@@ -1,0 +1,186 @@
+/*
+Theme Name: Québec Numérique
+Description: 
+Author: Evollia
+Author URI: http://evollia.com/
+*/
+
+
+/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	background: transparent;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+body {
+	line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+	clear: both;
+	font-weight: normal;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote {
+	quotes: none;
+}
+blockquote:before, blockquote:after {
+	content: '';
+	content: none;
+}
+del {
+	text-decoration: line-through;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a img {
+	border: none;
+}
+
+/* =Variables
+-------------------------------------------------------------- */
+
+@vert: #84a373;
+
+@sans-serif: 'Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
+@serif: 'Times', serif;
+
+/* =Int
+-------------------------------------------------------------- */
+
+body {
+	-webkit-font-smoothing: antialiased;
+	font-family: @ssans-serif;
+	font-weight: 300;
+}
+
+.clear {
+	padding: 0;
+	margin: 0;
+	visibility: hidden;
+	height: 0px;
+	border: none;
+	clear: both;
+}
+
+.transition(@props: all 0.2s ease) {
+	-webkit-transition: @props;
+	-moz-transition: @props;
+	-ms-transition: @props;
+	-o-transition: @props;
+	transition: @props;
+}
+
+.rotate(@props, @origin) {
+	-webkit-transform: rotate(@props);
+	-moz-transform: rotate(@props);
+	-ms-transform: rotate(@props);
+	-o-transform: rotate(@props);
+	transform: rotate(@props);
+
+	-webkit-transform-origin: @origin;
+	-moz-transform-origin: @origin;
+	-ms-transform-origin: @origin;
+	-o-transform-origin: @origin;
+	transform-origin: @origin;
+}
+
+.box-shadow(@props) {
+	-webkit-box-shadow: @props;
+	-moz-box-shadow: @props;
+	-ms-box-shadow: @props;
+	-o-box-shadow: @props;
+	box-shadow: @props;
+}
+
+.gradient (@origin: left, @start: white, @stop: black) {
+	background-color: @start;
+	background-image: -webkit-linear-gradient(@origin, @start, @stop);
+	background-image: -moz-linear-gradient(@origin, @start, @stop);
+	background-image: -o-linear-gradient(@origin, @start, @stop);
+	background-image: -ms-linear-gradient(@origin, @start, @stop);
+	background-image: linear-gradient(@origin, @start, @stop);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@start, endColorstr=@stop); /* IE6 & IE7 */  
+	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@start, endColorstr=@stop); /* IE8+ */  
+	background: linear-gradient(@origin, @start, @stop); /* the standard */  
+}
+
+.noselect() {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	cursor: default;
+}
+
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.wrapper { 
+	width: 1020px;
+	margin: 0 auto;
+}
+
+header#masthead {}
+footer#colophon {
+	clear: both;
+}
+
+.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 {
+	margin: 0 0.925925%;
+	float: left;
+	position: relative;
+	display: block;
+}
+
+.c1 { width: 6.48%; }
+.c2 { width: 14.81%; }
+.c3 { width: 23.14%; }
+.c4 { width: 31.48%; }
+.c5 { width: 39.81%; }
+.c6 { width: 48.14%; }
+.c7 { width: 56.48%; }
+.c8 { width: 64.81%; }
+.c9 { width: 73.14%; }
+.c10 { width: 81.48%; }
+.c11 { width: 89.81%; }
+.c12 { width: 98.14%; }
+
+.fr { float: right; }
+.fl { float: left; }
+.fn { float: none; }
+.cb { clear: both; }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 1050px){
+	.wrapper{ width: 97.14%; }
+}
+
+
