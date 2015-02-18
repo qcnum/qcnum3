@@ -108,46 +108,106 @@ table {
 a img {
   border: none;
 }
-#wrapper {
-  width: 1020px;
-  margin: 0 auto;
+/* =Variables
+-------------------------------------------------------------- */
+/* =Int
+-------------------------------------------------------------- */
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 300;
+}
+.clear {
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  height: 0px;
+  border: none;
+  clear: both;
+}
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+.wrapper {
+  width: 1180px;
 }
 footer#colophon {
   clear: both;
 }
-#container,
-#sidebar,
 .c1,
 .c2,
 .c3,
 .c4,
 .c5,
-.c6 {
-  margin: 0 0.98039%;
+.c6,
+.c7,
+.c8,
+.c9,
+.c10,
+.c11,
+.c12 {
+  margin: 0 0.925925%;
   float: left;
   position: relative;
   display: block;
 }
-.c1 {
-  width: 14.7%;
+.c1.padding,
+.c2.padding,
+.c3.padding,
+.c4.padding,
+.c5.padding,
+.c6.padding,
+.c7.padding,
+.c8.padding,
+.c9.padding,
+.c10.padding,
+.c11.padding,
+.c12.padding {
+  padding: 0 0.925925%;
+  margin: 0;
 }
-.c2,
-#sidebar {
-  width: 31.37%;
+.c1 {
+  width: 6.48%;
+}
+.c2 {
+  width: 14.81%;
 }
 .c3 {
-  width: 48.03%;
+  width: 23.14%;
 }
-.c4,
-#container {
-  width: 64.7%;
+.c4 {
+  width: 31.48%;
 }
 .c5 {
-  width: 81.37%;
+  width: 39.81%;
 }
-.c6,
-#container.fullwidth {
-  width: 98.03%;
+.c6 {
+  width: 48.14%;
+}
+.c7 {
+  width: 56.48%;
+}
+.c8 {
+  width: 64.81%;
+}
+.c9 {
+  width: 73.14%;
+}
+.c10 {
+  width: 81.48%;
+}
+.c11 {
+  width: 89.81%;
+}
+.c12 {
+  width: 98.14%;
 }
 .fr {
   float: right;
@@ -161,8 +221,41 @@ footer#colophon {
 .cb {
   clear: both;
 }
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.site-title {
+  float: left;
+}
+.navigation ul {
+  float: right;
+}
+.navigation li {
+  display: inline-block;
+}
+.bg-red {
+  background-color: red;
+}
+.trois article:first-child {
+  width: 98.14%;
+}
+.img-box {
+  position: relative;
+}
+.img-box .content {
+  position: absolute;
+  bottom: 0.5em;
+  left: 0.5em;
+  z-index: 10;
+}
 @media screen and (max-width: 1050px) {
-  #wrapper {
+  .wrapper {
     width: 97.14%;
   }
 }

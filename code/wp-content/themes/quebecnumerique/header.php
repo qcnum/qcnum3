@@ -26,23 +26,27 @@ wp_head();
 
 	<header id="masthead" role="banner">
 
-		<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</a>
+		<div class="group">
 
-		<div id="navbar" class="navbar">
+			<div class="c5">
 
-			<nav id="site-navigation" class="navigation main-navigation" role="navigation">
+				<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+					<span class="site-description"><?php bloginfo( 'description' ); ?></span>
+				</a>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'navigation', 'menu_class' => 'nav-menu' ) ); ?>
-				<?php get_social_media(); ?>
-				<?php get_search_form(); ?>
+				<?php wp_nav_menu( array( 'theme_location' => 'meta', 'container' => '' ) ); ?>
+
+			</div>
+
+			<nav id="site-navigation" class="navigation c7" role="navigation">
+
+				<?php wp_nav_menu( array( 'theme_location' => 'navigation', 'container' => '' ) ); ?>
 				
 			</nav><!-- #site-navigation -->
-
-		</div><!-- #navbar -->
 			
+		</div>
+
 	</header><!-- #masthead -->
 
 	<div id="main">

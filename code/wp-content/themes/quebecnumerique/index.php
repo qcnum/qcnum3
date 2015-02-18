@@ -1,25 +1,72 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$nouvelles = new WP_Query( array( 'post_type' => 'post', 'category_name' => 'nouvelles', 'posts_per_page' => 3 ) );
+$veilles = new WP_Query( array( 'post_type' => 'post', 'category_name' => 'veilles', 'posts_per_page' => 2 ) );
+$evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page' => 3 ) );
+
+
+
+?>
 
 	<div id="content" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<div class="c6">
+			
+			<div class="nouvelles group trois img-box">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<h2><?php _e('Aux dernières nouvelles', THEME_NAME); ?></h2>
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+				<div>
 
-			<?php endwhile; ?>
+					<?php if ( $nouvelles->have_posts() ) while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
 
-			<?php paging_nav(); ?>
+						<article class="c6">
+							<div class="content"><?php the_title(); ?></div>
+							<img src="http://placehold.it/580x440" alt="">
+						</article>
 
-		<?php else : ?>
+					<?php endwhile; ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
-				
-		<?php endif; ?>
+				</div>
+			
+			</div>
+
+			<div class="veilles group img-box">
+
+				<h2><?php _e('Les derniers articles', THEME_NAME); ?></h2>
+
+				<?php if ( $veilles->have_posts() ) while ( $veilles->have_posts() ) : $veilles->the_post(); ?>
+
+					<article class="c6">
+						<div class="content"><?php the_title(); ?></div>
+						<img src="http://placehold.it/580x440" alt="">
+					</article>
+
+				<?php endwhile; ?>
+			
+			</div>
+
+		</div>
+
+		<div class="c6">
+			
+			<div class="evenements group">
+
+				<?php if ( $evenements->have_posts() ) while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
+
+					<article class="c12">
+						<img src="http://placehold.it/75x75" class="fl" alt="">
+						<div class="content"><?php the_title(); ?></div>
+					</article>
+
+				<?php endwhile; ?>
+			
+			</div>
+
+		</div>
+
+		<hr class="clear">
 
 	</div><!-- #content -->
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

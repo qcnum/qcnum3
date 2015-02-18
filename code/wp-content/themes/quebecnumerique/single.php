@@ -1,4 +1,23 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$projets = new WP_Query( array(
+	'connected_type' => 'projets-to-post',
+	'connected_items' => get_queried_object(),
+	'nopaging' => true,
+) );
+
+$evenements = new WP_Query( array(
+	'connected_type' => 'evenements-to-post',
+	'connected_items' => get_queried_object(),
+	'nopaging' => true,
+) );
+
+$organisations = new WP_Query( array(
+	'connected_type' => 'organisations-to-post',
+	'connected_items' => get_queried_object(),
+	'nopaging' => true,
+) );
+?>
 
 	<div id="content" role="main">
 
@@ -8,7 +27,7 @@
 
 				<header class="entry-header">
 
-					<?php the_post_thumbnail(); ?>
+					<span><?php echo get_post_type(); ?></span>
 
 					<h1 class="entry-title"><?php the_title(); ?></h1>
 
@@ -18,6 +37,42 @@
 
 					<?php the_content(); ?>
 
+					<h2>Projets</h2>
+
+					<?php if ( $projets->have_posts() ) :
+
+						while ( $projets->have_posts() ) : $projets->the_post(); ?>
+
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+						<?php endwhile; wp_reset_postdata();
+
+					endif; ?>
+
+					<h2>Organisations</h2>
+
+					<?php if ( $organisations->have_posts() ) :
+
+						while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
+
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+						<?php endwhile; wp_reset_postdata();
+
+					endif; ?>
+
+					<h2>Événements</h2>
+
+					<?php if ( $evenements->have_posts() ) :
+
+						while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
+
+							<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+						<?php endwhile; wp_reset_postdata();
+
+					endif; ?>
+					
 				</div>
 
 				<footer class="entry-meta">
@@ -31,7 +86,5 @@
 		<?php endwhile; ?>
 
 	</div><!-- #content -->
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

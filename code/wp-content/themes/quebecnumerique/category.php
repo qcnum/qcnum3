@@ -3,9 +3,7 @@
 	<div id="content" role="main">
 
 		<header class="page-header">
-			<h1 class="page-title">
-				<?php printf( __( 'Archive de la catégorie : %s' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?>
-			</h1>
+			<h1 class="page-title"><?php single_cat_title(); ?></h1>
 		</header>
 
 		<?php if ( have_posts() ) : ?>
@@ -31,7 +29,5 @@
 		<?php endif; ?>
 
 	</div><!-- #content -->
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>

@@ -17,8 +17,9 @@ function setup() {
 add_action( 'init', 'init' );
 function init() {
 	register_nav_menus( array( 'navigation' => 'Navigation' ) );
+    register_nav_menus( array( 'meta' => 'Meta' ) );
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('small-thumb', 40, 30, true );
+	add_image_size('rectangle', 580, 440, true );
 
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', THEME_NAME ),
@@ -29,11 +30,9 @@ function init() {
 		'after_title' => '</h3>',
 	) );
 
-	/* Exemple création post type */
-
-	/*$labelsEvent = array(
-        'name' => _x('Événements', 'post type general name', 'Pauvreté'),
-        'singular_name' => _x('Événement', 'post type singular name', 'Pauvreté'),
+	$labelsEvent = array(
+        'name' => _x('Événements', 'post type general name', THEME_NAME),
+        'singular_name' => _x('Événement', 'post type singular name', THEME_NAME),
         'add_new' => _x('Ajouter un événement', 'evenements'),
         'add_new_item' => __('Ajouter un événement'),
         'edit_item' => __('Modifier l\'événement'),
@@ -54,7 +53,6 @@ function init() {
         'show_ui' => true,
         'show_in_menu' => true,
         'query_var' => true,
-        'rewrite' => array('slug' => _x('evenements', 'URL slug', 'Pauvreté')),
         'capability_type' => 'post',
         'has_archive' => true,
         'hierarchical' => true,
@@ -63,24 +61,128 @@ function init() {
         'supports' => array('title', 'thumbnail', 'editor', 'revisions', 'page-attributes')
     );
 
-    register_post_type('evenements', $argEvent);
+    $labelsOrg = array(
+        'name' => _x('Organisations', 'post type general name', THEME_NAME),
+        'singular_name' => _x('Organisation', 'post type singular name', THEME_NAME),
+        'add_new' => _x('Ajouter une organisation', 'organisations'),
+        'add_new_item' => __('Ajouter une organisation'),
+        'edit_item' => __('Modifier l\'organisation'),
+        'new_item' => __('Nouvelle organisation'),
+        'all_items' => __('Toutes les organisations'),
+        'view_item' => __('Voir l\'organisation'),
+        'search_items' => __('Chercher une organisation'),
+        'not_found' =>  __('Aucune organisation trouvé'),
+        'not_found_in_trash' => __('Rien de trouvé dans la corbeille'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Organisations'
+    );
+    
+    $argOrg = array(
+        'labels' => $labelsOrg,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-groups',
+        'supports' => array('title', 'thumbnail', 'editor', 'revisions', 'page-attributes')
+    );
 
-    register_taxonomy(
-        'categorie-evenement',
-        'evenements',
-        array(
-            'label' => __( 'Catégories' ),
-            'hierarchical' => true,
-        )
-    ); */
+    $labelsProjet = array(
+        'name' => _x('Projets', 'post type general name', THEME_NAME),
+        'singular_name' => _x('Projet', 'post type singular name', THEME_NAME),
+        'add_new' => _x('Ajouter un projet', 'projets'),
+        'add_new_item' => __('Ajouter un projet'),
+        'edit_item' => __('Modifier le projet'),
+        'new_item' => __('Nouveau projet'),
+        'all_items' => __('Tous les projets'),
+        'view_item' => __('Voir le projet'),
+        'search_items' => __('Chercher un projet'),
+        'not_found' =>  __('Aucun projet trouvé'),
+        'not_found_in_trash' => __('Rien de trouvé dans la corbeille'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Projets'
+    );
+    
+    $argProjet = array(
+        'labels' => $labelsProjet,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-star-empty',
+        'supports' => array('title', 'thumbnail', 'editor', 'revisions', 'page-attributes')
+    );
+
+    register_post_type('projets', $argProjet);
+    register_post_type('evenements', $argEvent);
+    register_post_type('organisations', $argOrg);
 
 }
+
+function my_connection_types() {
+
+    p2p_register_connection_type( array(
+        'name' => 'projets-to-post',
+        'from' => 'projets',
+        'to' => 'post',
+        'admin_column' => 'any'
+    ) );
+
+    p2p_register_connection_type( array(
+        'name' => 'projets-to-evenements',
+        'from' => 'projets',
+        'to' => 'evenements',
+        'admin_column' => 'any'
+    ) );
+
+    p2p_register_connection_type( array(
+        'name' => 'evenements-to-post',
+        'from' => 'evenements',
+        'to' => 'post',
+        'admin_column' => 'any'
+    ) );
+
+    p2p_register_connection_type( array(
+        'name' => 'organisations-to-post',
+        'from' => 'organisations',
+        'to' => 'post',
+        'admin_column' => 'any'
+    ) );
+
+    p2p_register_connection_type( array(
+        'name' => 'organisations-to-evenements',
+        'from' => 'organisations',
+        'to' => 'evenements',
+        'admin_column' => 'any'
+    ) );
+
+    p2p_register_connection_type( array(
+        'name' => 'organisations-to-projets',
+        'from' => 'organisations',
+        'to' => 'projets',
+        'admin_column' => 'any'
+    ) );
+
+
+}
+add_action( 'p2p_init', 'my_connection_types' );
 
 
 if( function_exists('acf_add_options_sub_page') ) {
     acf_add_options_sub_page(array( 'title' => 'Options' ));
     acf_add_options_sub_page(array( 'title' => 'Réseaux sociaux' ));
 }
+
 
 if(function_exists("register_field_group"))
 {
