@@ -266,13 +266,18 @@ img {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.site-description span {
+.site-description {
   background-color: rgba(44, 46, 51, 0.5);
   color: #ffffff;
-  padding: 0.25em;
+  padding: 0.5em 0.5em 0.5em 1em;
   display: block;
   float: left;
   margin-top: 0.5em;
+  font-family: 'Titillium Web', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  position: absolute;
+  top: 3em;
+  left: 12em;
+  margin-left: 0.925925%;
 }
 .navigation {
   position: relative;
@@ -567,27 +572,23 @@ img {
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
-}
-.navigation .fa-search:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #000000;
-  right: -100%;
-  top: 0;
-  z-index: -1;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
+  /*&:after {
+			content: "";
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			background-color: @noir;
+			right: -100%;
+			top: 0;
+			z-index: -1;
+			.transition();
+		}
+		&:hover { color: @blanc; }
+		&:hover:after { right: 0; }*/
+
 }
 .navigation .fa-search:hover {
-  color: #ffffff;
-}
-.navigation .fa-search:hover:after {
-  right: 0;
+  color: #e14e24;
 }
 .navigation #searchform {
   position: absolute;
@@ -596,16 +597,19 @@ img {
   z-index: 30;
   height: 100%;
   width: 43em;
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  transition: all 0.75s ease;
 }
 .navigation #searchform.hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+  right: -43em;
+  -webkit-transition: all 0.75s ease;
+  -moz-transition: all 0.75s ease;
+  -ms-transition: all 0.75s ease;
+  -o-transition: all 0.75s ease;
+  transition: all 0.75s ease;
 }
 .navigation #searchform .fa-close {
   position: absolute;
@@ -613,7 +617,7 @@ img {
   top: 1.45em;
   right: 0.9em;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.5);
+  color: #000000;
   font-size: 0.8125em;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -622,7 +626,7 @@ img {
   transition: all 0.2s ease;
 }
 .navigation #searchform .fa-close:hover {
-  color: #ffffff;
+  color: #e14e24;
 }
 #searchform {
   height: 2.5em;
@@ -638,8 +642,8 @@ img {
 #searchform input[type="text"] {
   width: 100%;
   padding: 0 2em 0 9em;
-  background-color: #44474e;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #2c2e33;
 }
 #searchform input[type="submit"] {
   position: absolute;
@@ -866,8 +870,8 @@ form input[type="submit"]:hover {
 }
 #colophon .partenaires img {
   display: inline-block;
-  padding: 1em;
-  max-height: 7em;
+  padding: 3em;
+  max-height: 5em;
   width: auto;
 }
 #colophon .gris-bg {

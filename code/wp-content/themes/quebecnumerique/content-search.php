@@ -6,7 +6,7 @@ $recherche = $_GET['recherche'];
 
 <div class="recherche">
 
-	<form role="search" method="get" id="searchform" action="recherche">
+	<form role="search" method="get" action="recherche">
 		<input type="text" name="recherche" id="s" value="<?php echo $recherche; ?>" /><br />
 
 		<h2>Mots-clés</h2>

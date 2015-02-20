@@ -31,12 +31,12 @@ wp_head();
 			<h1 class="site-title visuallyhidden"><?php bloginfo( 'name' ); ?></h1>
 		</a>
 
-		<nav id="site-navigation" class="navigation group" role="navigation">
+		<span class="site-description"><?php bloginfo( 'description' ); ?></span>
 
+		<nav id="site-navigation" class="navigation group" role="navigation">
 			<?php wp_nav_menu( array( 'theme_location' => 'meta', 'container' => '', 'menu_class' => 'meta' ) ); ?>
 			<?php get_search_form(); ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'navigation', 'container' => '', 'menu_class' => 'principal' ) ); ?>
-
 		</nav><!-- #site-navigation -->
 		
 	</div>
@@ -48,9 +48,6 @@ wp_head();
 <div id="page" class="wrapper">
 
 	<div class="fancyHead group">
-		<div class="site-description c12">
-			<span><?php bloginfo( 'description' ); ?></span>
-		</div>
 		<div class="triangle">
 			<div></div>
 			<div></div>

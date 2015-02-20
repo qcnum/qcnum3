@@ -253,14 +253,21 @@ img {
 	.transition();
 }
 
-.site-description span {
+.site-description {
 	background-color: fade(@gris, 50%);
 	color: @blanc;
-	padding: 0.25em;
+	padding: 0.5em 0.5em 0.5em 1em;
 	display: block;
 	float: left;
 	margin-top: 0.5em;
+	font-family: 'Titillium Web','Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
+
+	position: absolute;
+	top: 3em;
+	left: 12em;
+	margin-left: 0.925925%;
 }
+
 
 .navigation {
 	position: relative;
@@ -361,7 +368,7 @@ img {
 		z-index: 10;
 		.transition();
 
-		&:after {
+		/*&:after {
 			content: "";
 			position: absolute;
 			width: 100%;
@@ -373,17 +380,19 @@ img {
 			.transition();
 		}
 		&:hover { color: @blanc; }
-		&:hover:after { right: 0; }
+		&:hover:after { right: 0; }*/
+		&:hover { color: @orange; }
 	}
 
 	#searchform {
-		&.hidden { .visuallyhidden(); }
+		&.hidden { right: -43em; .transition(all 0.75s ease); }
 		position: absolute;
 		right: 0;
 		top: 0;
 		z-index: 30;
 		height: 100%;
 		width: 43em;
+		.transition(all 0.75s ease);
 
 		.fa-close {
 			position: absolute;
@@ -391,10 +400,11 @@ img {
 			top: 1.45em;
 			right: 0.9em;
 			text-decoration: none;
-			color: fade(@blanc, 50%);
+			//color: fade(@blanc, 50%);
+			color: @noir;
 			font-size: 0.8125em;
 			.transition();
-			&:hover { color: @blanc; }
+			&:hover { color: @orange; }
 		}
 	}
 }
@@ -414,8 +424,9 @@ img {
 	input[type="text"] { 
 		width: 100%;
 		padding: 0 2em 0 9em;
-		background-color: lighten(@gris, 10%);
-		color: @blanc;
+		//background-color: lighten(@gris, 10%);
+		background-color: @blanc;
+		color: @gris;
 	}
 
 	input[type="submit"] {
@@ -608,7 +619,7 @@ form {
 
 	.partenaires {
 		text-align: right;
-		img { display: inline-block; padding: 1em; max-height: 7em; width: auto; }
+		img { display: inline-block; padding: 3em; max-height: 5em; width: auto; }
 	}
 
 	.gris-bg { color: @blanc; color: fade(@blanc, 50%); }

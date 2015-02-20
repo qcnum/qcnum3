@@ -38,9 +38,17 @@
 
 			<div class="c7 partenaires">
 				
-				<?php foreach($partenaires as $p) : ?>
-					
-					<a href="<?php echo $p['site_web']; ?>"><img src="http://placehold.it/150x85" alt=""></a>
+				<?php foreach($partenaires as $p) : 
+					$site = $p['site_web'];
+					$nom = $p['nom'];
+					$logoid = $p['logo'];
+					$logo = wp_get_attachment_image_src($logoid, 'medium');
+					?>
+					<?php if($p['site_web']) : ?>
+						<a href="<?php echo $site; ?>"><img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>"></a>
+					<?php else : ?>
+						<img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>">
+					<?php endif; ?>
 
 				<?php endforeach; ?>
 
