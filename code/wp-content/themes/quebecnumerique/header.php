@@ -34,7 +34,7 @@ wp_head();
 		<nav id="site-navigation" class="navigation group" role="navigation">
 
 			<?php wp_nav_menu( array( 'theme_location' => 'meta', 'container' => '', 'menu_class' => 'meta' ) ); ?>
-			<a href="#" class="fa fa-search"></a>
+			<?php get_search_form(); ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'navigation', 'container' => '', 'menu_class' => 'principal' ) ); ?>
 
 		</nav><!-- #site-navigation -->

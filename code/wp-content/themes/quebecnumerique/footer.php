@@ -7,7 +7,7 @@
 	
 		<div class="group">
 				
-			<div class="c8 center">
+			<div class="c6 center entry-content">
 				<?php echo do_shortcode('[gravityform id=1 title=true description=true]'); ?>
 			</div>
 
@@ -15,7 +15,7 @@
 
 		<div class="gris-bg group">
 			
-			<p class="c6">
+			<p class="c6 email">
 				<?php _e('Pour informations', THEME_NAME); ?> : <a href="mailto:<?php echo get_option( 'admin_email' ); ?>"><?php echo get_option( 'admin_email' ); ?></a>
 			</p>
 
@@ -36,7 +36,7 @@
 				<?php echo $propos; ?>
 			</div>
 
-			<div class="c7">
+			<div class="c7 partenaires">
 				
 				<?php foreach($partenaires as $p) : ?>
 					

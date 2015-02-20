@@ -219,68 +219,64 @@ function get_social_media() {
     ?>
 
    <div class="rs">
-
-        <div class="c6">
             
-                <?php if($fb) : ?>
-                    <a title="Facebook" href="<?php echo $fb; ?>"><i class="fa fa-facebook"></i></a>
-                <?php endif; ?>
+        <?php if($fb) : ?>
+            <a title="Facebook" href="<?php echo $fb; ?>"><i class="fa fa-facebook"></i></a>
+        <?php endif; ?>
 
-                <?php if($gp) : ?>
-                    <a title="Google Plus" href="<?php echo $gp; ?>"><i class="fa fa-google-plus"></i></a>
-                <?php endif; ?>
+        <?php if($gp) : ?>
+            <a title="Google Plus" href="<?php echo $gp; ?>"><i class="fa fa-google-plus"></i></a>
+        <?php endif; ?>
 
-                <?php if($li) : ?>
-                    <a title="Linkedin" href="<?php echo $li; ?>"><i class="fa fa-linkedin"></i></a>
-                <?php endif; ?>
+        <?php if($li) : ?>
+            <a title="Linkedin" href="<?php echo $li; ?>"><i class="fa fa-linkedin"></i></a>
+        <?php endif; ?>
 
-                <?php if($tw) : ?>
-                    <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
-                <?php endif; ?>
+        <?php if($tw) : ?>
+            <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
+        <?php endif; ?>
 
-                <?php if($pt) : ?>
-                    <a title="Pinterest" href="<?php echo $pt; ?>"><i class="fa fa-pinterest"></i></a>
-                <?php endif; ?>
+        <?php if($pt) : ?>
+            <a title="Pinterest" href="<?php echo $pt; ?>"><i class="fa fa-pinterest"></i></a>
+        <?php endif; ?>
 
-                <?php if($tumb) : ?>
-                    <a title="Tumblr" href="<?php echo $tumb; ?>"><i class="fa fa-tumblr"></i></a>
-                <?php endif; ?>
+        <?php if($tumb) : ?>
+            <a title="Tumblr" href="<?php echo $tumb; ?>"><i class="fa fa-tumblr"></i></a>
+        <?php endif; ?>
 
-                <?php if($dribble) : ?>
-                    <a title="Dribbble" href="<?php echo $dribble; ?>"><i class="fa fa-dribbble"></i></a>
-                <?php endif; ?>
+        <?php if($dribble) : ?>
+            <a title="Dribbble" href="<?php echo $dribble; ?>"><i class="fa fa-dribbble"></i></a>
+        <?php endif; ?>
 
-                <?php if($stumbleupon) : ?>
-                    <a title="Stumble Upn" href="<?php echo $stumbleupon; ?>"><i class="fa fa-stumbleupon"></i></a>
-                <?php endif; ?>
+        <?php if($stumbleupon) : ?>
+            <a title="Stumble Upn" href="<?php echo $stumbleupon; ?>"><i class="fa fa-stumbleupon"></i></a>
+        <?php endif; ?>
 
-                <?php if($flickr) : ?>
-                    <a title="Flickr" href="<?php echo $flickr; ?>"><i class="fa fa-flickr"></i></a>
-                <?php endif; ?>
+        <?php if($flickr) : ?>
+            <a title="Flickr" href="<?php echo $flickr; ?>"><i class="fa fa-flickr"></i></a>
+        <?php endif; ?>
 
-                <?php if($spotify) : ?>
-                    <a title="Spotify" href="<?php echo $spotify; ?>"><i class="fa fa-spotify"></i></a>
-                <?php endif; ?>
+        <?php if($spotify) : ?>
+            <a title="Spotify" href="<?php echo $spotify; ?>"><i class="fa fa-spotify"></i></a>
+        <?php endif; ?>
 
-                <?php if($instagram) : ?>
-                    <a title="Instagram" href="<?php echo $instagram; ?>"><i class="fa fa-instagram"></i></a>
-                <?php endif; ?>
+        <?php if($instagram) : ?>
+            <a title="Instagram" href="<?php echo $instagram; ?>"><i class="fa fa-instagram"></i></a>
+        <?php endif; ?>
 
-                <?php if($skype) : ?>
-                    <a title="Skype" href="<?php echo $skype; ?>"><i class="fa fa-skype"></i></a>
-                <?php endif; ?>
+        <?php if($skype) : ?>
+            <a title="Skype" href="<?php echo $skype; ?>"><i class="fa fa-skype"></i></a>
+        <?php endif; ?>
 
-                 <?php if($vimeo) : ?>
-                    <a title="Vimeo" href="<?php echo $vimeo; ?>"><i class="fa fa-vimeo-square"></i></a>
-                <?php endif; ?>
+         <?php if($vimeo) : ?>
+            <a title="Vimeo" href="<?php echo $vimeo; ?>"><i class="fa fa-vimeo-square"></i></a>
+        <?php endif; ?>
 
-                 <?php if($github) : ?>
-                    <a title="Github" href="<?php echo $github; ?>"><i class="fa fa-github-alt"></i></a>
-                <?php endif; ?>
+         <?php if($github) : ?>
+            <a title="Github" href="<?php echo $github; ?>"><i class="fa fa-github-alt"></i></a>
+        <?php endif; ?>
 
-            </div>
-
-        </div>
+    </div>
 
 <?php }
 

@@ -3,10 +3,10 @@ jQuery(document).ready(function(){
 	//timeline.init("data.json");
 
 
-	jQuery('.fa-search').click(function(){
-
-		jQuery('.recherche').toggleClass('visible');
-
+	jQuery('.fa-search, .fa-close').click(function(){
+		jQuery('#searchform').toggleClass('hidden');
+		jQuery('#searchform #s').focus();
+		event.preventDefault();
 	});
 
 	jQuery('#searchform').submit(function(){

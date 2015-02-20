@@ -119,16 +119,22 @@ body {
 	box-shadow: @props;
 }
 
-.gradient (@origin: left, @start: white, @stop: black) {
-	background-color: @start;
-	background-image: -webkit-linear-gradient(@origin, @start, @stop);
-	background-image: -moz-linear-gradient(@origin, @start, @stop);
-	background-image: -o-linear-gradient(@origin, @start, @stop);
-	background-image: -ms-linear-gradient(@origin, @start, @stop);
-	background-image: linear-gradient(@origin, @start, @stop);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@start, endColorstr=@stop); /* IE6 & IE7 */  
-	-ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=@start, endColorstr=@stop); /* IE8+ */  
-	background: linear-gradient(@origin, @start, @stop); /* the standard */  
+.gradient (@startColor: #eee, @endColor: white) {
+	background-color: @startColor;
+	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
+	background: -webkit-linear-gradient(top, @startColor, @endColor);
+	background: -moz-linear-gradient(top, @startColor, @endColor);
+	background: -ms-linear-gradient(top, @startColor, @endColor);
+	background: -o-linear-gradient(top, @startColor, @endColor);
+}
+
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: -webkit-gradient(linear, left top, right top, from(@startColor), to(@endColor));
+	background-image: -webkit-linear-gradient(left, @startColor, @endColor);
+	background-image: -moz-linear-gradient(left, @startColor, @endColor);
+	background-image: -ms-linear-gradient(left, @startColor, @endColor);
+	background-image: -o-linear-gradient(left, @startColor, @endColor);
 }
 
 .noselect() {
@@ -137,6 +143,21 @@ body {
 	-ms-user-select: none;
 	-o-user-select: none;
 	cursor: default;
+}
+
+.box-sizing (@type: border-box) {
+	-webkit-box-sizing: @type;
+	-moz-box-sizing: @type;
+	box-sizing: @type;
+}
+
+.border-radius (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
 }
 
 .visuallyhidden {
@@ -242,6 +263,7 @@ img {
 }
 
 .navigation {
+	position: relative;
 	background-color: @gris;
 	li {
 		display: block;
@@ -353,8 +375,57 @@ img {
 		&:hover { color: @blanc; }
 		&:hover:after { right: 0; }
 	}
+
+	#searchform {
+		&.hidden { .visuallyhidden(); }
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: 30;
+		height: 100%;
+		width: 43em;
+
+		.fa-close {
+			position: absolute;
+			z-index: 10;
+			top: 1.45em;
+			right: 0.9em;
+			text-decoration: none;
+			color: fade(@blanc, 50%);
+			font-size: 0.8125em;
+			.transition();
+			&:hover { color: @blanc; }
+		}
+	}
 }
 
+#searchform {
+	height: 2.5em;
+	position: relative;
+
+	input {
+		position: relative;
+		height: 100%;
+		padding: 0;
+		border: none;
+		margin: 0;
+	}
+
+	input[type="text"] { 
+		width: 100%;
+		padding: 0 2em 0 9em;
+		background-color: lighten(@gris, 10%);
+		color: @blanc;
+	}
+
+	input[type="submit"] {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 8em;
+		padding: 0 2em;
+	}
+}
 
 .recherche {
 	position: fixed;
@@ -394,32 +465,21 @@ img {
 
 .entry-content {
 	
-	h2, .h2 {
-		//font-family: @serif;
-		font-size: 1.5em;
+	h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 		line-height: 1.5em;
-		padding-bottom: 0.75em;
-		//color: @rouge;
+		padding-bottom: 0.25em;
+		font-family: @sans-serif;
 		font-weight: 700;
-		&.blanc { color: #fff; }
-		a, span {
-			font-weight: 700;
-			font-size: 1em;
-			//color: @rouge;
-			text-decoration: none;
-			//font-family: @serif;
-		}
+		a { text-decoration: none; }
+	}
+
+	h2, .h2 {
+		font-size: 2em;
 	}
 
 	h3, .h3 {
-		font-weight: 700;
-		font-size: 1em;
-		color: #000;
-		padding-bottom: 0.75em;
-		a {
-			color: #000;
-			text-decoration: none;
-		}
+		font-size: 1.75em;
+		color: @gris;
 	}
 
 
@@ -452,7 +512,7 @@ img {
 	.aligncenter { clear: both; display: block; margin: 15px auto 20px auto; }
 	.alignnone { margin: 10px 20px 10px 5px; }
 
-	p, li {
+	p, li, .gform_description {
 		line-height: 1.5em;
 		padding-bottom: 1em;
 		a { 
@@ -462,7 +522,7 @@ img {
 		}
 	}
 
-	ul {
+	ul, ol {
 		list-style-type: square;
 		padding-left: 1.5em;
 		margin-bottom: 1em;
@@ -477,14 +537,122 @@ img {
 
 	ol { list-style-type: decimal; }
 
+	form {
+		ul {
+			padding-left: 0;
+			margin-bottom: 0;
+			list-style-type: none; 	
+			li { padding-bottom: 0; }
+		}
+	}
+
+}
+
+
+form {
+	input, textarea {
+		font-size: 1em;
+		padding: 0.75em;
+		margin: 0;
+		font-family: @content;
+		color: @blanc;
+		font-weight: lighter;
+		.box-sizing();
+		&:focus { outline: 0; }
+	}
+
+	input[type='text'],
+	input[type='email'],
+	textarea {
+		width: 100%;
+		border: thin solid @blanc;
+		background-color: fade(@blanc, 15%);
+	}
+
+	input[type="submit"] {
+		background-color: @orange;
+		color: @blanc;
+		font-family: @sans-serif;
+		text-transform: uppercase;
+		border: none;
+		cursor: pointer;
+		padding: 0.75em 2em;
+		.transition();
+		&:hover { background-color: darken(@orange, 10%); }
+	}	
+
+
+}
+
+#map {
+	height: 200px;
+	width: 100%;
+	background-color: @noir;
+}
+
+.rs {
+	text-align: right;
+	a {
+		display: inline-block;
+		font-size: 1.75em;
+		padding-left: 0.75em;
+		color: @blanc;
+		color: fade(@blanc, 50%);
+		.transition();
+		&:hover { color: @blanc; }
+	}
 }
 
 #colophon {
-	.group {
-		padding: 1em 0;
+	.group { padding: 1em 0; }
+
+	.partenaires {
+		text-align: right;
+		img { display: inline-block; padding: 1em; max-height: 7em; width: auto; }
 	}
 
+	.gris-bg { color: @blanc; color: fade(@blanc, 50%); }
 
+	p.email {
+		font-size: 1.25em;
+		padding-top: 0.3em;
+		a { color: @orange; text-decoration: none; font-weight: bolder; }
+	}
+
+	form {
+		color: @blanc;
+		padding: 2em 0;
+		.gform_title {
+			text-align: center;
+			font-size: 3em;
+			color: @blanc;
+		}
+		.gform_description {
+			font-size: 1.5em;
+			display: block;
+		}
+
+		.gform_body ul {
+			li:first-child { float: left; }
+			li:nth-child(2) { float: right; }
+			li:last-child { float: left; clear: left; }
+			li { width: 49%; margin: 0.75em 0; .box-sizing(); }
+			textarea { height: 9.5em; resize: none; }
+			input[type='text'],
+			input[type='email'] { padding: 1em; height: 4em; }
+		}
+
+		.gform_footer {
+			clear: both;
+			input[type="submit"] { float: right; }
+		}
+
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+	}
 }
 
 
