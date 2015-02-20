@@ -4,8 +4,6 @@ $nouvelles = new WP_Query( array( 'post_type' => 'post', 'category_name' => 'nou
 $veilles = new WP_Query( array( 'post_type' => 'post', 'category_name' => 'veilles', 'posts_per_page' => 2 ) );
 $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page' => 3 ) );
 
-
-
 ?>
 
 	<div id="content" role="main">

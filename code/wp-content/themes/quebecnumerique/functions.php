@@ -9,10 +9,6 @@ include_once('inc/advanced-custom-fields/acf.php');
 include_once('inc/acf-repeater/acf-repeater.php');
 include_once('inc/acf-options-page/acf-options-page.php');
 
-add_action( 'after_theme_setup', 'setup' );
-function setup() {
-	
-}
 
 add_action( 'init', 'init' );
 function init() {
@@ -127,6 +123,27 @@ function init() {
     register_post_type('evenements', $argEvent);
     register_post_type('organisations', $argOrg);
 
+    register_taxonomy(
+        'mots-cles',
+        array('projets', 'evenements', 'organisations', 'post'),
+        array(
+            'label' => __( 'Mots-clés' ),
+            'public' => true,
+            'hierarchical' => true,
+        )
+    );
+
+
+    register_taxonomy(
+        'quartier',
+        array('projets', 'evenements', 'organisations', 'post'),
+        array(
+            'label' => __( 'Quartiers' ),
+            'public' => true,
+            'hierarchical' => true,
+        )
+    );
+
 }
 
 function my_connection_types() {
@@ -180,156 +197,8 @@ add_action( 'p2p_init', 'my_connection_types' );
 
 if( function_exists('acf_add_options_sub_page') ) {
     acf_add_options_sub_page(array( 'title' => 'Options' ));
+    acf_add_options_sub_page(array( 'title' => 'Pied de page' ));
     acf_add_options_sub_page(array( 'title' => 'Réseaux sociaux' ));
-}
-
-
-if(function_exists("register_field_group"))
-{
-    register_field_group(array (
-        'id' => 'acf_reseaux-sociaux',
-        'title' => 'Réseaux sociaux',
-        'fields' => array (
-            array (
-                'key' => 'field_5422ff41f27e4',
-                'label' => 'Facebook',
-                'name' => 'facebook',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_5422ff52f27e6',
-                'label' => 'Twitter',
-                'name' => 'twitter',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_5422ff58f27e7',
-                'label' => 'Google+',
-                'name' => 'google_plus',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_5422ff5ef27e8',
-                'label' => 'Linkedin',
-                'name' => 'linkedin',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_54246f5216a1a',
-                'label' => 'Pinterest',
-                'name' => 'pinterest',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_54246f5e16a1b',
-                'label' => 'Tumblr',
-                'name' => 'tumblr',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_54246f7f16a1e',
-                'label' => 'Flickr',
-                'name' => 'flickr',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'html',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_54246fa716a22',
-                'label' => 'Instagram',
-                'name' => 'instagram',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'html',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_54246fba16a23',
-                'label' => 'Skype',
-                'name' => 'skype',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-            array (
-                'key' => 'field_544fb56d6623b',
-                'label' => 'Youtube',
-                'name' => 'youtube',
-                'type' => 'text',
-                'default_value' => '',
-                'placeholder' => '',
-                'prepend' => '',
-                'append' => '',
-                'formatting' => 'none',
-                'maxlength' => '',
-            ),
-        ),
-        'location' => array (
-            array (
-                array (
-                    'param' => 'options_page',
-                    'operator' => '==',
-                    'value' => 'acf-options-reseaux-sociaux',
-                    'order_no' => 0,
-                    'group_no' => 0,
-                ),
-            ),
-        ),
-        'options' => array (
-            'position' => 'normal',
-            'layout' => 'default',
-            'hide_on_screen' => array (
-            ),
-        ),
-        'menu_order' => 0,
-    ));
 }
 
 function get_social_media() {
@@ -339,54 +208,79 @@ function get_social_media() {
     $tw = get_field('twitter', 'options'); 
     $pt = get_field('pinterest', 'options');
     $tumb = get_field('tumblr', 'options');
+    $dribble = get_field('dribbble', 'options');
+    $stumbleupon = get_field('stumbleupon', 'options');
     $flickr = get_field('flickr', 'options');
+    $spotify = get_field('spotify', 'options');
     $instagram = get_field('instagram', 'options');
     $skype = get_field('skype', 'options');
-    $yt = get_field('youtube', 'options'); ?>
+    $vimeo = get_field('vimeo', 'options');
+    $github = get_field('github', 'options');
+    ?>
 
-    <div class="rs">
+   <div class="rs">
+
+        <div class="c6">
             
-        <?php if($fb) : ?>
-            <a title="Facebook" href="<?php echo $fb; ?>"><i class="fa fa-facebook"></i></a>
-        <?php endif; ?>
+                <?php if($fb) : ?>
+                    <a title="Facebook" href="<?php echo $fb; ?>"><i class="fa fa-facebook"></i></a>
+                <?php endif; ?>
 
-        <?php if($gp) : ?>
-            <a title="Google Plus" href="<?php echo $gp; ?>"><i class="fa fa-google-plus"></i></a>
-        <?php endif; ?>
+                <?php if($gp) : ?>
+                    <a title="Google Plus" href="<?php echo $gp; ?>"><i class="fa fa-google-plus"></i></a>
+                <?php endif; ?>
 
-        <?php if($li) : ?>
-            <a title="Linkedin" href="<?php echo $li; ?>"><i class="fa fa-linkedin"></i></a>
-        <?php endif; ?>
+                <?php if($li) : ?>
+                    <a title="Linkedin" href="<?php echo $li; ?>"><i class="fa fa-linkedin"></i></a>
+                <?php endif; ?>
 
-        <?php if($tw) : ?>
-            <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
-        <?php endif; ?>
+                <?php if($tw) : ?>
+                    <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
+                <?php endif; ?>
 
-        <?php if($pt) : ?>
-            <a title="Pinterest" href="<?php echo $pt; ?>"><i class="fa fa-pinterest"></i></a>
-        <?php endif; ?>
+                <?php if($pt) : ?>
+                    <a title="Pinterest" href="<?php echo $pt; ?>"><i class="fa fa-pinterest"></i></a>
+                <?php endif; ?>
 
-        <?php if($tumb) : ?>
-            <a title="Tumblr" href="<?php echo $tumb; ?>"><i class="fa fa-tumblr"></i></a>
-        <?php endif; ?>
+                <?php if($tumb) : ?>
+                    <a title="Tumblr" href="<?php echo $tumb; ?>"><i class="fa fa-tumblr"></i></a>
+                <?php endif; ?>
 
-        <?php if($flickr) : ?>
-            <a title="Flickr" href="<?php echo $flickr; ?>"><i class="fa fa-flickr"></i></a>
-        <?php endif; ?>
+                <?php if($dribble) : ?>
+                    <a title="Dribbble" href="<?php echo $dribble; ?>"><i class="fa fa-dribbble"></i></a>
+                <?php endif; ?>
 
-        <?php if($instagram) : ?>
-            <a title="Instagram" href="<?php echo $instagram; ?>"><i class="fa fa-instagram"></i></a>
-        <?php endif; ?>
+                <?php if($stumbleupon) : ?>
+                    <a title="Stumble Upn" href="<?php echo $stumbleupon; ?>"><i class="fa fa-stumbleupon"></i></a>
+                <?php endif; ?>
 
-        <?php if($skype) : ?>
-            <a title="Skype" href="<?php echo $skype; ?>"><i class="fa fa-skype"></i></a>
-        <?php endif; ?>
+                <?php if($flickr) : ?>
+                    <a title="Flickr" href="<?php echo $flickr; ?>"><i class="fa fa-flickr"></i></a>
+                <?php endif; ?>
 
-        <?php if($yt) : ?>
-            <a title="Youtube" href="<?php echo $yt; ?>"><i class="fa fa-youtube"></i></a>
-        <?php endif; ?>
+                <?php if($spotify) : ?>
+                    <a title="Spotify" href="<?php echo $spotify; ?>"><i class="fa fa-spotify"></i></a>
+                <?php endif; ?>
 
-    </div>
+                <?php if($instagram) : ?>
+                    <a title="Instagram" href="<?php echo $instagram; ?>"><i class="fa fa-instagram"></i></a>
+                <?php endif; ?>
+
+                <?php if($skype) : ?>
+                    <a title="Skype" href="<?php echo $skype; ?>"><i class="fa fa-skype"></i></a>
+                <?php endif; ?>
+
+                 <?php if($vimeo) : ?>
+                    <a title="Vimeo" href="<?php echo $vimeo; ?>"><i class="fa fa-vimeo-square"></i></a>
+                <?php endif; ?>
+
+                 <?php if($github) : ?>
+                    <a title="Github" href="<?php echo $github; ?>"><i class="fa fa-github-alt"></i></a>
+                <?php endif; ?>
+
+            </div>
+
+        </div>
 
 <?php }
 

@@ -114,8 +114,9 @@ a img {
 -------------------------------------------------------------- */
 body {
   -webkit-font-smoothing: antialiased;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   font-weight: 300;
+  background-color: #4d5057;
 }
 .clear {
   padding: 0;
@@ -134,9 +135,6 @@ body {
   padding: 0;
   position: absolute;
   width: 1px;
-}
-.wrapper {
-  width: 1180px;
 }
 footer#colophon {
   clear: both;
@@ -158,20 +156,20 @@ footer#colophon {
   position: relative;
   display: block;
 }
-.c1.padding,
-.c2.padding,
-.c3.padding,
-.c4.padding,
-.c5.padding,
-.c6.padding,
-.c7.padding,
-.c8.padding,
-.c9.padding,
-.c10.padding,
-.c11.padding,
-.c12.padding {
-  padding: 0 0.925925%;
-  margin: 0;
+.c1.center,
+.c2.center,
+.c3.center,
+.c4.center,
+.c5.center,
+.c6.center,
+.c7.center,
+.c8.center,
+.c9.center,
+.c10.center,
+.c11.center,
+.c12.center {
+  float: none;
+  margin: 0 auto;
 }
 .c1 {
   width: 6.48%;
@@ -221,6 +219,15 @@ footer#colophon {
 .cb {
   clear: both;
 }
+.grispale-bg {
+  background-color: #4d5057;
+}
+.gris-bg {
+  background-color: #2c2e33;
+}
+.blanc-bg {
+  background-color: #ffffff;
+}
 .group:after {
   content: "";
   display: table;
@@ -230,17 +237,369 @@ img {
   max-width: 100%;
   height: auto;
 }
-.site-title {
-  float: left;
+#masthead {
+  height: 6em;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 999;
 }
-.navigation ul {
-  float: right;
+#page {
+  margin-top: 6em;
+}
+.home-link {
+  margin-left: 0.925925%;
+  display: block;
+  width: 12em;
+  height: 5.625em;
+  background-image: url('images/logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #e14e24;
+  background-size: 8.75em 3em;
+  z-index: 10;
+  position: absolute;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.site-description span {
+  background-color: rgba(44, 46, 51, 0.5);
+  color: #ffffff;
+  padding: 0.25em;
+  display: block;
+  float: left;
+  margin-top: 0.5em;
+}
+.navigation {
+  background-color: #2c2e33;
 }
 .navigation li {
-  display: inline-block;
+  display: block;
+  float: left;
 }
-.bg-red {
-  background-color: red;
+.navigation li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  display: block;
+}
+.navigation .meta {
+  float: left;
+  padding-left: 1.25%;
+  margin-left: 12em;
+}
+.navigation .meta li {
+  margin: 0.9em 0 0;
+  border-left: thin solid rgba(255, 255, 255, 0.25);
+}
+.navigation .meta li:first-child {
+  border-left: none;
+}
+.navigation .meta a {
+  display: block;
+  float: left;
+  font-size: 1.25em;
+  padding: 0 0.5em;
+  text-transform: lowercase;
+}
+.navigation .principal {
+  float: right;
+  text-transform: uppercase;
+}
+.navigation .principal a {
+  font-size: 1.25em;
+  padding: 0.75em 1em;
+  border-left: thin solid rgba(255, 255, 255, 0.25);
+  position: relative;
+  z-index: 10;
+}
+.navigation .principal .nouvelles {
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .nouvelles:before {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 1em;
+  left: -0.5em;
+  border-radius: 10em;
+  border: 0.25em solid #2c2e33;
+  background-color: #00aca7;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  z-index: 20;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .nouvelles:hover:before {
+  background-color: #2c2e33;
+}
+.navigation .principal .nouvelles:hover:after {
+  width: 100%;
+}
+.navigation .principal .nouvelles:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #00aca7;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .articles {
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .articles:before {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 1em;
+  left: -0.5em;
+  border-radius: 10em;
+  border: 0.25em solid #2c2e33;
+  background-color: #a0ad00;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  z-index: 20;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .articles:hover:before {
+  background-color: #2c2e33;
+}
+.navigation .principal .articles:hover:after {
+  width: 100%;
+}
+.navigation .principal .articles:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #a0ad00;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .evenements {
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .evenements:before {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 1em;
+  left: -0.5em;
+  border-radius: 10em;
+  border: 0.25em solid #2c2e33;
+  background-color: #d39b00;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  z-index: 20;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .evenements:hover:before {
+  background-color: #2c2e33;
+}
+.navigation .principal .evenements:hover:after {
+  width: 100%;
+}
+.navigation .principal .evenements:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #d39b00;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .organisations {
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .organisations:before {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 1em;
+  left: -0.5em;
+  border-radius: 10em;
+  border: 0.25em solid #2c2e33;
+  background-color: #9b2b78;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  z-index: 20;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .organisations:hover:before {
+  background-color: #2c2e33;
+}
+.navigation .principal .organisations:hover:after {
+  width: 100%;
+}
+.navigation .principal .organisations:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #9b2b78;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .projets {
+  position: relative;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .projets:before {
+  content: "";
+  position: absolute;
+  width: 0.5em;
+  height: 0.5em;
+  top: 1em;
+  left: -0.5em;
+  border-radius: 10em;
+  border: 0.25em solid #2c2e33;
+  background-color: #009861;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.25);
+  z-index: 20;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .principal .projets:hover:before {
+  background-color: #2c2e33;
+}
+.navigation .principal .projets:hover:after {
+  width: 100%;
+}
+.navigation .principal .projets:after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #009861;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .fa-search {
+  float: right;
+  font-size: 1.25em;
+  padding: 0.75em;
+  background-color: #ffffff;
+  color: #000000;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .fa-search:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  right: -100%;
+  top: 0;
+  z-index: -1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .fa-search:hover {
+  color: #ffffff;
+}
+.navigation .fa-search:hover:after {
+  right: 0;
+}
+.recherche {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(44, 46, 51, 0.9);
+  z-index: 1000;
+  display: none;
+}
+.recherche.visible {
+  display: block;
 }
 .trois article:first-child {
   width: 98.14%;
@@ -253,6 +612,112 @@ img {
   bottom: 0.5em;
   left: 0.5em;
   z-index: 10;
+}
+.entry-content h2,
+.entry-content .h2 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+  padding-bottom: 0.75em;
+  font-weight: 700;
+}
+.entry-content h2.blanc,
+.entry-content .h2.blanc {
+  color: #fff;
+}
+.entry-content h2 a,
+.entry-content .h2 a,
+.entry-content h2 span,
+.entry-content .h2 span {
+  font-weight: 700;
+  font-size: 1em;
+  text-decoration: none;
+}
+.entry-content h3,
+.entry-content .h3 {
+  font-weight: 700;
+  font-size: 1em;
+  color: #000;
+  padding-bottom: 0.75em;
+}
+.entry-content h3 a,
+.entry-content .h3 a {
+  color: #000;
+  text-decoration: none;
+}
+.entry-content .alignleft,
+.entry-content .alignright,
+.entry-content .aligncenter,
+.entry-content .alignnone {
+  max-width: 100%;
+  height: auto;
+}
+.entry-content .alignleft img,
+.entry-content .alignright img,
+.entry-content .aligncenter img,
+.entry-content .alignnone img {
+  width: 100%;
+  height: auto;
+}
+.entry-content .wp-caption {
+  max-width: 100%;
+  height: auto;
+  width: auto !important;
+}
+.entry-content .wp-caption p {
+  font-size: 0.8125em;
+  margin: 0.25px 0 0px 0;
+  color: #4d5057;
+  text-align: center;
+  border-top: thin solid #EEE;
+  padding-top: 5px;
+}
+.entry-content .alignleft {
+  float: left;
+  margin: 10px 20px 10px 5px;
+}
+.entry-content .alignright {
+  float: right;
+  margin: 10px 5px 10px 20px;
+}
+.entry-content .aligncenter {
+  clear: both;
+  display: block;
+  margin: 15px auto 20px auto;
+}
+.entry-content .alignnone {
+  margin: 10px 20px 10px 5px;
+}
+.entry-content p,
+.entry-content li {
+  line-height: 1.5em;
+  padding-bottom: 1em;
+}
+.entry-content p a,
+.entry-content li a {
+  color: #e14e24;
+  text-decoration: none;
+}
+.entry-content p a:hover,
+.entry-content li a:hover {
+  text-decoration: underline;
+}
+.entry-content ul {
+  list-style-type: square;
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+.entry-content ul li {
+  padding-bottom: 0.5em;
+}
+.entry-content ul ul {
+  list-style-type: circle;
+  margin-top: 0.5em;
+}
+.entry-content ol {
+  list-style-type: decimal;
+}
+#colophon .group {
+  padding: 1em 0;
 }
 @media screen and (max-width: 1050px) {
   .wrapper {
