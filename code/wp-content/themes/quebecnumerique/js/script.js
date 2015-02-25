@@ -3,9 +3,27 @@ jQuery(document).ready(function(){
 	//timeline.init("data.json");
 
 
-	jQuery('.fa-search, .fa-close').click(function(){
-		jQuery('#searchform').toggleClass('hidden');
+	jQuery('a.fa-search').click(function(){
+		jQuery('#searchform').removeClass('hidden');
 		jQuery('#searchform #s').focus();
+		event.preventDefault();
+	});
+
+	jQuery('.fa-close').click(function(){
+
+		if(jQuery('.recherche').hasClass('hidden')) {
+			jQuery('#searchform').addClass('hidden');
+		} else {
+			jQuery('.recherche').addClass('hidden');
+			jQuery('#searchform').delay(500).queue(function(up){
+				jQuery(this).addClass('hidden'); up();
+			});
+		}
+		event.preventDefault();
+	});
+
+	jQuery('.advanced').click(function(){
+		jQuery('.recherche').toggleClass('hidden');
 		event.preventDefault();
 	});
 

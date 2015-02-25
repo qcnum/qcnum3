@@ -43,8 +43,6 @@ wp_head();
 
 </header><!-- #masthead -->
 
-<?php echo get_template_part('content', 'search'); ?>
-
 <div id="page" class="wrapper">
 
 	<div class="fancyHead group">
