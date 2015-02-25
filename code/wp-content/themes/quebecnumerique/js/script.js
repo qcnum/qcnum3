@@ -1,30 +1,11 @@
 jQuery(document).ready(function(){
 	//var timeline = new VMM.Timeline();
 	//timeline.init("data.json");
-	var lastScrollTop = 0;
 
 
-	jQuery('a.fa-search').click(function(){
-		jQuery('#searchform').removeClass('hidden');
+	jQuery('.fa-search, .fa-close').click(function(){
+		jQuery('#searchform').toggleClass('hidden');
 		jQuery('#searchform #s').focus();
-		event.preventDefault();
-	});
-
-	jQuery('.fa-close').click(function(){
-
-		if(jQuery('.recherche').hasClass('hidden')) {
-			jQuery('#searchform').addClass('hidden');
-		} else {
-			jQuery('.recherche').addClass('hidden');
-			jQuery('#searchform').delay(500).queue(function(up){
-				jQuery(this).addClass('hidden'); up();
-			});
-		}
-		event.preventDefault();
-	});
-
-	jQuery('.advanced').click(function(){
-		jQuery('.recherche').toggleClass('hidden');
 		event.preventDefault();
 	});
 
@@ -36,15 +17,25 @@ jQuery(document).ready(function(){
 		});
 	});
 
-	jQuery(window).scroll(function(){
-	    var $nav = jQuery('.home-link');
-	    if (jQuery('body').scrollTop() > 20) {
-	    	jQuery('.home-link').css("top", "-40px");
-	    } else {
-	    	//alert('déployé');
-	    }
-	
-		jQuery('.home-link').css("top", Math.max(0, -12 - jQuery(this).scrollTop()));
-	});
+ 	jQuery(window).scroll(function () {
+ 
+        if (jQuery(this).scrollTop() > 10) {
+            jQuery('.site-description').fadeOut();
+        } else {
+            jQuery('.site-description').fadeIn();
+        }
+
+        if (jQuery(this).scrollTop() > 50) {
+            jQuery('.home-link').addClass('retract');
+            //jQuery('.home-link').css("top", "-40px", "background-position-y", "3em" );
+            //jQuery('.site-description').css("top", "0em");
+        } else {
+            jQuery('.home-link').removeClass('retract');
+            //jQuery('.home-link').css("top", "0" );
+            //jQuery('.site-description').css("top", "3em" );
+        }
+
+    });
+
 
 });

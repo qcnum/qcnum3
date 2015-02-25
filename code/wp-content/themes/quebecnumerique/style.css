@@ -266,6 +266,10 @@ img {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+.retract {
+  height: 3.625em;
+  width: 11em;
+}
 .site-description {
   background-color: rgba(44, 46, 51, 0.5);
   color: #ffffff;
