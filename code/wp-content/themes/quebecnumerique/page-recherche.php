@@ -68,11 +68,11 @@ $results = new WP_Query($args);
 
 		<?php endwhile; ?>
 
-				<?php else : ?>
+		<?php else : ?>
 
-		rien
+			rien
 
-	<?php endif; ?>
+		<?php endif; ?>
 
 	</div><!-- #content -->
 

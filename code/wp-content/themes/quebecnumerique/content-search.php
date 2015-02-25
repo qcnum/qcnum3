@@ -4,10 +4,9 @@ $query_mc = $_GET['mots-cles'];
 $recherche = $_GET['recherche']; 
 ?>
 
-<div class="recherche">
+<div class="recherche hidden">
 
-	<form role="search" method="get" action="recherche">
-		<input type="text" name="recherche" id="s" value="<?php echo $recherche; ?>" /><br />
+	<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 
 		<h2>Mots-clés</h2>
 

@@ -558,7 +558,7 @@ img {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.navigation .fa-search {
+.navigation a.fa-search {
   float: right;
   font-size: 1.25em;
   padding: 0.75em;
@@ -587,31 +587,40 @@ img {
 		&:hover:after { right: 0; }*/
 
 }
-.navigation .fa-search:hover {
+.navigation a.fa-search:hover {
   color: #e14e24;
 }
 .navigation #searchform {
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 30;
+  z-index: 200;
   height: 100%;
   width: 43em;
-  -webkit-transition: all 0.75s ease;
-  -moz-transition: all 0.75s ease;
-  -ms-transition: all 0.75s ease;
-  -o-transition: all 0.75s ease;
-  transition: all 0.75s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .navigation #searchform.hidden {
   right: -43em;
-  -webkit-transition: all 0.75s ease;
-  -moz-transition: all 0.75s ease;
-  -ms-transition: all 0.75s ease;
-  -o-transition: all 0.75s ease;
-  transition: all 0.75s ease;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-.navigation #searchform .fa-close {
+.navigation #searchform .absolute {
+  height: 100%;
+  z-index: 200;
+  position: relative;
+}
+.navigation #searchform .absolute input {
+  height: 100%;
+}
+.navigation #searchform a.fa-close,
+.navigation #searchform button.fa-search {
   position: absolute;
   z-index: 10;
   top: 1.45em;
@@ -619,14 +628,23 @@ img {
   text-decoration: none;
   color: #000000;
   font-size: 0.8125em;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.navigation #searchform .fa-close:hover {
+.navigation #searchform a.fa-close:hover,
+.navigation #searchform button.fa-search:hover {
   color: #e14e24;
+}
+.navigation #searchform button.fa-search {
+  right: 2.25em;
+  top: 1.3em;
+  padding: 2px 6px 3px;
 }
 #searchform {
   height: 2.5em;
@@ -634,36 +652,85 @@ img {
 }
 #searchform input {
   position: relative;
-  height: 100%;
   padding: 0;
   border: none;
   margin: 0;
 }
 #searchform input[type="text"] {
   width: 100%;
-  padding: 0 2em 0 9em;
+  padding: 0 3.5em 0 11em;
   background-color: #ffffff;
   color: #2c2e33;
 }
-#searchform input[type="submit"] {
+#searchform .advanced {
   position: absolute;
   left: 0;
   top: 0;
-  width: 8em;
-  padding: 0 2em;
+  width: 10em;
+  padding: 0 1em;
+  text-align: center;
+}
+#searchform h2 {
+  color: #ffffff;
+}
+#searchform .mot-cle input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+#searchform .mot-cle input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  background-color: #e14e24;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 2px solid rgba(255, 255, 255, 0);
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+#searchform .mot-cle input[type="checkbox"] + label:before {
+  content: "# ";
+  font-weight: bold;
+}
+#searchform .mot-cle input[type="checkbox"] + label:hover {
+  background-color: #b93d19;
+}
+#searchform .mot-cle input[type="checkbox"]:checked + label {
+  box-shadow: 0 0 0 2px #e14e24;
 }
 .recherche {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 3em;
+  right: 0;
+  width: 43em;
   height: 100%;
   background-color: rgba(44, 46, 51, 0.9);
-  z-index: 1000;
-  display: none;
+  z-index: 100;
+  padding: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
-.recherche.visible {
-  display: block;
+.recherche.hidden {
+  top: -100%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .trois article:first-child {
   width: 98.14%;
@@ -800,7 +867,8 @@ img {
   padding-bottom: 0;
 }
 form input,
-form textarea {
+form textarea,
+form button {
   font-size: 1em;
   padding: 0.75em;
   margin: 0;
@@ -812,7 +880,8 @@ form textarea {
   box-sizing: border-box;
 }
 form input:focus,
-form textarea:focus {
+form textarea:focus,
+form button:focus {
   outline: 0;
 }
 form input[type='text'],
@@ -822,7 +891,8 @@ form textarea {
   border: thin solid #ffffff;
   background-color: rgba(255, 255, 255, 0.15);
 }
-form input[type="submit"] {
+form input[type="submit"],
+form .advanced {
   background-color: #e14e24;
   color: #ffffff;
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
@@ -830,13 +900,15 @@ form input[type="submit"] {
   border: none;
   cursor: pointer;
   padding: 0.75em 2em;
+  display: block;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-form input[type="submit"]:hover {
+form input[type="submit"]:hover,
+form .advanced:hover {
   background-color: #b93d19;
 }
 #map {
