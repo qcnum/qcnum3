@@ -58,14 +58,18 @@ a img {
 @blanc: #fff;
 @noir: #000;
 @bleu: #24449e;
-@vert: #009861;
-@mauve: #9b2b78;
-@jaune: #d39b00;
-@turquoise: #00aca7;
-@kaki: #a0ad00;
+@projets: #009861;
+@organisations: #9b2b78;
+@evenements: #d39b00;
+@nouvelles: #00aca7;
+@articles: #a0ad00;
 @orange: #e14e24;
 @gris: #2c2e33;
 @grispale: #4d5057;
+
+
+
+
 
 @content: 'Exo 2','Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
 @sans-serif: 'PT Sans Narrow', 'Arial' ,sans-serif;
@@ -250,16 +254,20 @@ img {
 	background-size: 8.75em 3em;
 	z-index: 10;
 	position: absolute;
-	.transition();
+	.box-shadow(0px 0px 9px 0px #1D1D1D);
+	.transition(all 0.4s ease);
+
+
 }
 
 .retract {
-
-	height: 3.625em;
-	width: 11em;
-
-
+	height: 3.1em;
+	width: 9.5em;
+	background-size: 7em 2.4em;
+	.box-shadow(0px 0px 0px 0px #1D1D1D);
 }
+
+
 
 .site-description {
 	background-color: fade(@gris, 50%);
@@ -274,11 +282,22 @@ img {
 	top: 3em;
 	left: 12em;
 	margin-left: 0.925925%;
+	.transition(all 0.2s ease);
+
 }
+
+.fadeout{
+	left: 11em;
+	opacity:0;
+
+}
+
+
 
 
 .navigation {
 	position: relative;
+	border-bottom: 1px solid @grispale;
 	background-color: @gris;
 	li {
 		display: block;
@@ -309,7 +328,11 @@ img {
 			padding: 0 0.5em;
 			text-transform: lowercase;
 		}
+		.transition(all 0.4s ease);
+		
 	}
+
+	.retract-tag {margin-left: 9.5em;} 
 
 	.principal {
 		float: right;
@@ -358,11 +381,11 @@ img {
 			}
 		}
 
-		.nouvelles { .hover(@turquoise); }
-		.articles { .hover(@kaki); }
-		.evenements { .hover(@jaune); }
-		.organisations { .hover(@mauve); }
-		.projets { .hover(@vert); }
+		.nouvelles { .hover(@nouvelles); }
+		.articles { .hover(@articles); }
+		.evenements { .hover(@evenements); }
+		.organisations { .hover(@organisations); }
+		.projets { .hover(@projets); }
 	}
 
 	a.fa-search { 
@@ -482,20 +505,29 @@ img {
 			float: left;
 			padding: 0.25em;
 			margin: 0.5em 0.5em 0em 0;
-			background-color: @orange;
 			color: @blanc;
 			cursor: pointer;
 			font-size: 1.25em;
-
-			border: 2px solid rgba(255, 255, 255, 0);
+			border: 1px solid @blanc;
+			opacity: 0.7;
 			-webkit-background-clip: padding-box;
 			background-clip: padding-box;
-			&:before { content: "# "; font-weight: bold; }
-			&:hover { background-color: darken(@orange, 10%); }
+			&:before { content: "#"; }
+			&:after {
+				font-family: FontAwesome;
+				content: "  \f055";
+			}
+			&:hover { opacity: 1 }
 		}
 
 		input[type="checkbox"]:checked + label {
-			box-shadow: 0 0 0 2px @orange;
+			opacity: 1;
+			background-color: @blanc;
+			color: @gris;
+			&:after {
+				font-family: FontAwesome;
+				content: "  \f057";
+			}
 		}
 	}
 }

@@ -39,20 +39,19 @@ jQuery(document).ready(function(){
 
  	jQuery(window).scroll(function () {
  
-        if (jQuery(this).scrollTop() > 10) {
-            jQuery('.site-description').fadeOut();
+        if (jQuery(this).scrollTop() > 5) {
+            jQuery('.site-description').addClass('fadeout');
         } else {
-            jQuery('.site-description').fadeIn();
+            jQuery('.site-description').removeClass('fadeout');
         }
 
-        if (jQuery(this).scrollTop() > 50) {
+        if (jQuery(this).scrollTop() > 70) {
             jQuery('.home-link').addClass('retract');
-            //jQuery('.home-link').css("top", "-40px", "background-position-y", "3em" );
-            //jQuery('.site-description').css("top", "0em");
+            jQuery('.navigation .meta').addClass('retract-tag');
+
         } else {
             jQuery('.home-link').removeClass('retract');
-            //jQuery('.home-link').css("top", "0" );
-            //jQuery('.site-description').css("top", "3em" );
+            jQuery('.navigation .meta').removeClass('retract-tag');
         }
 
     });

@@ -50,6 +50,8 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 			
 			<div class="evenements group">
 
+				<h2><?php _e('Les prochains événements', THEME_NAME); ?></h2>
+
 				<?php if ( $evenements->have_posts() ) while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
 
 					<article class="c12">
