@@ -35,6 +35,26 @@ jQuery(document).ready(function(){
 		});
 	});
 
-	
+
+
+ 	jQuery(window).scroll(function () {
+ 
+        if (jQuery(this).scrollTop() > 5) {
+            jQuery('.site-description').addClass('fadeout');
+        } else {
+            jQuery('.site-description').removeClass('fadeout');
+        }
+
+        if (jQuery(this).scrollTop() > 70) {
+            jQuery('.home-link').addClass('retract');
+            jQuery('.navigation .meta').addClass('retract-tag');
+
+        } else {
+            jQuery('.home-link').removeClass('retract');
+            jQuery('.navigation .meta').removeClass('retract-tag');
+        }
+
+    });
+
 
 });
