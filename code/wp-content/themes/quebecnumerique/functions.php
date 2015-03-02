@@ -130,6 +130,7 @@ function init() {
             'label' => __( 'Mots-clés' ),
             'public' => true,
             'hierarchical' => true,
+            'show_admin_column' => true,
         )
     );
 
@@ -141,6 +142,7 @@ function init() {
             'label' => __( 'Quartiers' ),
             'public' => true,
             'hierarchical' => true,
+            'show_admin_column' => true,
         )
     );
 
@@ -197,8 +199,10 @@ add_action( 'p2p_init', 'my_connection_types' );
 
 if( function_exists('acf_add_options_sub_page') ) {
     acf_add_options_sub_page(array( 'title' => 'Options' ));
+    acf_add_options_sub_page(array( 'title' => 'Accueil' ));
     acf_add_options_sub_page(array( 'title' => 'Pied de page' ));
     acf_add_options_sub_page(array( 'title' => 'Réseaux sociaux' ));
+
 }
 
 function get_social_media() {

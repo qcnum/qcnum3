@@ -1,6 +1,19 @@
 
 	</div><!-- #main -->
 
+	<?php
+	if ( is_home() ) {
+	    ?>
+		<div class="stats">
+			<?php 
+			$stats = get_field('phrase_stats', 'options');
+			?>
+			<p><?php echo $stats ?></p>
+		</div>	
+	    <?php
+	}
+	?>
+
 	<div id="map"></div>
 
 	<footer id="colophon" role="contentinfo">
