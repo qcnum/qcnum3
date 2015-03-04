@@ -41,6 +41,14 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
 	define('WP_SITEURL', 'http://www.quebecnumerique.approb.evollia.com');
 	define('WP_HOME', 'http://www.quebecnumerique.approb.evollia.com');
 	define('WP_DEBUG', false); 
+} elseif ('qn.appyk.fr' === $_SERVER[ 'HTTP_HOST' ]) {
+	define('DB_NAME', 'quebecnumerique');
+	define('DB_USER', 'root');
+	define('DB_PASSWORD', 'root');
+	define('DB_HOST', 'localhost');
+	define('WP_SITEURL', 'http://qn.appyk.fr');
+	define('WP_HOME', 'http://qn.appyk.fr');
+	define('WP_DEBUG', false); 
 } else {
 	define('DB_NAME', '');
 	define('DB_USER', '');
