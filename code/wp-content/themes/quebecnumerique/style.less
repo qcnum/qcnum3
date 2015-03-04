@@ -67,18 +67,17 @@ Author URI: http://evollia.com/
 	@gris: #373a3f;
 	@grispale: #4d5057;
 
-
-
-	@content: 'Exo 2','Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
-	@sans-serif: 'PT Sans Narrow', 'Arial' ,sans-serif;
+	@content: 'PT Sans', 'Arial' ,sans-serif;
+	@titre1: 'PT Sans Narrow', 'Arial' ,sans-serif;
+	@titre2: 'Exo 2','Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
 
 /* =Int
 -------------------------------------------------------------- */
 
 body {
 	-webkit-font-smoothing: antialiased;
-	font-family: @sans-serif;
-	font-weight: 300;
+	font-family: @titre1;
+	font-weight: 400;
 	background-color: @grispale;
 }
 
@@ -166,7 +165,6 @@ body {
 
 
 
-
 /* GENERAL */
 
 	.visuallyhidden {
@@ -222,6 +220,7 @@ body {
 	.grispale-bg { background-color: @grispale; }
 	.gris-bg { background-color: @gris; }
 	.blanc-bg { background-color: @blanc; }
+	.opac-bg { background-color: rgba(255,255,255,0.1);}
 	
 	
 
@@ -248,7 +247,6 @@ body {
 	#page {
 		margin-top: 6em;
 	}
-
 
 
 /* HEADER */
@@ -315,7 +313,7 @@ body {
 			a { 
 				color: @blanc; 
 				text-decoration: none;
-				font-family: @sans-serif;
+				font-family: @titre1;
 				display: block;
 			}
 		}
@@ -569,7 +567,7 @@ body {
 		text-decoration: none;
 		color: white;
 		text-transform: uppercase;
-		font-family: @sans-serif;
+		font-family: @titre1;
 		border-top: 2px solid @color;
 		margin-bottom: 0.5em;
 		.transition(0.4s);
@@ -579,6 +577,7 @@ body {
 			font-size: 0.6em;
 			line-height: 1.8em;
 			.transition();
+			color: @color;
 		}
 		&:hover {
 			background-color: darken(@gris, 5%);
@@ -590,19 +589,81 @@ body {
 
 	}
 
-	.nouvelles h2 a{
-		.h2link (@nouvelles);
+	.style-date (@color){
+		text-transform: uppercase;
+		font-weight: 700;
+		padding: 0.2em 0.4em;
+		font-size: 0.8em;
+		color: @blanc;	
+		background-color: @color;	
+	}
+
+	.lieu{
+		color: darken(@blanc, 20%); 
+		text-transform: uppercase;
+		font-weight: 700;
+		display: block;		
+		float: left;
+		margin-left: 2%;
+		i{
+			color: @evenements;
+			//margin-right: 1%;
+		}
+	}
+
+	.nouvelles{
+		h2 a{
+			.h2link (@nouvelles);
+		}
+		.date{
+			.style-date (@nouvelles);
+			
+		}
 	}	
 
-	.articles h2 a{
-		.h2link (@articles);
+	.articles{
+		h2 a{
+			.h2link (@articles);
+			
+		}
+		.date{
+			.style-date (@articles);
+			font-family: @titre1;
+		}
 	}
 
-	.evenements	h2 a{
-		.h2link (@evenements);
+	div.evenements{
+		margin-bottom: 3%;
+		a{
+			color: @blanc;
+		}
+		h2 a{
+			.h2link (@evenements);
+		}
+		.date{
+			color: @evenements;
+			text-transform: uppercase;
+			font-weight: 700;
+			float: left;
+		}
+		h3{
+			font-family: @titre2;
+			font-size: 1.5em;
+			margin-top: 0.5em;
+		}
+		article{
+			margin-bottom: 1.4%;
+			img{
+				width: 13%;
+				float: left;
+			}
+			.content{
+				width: 85%;
+				float: right;
+				margin-top: 2%;
+			}
+		}	
 	}
-	
-
 
 /* CONTENU */
 
@@ -612,6 +673,7 @@ body {
 
 	.img-box {
 		position: relative;
+		margin-bottom: 3%;
 		.content {
 			position: absolute;
 			bottom: 0.5em;
@@ -621,19 +683,26 @@ body {
 		img{
 			width: 100%;
 		}
+		.excerpt{
+			display: none;
+		}
+		a{
+			text-decoration: none;
+			color: @blanc;
+
+		}
+		article{
+			margin-bottom: 1.4%;
+		}
 	}
 
-
-	.group{
-		margin-bottom: 2em;
-	}
 
 	.entry-content {
 		
 		h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 			line-height: 1.5em;
 			padding-bottom: 0.25em;
-			font-family: @sans-serif;
+			font-family: @titre1;
 			font-weight: 700;
 			a { text-decoration: none; }
 		}
@@ -713,11 +782,7 @@ body {
 	}
 
 
-	.evenements{
-		article{
-			//height: 6.25em;				
-		}
-	}
+
 
 /* Footer */
 
@@ -726,7 +791,7 @@ body {
 			font-size: 1em;
 			padding: 0.75em;
 			margin: 0;
-			font-family: @content;
+			font-family: @titre2;
 			color: @blanc;
 			font-weight: lighter;
 			.box-sizing();
@@ -744,7 +809,7 @@ body {
 		input[type="submit"], .advanced {
 			background-color: @orange;
 			color: @blanc;
-			font-family: @sans-serif;
+			font-family: @titre1;
 			text-transform: uppercase;
 			border: none;
 			cursor: pointer;
@@ -753,10 +818,6 @@ body {
 			.transition();
 			&:hover { background-color: darken(@orange, 10%); }
 		}
-
-
-
-
 	}
 
 	#map {
