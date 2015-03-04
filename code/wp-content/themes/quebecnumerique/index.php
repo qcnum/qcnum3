@@ -79,7 +79,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 							<?php the_post_thumbnail('thumbnail'); ?>
 							<div class="content">
 								<span class="date"><?php echo get_the_date(); ?></span>
-								<span class="lieu"><i class="fa fa-map-marker"></i>L'Abri-co / 255 boulevard Charest Est</span>
+								<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
 								<h3><?php the_title(); ?></h3>
 							</div>
 						</article>
@@ -117,13 +117,10 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 			
 			</div>
 
-
 		</div>
 
 		<hr class="clear">
 
 	</div><!-- #content -->
-
-
 
 <?php get_footer(); ?>

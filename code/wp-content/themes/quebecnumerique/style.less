@@ -222,7 +222,10 @@ body {
 	.blanc-bg { background-color: @blanc; }
 	.opac-bg { background-color: rgba(255,255,255,0.1);}
 	
-	
+	.grispalepale-bg {
+		background-color: lighten(@grispale, 60%);
+		& > div { padding: 1em; }
+	}
 
 	.group:after {
 	  content: "";
@@ -649,7 +652,7 @@ body {
 		h3{
 			font-family: @titre2;
 			font-size: 1.5em;
-			margin-top: 0.5em;
+			margin-top: 1em;
 		}
 		article{
 			margin-bottom: 1.4%;
@@ -782,6 +785,12 @@ body {
 	}
 
 
+	article.wrapper {
+		background-color: @blanc;
+		padding: 2.5em;
+
+
+	}
 
 
 /* Footer */
