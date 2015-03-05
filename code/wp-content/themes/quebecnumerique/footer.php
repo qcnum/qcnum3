@@ -1,20 +1,37 @@
 
 	</div><!-- #main -->
 
-	<?php
-	if ( is_home() ) {
-	    ?>
-		<div class="stats">
-			<?php 
-			$stats = get_field('phrase_stats', 'options');
-			?>
-			<p><?php echo $stats ?></p>
-		</div>	
-	    <?php
-	}
-	?>
 
-	<div id="map"></div>
+	<div id="map">
+		<?php
+		if ( is_home() ) {
+		    ?>
+			<div class="stats c12">
+				<?php 
+				$stats = get_field('phrase_stats', 'options');
+				?>
+				<p><?php echo $stats ?></p>
+		
+					<?php
+					$nb_evenements = wp_count_posts('evenements');
+					$nb_organisations = wp_count_posts('organisations');
+					$nb_projets = wp_count_posts('projets');
+					$nb_articles = get_category('3');
+					$nb_nouvelles = get_category('2');
+					?>
+				<ul>
+					<li><?php echo $nb_nouvelles->category_count; ?></li>
+					<li><?php echo $nb_articles->category_count; ?></li>
+					<li><?php echo $nb_evenements->publish; ?></li>
+					<li><?php echo $nb_organisations->publish; ?></li>
+					<li><?php echo $nb_projets->publish; ?></li>
+				</ul>
+			</div>
+			<hr class="clear">	
+		    <?php
+		}
+		?>
+	</div>
 
 	<footer id="colophon" role="contentinfo">
 	

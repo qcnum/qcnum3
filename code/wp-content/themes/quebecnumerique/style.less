@@ -164,8 +164,6 @@ body {
 		background-clip: padding-box;
 	}
 
-
-
 /* GENERAL */
 
 	.visuallyhidden {
@@ -252,7 +250,6 @@ body {
 	#page {
 		margin-top: 6em;
 	}
-
 
 /* HEADER */
 
@@ -558,7 +555,6 @@ body {
 		&.hidden { top: -100%; .transition(all 0.5s ease); }
 	}
 
-
 /* ACCUEIL */
 
 	.abstract{
@@ -592,7 +588,7 @@ body {
 	.style-date (@color){
 		text-transform: uppercase;
 		font-weight: 700;
-		padding: 0.2em 0.4em;
+		padding: 0.3em 0.6em;
 		font-size: 0.8em;
 		color: @blanc;	
 		background-color: @color;	
@@ -643,6 +639,108 @@ body {
 		}
 	}
 
+	.stats{
+		font-size: 1.8em;
+		color: @blanc;
+		font-family: @titre2;
+	}
+
+/* CONTENU */
+
+	.trois article:first-child {
+		width: 98.14%;
+	}
+
+	.img-box {
+		position: relative;
+		margin-bottom: 3%;
+		.content {
+			position: absolute;
+			bottom: 2%;
+			left: 0.5em;
+			z-index: 10;
+			margin-right: 0.5em;
+			max-height: 92%;
+			.transition(all 0.5s ease);
+		}
+		img{
+			width: 100%;
+			.transition(all 0.5s ease);
+			vertical-align: bottom;
+		}
+		.excerpt-hover{
+			color: @noir;
+			display: none;
+			height: 0;
+			padding: 0.4em 0.6em;
+			font-size: 0.9em;
+			line-height: 1.3em;
+			.transition(all 1s ease);
+		}
+		.excerpt-degrade{
+			background-color: red;
+			width: 100%;
+			height: 20%;
+			position: absolute;
+			bottom: 0;
+			z-index: 30;
+			display: none;
+			.transition(all 0.5s ease);
+		}
+		a{
+			text-decoration: none;
+			color: @blanc;
+			display: block;
+			&:hover{
+				img{
+					
+					opacity: 0.1;
+				}
+				.excerpt-hover{	
+					height: auto;
+					display: block;
+				}
+				.excerpt-degrade{
+					display: block;
+				}
+				h3{
+					//background-color: transparent;
+				}
+			}
+		}
+		article{
+			margin-bottom: 1.4%;
+			overflow: hidden;
+		}
+		h3{
+			position: relative;
+			font-size: 1em; 
+			font-family: @titre2;
+			padding: 0.4em 0.6em;
+			float: left;
+		}
+		div.triangle{
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 0.5em 0.5em 0 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+
+		&.nouvelles {
+			div.triangle{border-color: @nouvelles transparent transparent transparent;}
+			.excerpt-degrade{.gradient (rgba(255,255,255,0),@nouvelles)}
+			
+		}
+		&.articles {
+			div.triangle{border-color: @articles transparent transparent transparent;}
+			.excerpt-degrade{.gradient (rgba(255,255,255,0), @articles)}
+		}
+
+	}
+
 	div.evenements{
 		margin-bottom: 3%;
 		a{
@@ -677,59 +775,6 @@ body {
 		}	
 	}
 
-/* CONTENU */
-
-	.trois article:first-child {
-		width: 98.14%;
-	}
-
-	.img-box {
-		position: relative;
-		margin-bottom: 3%;
-		.content {
-			position: absolute;
-			bottom: 0.5em;
-			left: 0.5em;
-			z-index: 10;
-			margin-right: 0.5em;
-		}
-		img{
-			width: 100%;
-		}
-		.excerpt-hover{
-			color: @gris;
-			display: none;
-			height: 0;
-		}
-		a{
-			text-decoration: none;
-			color: @blanc;
-		}
-		article{
-			margin-bottom: 1.4%;
-
-			&:hover{
-				img{
-					.transition(all 0.5s ease);
-					opacity: 0.1;
-				}
-				.excerpt-hover{
-					.transition(all 0.5s ease);
-					height: auto;
-					display: block;
-				}
-				h3{
-					background-color: transparent;
-				}
-			}
-		}
-		h3{
-			font-size: 1em; 
-			font-family: @titre2;
-			padding: 0.4em 0.6em;
-			float: left;
-		}
-	}
 
 
 	.entry-content {
