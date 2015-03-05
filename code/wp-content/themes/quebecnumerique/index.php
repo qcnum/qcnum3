@@ -32,14 +32,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 					<?php if ( $nouvelles->have_posts() ) while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
 						<article class="c6">
-							<a href="<?php the_permalink(); ?>">
-								<div class="content">
-									<span class="date"><?php echo get_the_date(); ?></span>
-									<h3><?php the_title(); ?></h3>
-									<div class="excerpt-hover"><?php the_excerpt(); ?></div>
-								</div>
-								<?php the_post_thumbnail('rectangle'); ?>
-							</a>
+							<?php include 'content-imgbox.php'; ?>
 						</article>
 					<?php endwhile; ?>
 
@@ -54,8 +47,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 				<h2 class="c12"><a class="gris-bg" href=""><?php echo $titre?><i class="fa fa-plus"></i></a></h2>
 				<?php if ( $articles->have_posts() ) while ( $articles->have_posts() ) : $articles->the_post(); ?>
 					<article class="c6">
-						<div class="content"><?php the_title(); ?></div>
-						<?php the_post_thumbnail('rectangle'); ?>
+						<?php include 'content-imgbox.php'; ?>
 					</article>
 				<?php endwhile; ?>
 			
@@ -95,8 +87,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 				<?php if ( $dossier1->have_posts() ) while ( $dossier1->have_posts() ) : $dossier1->the_post(); ?>
 
 					<article class="c6">
-						<div class="content"><?php the_title(); ?></div>
-						<?php the_post_thumbnail('rectangle'); ?>
+						<?php include 'content-imgbox.php'; ?>
 					</article>
 
 				<?php endwhile; ?>
@@ -109,8 +100,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 				<?php if ( $dossier2->have_posts() ) while ( $dossier2->have_posts() ) : $dossier2->the_post(); ?>
 
 					<article class="c6">
-						<div class="content"><?php the_title(); ?></div>
-						<?php the_post_thumbnail('rectangle'); ?>
+						<?php include 'content-imgbox.php'; ?>
 					</article>
 
 				<?php endwhile; ?>
