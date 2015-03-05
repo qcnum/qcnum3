@@ -65,14 +65,15 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 				<?php if ( $evenements->have_posts() ) while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
 
-			
 					<a href="<?php the_permalink(); ?>">
 						<article class="c12 opac-bg">
 							<?php the_post_thumbnail('thumbnail'); ?>
 							<div class="content">
-								<span class="date"><?php echo get_the_date(); ?></span>
-								<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
-								<h3><?php the_title(); ?></h3>
+								<div class="ellipsis info">
+									<span class="date"><?php echo get_the_date(); ?></span>
+									<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
+								</div>
+								<h3 class="ellipsis"><?php the_title(); ?></h3>
 							</div>
 						</article>
 					</a>
