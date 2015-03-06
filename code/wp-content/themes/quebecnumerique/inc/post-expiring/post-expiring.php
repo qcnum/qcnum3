@@ -16,11 +16,11 @@ class ExpiringPosts {
 		add_action( 'post_submitbox_misc_actions', array( $this, 'add_expiring_field') );
 		add_action( 'save_post', array( $this, 'save_post_meta' ), 10, 2 );	
 		
-		add_filter( 'manage_post_posts_columns', array( $this, 'manage_posts_columns' ), 5 );
-		add_action( 'manage_post_posts_custom_column', array( $this, 'manage_posts_custom_column' ), 5, 2 );	
+		add_filter( 'manage_evenements_posts_columns', array( $this, 'manage_posts_columns' ), 5 );
+		add_action( 'manage_evenements_posts_custom_column', array( $this, 'manage_posts_custom_column' ), 5, 2 );	
 		
-		add_filter( 'manage_page_posts_columns', array( $this, 'manage_posts_columns' ), 5 );
-		add_action( 'manage_page_posts_custom_column', array( $this, 'manage_posts_custom_column' ), 5, 2 );
+		//add_filter( 'manage_page_posts_columns', array( $this, 'manage_posts_columns' ), 5 );
+		//add_action( 'manage_page_posts_custom_column', array( $this, 'manage_posts_custom_column' ), 5, 2 );
 		
 		add_filter( 'posts_clauses', array( $this, 'posts_clauses' ), 10, 2 );
 	}
@@ -39,13 +39,13 @@ class ExpiringPosts {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		//wp_enqueue_script( 'post-expiring', plugins_url('assets/js/admin.js', __FILE__), array('jquery'), null, true );
 		//wp_enqueue_style( 'post-expiring', plugins_url('assets/css/post-expiring.css', __FILE__) );
-
+		wp_dequeue_style( 'acf-datepicker' );
 		wp_enqueue_script( 'post-expiring', get_template_directory_uri() . '/inc/post-expiring/assets/js/admin.js', 'jquery', null, true );
 		wp_enqueue_style( 'post-expiring', get_template_directory_uri() . '/inc/post-expiring/assets/css/post-expiring.css' );
 	}
 		
 	public function manage_posts_columns( $columns ){
-		$columns['expiring'] = __( 'Expiring', 'postexpiring' );
+		$columns['expiring'] = __( 'Date de fin', 'postexpiring' );
 		return $columns;
 	}
 	
@@ -53,7 +53,7 @@ class ExpiringPosts {
 		global $post;
 		if( $column_name === 'expiring' ){
 			$postexpired = get_post_meta( $post->ID, 'postexpired', true );
-			echo !empty($postexpired) ? $postexpired : __('Never');
+			echo !empty($postexpired) ? $postexpired : __('Aucune');
 		}
 	}
 	

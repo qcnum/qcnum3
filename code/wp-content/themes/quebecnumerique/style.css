@@ -794,6 +794,25 @@ img {
   font-weight: bold;
   color: #ffffff;
 }
+body,
+#page,
+#main,
+#content {
+  height: 100%;
+  position: relative;
+}
+.event {
+  height: 300px;
+}
+.scroller {
+  height: 100%;
+  overflow: auto;
+}
+.nav {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
 /* ACCUEIL */
 .abstract {
   height: 100px;
