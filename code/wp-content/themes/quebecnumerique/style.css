@@ -1173,7 +1173,7 @@ aside .mot-cle {
   transition: all 0.2s ease;
 }
 .sharing > div.visible {
-  height: 500px;
+  height: auto;
   opacity: 1;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
