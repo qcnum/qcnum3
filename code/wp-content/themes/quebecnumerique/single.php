@@ -23,7 +23,7 @@ $organisations = new WP_Query( array(
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<article <?php post_class('wrapper group'); ?>>
+			<article <?php post_class('white-post group'); ?>>
 
 				<secondary class="c4">
 
