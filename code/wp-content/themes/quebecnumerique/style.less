@@ -697,20 +697,26 @@ body {
 		display: block;
 	}
 
-/* PAGE TYPE */
+/* ARCHIVE D'UN TYPE (Nouvelles, articles, événements,...) */
 	.header-post-type{
-		position: relative;
-		min-height: 10em;
-		background-color: red;
+		//background-color: red;
 		margin-top: -6em;
+		margin-bottom: 1em;
+		margin-bottom: 1.8%;
+		&.nouvelles{
+			background-color: @nouvelles;
+		}
+		&.articles{
+			background-color: @articles;
+		}		
+
 		h1{
-			position: absolute;
-			bottom: 0em;
 			font-family: @titre1;
 			font-size: 3em;
 			font-weight: 700;
 			text-transform: uppercase;
 			color: @blanc;
+			margin: 1em 0 0.2em 1%;
 		}
 	}
 
