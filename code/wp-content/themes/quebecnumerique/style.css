@@ -829,7 +829,7 @@ img {
 .nouvelles .date {
   text-transform: uppercase;
   font-weight: 700;
-  padding: 0.2em 0.4em;
+  padding: 0.3em 0.6em;
   font-size: 0.8em;
   color: #ffffff;
   background-color: #00aca7;
@@ -874,7 +874,7 @@ img {
 .articles .date {
   text-transform: uppercase;
   font-weight: 700;
-  padding: 0.2em 0.4em;
+  padding: 0.3em 0.6em;
   font-size: 0.8em;
   color: #ffffff;
   background-color: #a0ad00;
@@ -883,6 +883,11 @@ img {
 }
 .articles.img-box article {
   background-color: #a0ad00;
+}
+.stats {
+  font-size: 1.8em;
+  color: #ffffff;
+  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 }
 div.evenements {
   margin-bottom: 3%;
@@ -963,13 +968,20 @@ div.evenements article .content {
 }
 .img-box .content {
   position: absolute;
-  bottom: 0.5em;
+  bottom: 2%;
   left: 0.5em;
   z-index: 10;
   margin-right: 0.5em;
+  max-height: 92%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 .img-box img {
   width: 100%;
+  vertical-align: bottom;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -977,9 +989,26 @@ div.evenements article .content {
   transition: all 0.5s ease;
 }
 .img-box .excerpt-hover {
-  color: #373a3f;
+  color: #000000;
   display: none;
   height: 0;
+  padding: 0.4em 0.6em;
+  font-size: 0.9em;
+  line-height: 1.3em;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -ms-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.img-box .excerpt-degrade {
+  background-color: red;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  z-index: 30;
+  display: none;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -989,25 +1018,121 @@ div.evenements article .content {
 .img-box a {
   text-decoration: none;
   color: #ffffff;
+  display: block;
 }
-.img-box article {
-  margin-bottom: 1.4%;
-}
-.img-box article:hover img {
+.img-box a:hover img {
   opacity: 0.1;
 }
-.img-box article:hover .excerpt-hover {
+.img-box a:hover .excerpt-hover {
   height: auto;
   display: block;
 }
-.img-box article:hover h3 {
-  background-color: transparent;
+.img-box a:hover .excerpt-degrade {
+  display: block;
+}
+.img-box article {
+  margin-bottom: 1.4%;
+  overflow: hidden;
 }
 .img-box h3 {
+  position: relative;
   font-size: 1em;
   font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 0.4em 0.6em;
   float: left;
+}
+.img-box div.triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.5em 0.5em 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.img-box.nouvelles div.triangle {
+  border-color: #00aca7 transparent transparent transparent;
+}
+.img-box.nouvelles .excerpt-degrade {
+  background-color: rgba(255, 255, 255, 0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#00aca7));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
+}
+.img-box.articles div.triangle {
+  border-color: #a0ad00 transparent transparent transparent;
+}
+.img-box.articles .excerpt-degrade {
+  background-color: rgba(255, 255, 255, 0);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#a0ad00));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
+}
+div.evenements {
+  margin-bottom: 3%;
+}
+div.evenements a {
+  color: #ffffff;
+}
+div.evenements h2 a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  border-top: 2px solid #d39b00;
+  margin-bottom: 0.5em;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+div.evenements h2 a span {
+  color: #d39b00;
+}
+div.evenements h2 a i {
+  float: right;
+  font-size: 0.6em;
+  line-height: 1.8em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: #d39b00;
+}
+div.evenements h2 a:hover {
+  background-color: #2b2d31;
+}
+div.evenements .date {
+  color: #d39b00;
+  text-transform: uppercase;
+  font-weight: 700;
+  float: left;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+}
+div.evenements h3 {
+  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-size: 1.5em;
+  margin-top: 5%;
+}
+div.evenements article {
+  margin-bottom: 1.4%;
+}
+div.evenements article img {
+  width: 15%;
+  float: left;
+}
+div.evenements article .content {
+  width: 83%;
+  float: right;
+  margin-top: 2%;
 }
 .entry-header h1 {
   color: #4d5057;
