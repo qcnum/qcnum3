@@ -972,6 +972,11 @@ div.evenements article .content {
   text-overflow: ellipsis;
   display: block;
 }
+/* PAGE TYPE */
+.header-post-type {
+  min-height: 6em;
+  background-color: red;
+}
 /* CONTENU */
 .trois article:first-child {
   width: 98.14%;
