@@ -3,10 +3,11 @@
 	<div id="content" role="main">
 
 		<header class="page-header header-post-type">
-			<h1 class="page-title"><?php single_cat_title(); ?></h1>
+			<div class="c12">
+				<h1 class="page-title"><?php single_cat_title(); ?></h1>
+			</div>
 		</header>
 
-		<p>dsgdfgdfsdfh</p>
 		<div class="c12">
 			
 			<div class="nouvelles group cinq img-box">

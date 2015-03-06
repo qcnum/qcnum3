@@ -60,7 +60,7 @@ wp_head();
 			<div></div>
 		</div>
 
-		<?php if ( function_exists('yoast_breadcrumb') && !is_front_page()) {
+		<?php if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category( $category )) {
 			yoast_breadcrumb('<p class="c12" id="breadcrumbs">','</p>');
 		} ?>
 

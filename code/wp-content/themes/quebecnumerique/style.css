@@ -974,8 +974,19 @@ div.evenements article .content {
 }
 /* PAGE TYPE */
 .header-post-type {
-  min-height: 6em;
+  position: relative;
+  min-height: 10em;
   background-color: red;
+  margin-top: -6em;
+}
+.header-post-type h1 {
+  position: absolute;
+  bottom: 0em;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 /* CONTENU */
 .trois article:first-child {
