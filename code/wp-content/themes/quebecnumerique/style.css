@@ -780,6 +780,20 @@ img {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+.fancyHead {
+  position: relative;
+}
+#breadcrumbs {
+  margin-top: 3em;
+  margin-bottom: 1em;
+}
+#breadcrumbs a,
+#breadcrumbs span {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  color: #ffffff;
+}
 /* ACCUEIL */
 .abstract {
   height: 100px;
@@ -1072,68 +1086,6 @@ div.evenements article .content {
   background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
   background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
 }
-div.evenements {
-  margin-bottom: 3%;
-}
-div.evenements a {
-  color: #ffffff;
-}
-div.evenements h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  border-top: 2px solid #d39b00;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-div.evenements h2 a span {
-  color: #d39b00;
-}
-div.evenements h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-  color: #d39b00;
-}
-div.evenements h2 a:hover {
-  background-color: #2b2d31;
-}
-div.evenements .date {
-  color: #d39b00;
-  text-transform: uppercase;
-  font-weight: 700;
-  float: left;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-}
-div.evenements h3 {
-  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 1.5em;
-  margin-top: 5%;
-}
-div.evenements article {
-  margin-bottom: 1.4%;
-}
-div.evenements article img {
-  width: 15%;
-  float: left;
-}
-div.evenements article .content {
-  width: 83%;
-  float: right;
-  margin-top: 2%;
-}
 .entry-header h1 {
   color: #4d5057;
   font-size: 2em;
@@ -1141,6 +1093,16 @@ div.evenements article .content {
   line-height: 1.25em;
   font-weight: bolder;
 }
+.entry-header .author {
+  font-size: 1.25em;
+  font-weight: lighter;
+  color: #7e828c;
+  display: block;
+  margin-bottom: 0.75em;
+  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+.entry-content h1,
+.entry-content .h1,
 .entry-content h2,
 .entry-content .h2,
 .entry-content h3,
@@ -1155,7 +1117,10 @@ div.evenements article .content {
   padding-bottom: 0.25em;
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   font-weight: 700;
+  display: block;
 }
+.entry-content h1 a,
+.entry-content .h1 a,
 .entry-content h2 a,
 .entry-content .h2 a,
 .entry-content h3 a,
@@ -1176,6 +1141,19 @@ div.evenements article .content {
 .entry-content .h3 {
   font-size: 1.75em;
   color: #373a3f;
+}
+.entry-content h4,
+.entry-content .h4 {
+  font-size: 1.5em;
+  color: #4d5057;
+}
+.entry-content h5,
+.entry-content .h5 {
+  font-size: 1.25em;
+}
+.entry-content h6,
+.entry-content .h6 {
+  font-weight: bold;
 }
 .entry-content .alignleft,
 .entry-content .alignright,
@@ -1255,6 +1233,122 @@ div.evenements article .content {
 .entry-content ol {
   list-style-type: decimal;
 }
+.entry-content form {
+  /*li.gf_left_half,
+			li.gf_right_half {
+				width: 48%;
+				float: left;
+				margin: 0 3% 0 0;
+
+				&.gf_right_half { margin: 0; }
+				&.small { width: 22.5%; clear: both; }
+			}
+
+			li.gf_full_input { width: 99%; clear: both; }
+			.gfield_required { color: red; margin-left: 0.25em; }
+
+			.ginput_container {
+				input, textarea {
+					//margin: 0;
+					//padding: 10px;
+					//box-shadow: none;
+					//width: 100%;
+					box-sizing: border-box;
+					-moz-box-sizing: border-box;
+					-webkit-box-sizing: border-box;
+					//background-color: #fff;
+					//background-color: rgba(255, 255, 255, 0.5);
+					//border: thin solid @orange;
+					resize: none;
+					.transition();
+
+					&:focus { 
+						outline: 0; 
+						background-color: rgba(255, 255, 255, 0);
+					}
+				}
+			}
+
+			.gfield > label { 
+				font-weight: 500;
+				font-size: 1.125em;
+				margin-bottom: 0.25em;
+				display: block;
+			}
+
+			.gfield_error {
+				input, textarea {
+					background-color: rgb(239, 65, 80);
+					background-color: rgba(239, 65, 80, 0.5);
+				}
+				input[type="radio"],
+				input[type="checkbox"] {
+					background-color: #fff;
+				}
+			}
+
+			legend {
+				background-color: @grispale;
+				padding: 0.5em;
+				color: #fff;
+				width: 100%;
+				font-weight: bold;
+				box-sizing: border-box;
+			}
+
+			.gform_footer {
+				overflow: hidden;
+				display: inline-block;
+				float: right;
+
+				input {
+					border: none;
+					padding: 0.75em 1.5em;
+					cursor: pointer;
+					font-family: @content;
+				}
+			}
+
+			.checkbox_input > label,
+			.radio_don > label,
+			.validation_message {
+				display: none;
+			}
+
+			.gfield_radio {
+				background-color: lighten(@grispale, 10%);
+				padding: 0.75em 1em;
+				margin-top: 1em;
+				label { cursor: pointer; }
+				li { padding-bottom: 0.5em; padding-top: 0.2em; } 
+			}
+
+
+
+			input[type="radio"],
+			input[type="checkbox"] {
+				display: inline-block;
+				width: 15px;
+				height: 15px;
+				vertical-align: middle;
+				cursor: pointer;
+				border: 2px solid #fff;
+				-webkit-appearance: none;
+				float: left;
+				margin-right: 1em;
+				margin-top: 5px;
+				padding: 0;
+				box-shadow: 0 0 0 1px @orange;
+				margin-left: 1px;
+			}
+
+			input[type="radio"] { border-radius: 50px; }
+			input[type="radio"]:checked,
+			input[type="checkbox"]:checked {
+				background-color: @orange;
+			}*/
+
+}
 .entry-content form ul {
   padding-left: 0;
   margin-bottom: 0;
@@ -1263,9 +1357,22 @@ div.evenements article .content {
 .entry-content form ul li {
   padding-bottom: 0;
 }
-article.wrapper {
+.entry-content .validation_error {
+  border: thin solid #f64438;
+  background-color: #f64438;
+  background-color: rgba(246, 68, 56, 0.7);
+  padding: 10px;
+  margin-bottom: 1em;
+}
+.entry-content .gform_confirmation_message {
+  border: thin solid #2ead35;
+  background-color: #2ead35;
+  background-color: rgba(46, 173, 53, 0.7);
+  padding: 10px;
+}
+article.white-post {
   background-color: #ffffff;
-  padding: 2.5em;
+  padding: 1.5em 0;
 }
 aside {
   background-color: #eaebec;
@@ -1289,7 +1396,7 @@ aside .mot-cle {
   margin: 0 0.25em 0.25em 0;
 }
 .sharing > div {
-  height: 0px;
+  visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1298,7 +1405,7 @@ aside .mot-cle {
   transition: all 0.2s ease;
 }
 .sharing > div.visible {
-  height: auto;
+  visibility: visible;
   opacity: 1;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1306,16 +1413,16 @@ aside .mot-cle {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.sharing span {
+.sharing > div a span {
   opacity: 0;
-  right: 0%;
+  right: 10%;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.sharing a:hover span {
+.sharing > div a:hover span {
   opacity: 1;
   right: 100%;
   -webkit-transition: all 0.2s ease;
@@ -1332,6 +1439,7 @@ aside .mot-cle {
   margin-bottom: 0.5em;
   text-align: center;
   color: #4d5057;
+  line-height: 1.25em;
 }
 .sharing a:hover {
   color: #e14e24;
@@ -1383,10 +1491,12 @@ aside .mot-cle {
 }
 .sharing a span {
   position: absolute;
-  background-color: #e14e24;
+  background-color: #4d5057;
+  line-height: 1;
   color: #ffffff;
   font-size: 0.4em;
   top: 0.25em;
+  right: 100%;
   padding: 0.55em 0.5em 0.4em 0.5em;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1400,7 +1510,7 @@ aside .mot-cle {
   top: 0;
   border-top: 25px solid transparent;
   border-bottom: 0px solid transparent;
-  border-left: 15px solid #e14e24;
+  border-left: 15px solid #4d5057;
 }
 /* Footer */
 form input,
@@ -1528,11 +1638,12 @@ form .advanced:hover {
 }
 #colophon form .gform_body ul textarea {
   height: 9.5em;
+  padding-top: 1.25em;
+  padding-bottom: 1.25em;
   resize: none;
 }
 #colophon form .gform_body ul input[type='text'],
 #colophon form .gform_body ul input[type='email'] {
-  padding: 1em;
   height: 4em;
 }
 #colophon form .gform_footer {
