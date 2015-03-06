@@ -8,6 +8,7 @@ define("THEME_NAME", 'Québec Numérique');
 include_once('inc/advanced-custom-fields/acf.php');
 include_once('inc/acf-repeater/acf-repeater.php');
 include_once('inc/acf-options-page/acf-options-page.php');
+include_once('inc/post-expiring/post-expiring.php');
 
 
 add_action( 'init', 'init' );
