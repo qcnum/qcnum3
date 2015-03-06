@@ -2,10 +2,12 @@
 
 	<div id="content" role="main">
 
+		
+
 		<header class="page-header">
 			<h1 class="page-title"><?php post_type_archive_title(); ?></h1>
 		</header>
-
+		<p>ici</p>
 		<?php if ( have_posts() ) : ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>

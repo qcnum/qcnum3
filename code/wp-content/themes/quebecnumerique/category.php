@@ -6,27 +6,30 @@
 			<h1 class="page-title"><?php single_cat_title(); ?></h1>
 		</header>
 
-		<?php if ( have_posts() ) : ?>
+		
+		<div class="c12">
+			<?php if ( have_posts() ) : ?>
 
-			<?php
-				$category_description = category_description();
-				if ( ! empty( $category_description ) )
-					echo '<div class="archive-meta">' . $category_description . '</div>';
-			?>
+				<?php
+					$category_description = category_description();
+					if ( ! empty( $category_description ) )
+						echo '<div class="archive-meta">' . $category_description . '</div>';
+				?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+					<?php get_template_part( 'content', get_post_format() ); ?>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
-			<?php paging_nav(); ?>
+				<?php paging_nav(); ?>
 
-		<?php else : ?>
+			<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; ?>
+			<?php endif; ?>
+		</div>
 
 	</div><!-- #content -->
 
