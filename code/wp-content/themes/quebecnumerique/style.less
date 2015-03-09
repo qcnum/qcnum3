@@ -715,29 +715,6 @@ body {
 		display: block;
 	}
 
-/* ARCHIVE D'UN TYPE (Nouvelles, articles, événements,...) */
-	.header-post-type{
-		//background-color: red;
-		margin-top: -6em;
-		margin-bottom: 1em;
-		margin-bottom: 1.8%;
-		&.nouvelles{
-			background-color: @nouvelles;
-		}
-		&.articles{
-			background-color: @articles;
-		}		
-
-		h1{
-			font-family: @titre1;
-			font-size: 3em;
-			font-weight: 700;
-			text-transform: uppercase;
-			color: @blanc;
-			margin: 1em 0 0.2em 1%;
-		}
-	}
-
 /* CONTENU */
 
 	.trois article:first-child {
@@ -917,6 +894,9 @@ body {
 		.alignright { float: right; margin: 10px 5px 10px 20px; }
 		.aligncenter { clear: both; display: block; margin: 15px auto 20px auto; }
 		.alignnone { margin: 10px 20px 10px 5px; }
+
+		.fl{float: left};
+		.fr{float: right}
 
 		p, li, .gform_description {
 			line-height: 1.5em;
@@ -1236,6 +1216,71 @@ body {
 					border-left: 1.25em solid @grispale;
 				}
 			}
+		}
+	}
+
+
+/* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
+	
+	.header-post-type{
+		//background-color: red;
+		margin-top: -6em;
+		margin-bottom: 1em;
+		margin-bottom: 1.8%;
+		background-image: url("images/shadow1.png");
+		//background-position: left;
+
+		&.nouvelles{
+			background-color: @nouvelles;
+		}
+		&.articles{
+			background-color: @articles;
+		}
+		&.evenements{
+			background-color: @evenements;
+		}		
+		&.organisation{
+			background-color: @organisations;
+		}	
+		&.projets{
+			background-color: @projets;
+		}		
+		h1{
+			font-family: @titre1;
+			font-size: 3em;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: @blanc;
+			margin: 1em 0 0.2em 1%;
+		}
+		.shapeheader{
+			opacity: 0.05;
+			width: 0;
+			height: 0;
+			border-style: solid;	
+		}
+		.tri1{
+
+			border-width: 0 0 50% 50%;
+			border-color: transparent transparent @noir transparent;
+		}
+	}
+
+	.img-box article.c6-custom{
+		margin: 0;
+		width: 48%;
+		margin-bottom: 2.8%;
+		&:nth-child(odd) {
+			float: left;
+		}		
+		&:nth-child(even) {
+			float: right;
+		}	
+	}
+
+	.cinq{
+		.clear{
+			margin-bottom: 0.4%;
 		}
 	}
 

@@ -996,26 +996,6 @@ img {
   text-overflow: ellipsis;
   display: block;
 }
-/* ARCHIVE D'UN TYPE (Nouvelles, articles, événements,...) */
-.header-post-type {
-  margin-top: -6em;
-  margin-bottom: 1em;
-  margin-bottom: 1.8%;
-}
-.header-post-type.nouvelles {
-  background-color: #00aca7;
-}
-.header-post-type.articles {
-  background-color: #a0ad00;
-}
-.header-post-type h1 {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 3em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin: 1em 0 0.2em 1%;
-}
 /* CONTENU */
 .trois article:first-child {
   width: 98.14%;
@@ -1262,6 +1242,12 @@ img {
 }
 .entry-content .alignnone {
   margin: 10px 20px 10px 5px;
+}
+.entry-content .fl {
+  float: left;
+}
+.entry-content .fr {
+  float: right;
 }
 .entry-content p,
 .entry-content li,
@@ -1607,6 +1593,60 @@ aside .mot-cle {
   border-top: 1.95em solid transparent;
   border-bottom: 0px solid transparent;
   border-left: 1.25em solid #4d5057;
+}
+/* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
+.header-post-type {
+  margin-top: -6em;
+  margin-bottom: 1em;
+  margin-bottom: 1.8%;
+  background-image: url("images/shadow1.png");
+}
+.header-post-type.nouvelles {
+  background-color: #00aca7;
+}
+.header-post-type.articles {
+  background-color: #a0ad00;
+}
+.header-post-type.evenements {
+  background-color: #d39b00;
+}
+.header-post-type.organisation {
+  background-color: #9b2b78;
+}
+.header-post-type.projets {
+  background-color: #009861;
+}
+.header-post-type h1 {
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin: 1em 0 0.2em 1%;
+}
+.header-post-type .shapeheader {
+  opacity: 0.05;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+.header-post-type .tri1 {
+  border-width: 0 0 50% 50%;
+  border-color: transparent transparent #000000 transparent;
+}
+.img-box article.c6-custom {
+  margin: 0;
+  width: 48%;
+  margin-bottom: 2.8%;
+}
+.img-box article.c6-custom:nth-child(odd) {
+  float: left;
+}
+.img-box article.c6-custom:nth-child(even) {
+  float: right;
+}
+.cinq .clear {
+  margin-bottom: 0.4%;
 }
 /* Footer */
 form input,
