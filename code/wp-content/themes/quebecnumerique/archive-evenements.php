@@ -13,7 +13,7 @@ wp_enqueue_script('sticky', get_template_directory_uri().'/js/slinky.js', 'jquer
 <script>
 jQuery(document).ready(function(){
 
-	//jQuery('.nav').slinky()
+	jQuery('.nav').slinky()
 });
 </script>
 

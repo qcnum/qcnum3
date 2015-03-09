@@ -1434,6 +1434,15 @@ body,
   height: 100%;
   position: relative;
 }
+.scroller {
+  height: 100%;
+  overflow: auto;
+}
+.nav {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
 .sticky-event section {
   margin-left: 1em;
   border-left: thin solid #d39b00;
