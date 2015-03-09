@@ -25,7 +25,62 @@ $projets = new WP_Query( array(
 
 			<article <?php post_class('white-post group'); ?>>
 
-				<article <?php post_class('white-post group'); ?>>
+				<div class="c8 fr group" role="main">
+
+					<div class="c11">
+
+						<header class="entry-header">
+
+							<h1 class="entry-title"><?php the_title(); ?></h1>
+
+							<?php 
+							$map = get_field('localisation');
+							if ( $map ) : ?>
+
+								<aside>
+									<div class="info-event">
+										<div class="date">
+											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
+										</div>
+									</div>
+								</aside>
+
+							<?php endif; ?>
+
+						</header>
+						
+						<div class="entry-content">
+
+							<?php the_content(); ?>
+							
+						</div>
+
+						<footer class="entry-meta">
+
+							<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
+
+						</footer>
+
+					</div>
+
+					<div class="c1">
+
+						<div class="sharing">
+							<a href="#" class="sharer" title="Sharing"><i class="fa fa-share-alt"></i></a>
+							<div>
+								<?php $urlimg = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+								<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="fb" title="Facebook"><span>Facebook</span> <i class="fa fa-facebook"></i></a>
+								<a target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&amp;text=<?php the_title(); ?>&amp;via=<?php echo bloginfo('name'); ?>" class="tw" title="Twitter"><span>Twitter</span> <i class="fa fa-twitter"></i></a>
+								<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" class="gp" title="Google+"><span>Google+</span> <i class="fa fa-google-plus"></i></a>
+								<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;summary=<?php echo get_the_excerpt(); ?>&amp;source=<?php echo bloginfo('name'); ?>" class="li" title="Linkedin"><span>Linkedin</span> <i class="fa fa-linkedin"></i></a>
+								<a target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&amp;media=<?php echo $urlimg; ?>&amp;description=<?php echo get_the_excerpt(); ?>" class="pin" title="Pinterest"><span>Pinterest</span> <i class="fa fa-pinterest-p"></i></a>
+								<a href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php echo get_the_excerpt(); ?>" class="email" title="Courriel"><span>Courriel</span> <i class="fa fa-envelope"></i></a>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
 
 				<secondary class="c4">
 
@@ -122,61 +177,6 @@ $projets = new WP_Query( array(
 					<?php endif; ?>
 
 				</secondary>
-
-				<div class="c7" role="main">
-
-					<header class="entry-header">
-
-						<h1 class="entry-title"><?php the_title(); ?></h1>
-
-						<?php 
-						$map = get_field('localisation');
-						if ( $map ) : ?>
-
-							<aside>
-
-								<div>
-
-									<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
-										
-								</div>
-
-							</aside>
-
-						<?php endif; ?>
-
-					</header>
-					
-					<div class="entry-content">
-
-						<?php the_content(); ?>
-						
-					</div>
-
-					<footer class="entry-meta">
-
-						<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-					</footer>
-
-				</div>
-
-				<div class="c1">
-
-					<div class="sharing">
-						<a href="#" class="sharer" title="Sharing"><span>Partager</span> <i class="fa fa-share-alt"></i></a>
-						<div>
-							<?php $urlimg = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-							<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="fb" title="Facebook"><span>Facebook</span> <i class="fa fa-facebook"></i></a>
-							<a target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&amp;text=<?php the_title(); ?>&amp;via=<?php echo bloginfo('name'); ?>" class="tw" title="Twitter"><span>Twitter</span> <i class="fa fa-twitter"></i></a>
-							<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>" class="gp" title="Google+"><span>Google+</span> <i class="fa fa-google-plus"></i></a>
-							<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php the_title(); ?>&amp;summary=<?php echo get_the_excerpt(); ?>&amp;source=<?php echo bloginfo('name'); ?>" class="li" title="Linkedin"><span>Linkedin</span> <i class="fa fa-linkedin"></i></a>
-							<a target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&amp;media=<?php echo $urlimg; ?>&amp;description=<?php echo get_the_excerpt(); ?>" class="pin" title="Pinterest"><span>Pinterest</span> <i class="fa fa-pinterest-p"></i></a>
-							<a href="mailto:?subject=<?php the_title(); ?>&amp;body=<?php echo get_the_excerpt(); ?>" class="email" title="Courriel"><span>Courriel</span> <i class="fa fa-envelope"></i></a>
-						</div>
-					</div>
-
-				</div>
 
 			</article>
 
