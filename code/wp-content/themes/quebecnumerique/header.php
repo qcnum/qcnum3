@@ -57,10 +57,10 @@ wp_head();
 			$name = $queried_object->name;
 			if ($id == 2) {
 			  	$class="nouvelles";
-			  	$title = single_cat_title(); 
+			  	$title = $queried_object->label;
 			} else if ($id == 3) {
 				$class="articles";
-				$title = single_cat_title(); 
+				$title = $queried_object->label;
 			} else if ($name == 'organisations')  {
 				$class="organisations";
 				$title = $queried_object->label;
