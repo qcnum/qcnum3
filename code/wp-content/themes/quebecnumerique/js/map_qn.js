@@ -121,6 +121,7 @@ function initialize() {
 
     map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
+          scrollwheel: false,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     });
