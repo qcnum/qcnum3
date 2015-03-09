@@ -95,17 +95,10 @@ wp_head();
 	<div class="group">
 
 		<?php
-		if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category( $category )) {
+		if ( function_exists('yoast_breadcrumb') && !is_front_page() && && !is_archive() !is_category( $category )) {
 
 			yoast_breadcrumb('<p class="c12" id="breadcrumbs">','</p>');
 		} ?>
-
-		<?php if(is_archive()) { ?>
-			<h1 class="page-title c12"><?php post_type_archive_title(); ?></h1>
-		<?php } ?>
-
-
-
 
 	</div>
 
