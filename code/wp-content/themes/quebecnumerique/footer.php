@@ -38,20 +38,27 @@
 		</div-->
 
 
-		<div class="filtre">
+		<div class="filtre nouvelles">
 			<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" checked="checked";>
-			<label class="nouvelles" for="nouvelles" id="">Nouvelles</label>
+			<label for="nouvelles" id="">Nouvelles</label>
+		</div>
+
+		<div class="filtre evenements">
+			<input id="evenements" class="selection" type="checkbox" name="evenements" value="1" checked="checked";>
+			<label for="evenements" id="">Événements</label>
+		</div>
+
+		<div class="filtre organisations">
+			<input id="organisations" class="selection" type="checkbox" name="organisations" value="1" checked="checked";>
+			<label for="organisations" id="">Organisations</label>
+		</div>
+
+		<div class="filtre projets">
+			<input id="projets" class="selection" type="checkbox" name="projets" value="1" checked="checked";>
+			<label for="projets" id="">Projets</label>
 		</div>
 
 
-    	<!--input type="checkbox" id="nouvelles" value="1" checked="checked" class="selection"/--> 
-
-    	<input type="checkbox" id="evenements" value="1" checked="checked"  class="selection"/> 
-    	Evènements 
-    	<input type="checkbox" id="organisations" value="1" checked="checked" class="selection"/> 
-    	Organisations 
-    	<input type="checkbox" id="projets" value="1" checked="checked" class="selection"/> 
-    	Projets 
     	<input type="checkbox" id="twitter" value="1" class="selection"/> 
     	Twitter 
     </div>

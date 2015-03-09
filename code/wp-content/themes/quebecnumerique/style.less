@@ -264,7 +264,7 @@ body {
 		margin-top: 6em;
 	}
 
-	.filtre {
+	.style-filtre(@couleur-fond: @blanc, @couleur-text: @gris) {
 
 		input[type="checkbox"] {
 			position: absolute; 
@@ -292,21 +292,38 @@ body {
 			background-clip: padding-box;
 			&:after {
 				font-family: FontAwesome;
-				content: "  \f055";
+				content: "   \f055";
 			}
-			&:hover { opacity: 1 }
+			&:hover { opacity: 0.9 }
 		}
 
 		input[type="checkbox"]:checked + label {
 			opacity: 1;
-			background-color: @blanc;
-			color: @gris;
+			background-color: @couleur-fond;
+			color: @couleur-text;
+			border-color: @couleur-fond;
 			&:after {
 				font-family: FontAwesome;
-				content: "  \f057";
+				content: "   \f057";
 			}
+			&:hover { opacity: 0.9 }
 		}
 
+	}
+
+	.filtre{
+		&.nouvelles{
+			.style-filtre(@nouvelles, @blanc);
+		}
+		&.evenements{
+			.style-filtre(@evenements, @blanc);
+		}
+		&.organisations{
+			.style-filtre(@organisations, @blanc);
+		}
+		&.projets{
+			.style-filtre(@projets, @blanc);
+		}
 	}	
 
 /* HEADER */
@@ -1090,14 +1107,14 @@ body {
 	}
 
 	.scroller {
-	 // height: 100%;
-	 // overflow: auto;
+	  height: 100%;
+	  overflow: auto;
 	}
 
 	.nav {
-		//position: relative;
-		//height: 100%;
-		//overflow: hidden;
+		position: relative;
+		height: 100%;
+		overflow: hidden;
 	}
 
 	.sticky-event {
@@ -1222,7 +1239,6 @@ body {
 		}
 	}
 
-/* CARTE */ 
 
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 	
@@ -1321,7 +1337,13 @@ body {
 	#map {
 		height: 35em;
 		width: 100%;
-		background-color: @noir;
+		background-color: @noir !important;
+		background-image: url('images/loading.gif');
+		background-repeat: no-repeat;
+		background-position: center center;
+		img{
+			max-width: none;
+		}
 	}
 
 	.rs {

@@ -57,10 +57,10 @@ wp_head();
 			$name = $queried_object->name;
 			if ($id == 2) {
 			  	$class="nouvelles";
-			  	$title = $queried_object->label;
+			  	$title=$name;
 			} else if ($id == 3) {
 				$class="articles";
-				$title = $queried_object->label;
+				$title=$name;
 			} else if ($name == 'organisations')  {
 				$class="organisations";
 				$title = $queried_object->label;
@@ -95,8 +95,7 @@ wp_head();
 	<div class="group">
 
 		<?php
-		if ( function_exists('yoast_breadcrumb') && !is_front_page() && && !is_archive() !is_category( $category )) {
-
+		if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
 			yoast_breadcrumb('<p class="c12" id="breadcrumbs">','</p>');
 		} ?>
 
