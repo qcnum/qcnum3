@@ -29,8 +29,35 @@
 		    <?php
 		}
 		?>
-        <div><input type="checkbox" id="nouvelles" value="1" checked="checked" class="selection"/> Nouvelles <input type="checkbox" id="evenements" value="1" checked="checked"  class="selection"/> Evènements <input type="checkbox" id="organisations" value="1" checked="checked" class="selection"/> Organisations <input type="checkbox" id="projets" value="1" checked="checked" class="selection"/> Projets <input type="checkbox" id="twitter" value="1" class="selection"/> Twitter </div>
-	<div id="map"></div>
+     
+
+    <div id="">
+		<!--div class="filtre">
+			<input id="<?php echo $mc_slug; ?>" type="checkbox" name="mots-cles[]" value="<?php echo $mc_slug; ?>" <?php if (in_array($mc_slug, $query_mc)) { echo 'checked="checked"'; } ?> >
+			<label for="<?php echo $mc_slug; ?>" id=""><?php echo $mc_name;?></label>
+		</div-->
+
+
+		<div class="filtre">
+			<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" checked="checked";>
+			<label class="nouvelles" for="nouvelles" id="">Nouvelles</label>
+		</div>
+
+
+    	<!--input type="checkbox" id="nouvelles" value="1" checked="checked" class="selection"/--> 
+
+    	<input type="checkbox" id="evenements" value="1" checked="checked"  class="selection"/> 
+    	Evènements 
+    	<input type="checkbox" id="organisations" value="1" checked="checked" class="selection"/> 
+    	Organisations 
+    	<input type="checkbox" id="projets" value="1" checked="checked" class="selection"/> 
+    	Projets 
+    	<input type="checkbox" id="twitter" value="1" class="selection"/> 
+    	Twitter 
+    </div>
+	<div id="map">
+
+	</div>
 
 	<footer id="colophon" role="contentinfo">
 	

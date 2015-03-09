@@ -51,22 +51,51 @@ wp_head();
 
 <div id="page" class="wrapper">
 
-	<div class="fancyHead group">
-		<div class="triangle">
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-			<div></div>
-		</div>
+		<?php if ( is_category() || is_archive() ) {
+			$queried_object = get_queried_object();
+			$id = $queried_object->cat_ID;	
+			$name = $queried_object->name;
+			if ($id == 2) {
+			  	$class="nouvelles";
+			  	$title = single_cat_title(); 
+			} else if ($id == 3) {
+				$class="articles";
+				$title = single_cat_title(); 
+			} else if ($name == 'organisations')  {
+				$class="organisations";
+				$title = $queried_object->label;
+			} else if ($name == 'projets')  {
+				$class="projets";
+				$title = $queried_object->label;
+			} else if ($name == 'evenements')  {
+				$class="evenements";
+				$title = $queried_object->label;
+			};
+			?>
 
 
-		<?php if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category( $category )) {
+			<div class="page-header header-post-type <?php echo $class?>">
+
+
+				<div class="c12">
+					<h1 class="page-title"><?php echo $title ?></h1>
+				</div>
+				<!--div class="shapeheader tri1"></div>
+				<div class="shapeheader tri2"></div>
+				<div class="shapeheader tri3"></div>
+				<div class="shapeheader tri4"></div>
+				<div class="shapeheader tri5"></div-->
+				<hr class="clear"></hr>
+
+			</div>
+			<?php 
+		};?>
+
+
+	<div class="group">
+
+		<?php
+		if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category( $category )) {
 
 			yoast_breadcrumb('<p class="c12" id="breadcrumbs">','</p>');
 		} ?>
@@ -74,6 +103,9 @@ wp_head();
 		<?php if(is_archive()) { ?>
 			<h1 class="page-title c12"><?php post_type_archive_title(); ?></h1>
 		<?php } ?>
+
+
+
 
 	</div>
 

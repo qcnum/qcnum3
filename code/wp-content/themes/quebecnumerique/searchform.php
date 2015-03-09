@@ -26,7 +26,7 @@ $query_mc = $_GET['mots-cles'];
 					$mc_slug = $mc->slug;
 					$mc_id = $mc->term_id;
 					$mc_name = $mc->name;?>
-					<div class="mot-cle">
+					<div class="mot-cle filtre">
 						<input id="<?php echo $mc_slug; ?>" type="checkbox" name="mots-cles[]" value="<?php echo $mc_slug; ?>" <?php if (in_array($mc_slug, $query_mc)) { echo 'checked="checked"'; } ?> >
 						<label for="<?php echo $mc_slug; ?>" id=""><?php echo $mc_name;?></label>
 					</div>
@@ -43,7 +43,7 @@ $query_mc = $_GET['mots-cles'];
 					$q_slug = $q->slug;
 					$q_id = $q->term_id;
 					$q_name = $q->name; ?>
-					<div class="mot-cle">
+					<div class="mot-cle filtre">
 						<input id="<?php echo $q_slug; ?>" type="checkbox" name="quartiers[]" value="<?php echo $q_slug; ?>" <?php if (in_array($q_slug, $query_q)) { echo 'checked="checked"'; } ?> >
 						<label for="<?php echo $q_slug; ?>"><?php echo $q_name; ?></label>
 					</div>

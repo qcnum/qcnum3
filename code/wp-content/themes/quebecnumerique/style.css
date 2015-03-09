@@ -256,6 +256,46 @@ img {
 #page {
   margin-top: 6em;
 }
+.filtre input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.7;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "  \f055";
+}
+.filtre input[type="checkbox"] + label:hover {
+  opacity: 1;
+}
+.filtre input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #ffffff;
+  color: #373a3f;
+}
+.filtre input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "  \f057";
+}
 /* HEADER */
 .home-link {
   margin-left: 0.925925%;
@@ -715,45 +755,6 @@ img {
 #searchform h2 {
   color: #ffffff;
 }
-#searchform .mot-cle input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-}
-#searchform .mot-cle input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.7;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-#searchform .mot-cle input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "  \f055";
-}
-#searchform .mot-cle input[type="checkbox"] + label:hover {
-  opacity: 1;
-}
-#searchform .mot-cle input[type="checkbox"]:checked + label {
-  opacity: 1;
-  background-color: #ffffff;
-  color: #373a3f;
-}
-#searchform .mot-cle input[type="checkbox"]:checked + label:after {
-  font-family: FontAwesome;
-  content: "  \f057";
-}
 .recherche {
   position: fixed;
   top: 3em;
@@ -1002,7 +1003,7 @@ div.evenements article .content {
 .img-box .content {
   position: absolute;
   bottom: 2%;
-  left: 0.5em;
+  left: 2%;
   z-index: 10;
   margin-right: 0.5em;
   max-height: 92%;
@@ -1537,12 +1538,26 @@ aside .mot-cle {
   border-bottom: 0px solid transparent;
   border-left: 15px solid #4d5057;
 }
-/* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
+/* CARTE *//* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 .header-post-type {
-  margin-top: -6em;
+  margin-top: -3em;
+  padding-top: 3em;
   margin-bottom: 1em;
   margin-bottom: 1.8%;
   background-image: url("images/shadow1.png");
+  background-attachment: fixed;
+  /*.shapeheader{
+			opacity: 0.05;
+			width: 0;
+			height: 0;
+			border-style: solid;	
+		}
+		.tri1{
+
+			border-width: 0 0 50% 50%;
+			border-color: transparent transparent @noir transparent;
+		}*/
+
 }
 .header-post-type.nouvelles {
   background-color: #00aca7;
@@ -1553,7 +1568,7 @@ aside .mot-cle {
 .header-post-type.evenements {
   background-color: #d39b00;
 }
-.header-post-type.organisation {
+.header-post-type.organisations {
   background-color: #9b2b78;
 }
 .header-post-type.projets {
@@ -1566,16 +1581,6 @@ aside .mot-cle {
   text-transform: uppercase;
   color: #ffffff;
   margin: 1em 0 0.2em 1%;
-}
-.header-post-type .shapeheader {
-  opacity: 0.05;
-  width: 0;
-  height: 0;
-  border-style: solid;
-}
-.header-post-type .tri1 {
-  border-width: 0 0 50% 50%;
-  border-color: transparent transparent #000000 transparent;
 }
 .img-box article.c6-custom {
   margin: 0;
@@ -1638,7 +1643,7 @@ form .advanced:hover {
   background-color: #b93d19;
 }
 #map {
-  height: 200px;
+  height: 35em;
   width: 100%;
   background-color: #000000;
 }

@@ -12,7 +12,7 @@
 			$class="articles";
 		};
 		?>
-		<header class="page-header header-post-type <?php echo $class?>">
+		<!--header class="page-header header-post-type <?php echo $class?>">
 			<div class="c12">
 				<h1 class="page-title"><?php single_cat_title(); ?></h1>
 			</div>
@@ -23,7 +23,7 @@
 			<div class="shapeheader tri5"></div>
 			<hr class="clear"></hr>
 
-		</header>
+		</header-->
 
 		<div class="c12">
 			
