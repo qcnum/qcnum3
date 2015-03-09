@@ -90,6 +90,7 @@
 a.ui-datepicker-prev, 
 a.ui-datepicker-next {
   outline: 0;
+  display: block !important;
 }
 .ui-datepicker thead {
   background-color: #fafafa;

@@ -1,9 +1,7 @@
 
 	</div><!-- #main -->
 
-
-	<div id="map">
-		<?php
+	<?php
 		if ( is_home() ) {
 		    ?>
 			<div class="stats c12">
@@ -31,7 +29,8 @@
 		    <?php
 		}
 		?>
-	</div>
+        <div><input type="checkbox" id="nouvelles" value="1" checked="checked" class="selection"/> Nouvelles <input type="checkbox" id="evenements" value="1" checked="checked"  class="selection"/> Evènements <input type="checkbox" id="organisations" value="1" checked="checked" class="selection"/> Organisations <input type="checkbox" id="projets" value="1" checked="checked" class="selection"/> Projets <input type="checkbox" id="twitter" value="1" class="selection"/> Twitter </div>
+	<div id="map"></div>
 
 	<footer id="colophon" role="contentinfo">
 	

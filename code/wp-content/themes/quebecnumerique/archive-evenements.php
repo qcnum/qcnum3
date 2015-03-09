@@ -1,50 +1,74 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$lastM;
+query_posts(array(
+	'post_type' => 'evenements',
+	'post_status' => array('publish', 'future'),
+	'order' => 'ASC'
+));
+
+
+wp_enqueue_script('sticky', get_template_directory_uri().'/js/slinky.js', 'jquery', '', true);
+?>
+<script>
+jQuery(document).ready(function(){
+
+	jQuery('.nav').slinky()
+});
+</script>
 
 	<div id="content">
 
-
-
-		<header class="page-header">
-			<h1 class="page-title"><?php post_type_archive_title(); ?></h1>
-		</header>
-		<p>ici</p>
 		<?php if ( have_posts() ) : ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="nav">
+				
+				<div class="scroller">
 
-				<div class="group">
+					<section class="group">
 
-					<div class="c1">
-						
-						<?php the_date('F') ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-					</div>
-	
-					<div class="c11">
+							<?php 
+							$month = get_the_date('F'); 
+							if($month != $lastM && $lastM != null) { 
+								$lastM = $month; 
+								$firstMonth = $month;
+								echo '</div></section>';
+								echo '<section class="group">';
+								echo '<header class="c1">';
+								echo $firstMonth;
+								echo '</header><div class="c11 fr">';
+							} elseif($month != $lastM && $lastM == null) {
+								$lastM = $month; 
+								$firstMonth = $month;
+								echo '<header class="c1">';
+								echo $firstMonth;
+								echo '</header><div class="c11 fr">';
+							} else { $firstMonth = ''; }
+							?>
 
-						<article <?php post_class(); ?>>
+								<article class="event blanc-bg">
 
-							<?php echo get_the_date() ?>
+									<?php 
+									$date_exp = get_post_meta( $post->ID, 'postexpired', true );
+									$date_arr = explode('-', $date_exp);
+									$mois = array('01'=>'janvier', '02'=>'février', '03'=>'mars', '04'=>'avril', '05'=>'mai', '06'=>'juin', '07'=>'juillet', '08'=>'août', '09'=>'septembre', '10'=>'octobre', '11'=>'novembre', '12'=>'décembre');
+									?>
 
+									<h1><?php the_title(); ?></h1>
 
-							<h1 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+								</article>
 
-							
-							<div class="entry-content">
+						<?php endwhile; ?>
 
-								<?php the_excerpt(); ?>
+						</div>
 
-							</div>
-
-						
-
-						</article>
-
-					</div>
-
+					</section>
+					
 				</div>
 
-			<?php endwhile; ?>
+			</div>
 			
 			<?php paging_nav(); ?>
 
