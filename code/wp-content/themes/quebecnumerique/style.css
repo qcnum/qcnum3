@@ -278,6 +278,11 @@ footer#colophon {
 #page {
   margin-top: 6em;
 }
+.filtre {
+  position: relative;
+  display: block;
+  float: left;
+}
 .filtre.mot-cle input[type="checkbox"] {
   position: absolute;
   overflow: hidden;
@@ -601,6 +606,7 @@ footer#colophon {
 .navigation {
   position: relative;
   background-color: #373a3f;
+  border-bottom: 1px solid #4d5057;
 }
 .navigation li {
   display: block;
@@ -1149,6 +1155,7 @@ footer#colophon {
   font-size: 1.8em;
   color: #ffffff;
   font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  margin-bottom: 3em;
 }
 .box-evenements {
   margin-bottom: 3%;
@@ -1926,19 +1933,13 @@ form .advanced:hover {
   background-color: #b93d19;
 }
 .map-content {
-  overflow: hidden;
   width: 100%;
 }
 #menu-map {
   padding-bottom: 0.5em;
-  overflow: hidden;
   position: relative;
   z-index: 30;
-  -webkit-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  -moz-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  -ms-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  -o-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  box-shadow: 0px 0px 9px 0px #1d1d1d;
+  border-top: 1px solid #696969;
 }
 #menu-map a {
   opacity: 0.8;
@@ -1952,6 +1953,15 @@ form .advanced:hover {
 }
 #menu-map a i:before {
   content: "\f065";
+}
+#menu-map .nbr-count {
+  position: absolute;
+  top: -1.3em;
+  left: 33%;
+  font-size: 3em;
+  font-family: 'Exo 2.0';
+  font-weight: 700;
+  color: white;
 }
 #map {
   height: 35em;
