@@ -20,6 +20,11 @@ wp_enqueue_script('jquery');
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', 'jquery', '', true);
 wp_head(); 
 ?>
+
+<script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
+<script src="<?php echo get_template_directory_uri() . '/js/markerclusterer_packed.js';?>"></script>
+<script src="<?php echo get_template_directory_uri() . '/js/map_qn.js';?>"></script>
+
 </head>
 
 <body <?php body_class(); ?>>

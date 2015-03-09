@@ -239,7 +239,7 @@ footer#colophon {
   clear: both;
 }
 img {
-  max-width: 100%;
+  /*max-width: 100%*/;
   height: auto;
 }
 #masthead {
@@ -1133,7 +1133,7 @@ form .advanced:hover {
   background-color: #b93d19;
 }
 #map {
-  height: 200px;
+  height: 430px;
   width: 100%;
   background-color: #000000;
 }
