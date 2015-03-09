@@ -71,6 +71,14 @@ wp_head();
 				$class="evenements";
 				$title = $queried_object->label;
 			};
+
+			if(is_tax()) {
+				$term = $wp_query->get_queried_object();
+				$class="organisations";
+    			$title = $term->name;
+			}
+
+
 			?>
 
 

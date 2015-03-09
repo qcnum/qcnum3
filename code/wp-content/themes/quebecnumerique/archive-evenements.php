@@ -8,12 +8,16 @@ query_posts(array(
 ));
 
 
-wp_enqueue_script('sticky', get_template_directory_uri().'/js/slinky.js', 'jquery', '', true);
+//wp_enqueue_script('waypoint', get_template_directory_uri().'/js/jquery.waypoints.min.js', 'jquery', '', true);
+//wp_enqueue_script('sticky', get_template_directory_uri().'/js/sticky.js', 'jquery', '', true);
 ?>
 <script>
 jQuery(document).ready(function(){
 
-	jQuery('.nav').slinky()
+	//var sticky = new Waypoint.Sticky({
+	//  element: jQuery('header.c1')[0],
+	//  offset: 50
+	//});
 });
 </script>
 
@@ -101,8 +105,6 @@ jQuery(document).ready(function(){
 								</article>
 
 						<?php endwhile; ?>
-
-						</div>
 
 					</section>
 					

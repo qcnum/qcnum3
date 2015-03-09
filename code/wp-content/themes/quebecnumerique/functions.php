@@ -148,6 +148,17 @@ function init() {
         )
     );
 
+     register_taxonomy(
+        'secteurs',
+        array('organisations'),
+        array(
+            'label' => __( 'Secteurs' ),
+            'public' => true,
+            'hierarchical' => true,
+            'show_admin_column' => true,
+        )
+    );
+
 }
 
 function my_connection_types() {
