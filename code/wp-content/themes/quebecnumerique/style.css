@@ -277,6 +277,50 @@ img {
 #page {
   margin-top: 6em;
 }
+.filtre.mot-cle input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.mot-cle input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.mot-cle input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.mot-cle input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.mot-cle input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #ffffff;
+  color: #373a3f;
+  border-color: #ffffff;
+}
+.filtre.mot-cle input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.mot-cle input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
 .filtre.nouvelles input[type="checkbox"] {
   position: absolute;
   overflow: hidden;
@@ -297,7 +341,7 @@ img {
   cursor: pointer;
   font-size: 1.25em;
   border: 1px solid #ffffff;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
@@ -341,7 +385,7 @@ img {
   cursor: pointer;
   font-size: 1.25em;
   border: 1px solid #ffffff;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
@@ -385,7 +429,7 @@ img {
   cursor: pointer;
   font-size: 1.25em;
   border: 1px solid #ffffff;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
@@ -429,7 +473,7 @@ img {
   cursor: pointer;
   font-size: 1.25em;
   border: 1px solid #ffffff;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
@@ -451,6 +495,50 @@ img {
   content: "   \f057";
 }
 .filtre.projets input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
+.filtre.twitter input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.twitter input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.twitter input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.twitter input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.twitter input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #55acee;
+  color: #ffffff;
+  border-color: #55acee;
+}
+.filtre.twitter input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.twitter input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
 }
 /* HEADER */
@@ -1848,6 +1936,34 @@ form input[type="submit"]:hover,
 form .advanced:hover {
   background-color: #b93d19;
 }
+.map-content {
+  overflow: hidden;
+  width: 100%;
+}
+#menu-map {
+  padding-bottom: 0.5em;
+  overflow: hidden;
+  position: relative;
+  z-index: 30;
+  -webkit-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -moz-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -ms-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -o-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  box-shadow: 0px 0px 9px 0px #1d1d1d;
+}
+#menu-map a {
+  opacity: 0.9;
+  color: #ffffff;
+  float: right;
+  margin-top: 0.65em;
+  font-size: 1.5em;
+}
+#menu-map a:hover {
+  opacity: 1;
+}
+#menu-map a i:before {
+  content: "\f0b2";
+}
 #map {
   height: 35em;
   width: 100%;
@@ -1855,9 +1971,23 @@ form .advanced:hover {
   background-image: url('images/loading.gif');
   background-repeat: no-repeat;
   background-position: center center;
+  z-index: 10;
 }
 #map img {
   max-width: none;
+}
+.full-screen-map {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  opacity: 1;
+}
+.full-screen-map #map {
+  height: 100%;
+}
+.full-screen-map #menu-map i:before {
+  content: "\f057";
 }
 .rs {
   text-align: right;
@@ -1955,7 +2085,5 @@ form .advanced:hover {
 }
 /* Media Queries*/
 @media screen and (max-width: 1050px) {
-  .wrapper {
-    width: 97.14%;
-  }
+  
 }

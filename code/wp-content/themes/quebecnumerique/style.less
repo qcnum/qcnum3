@@ -67,6 +67,7 @@ Author URI: http://evollia.com/
 	@gris: #373a3f;
 	@grispale: #4d5057;
 	@grisopac: rgba(44, 46, 51, 0.9);
+	@twitter: #55acee;
 
 	@content: 'PT Sans', 'Arial' ,sans-serif;
 	@titre1: 'PT Sans Narrow', 'Arial' ,sans-serif;
@@ -287,7 +288,7 @@ body {
 			cursor: pointer;
 			font-size: 1.25em;
 			border: 1px solid @blanc;
-			opacity: 0.7;
+			opacity: 0.6;
 			-webkit-background-clip: padding-box;
 			background-clip: padding-box;
 			&:after {
@@ -312,6 +313,9 @@ body {
 	}
 
 	.filtre{
+		&.mot-cle{
+			.style-filtre();
+		}
 		&.nouvelles{
 			.style-filtre(@nouvelles, @blanc);
 		}
@@ -324,6 +328,11 @@ body {
 		&.projets{
 			.style-filtre(@projets, @blanc);
 		}
+		&.twitter{
+			.style-filtre(@twitter, @blanc);
+		}
+
+
 	}	
 
 /* HEADER */
@@ -590,8 +599,6 @@ body {
 	}
 
 	.fancyHead {
-		//height: 5em; //temporaire
-
 		position: relative;
 
 	}
@@ -606,7 +613,6 @@ body {
 			color: @blanc;
 		}
 	}
-
 
 /* ACCUEIL */
 
@@ -1239,7 +1245,6 @@ body {
 		}
 	}
 
-
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 	
 	.header-post-type{
@@ -1334,6 +1339,34 @@ body {
 		}
 	}
 
+	
+	.map-content{
+		overflow: hidden;
+		width: 100%;
+	}
+	
+	#menu-map{
+		padding-bottom: 0.5em;
+		overflow: hidden;
+		position: relative;
+		z-index: 30;
+		.box-shadow(0px 0px 9px 0px #1D1D1D);
+		a{
+			opacity: 0.9;
+			color: @blanc;
+			float: right;
+			margin-top: 0.65em;
+			font-size: 1.5em;
+			&:hover{
+				opacity: 1;
+			}
+			i:before	{
+				content: "\f0b2";
+			}
+		}
+
+	}
+
 	#map {
 		height: 35em;
 		width: 100%;
@@ -1341,10 +1374,28 @@ body {
 		background-image: url('images/loading.gif');
 		background-repeat: no-repeat;
 		background-position: center center;
+		z-index: 10;
 		img{
 			max-width: none;
 		}
 	}
+
+	.full-screen-map{
+		height: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		opacity: 1;	
+		#map{
+			height: 100%;
+		}	
+		#menu-map{
+			i:before	{
+				content: "\f057";
+			}			
+		}
+	}
+
 
 	.rs {
 		text-align: right;
@@ -1415,7 +1466,7 @@ body {
 /* Media Queries*/
 
 	@media screen and (max-width: 1050px){
-		.wrapper{ width: 97.14%; }
+		//.wrapper{ width: 97.14%; }
 	}
 
 

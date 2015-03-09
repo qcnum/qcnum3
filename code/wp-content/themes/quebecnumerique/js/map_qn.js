@@ -113,7 +113,7 @@ var stylesCarte =[
                 "saturation": -100
             },
             {
-                "lightness": 33
+                "lightness": 28
             },
             {
                 "gamma": 0.5
@@ -147,6 +147,7 @@ jQuery(document).ready(function(){
             });
             initialize();
         });
+
 });
 
 function initialize() {
