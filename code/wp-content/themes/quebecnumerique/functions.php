@@ -8,6 +8,7 @@ define("THEME_NAME", 'Québec Numérique');
 include_once('inc/advanced-custom-fields/acf.php');
 include_once('inc/acf-repeater/acf-repeater.php');
 include_once('inc/acf-options-page/acf-options-page.php');
+include_once('inc/post-expiring/post-expiring.php');
 
 
 add_action( 'init', 'init' );
@@ -15,7 +16,7 @@ function init() {
 	register_nav_menus( array( 'navigation' => 'Navigation' ) );
     register_nav_menus( array( 'meta' => 'Meta' ) );
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('rectangle', 580, 440, true );
+	add_image_size('rectangle', 800, 600, true );
     
 
 	register_sidebar( array(

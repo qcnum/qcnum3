@@ -1,0 +1,57 @@
+# Copyright (C) 2015 Post Expiring
+# This file is distributed under the same license as the Post Expiring package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Post Expiring 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/post-expiring\n"
+"POT-Creation-Date: 2015-01-04 19:45:23+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: post-expiring.php:41
+msgid "Expiring"
+msgstr ""
+
+#: post-expiring.php:49 post-expiring.php:74
+msgid "Never"
+msgstr ""
+
+#: post-expiring.php:74
+msgid "Expiring:"
+msgstr ""
+
+#: post-expiring.php:75
+msgid "Edit"
+msgstr ""
+
+#: post-expiring.php:75
+msgid "Edit expiring date"
+msgstr ""
+
+#: post-expiring.php:77
+msgid "OK"
+msgstr ""
+
+#: post-expiring.php:78
+msgid "Cancel"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Post Expiring"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Allows you to add an expiration date to posts."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Piotr Potrebka"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://potrebka.pl"
+msgstr ""

@@ -2,17 +2,33 @@
 	</div><!-- #main -->
 
 	<?php
-	if ( is_home() ) {
-	    ?>
-		<div class="stats">
-			<?php 
-			$stats = get_field('phrase_stats', 'options');
-			?>
-			<p><?php echo $stats ?></p>
-		</div>	
-	    <?php
-	}
-	?>
+		if ( is_home() ) {
+		    ?>
+			<div class="stats c12">
+				<?php 
+				$stats = get_field('phrase_stats', 'options');
+				?>
+				<p><?php echo $stats ?></p>
+		
+					<?php
+					$nb_evenements = wp_count_posts('evenements');
+					$nb_organisations = wp_count_posts('organisations');
+					$nb_projets = wp_count_posts('projets');
+					$nb_articles = get_category('3');
+					$nb_nouvelles = get_category('2');
+					?>
+				<ul>
+					<li><?php echo $nb_nouvelles->category_count; ?></li>
+					<li><?php echo $nb_articles->category_count; ?></li>
+					<li><?php echo $nb_evenements->publish; ?></li>
+					<li><?php echo $nb_organisations->publish; ?></li>
+					<li><?php echo $nb_projets->publish; ?></li>
+				</ul>
+			</div>
+			<hr class="clear">	
+		    <?php
+		}
+		?>
         <div><input type="checkbox" id="nouvelles" value="1" checked="checked" class="selection"/> Nouvelles <input type="checkbox" id="evenements" value="1" checked="checked"  class="selection"/> Evènements <input type="checkbox" id="organisations" value="1" checked="checked" class="selection"/> Organisations <input type="checkbox" id="projets" value="1" checked="checked" class="selection"/> Projets <input type="checkbox" id="twitter" value="1" class="selection"/> Twitter </div>
 	<div id="map"></div>
 

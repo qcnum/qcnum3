@@ -36,6 +36,11 @@ jQuery(document).ready(function(){
 	});
 
 
+	jQuery('.sharer').click(function(){
+		jQuery(this).next().toggleClass('visible');
+	});
+
+
 
  	jQuery(window).scroll(function () {
  
