@@ -1952,7 +1952,7 @@ form .advanced:hover {
   box-shadow: 0px 0px 9px 0px #1d1d1d;
 }
 #menu-map a {
-  opacity: 0.9;
+  opacity: 0.8;
   color: #ffffff;
   float: right;
   margin-top: 0.65em;
@@ -1962,7 +1962,7 @@ form .advanced:hover {
   opacity: 1;
 }
 #menu-map a i:before {
-  content: "\f0b2";
+  content: "\f065";
 }
 #map {
   height: 35em;

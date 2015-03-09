@@ -32,10 +32,12 @@
      
     <div class="map-content">
 	    <nav id="menu-map" class="gris-bg">
-			<!--div class="filtre">
-				<input id="<?php echo $mc_slug; ?>" type="checkbox" name="mots-cles[]" value="<?php echo $mc_slug; ?>" <?php if (in_array($mc_slug, $query_mc)) { echo 'checked="checked"'; } ?> >
-				<label for="<?php echo $mc_slug; ?>" id=""><?php echo $mc_name;?></label>
-			</div-->
+
+	    	<?php 
+	    	
+	    	
+	    	?>
+
 
 			<div class="c12">
 
