@@ -16,7 +16,7 @@ function init() {
 	register_nav_menus( array( 'navigation' => 'Navigation' ) );
     register_nav_menus( array( 'meta' => 'Meta' ) );
 	add_theme_support( 'post-thumbnails' );
-	add_image_size('rectangle', 580, 440, true );
+	add_image_size('rectangle', 800, 600, true );
     
 
 	register_sidebar( array(

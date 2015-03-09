@@ -242,7 +242,7 @@ footer#colophon {
   clear: both;
 }
 img {
-  max-width: 100%;
+  /*max-width: 100%*/;
   height: auto;
 }
 #masthead {
@@ -991,21 +991,25 @@ div.evenements article .content {
   text-overflow: ellipsis;
   display: block;
 }
-/* PAGE TYPE */
+/* ARCHIVE D'UN TYPE (Nouvelles, articles, événements,...) */
 .header-post-type {
-  position: relative;
-  min-height: 10em;
-  background-color: red;
   margin-top: -6em;
+  margin-bottom: 1em;
+  margin-bottom: 1.8%;
+}
+.header-post-type.nouvelles {
+  background-color: #00aca7;
+}
+.header-post-type.articles {
+  background-color: #a0ad00;
 }
 .header-post-type h1 {
-  position: absolute;
-  bottom: 0em;
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   font-size: 3em;
   font-weight: 700;
   text-transform: uppercase;
   color: #ffffff;
+  margin: 1em 0 0.2em 1%;
 }
 /* CONTENU */
 .trois article:first-child {
@@ -1594,7 +1598,7 @@ form .advanced:hover {
   background-color: #b93d19;
 }
 #map {
-  height: 200px;
+  height: 430px;
   width: 100%;
   background-color: #000000;
 }
