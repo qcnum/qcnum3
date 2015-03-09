@@ -30,33 +30,50 @@
 		}
 		?>
      
+    <div class="map-content">
+	    <nav id="menu-map" class="gris-bg">
+			<!--div class="filtre">
+				<input id="<?php echo $mc_slug; ?>" type="checkbox" name="mots-cles[]" value="<?php echo $mc_slug; ?>" <?php if (in_array($mc_slug, $query_mc)) { echo 'checked="checked"'; } ?> >
+				<label for="<?php echo $mc_slug; ?>" id=""><?php echo $mc_name;?></label>
+			</div-->
 
-    <div id="">
-		<!--div class="filtre">
-			<input id="<?php echo $mc_slug; ?>" type="checkbox" name="mots-cles[]" value="<?php echo $mc_slug; ?>" <?php if (in_array($mc_slug, $query_mc)) { echo 'checked="checked"'; } ?> >
-			<label for="<?php echo $mc_slug; ?>" id=""><?php echo $mc_name;?></label>
-		</div-->
+			<div class="c12">
+
+				<div class="filtre nouvelles">
+					<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" checked="checked";>
+					<label for="nouvelles" id="">Nouvelles</label>
+				</div>
+
+				<div class="filtre evenements">
+					<input id="evenements" class="selection" type="checkbox" name="evenements" value="1" checked="checked";>
+					<label for="evenements" id="">Événements</label>
+				</div>
+
+				<div class="filtre organisations">
+					<input id="organisations" class="selection" type="checkbox" name="organisations" value="1" checked="checked";>
+					<label for="organisations" id="">Organisations</label>
+				</div>
+
+				<div class="filtre projets">
+					<input id="projets" class="selection" type="checkbox" name="projets" value="1" checked="checked";>
+					<label for="projets" id="">Projets</label>
+				</div>
+
+				<div class="filtre twitter">
+					<input id="twitter" class="selection" type="checkbox" name="twitter" value="1" checked="checked";>
+					<label for="twitter" id="">Twitter</label>
+				</div>
 
 
-		<div class="filtre">
-			<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" checked="checked";>
-			<label class="nouvelles" for="nouvelles" id="">Nouvelles</label>
+		    	<a href="#" id="full-screen">
+		    		<i class="fa"></i>
+		    	</a>
+	    	</div>
+	    </nav>
+
+		<div id="map">
+
 		</div>
-
-
-    	<!--input type="checkbox" id="nouvelles" value="1" checked="checked" class="selection"/--> 
-
-    	<input type="checkbox" id="evenements" value="1" checked="checked"  class="selection"/> 
-    	Evènements 
-    	<input type="checkbox" id="organisations" value="1" checked="checked" class="selection"/> 
-    	Organisations 
-    	<input type="checkbox" id="projets" value="1" checked="checked" class="selection"/> 
-    	Projets 
-    	<input type="checkbox" id="twitter" value="1" class="selection"/> 
-    	Twitter 
-    </div>
-	<div id="map">
-
 	</div>
 
 	<footer id="colophon" role="contentinfo">

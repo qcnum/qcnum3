@@ -67,6 +67,7 @@ Author URI: http://evollia.com/
 	@gris: #373a3f;
 	@grispale: #4d5057;
 	@grisopac: rgba(44, 46, 51, 0.9);
+	@twitter: #55acee;
 
 	@content: 'PT Sans', 'Arial' ,sans-serif;
 	@titre1: 'PT Sans Narrow', 'Arial' ,sans-serif;
@@ -276,7 +277,7 @@ hr {
 		margin-top: 6em;
 	}
 
-	.filtre {
+	.style-filtre(@couleur-fond: @blanc, @couleur-text: @gris) {
 
 		input[type="checkbox"] {
 			position: absolute; 
@@ -299,25 +300,50 @@ hr {
 			cursor: pointer;
 			font-size: 1.25em;
 			border: 1px solid @blanc;
-			opacity: 0.7;
+			opacity: 0.6;
 			-webkit-background-clip: padding-box;
 			background-clip: padding-box;
 			&:after {
 				font-family: FontAwesome;
-				content: "  \f055";
+				content: "   \f055";
 			}
-			&:hover { opacity: 1 }
+			&:hover { opacity: 0.9 }
 		}
 
 		input[type="checkbox"]:checked + label {
 			opacity: 1;
-			background-color: @blanc;
-			color: @gris;
+			background-color: @couleur-fond;
+			color: @couleur-text;
+			border-color: @couleur-fond;
 			&:after {
 				font-family: FontAwesome;
-				content: "  \f057";
+				content: "   \f057";
 			}
+			&:hover { opacity: 0.9 }
 		}
+
+	}
+
+	.filtre{
+		&.mot-cle{
+			.style-filtre();
+		}
+		&.nouvelles{
+			.style-filtre(@nouvelles, @blanc);
+		}
+		&.evenements{
+			.style-filtre(@evenements, @blanc);
+		}
+		&.organisations{
+			.style-filtre(@organisations, @blanc);
+		}
+		&.projets{
+			.style-filtre(@projets, @blanc);
+		}
+		&.twitter{
+			.style-filtre(@twitter, @blanc);
+		}
+
 
 	}	
 
@@ -585,8 +611,6 @@ hr {
 	}
 
 	.fancyHead {
-		//height: 5em; //temporaire
-
 		position: relative;
 
 	}
@@ -601,7 +625,6 @@ hr {
 			color: @blanc;
 		}
 	}
-
 
 /* ACCUEIL */
 
@@ -1224,8 +1247,6 @@ hr {
 		}
 	}
 
-/* CARTE */ 
-
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 	
 	.header-post-type{
@@ -1320,15 +1341,65 @@ hr {
 		}
 	}
 
+	
+	.map-content{
+		overflow: hidden;
+		width: 100%;
+	}
+	
+	#menu-map{
+		padding-bottom: 0.5em;
+		overflow: hidden;
+		position: relative;
+		z-index: 30;
+		.box-shadow(0px 0px 9px 0px #1D1D1D);
+		a{
+			opacity: 0.9;
+			color: @blanc;
+			float: right;
+			margin-top: 0.65em;
+			font-size: 1.5em;
+			&:hover{
+				opacity: 1;
+			}
+			i:before	{
+				content: "\f0b2";
+			}
+		}
+
+	}
+
 	#map {
 		height: 35em;
 		width: 100%;
-		background-color: @noir;
 		img { max-width: none; }
 		.gmnoprint a, .gmnoprint span { display:none; }
 		.gmnoprint div { background:none !important; }
 		img[src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png"], a[href^="http://maps.google.com/maps"]{ display:none !important; }
+
+		background-color: @noir !important;
+		background-image: url('images/loading.gif');
+		background-repeat: no-repeat;
+		background-position: center center;
+		z-index: 10;
 	}
+
+	.full-screen-map{
+		height: 100%;
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		opacity: 1;	
+		#map{
+			height: 100%;
+		}	
+		#menu-map{
+			i:before	{
+				content: "\f057";
+			}			
+		}
+	}
+
 
 	.rs {
 		text-align: right;
@@ -1523,6 +1594,7 @@ hr {
 /* Media Queries*/
 
 	@media screen and (max-width: 1050px){
+
 		.wrapper { width: 97.14%; }
 	}
 

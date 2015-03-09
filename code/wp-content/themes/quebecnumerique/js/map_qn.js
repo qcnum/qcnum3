@@ -47,7 +47,7 @@ stylesCluster['projets']      = [{
         textSize: 10
       }];
 
-var stylesCarte = [
+/*var stylesCarte = [
             {
                 featureType: "all",
                 elementType: "all",
@@ -97,7 +97,40 @@ var stylesCarte = [
                     { lightness: -60 }
                 ]
             }
-        ];
+*/
+
+
+var stylesCarte =[
+    {
+        "stylers": [
+            {
+                "hue": "#ff1a00"
+            },
+            {
+                "invert_lightness": true
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 28
+            },
+            {
+                "gamma": 0.5
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#2D333C"
+            }
+        ]
+    }
+]
+
 
 var infowindow = new google.maps.InfoWindow(
   { 
@@ -114,6 +147,7 @@ jQuery(document).ready(function(){
             });
             initialize();
         });
+
 });
 
 function initialize() {

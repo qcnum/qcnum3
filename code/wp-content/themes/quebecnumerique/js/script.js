@@ -41,6 +41,11 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 	});
 
+    jQuery('#full-screen').click(function(){
+        jQuery(".map-content").toggleClass('full-screen-map');
+        event.preventDefault();
+        initialize();
+    });
 
 
  	jQuery(window).scroll(function () {

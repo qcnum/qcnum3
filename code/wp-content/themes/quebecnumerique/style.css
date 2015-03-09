@@ -278,7 +278,7 @@ footer#colophon {
 #page {
   margin-top: 6em;
 }
-.filtre input[type="checkbox"] {
+.filtre.mot-cle input[type="checkbox"] {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -289,7 +289,7 @@ footer#colophon {
   border: 0;
   display: none;
 }
-.filtre input[type="checkbox"] + label {
+.filtre.mot-cle input[type="checkbox"] + label {
   display: block;
   float: left;
   padding: 0.25em;
@@ -298,25 +298,249 @@ footer#colophon {
   cursor: pointer;
   font-size: 1.25em;
   border: 1px solid #ffffff;
-  opacity: 0.7;
+  opacity: 0.6;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.filtre input[type="checkbox"] + label:after {
+.filtre.mot-cle input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "  \f055";
+  content: "   \f055";
 }
-.filtre input[type="checkbox"] + label:hover {
-  opacity: 1;
+.filtre.mot-cle input[type="checkbox"] + label:hover {
+  opacity: 0.9;
 }
-.filtre input[type="checkbox"]:checked + label {
+.filtre.mot-cle input[type="checkbox"]:checked + label {
   opacity: 1;
   background-color: #ffffff;
   color: #373a3f;
+  border-color: #ffffff;
 }
-.filtre input[type="checkbox"]:checked + label:after {
+.filtre.mot-cle input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "  \f057";
+  content: "   \f057";
+}
+.filtre.mot-cle input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
+.filtre.nouvelles input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.nouvelles input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.nouvelles input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.nouvelles input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.nouvelles input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #00aca7;
+  color: #ffffff;
+  border-color: #00aca7;
+}
+.filtre.nouvelles input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.nouvelles input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
+.filtre.evenements input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.evenements input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.evenements input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.evenements input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.evenements input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #d39b00;
+  color: #ffffff;
+  border-color: #d39b00;
+}
+.filtre.evenements input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.evenements input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
+.filtre.organisations input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.organisations input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.organisations input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.organisations input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.organisations input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #9b2b78;
+  color: #ffffff;
+  border-color: #9b2b78;
+}
+.filtre.organisations input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.organisations input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
+.filtre.projets input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.projets input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.projets input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.projets input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.projets input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #009861;
+  color: #ffffff;
+  border-color: #009861;
+}
+.filtre.projets input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.projets input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
+}
+.filtre.twitter input[type="checkbox"] {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  display: none;
+}
+.filtre.twitter input[type="checkbox"] + label {
+  display: block;
+  float: left;
+  padding: 0.25em;
+  margin: 0.5em 0.5em 0em 0;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25em;
+  border: 1px solid #ffffff;
+  opacity: 0.6;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+.filtre.twitter input[type="checkbox"] + label:after {
+  font-family: FontAwesome;
+  content: "   \f055";
+}
+.filtre.twitter input[type="checkbox"] + label:hover {
+  opacity: 0.9;
+}
+.filtre.twitter input[type="checkbox"]:checked + label {
+  opacity: 1;
+  background-color: #55acee;
+  color: #ffffff;
+  border-color: #55acee;
+}
+.filtre.twitter input[type="checkbox"]:checked + label:after {
+  font-family: FontAwesome;
+  content: "   \f057";
+}
+.filtre.twitter input[type="checkbox"]:checked + label:hover {
+  opacity: 0.9;
 }
 /* HEADER */
 .home-link {
@@ -1594,7 +1818,7 @@ aside .mot-cle {
   border-bottom: 0px solid transparent;
   border-left: 1.25em solid #4d5057;
 }
-/* CARTE *//* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
+/* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 .header-post-type {
   margin-top: -3em;
   padding-top: 3em;
@@ -1701,10 +1925,42 @@ form input[type="submit"]:hover,
 form .advanced:hover {
   background-color: #b93d19;
 }
+.map-content {
+  overflow: hidden;
+  width: 100%;
+}
+#menu-map {
+  padding-bottom: 0.5em;
+  overflow: hidden;
+  position: relative;
+  z-index: 30;
+  -webkit-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -moz-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -ms-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -o-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  box-shadow: 0px 0px 9px 0px #1d1d1d;
+}
+#menu-map a {
+  opacity: 0.9;
+  color: #ffffff;
+  float: right;
+  margin-top: 0.65em;
+  font-size: 1.5em;
+}
+#menu-map a:hover {
+  opacity: 1;
+}
+#menu-map a i:before {
+  content: "\f0b2";
+}
 #map {
   height: 35em;
   width: 100%;
-  background-color: #000000;
+  background-color: #000000 !important;
+  background-image: url('images/loading.gif');
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 10;
 }
 #map img {
   max-width: none;
@@ -1719,6 +1975,19 @@ form .advanced:hover {
 #map img[src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png"],
 #map a[href^="http://maps.google.com/maps"] {
   display: none !important;
+}
+.full-screen-map {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  opacity: 1;
+}
+.full-screen-map #map {
+  height: 100%;
+}
+.full-screen-map #menu-map i:before {
+  content: "\f057";
 }
 .rs {
   text-align: right;

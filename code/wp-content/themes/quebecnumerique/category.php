@@ -91,7 +91,7 @@
 							<?php
 						};
 						?>
-
+					<hr class="clear"></hr>
 					</div>
 
 					<?php paging_nav(); ?>
