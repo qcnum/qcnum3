@@ -312,7 +312,7 @@ hr {
 		input[type="checkbox"]+ label {
 			display: block;
 			float: left;
-			padding: 0.25em;
+			padding: 0.25em 0.4em;
 			margin: 0.5em 0.5em 0em 0;
 			color: @blanc;
 			cursor: pointer;
@@ -353,6 +353,9 @@ hr {
 		&.nouvelles{
 			.style-filtre(@nouvelles, @blanc);
 		}
+		&.articles{
+			.style-filtre(@articles, @blanc);
+		}
 		&.evenements{
 			.style-filtre(@evenements, @blanc);
 		}
@@ -361,6 +364,9 @@ hr {
 		}
 		&.projets{
 			.style-filtre(@projets, @blanc);
+		}
+		&.autre{
+			.style-filtre(@orange, @blanc);
 		}
 		&.twitter{
 			.style-filtre(@twitter, @blanc);
@@ -652,7 +658,6 @@ hr {
 			color: @blanc;
 		}
 	}
-
 
 /* ACCUEIL */
 
@@ -1307,17 +1312,69 @@ hr {
 
 /* RÉSULTATS RECHERCHE */
 
+.header-recherche{
+	margin: 0.5em;
+	span{
+		display: block;
+		font-size: 1.2em;
+		line-height: 2.8em;
+		margin-right: 0.5em;
+		color: #fff;
+	}
+
+}
+
 	.style-resultat(@couleur){
+		margin-bottom: 1em;
+		overflow: hidden;
+		font-size: 0.7em;
+		.transition();
 		.pastille{
-			display: block;
-			width: 2em;
-			height: 2em;
+			float: left;
+			width: 5em;
+			margin-left: -100%;
 			background-color: @couleur;
-		}		
+			height: 5em;
+		}	
+		.content-wrapper{
+			float: left;
+			width: 100%;			
+		}
+		.content{
+			margin-left: 6em;
+			line-height: 5em;
+			background-color: rgba(255,255,255,0.9);
+			height: 5em;
+			padding: 0 1.5em;
+		}
+		a{
+			text-decoration: none;
+			color: @gris;
+			.transition();
+			&:hover{
+				.content{
+					background-color: rgba(255, 255, 255, 1);
+				}
+			}
+		}
+		span{
+			font-size: 1.5em;
+			color: lighten(@grispale, 20%);  
+			&.info{
+				&:before{
+					content: '|';
+					margin: 0 1em;
+					color: #C5C5C5;
+				}				
+			}
+
+		}
+
+
 	}	
 
-
 	.resultats{
+		.transition();
 		.nouvelles{
 			.style-resultat(@nouvelles);
 		}
@@ -1332,6 +1389,9 @@ hr {
 		}
 		.organisations{
 			.style-resultat(@organisations);
+		}
+		.autre{
+			.style-resultat(@orange);
 		}
 	}
 
@@ -1459,7 +1519,7 @@ hr {
 			top: -1.3em;
 			left: 33%;
 			font-size: 3em;
-			font-family: 'Exo 2.0';
+			font-family: 'Exo 2';
 			font-weight: 700;
 			color: white;
 		}
@@ -1481,7 +1541,7 @@ hr {
 		z-index: 10;
 		.cluster div{
 			border-radius: 40px;
-			.box-shadow(0px 0px 9px 0px #1D1D1D);
+			//.box-shadow(0px 0px 9px 0px #1D1D1D);
 			.transition();
 			&:hover{
 				.box-shadow(0px 0px 9px 0px #d2d2d2);

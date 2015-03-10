@@ -52,6 +52,24 @@ jQuery(document).ready(function(){
         initialize();
     });
 
+    jQuery('.resultat').change(function(){
+        markerCluster = [];
+        jQuery.each(categories, function( index, value ) {
+            markers[value] = [];
+        });
+        initialize();
+    });
+
+
+
+	jQuery('.filtre-recherche').click(function(){
+		var $filtre = '.' + jQuery(this).attr('value');
+		alert($filtre)
+		jQuery('.resultats ' + $filtre).hide();
+		//event.preventDefault();
+	});
+
+
 
  	jQuery(window).scroll(function () {
  		element = jQuery(window);

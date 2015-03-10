@@ -59,7 +59,6 @@
 							<?php if ( is_home() ){
 								echo "<span class='nbr-count'>" . $nb_articles->category_count . "</span>";
 							}; ?>
-							<hr class="clear">
 						</div>
 
 						<div class="filtre organisations">
@@ -73,7 +72,6 @@
 							<?php if ( is_home() ){
 								echo "<span class='nbr-count'>" . $nb_organisations->publish . "</span>";
 							}; ?>
-							<hr class="clear">
 						</div>
 
 						<div class="filtre projets">
@@ -87,19 +85,13 @@
 							<?php if ( is_home() ){
 								echo "<span class='nbr-count'>" . $nb_projets->publish . "</span>";
 							}; ?>
-							<hr class="clear">
-
 						</div>
 
 						<div class="filtre twitter">
 
-							<?php 
-					    	$check="";
-					    	if (is_home()) {$check = 'checked="checked"';}?>
+							<?php $check = 'checked="checked"';?>
 							<input id="twitter" class="selection" type="checkbox" name="twitter" value="1" <?php echo $check; ?> ;>
-
 							<label for="twitter" id="">Twitter</label>
-							<hr class="clear">
 						</div>
 
 
