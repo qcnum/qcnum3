@@ -98,14 +98,11 @@ wp_head();
 	};?>
 
 
-	<div class="group">
+	<?php
+	if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
+		yoast_breadcrumb('<div class="group"><p class="c12" id="breadcrumbs">','</p></div>');
+	} ?>
 
-		<?php
-		if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
-			yoast_breadcrumb('<p class="c12" id="breadcrumbs">','</p>');
-		} ?>
-
-	</div>
 
 	<div id="page" class="wrapper">
 
