@@ -309,7 +309,8 @@ footer#colophon {
 }
 .filtre.mot-cle input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "   \f055";
+  content: "\f055";
+  margin-left: 0.6em;
 }
 .filtre.mot-cle input[type="checkbox"] + label:hover {
   opacity: 0.9;
@@ -322,7 +323,7 @@ footer#colophon {
 }
 .filtre.mot-cle input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "   \f057";
+  content: "\f057";
 }
 .filtre.mot-cle input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
@@ -353,7 +354,8 @@ footer#colophon {
 }
 .filtre.nouvelles input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "   \f055";
+  content: "\f055";
+  margin-left: 0.6em;
 }
 .filtre.nouvelles input[type="checkbox"] + label:hover {
   opacity: 0.9;
@@ -366,7 +368,7 @@ footer#colophon {
 }
 .filtre.nouvelles input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "   \f057";
+  content: "\f057";
 }
 .filtre.nouvelles input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
@@ -397,7 +399,8 @@ footer#colophon {
 }
 .filtre.evenements input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "   \f055";
+  content: "\f055";
+  margin-left: 0.6em;
 }
 .filtre.evenements input[type="checkbox"] + label:hover {
   opacity: 0.9;
@@ -410,7 +413,7 @@ footer#colophon {
 }
 .filtre.evenements input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "   \f057";
+  content: "\f057";
 }
 .filtre.evenements input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
@@ -441,7 +444,8 @@ footer#colophon {
 }
 .filtre.organisations input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "   \f055";
+  content: "\f055";
+  margin-left: 0.6em;
 }
 .filtre.organisations input[type="checkbox"] + label:hover {
   opacity: 0.9;
@@ -454,7 +458,7 @@ footer#colophon {
 }
 .filtre.organisations input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "   \f057";
+  content: "\f057";
 }
 .filtre.organisations input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
@@ -485,7 +489,8 @@ footer#colophon {
 }
 .filtre.projets input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "   \f055";
+  content: "\f055";
+  margin-left: 0.6em;
 }
 .filtre.projets input[type="checkbox"] + label:hover {
   opacity: 0.9;
@@ -498,7 +503,7 @@ footer#colophon {
 }
 .filtre.projets input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "   \f057";
+  content: "\f057";
 }
 .filtre.projets input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
@@ -529,7 +534,8 @@ footer#colophon {
 }
 .filtre.twitter input[type="checkbox"] + label:after {
   font-family: FontAwesome;
-  content: "   \f055";
+  content: "\f055";
+  margin-left: 0.6em;
 }
 .filtre.twitter input[type="checkbox"] + label:hover {
   opacity: 0.9;
@@ -542,7 +548,7 @@ footer#colophon {
 }
 .filtre.twitter input[type="checkbox"]:checked + label:after {
   font-family: FontAwesome;
-  content: "   \f057";
+  content: "\f057";
 }
 .filtre.twitter input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
@@ -1207,6 +1213,7 @@ footer#colophon {
   width: 6em;
   margin-right: 1em;
   float: left;
+  height: auto;
 }
 .box-evenements article .content {
   width: auto;
@@ -1825,6 +1832,37 @@ aside .mot-cle {
   border-bottom: 0px solid transparent;
   border-left: 1.25em solid #4d5057;
 }
+/* RÉSULTATS RECHERCHE */
+.resultats .nouvelles .pastille {
+  display: block;
+  width: 2em;
+  height: 2em;
+  background-color: #00aca7;
+}
+.resultats .evenements .pastille {
+  display: block;
+  width: 2em;
+  height: 2em;
+  background-color: #d39b00;
+}
+.resultats .projets .pastille {
+  display: block;
+  width: 2em;
+  height: 2em;
+  background-color: #009861;
+}
+.resultats .articles .pastille {
+  display: block;
+  width: 2em;
+  height: 2em;
+  background-color: #a0ad00;
+}
+.resultats .organisations .pastille {
+  display: block;
+  width: 2em;
+  height: 2em;
+  background-color: #9b2b78;
+}
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 .header-post-type {
   margin-top: -3em;
@@ -1985,6 +2023,26 @@ form .advanced:hover {
 #map img[src="http://maps.gstatic.com/mapfiles/api-3/images/google_white2.png"],
 #map a[href^="http://maps.google.com/maps"] {
   display: none !important;
+}
+#map .cluster div {
+  border-radius: 40px;
+  -webkit-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -moz-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -ms-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -o-box-shadow: 0px 0px 9px 0px #1d1d1d;
+  box-shadow: 0px 0px 9px 0px #1d1d1d;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+#map .cluster div:hover {
+  -webkit-box-shadow: 0px 0px 9px 0px #d2d2d2;
+  -moz-box-shadow: 0px 0px 9px 0px #d2d2d2;
+  -ms-box-shadow: 0px 0px 9px 0px #d2d2d2;
+  -o-box-shadow: 0px 0px 9px 0px #d2d2d2;
+  box-shadow: 0px 0px 9px 0px #d2d2d2;
 }
 .full-screen-map {
   height: 100%;

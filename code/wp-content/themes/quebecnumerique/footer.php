@@ -17,13 +17,6 @@
 					$nb_articles = get_category('3');
 					$nb_nouvelles = get_category('2');
 					?>
-				<!--ul>
-					<li><?php echo $nb_nouvelles->category_count; ?></li>
-					<li><?php echo $nb_articles->category_count; ?></li>
-					<li><?php echo $nb_evenements->publish; ?></li>
-					<li><?php echo $nb_organisations->publish; ?></li>
-					<li><?php echo $nb_projets->publish; ?></li>
-				</ul-->
 			</div>
 			<hr class="clear">	
 		    <?php

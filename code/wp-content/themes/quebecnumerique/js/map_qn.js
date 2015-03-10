@@ -47,58 +47,6 @@ stylesCluster['projets']      = [{
         textSize: 10
       }];
 
-/*var stylesCarte = [
-            {
-                featureType: "all",
-                elementType: "all",
-                stylers: [
-                    { invert_lightness: true }
-                ]
-            },{
-                featureType: "landscape",
-                elementType: "all",
-                stylers: [
-                { lightness: -100 }
-                ]
-            },{
-                featureType: "administrative",
-                elementType: "all",
-                stylers: [
-                { lightness: -100 }
-                ]
-            },{
-                featureType: "road",
-                elementType: "all",
-                stylers: [
-                    { saturation: -100 }
-                ]
-            },{
-                featureType: "poi",
-                elementType: "geometry",
-                stylers: [
-                    { lightness: -100  }
-                ]
-            },{
-                featureType: "poi",
-                elementType: "label",
-                stylers: [
-                    { saturation: -100  }
-                ]
-            },{
-                featureType: "transit",
-                elementType: "all",
-                stylers: [
-                { saturation: -100 }
-                ]
-            },{
-                featureType: "water",
-                elementType: "all",
-                stylers: [
-                    { lightness: -60 }
-                ]
-            }
-*/
-
 
 var stylesCarte =[
     {
