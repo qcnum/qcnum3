@@ -219,7 +219,7 @@ hr {
 	}
 
 	.c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 {
-		margin: 0 0.925925%;
+		//margin: 0 0.925925%;
 		float: left;
 		position: relative;
 		display: block;
@@ -227,9 +227,13 @@ hr {
 			float: none;
 			margin: 0 auto; 
 		}
+
+		.padding { padding: 0 0.5em; }
 	}
 
-	.c1 { width: 6.48%; }
+	.large-wrapper { padding: 0 0.5em; }
+
+	/*.c1 { width: 6.48%; }
 	.c2 { width: 14.81%; }
 	.c3 { width: 23.14%; }
 	.c4 { width: 31.48%; }
@@ -240,7 +244,21 @@ hr {
 	.c9 { width: 73.14%; }
 	.c10 { width: 81.48%; }
 	.c11 { width: 89.81%; }
-	.c12 { width: 98.14%; }
+	.c12 { width: 98.14%; }*/
+
+	.c1 { width: 8.33%; }
+	.c2 { width: 16.66%; }
+	.c3 { width: 24.99%; }
+	.c4 { width: 33.32%; }
+	.c5 { width: 41.65%; }
+	.c6 { width: 49.98%; }
+	.c7 { width: 58.31%; }
+	.c8 { width: 66.64%; }
+	.c9 { width: 74.97%; }
+	.c10 { width: 83.33%; }
+	.c11 { width: 91.63%; }
+	.c12 { width: 99.99%; }
+
 
 	.fr { float: right; }
 	.fl { float: left; }
@@ -672,7 +690,7 @@ hr {
 
 	}
 
-	.lieu{
+	.lieu {
 		color: darken(@blanc, 20%); 
 		text-transform: uppercase;
 		font-weight: 700;
@@ -721,14 +739,14 @@ hr {
 	}
 
 	.box-evenements{
-		margin-bottom: 1%;
+		margin-bottom: 1em;
 		a { color: @blanc; text-decoration: none; }
 		h2 a { .h2link (@evenements); }
 		h3{ font-family: @titre2; font-size: 1.5em; }
 		article{
-			margin-bottom: 1%;
+			margin-bottom: 0.5em;
 			img{
-				width: 12%;
+				width: 15%;
 				height: auto;
 				margin-right: 1em;
 				float: left;
@@ -760,9 +778,9 @@ hr {
 	}
 
 	.demi {
-		width: 50%;
+		//width: 50%;
 		float: left;
-		.padding { margin: 0 0.925925%; } 
+		//.padding { margin: 0 0.925925%; } 
 		img {
 			width: 100%;
 			height: auto;
@@ -771,7 +789,7 @@ hr {
 
 /* CONTENU */
 
-	.trois article:first-child {
+	.trois .c6:first-child {
 		width: 100%;
 	}
 
@@ -833,7 +851,7 @@ hr {
 			}
 		}
 		article{
-			margin-bottom: 2%;
+			margin-bottom: 1em;
 			overflow: hidden;
 			position: relative;
 		}
@@ -1148,6 +1166,7 @@ hr {
 		section {
 			margin-left: 1em;
 			border-left: thin solid @evenements;
+			img { max-width: 100%; height: auto; }
 		}
 		
 		header {
@@ -1445,7 +1464,7 @@ hr {
 
 		.gris-bg { color: @blanc; color: fade(@blanc, 50%); }
 
-		p.email {
+		.email {
 			font-size: 1.25em;
 			padding-top: 0.3em;
 			a { color: @orange; text-decoration: none; font-weight: bolder; }
@@ -1612,11 +1631,14 @@ hr {
 	}
 
 
+
 /* Media Queries*/
 
 	@media screen and (max-width: 1200px){
 		#masthead, .page-header { font-size: 90%; }
 		
+
+
 
 	}
 
@@ -1628,5 +1650,8 @@ hr {
 
 	@media screen and (max-width: 767px){
 		.contact-form { width: 98.14%; }
+
+		
+
 	}
 
