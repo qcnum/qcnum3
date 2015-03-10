@@ -35,6 +35,11 @@ jQuery(document).ready(function(){
 		});
 	});
 
+	jQuery('.menu-toggle a').click(function(){
+		jQuery('#menu-principal').toggleClass('visible');
+		event.preventDefault();
+	});
+
 
 	jQuery('.sharer').click(function(){
 		jQuery(this).next().toggleClass('visible');
@@ -49,14 +54,15 @@ jQuery(document).ready(function(){
 
 
  	jQuery(window).scroll(function () {
- 
+ 		element = jQuery(window);
+
         if (jQuery(this).scrollTop() > 5) {
             jQuery('.site-description').addClass('fadeout');
         } else {
             jQuery('.site-description').removeClass('fadeout');
         }
 
-        if (jQuery(this).scrollTop() > 70) {
+        if (jQuery(this).scrollTop() > 70 && element[0].outerWidth >= 1024) {
             jQuery('.home-link').addClass('retract');
             jQuery('.navigation .meta').addClass('retract-tag');
 
@@ -67,11 +73,16 @@ jQuery(document).ready(function(){
 
     });
 
+ 	//resize();
+ 	//jQuery(window).resize(function(){
+ 	//	resize();
+ 	//});
+
 });
 
 
 
-function calculResize() {
+function resize() {
 
 	element = jQuery(window);
 
