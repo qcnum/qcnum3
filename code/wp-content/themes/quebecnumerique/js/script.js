@@ -67,5 +67,23 @@ jQuery(document).ready(function(){
 
     });
 
-
 });
+
+
+
+function calculResize() {
+
+	element = jQuery(window);
+
+	if(element[0].outerWidth >= 1024 ) {
+		
+	} 
+
+	if(element[0].outerWidth >= 768 ) {
+		
+
+	} else {
+
+	}
+
+}
