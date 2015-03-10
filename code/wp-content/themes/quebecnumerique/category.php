@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php 
+get_header(); ?>
 
 	<div id="content" role="main">
 
@@ -25,9 +26,8 @@
 
 		</header-->
 
-		<div class="c12">
 			
-			<div class="<?php echo $class?> group cinq img-box">
+			<div class="<?php echo $class?> group img-box">
 				<?php if ( have_posts() ) : ?>
 
 					<?php
@@ -36,62 +36,30 @@
 							echo '<div class="archive-meta">' . $category_description . '</div>';
 					?>
 
-					<div>
-						<?php 
-						$i=0;
-						while ( have_posts() ) : the_post(); 
-							$i++;
-							if ($i == 1){
-								?>
-								<article class="c6">
-									<?php get_template_part('content', 'imgbox'); ?>
-								</article>
-								<?php
-							}elseif ($i>1 && $i<6){
-								?>
-								<article class="c3">
-									<?php get_template_part('content', 'imgbox'); ?>
-								</article>
-								<?php
-								$open = true;
-							}elseif ($i>=6 && $i<= 9){
-								if ($i==6) {
-									?>
-									<hr class="clear"></hr>
-									<div class="c6 fl">
-									<?php
-								};
-								?>
-								<article class="c6 c6-custom">
-									<?php get_template_part('content', 'imgbox'); ?>
-								</article>
-								<?php	
-								if ($i==9) {
-									?>
-									</div>
-									<?php
-									$open = false;
-								};					
-							}elseif ($i==10){
-								?>
-								<article class="c6 fr">
-									<?php get_template_part('content', 'imgbox'); ?>
-								</article>
-								<hr class="clear"></hr>
-								<?php
-								$i=0;								
-							};
-	
-						endwhile; 
+					<div class="large-wrapper">
 
-						if ($open == true) {
-							?>
+						<?php $cpt = 1; ?>
+
+						<div class="cinq">
+
+							<div class="group">
+
+								<?php while ( have_posts() ) : the_post(); ?>
+
+									<div class="c3">
+										<div class="padding">
+											<?php get_template_part('content', 'imgbox'); ?>
+										</div>
+									</div>
+									
+									<?php if ($cpt % 5 == 0) { ?></div><div class="group"><?php } ?>
+						
+								<?php $cpt++; endwhile; ?>
+
 							</div>
-							<hr class="clear"></hr>
-							<?php
-						};
-						?>
-					<hr class="clear"></hr>
+
+						</div>
+
 					</div>
 
 					<?php paging_nav(); ?>
@@ -103,7 +71,6 @@
 				<?php endif; ?>
 			</div>
 
-		</div>
 
 	</div><!-- #content -->
 
