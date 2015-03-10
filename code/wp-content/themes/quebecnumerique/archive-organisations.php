@@ -47,12 +47,16 @@ jQuery(document).ready(function(){
 
 					<div class="organisation entry-content">
 
-						<div class="c12 group all-org">
-							<h2 class="h2 fl"><?php echo $category->name; ?></h2>
-							<a class="fr" title="<?php _e('Voir toute la liste', THEME_NAME); ?>" href="<?php echo get_term_link( $category, 'secteurs' ); ?>"><?php _e('Voir toute la liste', THEME_NAME); ?></a>
-						</div>
+						<div class="large-wrapper">
 
-						<hr class="clear">
+							<div class="padding">
+								<div class="all-org group">
+									<h2 class="h2 fl"><?php echo $category->name; ?></h2>
+									<a class="fr" title="<?php _e('Voir toute la liste', THEME_NAME); ?>" href="<?php echo get_term_link( $category, 'secteurs' ); ?>"><?php _e('Voir toute la liste', THEME_NAME); ?></a>
+								</div>
+							</div>
+
+						</div>
 
 						<div class="slick group">
 

@@ -4,7 +4,7 @@
 	<?php
 		if ( is_home() ) {
 		    ?>
-		    <div class="large-wrapper">
+		    <div class="large-wrapper group">
 				<div class="stats c12">
 					<div class="padding">
 						<?php 
@@ -29,7 +29,7 @@
     <div class="map-content">
 	    <nav id="menu-map" class="gris-bg">
 
-	    	<div class="large-wrapper">
+	    	<div class="large-wrapper group">
 
 				<div class="c12">
 
@@ -105,7 +105,6 @@
 
 	    	</div>
 
-	    	<hr class="clear">
 	    </nav>
 
 		<div id="map">
@@ -115,21 +114,18 @@
 
 	<footer id="colophon" role="contentinfo">
 	
-		<div class="group">
 
-			<div class="large-wrapper">
-					
-				<div class="c6 center contact-form entry-content">
-					<?php echo do_shortcode('[gravityform id=1 title=true description=true]'); ?>
-				</div>
-
+		<div class="large-wrapper group">
+				
+			<div class="c6 center contact-form entry-content">
+				<?php echo do_shortcode('[gravityform id=1 title=true description=true]'); ?>
 			</div>
 
 		</div>
 
-		<div class="gris-bg group">
+		<div class="gris-bg">
 
-			<div class="large-wrapper">
+			<div class="large-wrapper group">
 			
 				<div class="c6 email">
 					<div class="padding">
@@ -147,9 +143,9 @@
 
 		</div>
 
-		<div class="blanc-bg group">
+		<div class="blanc-bg">
 
-			<div class="large-wrapper">
+			<div class="large-wrapper group">
 				
 				<?php 
 				$propos = get_field('propos', 'options');
