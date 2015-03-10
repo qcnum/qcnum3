@@ -49,55 +49,53 @@ wp_head();
 
 </header><!-- #masthead -->
 
-<div id="page" class="wrapper">
+	<?php if ( is_category() || is_archive() ) {
+		$queried_object = get_queried_object();
+		$id = $queried_object->cat_ID;	
+		$name = $queried_object->name;
+		if ($id == 2) {
+		  	$class="nouvelles";
+		  	$title=$name;
+		} else if ($id == 3) {
+			$class="articles";
+			$title=$name;
+		} else if ($name == 'organisations')  {
+			$class="organisations";
+			$title = $queried_object->label;
+		} else if ($name == 'projets')  {
+			$class="projets";
+			$title = $queried_object->label;
+		} else if ($name == 'evenements')  {
+			$class="evenements";
+			$title = $queried_object->label;
+		};
 
-		<?php if ( is_category() || is_archive() ) {
-			$queried_object = get_queried_object();
-			$id = $queried_object->cat_ID;	
-			$name = $queried_object->name;
-			if ($id == 2) {
-			  	$class="nouvelles";
-			  	$title=$name;
-			} else if ($id == 3) {
-				$class="articles";
-				$title=$name;
-			} else if ($name == 'organisations')  {
-				$class="organisations";
-				$title = $queried_object->label;
-			} else if ($name == 'projets')  {
-				$class="projets";
-				$title = $queried_object->label;
-			} else if ($name == 'evenements')  {
-				$class="evenements";
-				$title = $queried_object->label;
-			};
-
-			if(is_tax()) {
-				$term = $wp_query->get_queried_object();
-				$class="organisations";
-    			$title = $term->name;
-			}
+		if(is_tax()) {
+			$term = $wp_query->get_queried_object();
+			$class="organisations";
+			$title = $term->name;
+		}
 
 
-			?>
+		?>
 
 
-			<div class="page-header header-post-type <?php echo $class?>">
+		<div class="page-header header-post-type <?php echo $class?>">
 
 
-				<div class="c12">
-					<h1 class="page-title"><?php echo $title ?></h1>
-				</div>
-				<!--div class="shapeheader tri1"></div>
-				<div class="shapeheader tri2"></div>
-				<div class="shapeheader tri3"></div>
-				<div class="shapeheader tri4"></div>
-				<div class="shapeheader tri5"></div-->
-				<hr class="clear"></hr>
-
+			<div class="c12">
+				<h1 class="page-title"><?php echo $title ?></h1>
 			</div>
-			<?php 
-		};?>
+			<!--div class="shapeheader tri1"></div>
+			<div class="shapeheader tri2"></div>
+			<div class="shapeheader tri3"></div>
+			<div class="shapeheader tri4"></div>
+			<div class="shapeheader tri5"></div-->
+			<hr class="clear"></hr>
+
+		</div>
+		<?php 
+	};?>
 
 
 	<div class="group">
@@ -109,4 +107,6 @@ wp_head();
 
 	</div>
 
-	<div id="main">
+	<div id="page" class="wrapper">
+
+		<div id="main">

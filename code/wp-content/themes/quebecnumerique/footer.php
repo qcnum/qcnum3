@@ -40,27 +40,27 @@
 			<div class="c12">
 
 				<div class="filtre nouvelles">
-					<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" checked="checked";>
+					<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" checked="checked">
 					<label for="nouvelles" id="">Nouvelles</label>
 				</div>
 
 				<div class="filtre evenements">
-					<input id="evenements" class="selection" type="checkbox" name="evenements" value="1" checked="checked";>
+					<input id="evenements" class="selection" type="checkbox" name="evenements" value="1" checked="checked">
 					<label for="evenements" id="">Événements</label>
 				</div>
 
 				<div class="filtre organisations">
-					<input id="organisations" class="selection" type="checkbox" name="organisations" value="1" checked="checked";>
+					<input id="organisations" class="selection" type="checkbox" name="organisations" value="1" checked="checked">
 					<label for="organisations" id="">Organisations</label>
 				</div>
 
 				<div class="filtre projets">
-					<input id="projets" class="selection" type="checkbox" name="projets" value="1" checked="checked";>
+					<input id="projets" class="selection" type="checkbox" name="projets" value="1" checked="checked">
 					<label for="projets" id="">Projets</label>
 				</div>
 
 				<div class="filtre twitter">
-					<input id="twitter" class="selection" type="checkbox" name="twitter" value="1" checked="checked";>
+					<input id="twitter" class="selection" type="checkbox" name="twitter" value="1" checked="checked">
 					<label for="twitter" id="">Twitter</label>
 				</div>
 
@@ -80,7 +80,7 @@
 	
 		<div class="group">
 				
-			<div class="c6 center entry-content">
+			<div class="c6 center contact-form entry-content">
 				<?php echo do_shortcode('[gravityform id=1 title=true description=true]'); ?>
 			</div>
 

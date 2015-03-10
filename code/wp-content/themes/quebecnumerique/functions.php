@@ -233,9 +233,14 @@ function get_social_media() {
     $skype = get_field('skype', 'options');
     $vimeo = get_field('vimeo', 'options');
     $github = get_field('github', 'options');
+    $youtube = get_field('youtube', 'options');
     ?>
 
    <div class="rs">
+
+        <?php if($tw) : ?>
+            <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
+        <?php endif; ?>
             
         <?php if($fb) : ?>
             <a title="Facebook" href="<?php echo $fb; ?>"><i class="fa fa-facebook"></i></a>
@@ -247,10 +252,6 @@ function get_social_media() {
 
         <?php if($li) : ?>
             <a title="Linkedin" href="<?php echo $li; ?>"><i class="fa fa-linkedin"></i></a>
-        <?php endif; ?>
-
-        <?php if($tw) : ?>
-            <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
         <?php endif; ?>
 
         <?php if($pt) : ?>
@@ -287,6 +288,10 @@ function get_social_media() {
 
          <?php if($vimeo) : ?>
             <a title="Vimeo" href="<?php echo $vimeo; ?>"><i class="fa fa-vimeo-square"></i></a>
+        <?php endif; ?>
+
+        <?php if($youtube) : ?>
+            <a title="Youtube" href="<?php echo $youtube; ?>"><i class="fa fa-youtube-play"></i></a>
         <?php endif; ?>
 
          <?php if($github) : ?>

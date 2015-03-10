@@ -140,13 +140,13 @@ var infowindow = new google.maps.InfoWindow(
 jQuery(document).ready(function(){
 	initialize();
         
-        jQuery('.selection').change(function(){
-            markerCluster = [];
-            jQuery.each(categories, function( index, value ) {
-                markers[value] = [];
-            });
-            initialize();
+    jQuery('.selection').change(function(){
+        markerCluster = [];
+        jQuery.each(categories, function( index, value ) {
+            markers[value] = [];
         });
+        initialize();
+    });
 
 });
 

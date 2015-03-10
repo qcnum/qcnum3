@@ -274,7 +274,7 @@ hr {
 	}
 
 	#page {
-		margin-top: 6em;
+		//margin-top: 6em;
 	}
 
 	.style-filtre(@couleur-fond: @blanc, @couleur-text: @gris) {
@@ -724,6 +724,7 @@ hr {
 			margin-bottom: 1.4%;
 			img{
 				width: 6em;
+				height: auto;
 				margin-right: 1em;
 				float: left;
 			}
@@ -1251,8 +1252,8 @@ hr {
 	
 	.header-post-type{
 		//background-color: red;
-		margin-top: -3em;
-		padding-top: 3em;
+		//margin-top: -3em;
+		padding-top: 5em;
 		margin-bottom: 1.5em;
 		//margin-bottom: 1.8%;
 		background-image: url("images/shadow1.png");
@@ -1593,9 +1594,19 @@ hr {
 
 /* Media Queries*/
 
-	@media screen and (max-width: 1050px){
+	@media screen and (max-width: 1200px){
+		#masthead, .page-header { font-size: 90%; }
+		
 
-		.wrapper { width: 97.14%; }
 	}
 
+	@media screen and (max-width: 1023px){
+		#masthead, .page-header { font-size: 75%; }
+		#colophon { font-size: 85%; }
+		.contact-form { width: 64.81%; }
+	}
+
+	@media screen and (max-width: 767px){
+		.contact-form { width: 98.14%; }
+	}
 
