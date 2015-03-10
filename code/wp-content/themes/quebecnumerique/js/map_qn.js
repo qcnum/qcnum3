@@ -7,11 +7,13 @@ var map;
 
 var categories           = ['nouvelles','organisations','evenements','projets'];
 var markers              = [];
+var allMarkers           = [];
 var markerCluster        = [];
 
 jQuery.each(categories, function( index, value ) {
     markers[value] = [];
 });
+markers['twitter'] = [];
 
 var stylesCluster        = [];
 stylesCluster['nouvelles']      = [{
@@ -46,58 +48,14 @@ stylesCluster['projets']      = [{
         textColor: '#ffffff',
         textSize: 10
       }];
-
-/*var stylesCarte = [
-            {
-                featureType: "all",
-                elementType: "all",
-                stylers: [
-                    { invert_lightness: true }
-                ]
-            },{
-                featureType: "landscape",
-                elementType: "all",
-                stylers: [
-                { lightness: -100 }
-                ]
-            },{
-                featureType: "administrative",
-                elementType: "all",
-                stylers: [
-                { lightness: -100 }
-                ]
-            },{
-                featureType: "road",
-                elementType: "all",
-                stylers: [
-                    { saturation: -100 }
-                ]
-            },{
-                featureType: "poi",
-                elementType: "geometry",
-                stylers: [
-                    { lightness: -100  }
-                ]
-            },{
-                featureType: "poi",
-                elementType: "label",
-                stylers: [
-                    { saturation: -100  }
-                ]
-            },{
-                featureType: "transit",
-                elementType: "all",
-                stylers: [
-                { saturation: -100 }
-                ]
-            },{
-                featureType: "water",
-                elementType: "all",
-                stylers: [
-                    { lightness: -60 }
-                ]
-            }
-*/
+stylesCluster['twitter']      = [{
+        url: directory_theme + '/images/icon_gmap_cluster_t.png',
+        height: 38,
+        width: 38,
+        anchor: [16, 0],
+        textColor: '#ffffff',
+        textSize: 10
+      }];
 
 
 var stylesCarte =[
@@ -175,12 +133,48 @@ function initialize() {
         /*.fail(function() {
         });*/
     });
+    
+    //Twitter
+    var value = 'twitter';
+    
+    if(jQuery('#'+value+':checked').length > 0){
+            jQuery.get( directory_theme + "/js/ajax/"+value+".json.php?periode=&limit=", function(data) {
+                var cpt   = 0;
+                for (var i = 0; i < data.statuses.length; i++) {
+                    var latlng = new google.maps.LatLng(data.statuses[i].geo.coordinates[0], data.statuses[i].geo.coordinates[1]);
+                    createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
+                    cpt++;
+                }
+            });
+        }
 }
 
 function createMarker(latlng,name,html,image,category) {
+    var min = .999999;
+    var max = 1.000001;
+    
     var contentString = html;
+    var finalLatLng   = latlng;
+    
+    if (allMarkers.length > 0) {
+            for (i=0; i < allMarkers.length; i++) {
+                var existingMarker = allMarkers[i];
+                var pos = existingMarker.getPosition();
+
+                //if a marker already exists in the same position as this marker
+                if (latlng.equals(pos)) {
+                    //update the position of the coincident marker by applying a small multipler to its coordinates
+                    var newLat = latlng.lat() * (Math.random() * (max - min) + min);
+                    var newLng = latlng.lng() * (Math.random() * (max - min) + min);
+
+                    finalLatLng = new google.maps.LatLng(newLat,newLng);
+
+                }                   
+            }
+    }
+    
     var marker = new google.maps.Marker({
-        position: latlng,
+        position: finalLatLng,
         icon: image,
         map: map,
         title: name,
@@ -188,6 +182,7 @@ function createMarker(latlng,name,html,image,category) {
         });
         marker.mycategory = category;                                 
         markers[category].push(marker);
+        allMarkers.push(marker);
 
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(contentString); 

@@ -12,24 +12,16 @@
 						?>
 						<p><?php echo $stats ?></p>
 				
-							<?php
-							$nb_evenements = wp_count_posts('evenements');
-							$nb_organisations = wp_count_posts('organisations');
-							$nb_projets = wp_count_posts('projets');
-							$nb_articles = get_category('3');
-							$nb_nouvelles = get_category('2');
-							?>
-						<!--ul>
-							<li><?php echo $nb_nouvelles->category_count; ?></li>
-							<li><?php echo $nb_articles->category_count; ?></li>
-							<li><?php echo $nb_evenements->publish; ?></li>
-							<li><?php echo $nb_organisations->publish; ?></li>
-							<li><?php echo $nb_projets->publish; ?></li>
-						</ul-->
+						<?php
+						$nb_evenements = wp_count_posts('evenements');
+						$nb_organisations = wp_count_posts('organisations');
+						$nb_projets = wp_count_posts('projets');
+						$nb_articles = get_category('3');
+						$nb_nouvelles = get_category('2');
+						?>
 					</div>
 				</div>
 			</div>
-			<hr class="clear">	
 		    <?php
 		}
 		?>
