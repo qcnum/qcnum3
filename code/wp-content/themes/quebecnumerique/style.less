@@ -295,7 +295,7 @@ hr {
 		input[type="checkbox"]+ label {
 			display: block;
 			float: left;
-			padding: 0.25em;
+			padding: 0.25em 0.4em;
 			margin: 0.5em 0.5em 0em 0;
 			color: @blanc;
 			cursor: pointer;
@@ -1271,12 +1271,28 @@ hr {
 /* RÉSULTATS RECHERCHE */
 
 	.style-resultat(@couleur){
+		margin-bottom: 1em;
+		overflow: hidden;
+		font-size: 0.7em;
 		.pastille{
-			display: block;
-			width: 2em;
-			height: 2em;
+			float: left;
+			width: 5em;
+			margin-left: -100%;
 			background-color: @couleur;
-		}		
+			height: 5em;
+		}	
+		.content-wrapper{
+			float: left;
+			width: 100%;			
+		}
+		.content{
+			margin-left: 6em;
+			line-height: 5em;
+			background-color: rgba(255,255,255,0.9);
+			height: 5em;
+			padding-left: 1.5em;
+		}
+
 	}	
 
 
@@ -1295,6 +1311,9 @@ hr {
 		}
 		.organisations{
 			.style-resultat(@organisations);
+		}
+		.autre{
+			.style-resultat(@orange);
 		}
 	}
 

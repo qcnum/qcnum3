@@ -294,7 +294,7 @@ footer#colophon {
 .filtre.mot-cle input[type="checkbox"] + label {
   display: block;
   float: left;
-  padding: 0.25em;
+  padding: 0.25em 0.4em;
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
@@ -339,7 +339,7 @@ footer#colophon {
 .filtre.nouvelles input[type="checkbox"] + label {
   display: block;
   float: left;
-  padding: 0.25em;
+  padding: 0.25em 0.4em;
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
@@ -384,7 +384,7 @@ footer#colophon {
 .filtre.evenements input[type="checkbox"] + label {
   display: block;
   float: left;
-  padding: 0.25em;
+  padding: 0.25em 0.4em;
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
@@ -429,7 +429,7 @@ footer#colophon {
 .filtre.organisations input[type="checkbox"] + label {
   display: block;
   float: left;
-  padding: 0.25em;
+  padding: 0.25em 0.4em;
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
@@ -474,7 +474,7 @@ footer#colophon {
 .filtre.projets input[type="checkbox"] + label {
   display: block;
   float: left;
-  padding: 0.25em;
+  padding: 0.25em 0.4em;
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
@@ -519,7 +519,7 @@ footer#colophon {
 .filtre.twitter input[type="checkbox"] + label {
   display: block;
   float: left;
-  padding: 0.25em;
+  padding: 0.25em 0.4em;
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
@@ -1208,7 +1208,6 @@ footer#colophon {
 }
 .box-evenements article img {
   width: 12%;
-  height: auto;
   margin-right: 1em;
   float: left;
   height: auto;
@@ -1844,35 +1843,143 @@ aside .mot-cle {
   border-left: 1.25em solid #4d5057;
 }
 /* RÉSULTATS RECHERCHE */
+.resultats .nouvelles {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
+}
 .resultats .nouvelles .pastille {
-  display: block;
-  width: 2em;
-  height: 2em;
+  float: left;
+  width: 5em;
+  margin-left: -100%;
   background-color: #00aca7;
+  height: 5em;
+}
+.resultats .nouvelles .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .nouvelles .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding-left: 1.5em;
+}
+.resultats .evenements {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
 }
 .resultats .evenements .pastille {
-  display: block;
-  width: 2em;
-  height: 2em;
+  float: left;
+  width: 5em;
+  margin-left: -100%;
   background-color: #d39b00;
+  height: 5em;
+}
+.resultats .evenements .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .evenements .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding-left: 1.5em;
+}
+.resultats .projets {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
 }
 .resultats .projets .pastille {
-  display: block;
-  width: 2em;
-  height: 2em;
+  float: left;
+  width: 5em;
+  margin-left: -100%;
   background-color: #009861;
+  height: 5em;
+}
+.resultats .projets .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .projets .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding-left: 1.5em;
+}
+.resultats .articles {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
 }
 .resultats .articles .pastille {
-  display: block;
-  width: 2em;
-  height: 2em;
+  float: left;
+  width: 5em;
+  margin-left: -100%;
   background-color: #a0ad00;
+  height: 5em;
+}
+.resultats .articles .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .articles .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding-left: 1.5em;
+}
+.resultats .organisations {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
 }
 .resultats .organisations .pastille {
-  display: block;
-  width: 2em;
-  height: 2em;
+  float: left;
+  width: 5em;
+  margin-left: -100%;
   background-color: #9b2b78;
+  height: 5em;
+}
+.resultats .organisations .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .organisations .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding-left: 1.5em;
+}
+.resultats .autre {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
+}
+.resultats .autre .pastille {
+  float: left;
+  width: 5em;
+  margin-left: -100%;
+  background-color: #e14e24;
+  height: 5em;
+}
+.resultats .autre .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .autre .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding-left: 1.5em;
 }
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 .header-post-type {
