@@ -247,6 +247,7 @@ hr {
 	.fn { float: none; }
 	.cb { clear: both; }
 
+
 	.grispale-bg { background-color: @grispale; }
 	.gris-bg { background-color: @gris; }
 	.grisopac-bg { background-color: @grisopac;}
@@ -274,7 +275,7 @@ hr {
 	}
 
 	#page {
-		margin-top: 6em;
+		//margin-top: 6em;
 	}
 
 	.style-filtre(@couleur-fond: @blanc, @couleur-text: @gris) {
@@ -629,6 +630,7 @@ hr {
 		}
 	}
 
+
 /* ACCUEIL */
 
 	.abstract{
@@ -720,14 +722,15 @@ hr {
 	}
 
 	.box-evenements{
-		margin-bottom: 3%;
+		margin-bottom: 1%;
 		a { color: @blanc; text-decoration: none; }
 		h2 a { .h2link (@evenements); }
 		h3{ font-family: @titre2; font-size: 1.5em; }
 		article{
-			margin-bottom: 1.4%;
+			margin-bottom: 1%;
 			img{
-				width: 6em;
+				width: 12%;
+				height: auto;
 				margin-right: 1em;
 				float: left;
 				height: auto;
@@ -758,15 +761,25 @@ hr {
 		display: block;
 	}
 
+	.demi {
+		width: 50%;
+		float: left;
+		.padding { margin: 0 0.925925%; } 
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
 /* CONTENU */
 
 	.trois article:first-child {
-		width: 98.14%;
+		width: 100%;
 	}
 
 	.img-box {
 		position: relative;
-		margin-bottom: 3%;
+		//margin-bottom: 3%;
 		.content {
 			position: absolute;
 			bottom: 2%;
@@ -822,8 +835,9 @@ hr {
 			}
 		}
 		article{
-			margin-bottom: 1.4%;
+			margin-bottom: 2%;
 			overflow: hidden;
+			position: relative;
 		}
 		h3{
 			position: relative;
@@ -831,6 +845,8 @@ hr {
 			font-family: @titre2;
 			padding: 0.4em 0.6em;
 			float: left;
+			line-height: 1.25em;
+			clear: both;
 		}
 		div.triangle{
 			width: 0;
@@ -1288,8 +1304,8 @@ hr {
 	
 	.header-post-type{
 		//background-color: red;
-		margin-top: -3em;
-		padding-top: 3em;
+		//margin-top: -3em;
+		padding-top: 5em;
 		margin-bottom: 1.5em;
 		//margin-bottom: 1.8%;
 		background-image: url("images/shadow1.png");
@@ -1336,18 +1352,12 @@ hr {
 		margin: 0;
 		width: 48%;
 		margin-bottom: 2.8%;
-		&:nth-child(odd) {
-			float: left;
-		}		
-		&:nth-child(even) {
-			float: right;
-		}	
+		&:nth-child(odd) { float: left; }		
+		&:nth-child(even) { float: right; }	
 	}
 
 	.cinq{
-		.clear{
-			margin-bottom: 0.4%;
-		}
+		.clear{ margin-bottom: 0.4%; }
 	}
 
 /* Footer */
@@ -1646,9 +1656,19 @@ hr {
 
 /* Media Queries*/
 
-	@media screen and (max-width: 1050px){
+	@media screen and (max-width: 1200px){
+		#masthead, .page-header { font-size: 90%; }
+		
 
-		.wrapper { width: 97.14%; }
 	}
 
+	@media screen and (max-width: 1023px){
+		#masthead, .page-header { font-size: 75%; }
+		#colophon { font-size: 85%; }
+		.contact-form { width: 64.81%; }
+	}
+
+	@media screen and (max-width: 767px){
+		.contact-form { width: 98.14%; }
+	}
 

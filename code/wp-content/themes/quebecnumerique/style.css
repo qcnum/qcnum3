@@ -275,9 +275,6 @@ footer#colophon {
   width: 100%;
   z-index: 999;
 }
-#page {
-  margin-top: 6em;
-}
 .filtre {
   position: relative;
   display: block;
@@ -1164,7 +1161,7 @@ footer#colophon {
   margin-bottom: 3em;
 }
 .box-evenements {
-  margin-bottom: 3%;
+  margin-bottom: 1%;
 }
 .box-evenements a {
   color: #ffffff;
@@ -1207,10 +1204,11 @@ footer#colophon {
   font-size: 1.5em;
 }
 .box-evenements article {
-  margin-bottom: 1.4%;
+  margin-bottom: 1%;
 }
 .box-evenements article img {
-  width: 6em;
+  width: 12%;
+  height: auto;
   margin-right: 1em;
   float: left;
   height: auto;
@@ -1235,13 +1233,23 @@ footer#colophon {
   text-overflow: ellipsis;
   display: block;
 }
+.demi {
+  width: 50%;
+  float: left;
+}
+.demi .padding {
+  margin: 0 0.925925%;
+}
+.demi img {
+  width: 100%;
+  height: auto;
+}
 /* CONTENU */
 .trois article:first-child {
-  width: 98.14%;
+  width: 100%;
 }
 .img-box {
   position: relative;
-  margin-bottom: 3%;
 }
 .img-box .content {
   position: absolute;
@@ -1309,8 +1317,9 @@ footer#colophon {
   display: block;
 }
 .img-box article {
-  margin-bottom: 1.4%;
+  margin-bottom: 2%;
   overflow: hidden;
+  position: relative;
 }
 .img-box h3 {
   position: relative;
@@ -1318,6 +1327,8 @@ footer#colophon {
   font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   padding: 0.4em 0.6em;
   float: left;
+  line-height: 1.25em;
+  clear: both;
 }
 .img-box div.triangle {
   width: 0;
@@ -1865,8 +1876,7 @@ aside .mot-cle {
 }
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 .header-post-type {
-  margin-top: -3em;
-  padding-top: 3em;
+  padding-top: 5em;
   margin-bottom: 1.5em;
   background-image: url("images/shadow1.png");
   background-attachment: fixed;
@@ -2312,8 +2322,26 @@ form .advanced:hover {
   vertical-align: middle;
 }
 /* Media Queries*/
-@media screen and (max-width: 1050px) {
-  .wrapper {
-    width: 97.14%;
+@media screen and (max-width: 1200px) {
+  #masthead,
+  .page-header {
+    font-size: 90%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  #masthead,
+  .page-header {
+    font-size: 75%;
+  }
+  #colophon {
+    font-size: 85%;
+  }
+  .contact-form {
+    width: 64.81%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .contact-form {
+    width: 98.14%;
   }
 }
