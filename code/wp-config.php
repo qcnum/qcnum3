@@ -32,6 +32,11 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
   define('WP_SITEURL', 'http://www.quebecnumerique.dev.evollia.com');
   define('WP_HOME', 'http://www.quebecnumerique.dev.evollia.com');
   define('WP_DEBUG', false); 
+        //Apps Twitter
+        define('oauth_access_token',"421936727-GRdijS26xhEkqczDWeFSvHacHLThOju15jxX2N8d");
+        define('oauth_access_token_secret',"PScrCDTDLjKVrjUJIZ4NjlelKisjNyAYwVk40TjpADH8W");
+        define('consumer_key',"5T1S4slgI6sDOmItbHsBrnlnG");
+        define('consumer_secret',"0xz8sAWVfphJ9GnSIVf50GUj6xaDF5gycfovfn7zwOpMZri4UZ");
 
 } elseif ('www.quebecnumerique.approb.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
 	define('DB_NAME', 'approb_quebecnumerique_www');
@@ -41,14 +46,25 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
 	define('WP_SITEURL', 'http://www.quebecnumerique.approb.evollia.com');
 	define('WP_HOME', 'http://www.quebecnumerique.approb.evollia.com');
 	define('WP_DEBUG', false); 
+        //Apps Twitter
+        define('oauth_access_token',"421936727-GRdijS26xhEkqczDWeFSvHacHLThOju15jxX2N8d");
+        define('oauth_access_token_secret',"PScrCDTDLjKVrjUJIZ4NjlelKisjNyAYwVk40TjpADH8W");
+        define('consumer_key',"5T1S4slgI6sDOmItbHsBrnlnG");
+        define('consumer_secret',"0xz8sAWVfphJ9GnSIVf50GUj6xaDF5gycfovfn7zwOpMZri4UZ");
 } elseif ('qn.appyk.fr' === $_SERVER[ 'HTTP_HOST' ]) {
-	define('DB_NAME', 'quebecnumerique');
-	define('DB_USER', 'root');
-	define('DB_PASSWORD', 'root');
-	define('DB_HOST', 'localhost');
+	define('DB_NAME', 'approb_quebecnumerique_www');
+        define('DB_USER', 'root');
+        define('DB_PASSWORD', 'nac4Kaspuy2drEwreS6astez5ch8F2Spax5xehespafrebrEchAwaFr8spaCH7qe');
+        define('DB_HOST', 'eris.evollia.com');
 	define('WP_SITEURL', 'http://qn.appyk.fr');
 	define('WP_HOME', 'http://qn.appyk.fr');
 	define('WP_DEBUG', false); 
+        //Apps Twitter
+        define('oauth_access_token',"421936727-GRdijS26xhEkqczDWeFSvHacHLThOju15jxX2N8d");
+        define('oauth_access_token_secret',"PScrCDTDLjKVrjUJIZ4NjlelKisjNyAYwVk40TjpADH8W");
+        define('consumer_key',"5T1S4slgI6sDOmItbHsBrnlnG");
+        define('consumer_secret',"0xz8sAWVfphJ9GnSIVf50GUj6xaDF5gycfovfn7zwOpMZri4UZ");
+         
 } else {
 	define('DB_NAME', '');
 	define('DB_USER', '');
@@ -56,6 +72,11 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
 	define('DB_HOST', '');
 	define('WP_SITEURL', 'http://www.quebecnumerique.com');
 	define('WP_HOME', 'http://www.quebecnumerique.com');
+        //Apps Twitter
+        define('oauth_access_token',"421936727-GRdijS26xhEkqczDWeFSvHacHLThOju15jxX2N8d");
+        define('oauth_access_token_secret',"PScrCDTDLjKVrjUJIZ4NjlelKisjNyAYwVk40TjpADH8W");
+        define('consumer_key',"5T1S4slgI6sDOmItbHsBrnlnG");
+        define('consumer_secret',"0xz8sAWVfphJ9GnSIVf50GUj6xaDF5gycfovfn7zwOpMZri4UZ");
 }
 
 define('DB_CHARSET', 'utf8');

@@ -61,7 +61,7 @@ jQuery(document).ready(function(){
 									?>
 
 									<div class="c3">
-										<?php the_post_thumbnail(); ?>
+										<?php the_post_thumbnail('thumb-nocrop'); ?>
 									</div>
 
 									<div class="c7">

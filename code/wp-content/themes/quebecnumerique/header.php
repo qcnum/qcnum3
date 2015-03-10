@@ -82,10 +82,14 @@ wp_head();
 
 		<div class="page-header header-post-type <?php echo $class?>">
 
-
-			<div class="c12">
-				<h1 class="page-title"><?php echo $title ?></h1>
+			<div class="large-wrapper">
+				<div class="c12">
+					<div class="padding">
+						<h1 class="page-title"><?php echo $title ?></h1>
+					</div>
+				</div>
 			</div>
+			
 			<!--div class="shapeheader tri1"></div>
 			<div class="shapeheader tri2"></div>
 			<div class="shapeheader tri3"></div>
@@ -100,7 +104,7 @@ wp_head();
 
 	<?php
 	if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
-		yoast_breadcrumb('<div class="group"><p class="c12" id="breadcrumbs">','</p></div>');
+		yoast_breadcrumb('<div class="group large-wrapper"><p class="c12" id="breadcrumbs"><div class="padding">','</p></div></div>');
 	} ?>
 
 

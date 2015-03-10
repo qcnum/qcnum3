@@ -44,13 +44,13 @@
 							if ($i == 1){
 								?>
 								<article class="c6">
-									<?php include 'content-imgbox.php'; ?>
+									<?php get_template_part('content', 'imgbox'); ?>
 								</article>
 								<?php
 							}elseif ($i>1 && $i<6){
 								?>
 								<article class="c3">
-									<?php include 'content-imgbox.php'; ?>
+									<?php get_template_part('content', 'imgbox'); ?>
 								</article>
 								<?php
 								$open = true;
@@ -63,7 +63,7 @@
 								};
 								?>
 								<article class="c6 c6-custom">
-									<?php include 'content-imgbox.php'; ?>
+									<?php get_template_part('content', 'imgbox'); ?>
 								</article>
 								<?php	
 								if ($i==9) {
@@ -75,7 +75,7 @@
 							}elseif ($i==10){
 								?>
 								<article class="c6 fr">
-									<?php include 'content-imgbox.php'; ?>
+									<?php get_template_part('content', 'imgbox'); ?>
 								</article>
 								<hr class="clear"></hr>
 								<?php

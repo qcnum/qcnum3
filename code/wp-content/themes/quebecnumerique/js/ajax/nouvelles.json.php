@@ -41,5 +41,11 @@ $data[3]['window'] = 'Window4';
 $data[3]['lat']    = '46.813474';
 $data[3]['long']   = '-71.211565';
 
+$data[4]['id']     = 'id5';
+$data[4]['title']  = 'Title5 projet';
+$data[4]['window'] = 'Window5';
+$data[4]['lat']    = '46.814798';
+$data[4]['long']   = '-71.224193';
+
 header('Content-type: application/json');
 echo json_encode($data);
