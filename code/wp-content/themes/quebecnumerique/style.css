@@ -1958,6 +1958,16 @@ aside .mot-cle {
   border-left: 1.25em solid #4d5057;
 }
 /* RÉSULTATS RECHERCHE */
+.header-recherche {
+  margin: 0.5em;
+}
+.header-recherche span {
+  display: block;
+  font-size: 1.2em;
+  line-height: 2.8em;
+  margin-right: 0.5em;
+  color: #fff;
+}
 .resultats {
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
@@ -1991,13 +2001,25 @@ aside .mot-cle {
   line-height: 5em;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 .resultats .nouvelles a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.resultats .nouvelles h2:after {
+.resultats .nouvelles a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .nouvelles span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .nouvelles span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -2028,13 +2050,25 @@ aside .mot-cle {
   line-height: 5em;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 .resultats .evenements a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.resultats .evenements h2:after {
+.resultats .evenements a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .evenements span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .evenements span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -2065,13 +2099,25 @@ aside .mot-cle {
   line-height: 5em;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 .resultats .projets a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.resultats .projets h2:after {
+.resultats .projets a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .projets span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .projets span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -2102,13 +2148,25 @@ aside .mot-cle {
   line-height: 5em;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 .resultats .articles a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.resultats .articles h2:after {
+.resultats .articles a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .articles span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .articles span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -2139,13 +2197,25 @@ aside .mot-cle {
   line-height: 5em;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 .resultats .organisations a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.resultats .organisations h2:after {
+.resultats .organisations a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .organisations span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .organisations span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -2176,13 +2246,25 @@ aside .mot-cle {
   line-height: 5em;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
-  padding-left: 1.5em;
+  padding: 0 1.5em;
 }
 .resultats .autre a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
-.resultats .autre h2:after {
+.resultats .autre a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .autre span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .autre span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -2361,11 +2443,6 @@ form .advanced:hover {
 }
 #map .cluster div {
   border-radius: 40px;
-  -webkit-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  -moz-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  -ms-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  -o-box-shadow: 0px 0px 9px 0px #1d1d1d;
-  box-shadow: 0px 0px 9px 0px #1d1d1d;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;

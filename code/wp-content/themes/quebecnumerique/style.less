@@ -1298,6 +1298,18 @@ hr {
 
 /* RÉSULTATS RECHERCHE */
 
+.header-recherche{
+	margin: 0.5em;
+	span{
+		display: block;
+		font-size: 1.2em;
+		line-height: 2.8em;
+		margin-right: 0.5em;
+		color: #fff;
+	}
+
+}
+
 	.style-resultat(@couleur){
 		margin-bottom: 1em;
 		overflow: hidden;
@@ -1319,22 +1331,33 @@ hr {
 			line-height: 5em;
 			background-color: rgba(255,255,255,0.9);
 			height: 5em;
-			padding-left: 1.5em;
+			padding: 0 1.5em;
 		}
 		a{
 			text-decoration: none;
 			color: @gris;
-		}
-		h2{
-			&:after{
-				content: '|';
-				margin: 0 1em;
-				color: #C5C5C5;
+			.transition();
+			&:hover{
+				.content{
+					background-color: rgba(255, 255, 255, 1);
+				}
 			}
 		}
+		span{
+			font-size: 1.5em;
+			color: lighten(@grispale, 20%);  
+			&.info{
+				&:before{
+					content: '|';
+					margin: 0 1em;
+					color: #C5C5C5;
+				}				
+			}
+
+		}
+
 
 	}	
-
 
 	.resultats{
 		.transition();
@@ -1519,7 +1542,7 @@ hr {
 		z-index: 10;
 		.cluster div{
 			border-radius: 40px;
-			.box-shadow(0px 0px 9px 0px #1D1D1D);
+			//.box-shadow(0px 0px 9px 0px #1D1D1D);
 			.transition();
 			&:hover{
 				.box-shadow(0px 0px 9px 0px #d2d2d2);

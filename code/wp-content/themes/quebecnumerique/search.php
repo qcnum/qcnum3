@@ -6,47 +6,44 @@
 			<h1 class="page-title">
 				<?php printf( __( 'Résultat de recherche pour: %s', THEME_NAME ), '<span></span>' ); ?>
 			</h1>
-			<div>
+			<div class="group header-recherche">
 
 		    	<?php $check = 'checked="checked"'?>
+		    	<span class="fl">Filtres :</span>
 
 				<div class="filtre nouvelles">
-					<input id="nouvelles" class="resultat" type="checkbox" name="nouvelles" value="1" <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="nouvelles" id="">Nouvelles</label>
+					<input id="recherche-nouvelles" class="resultat" type="checkbox" name="recherche-nouvelles" value="1" <?php echo $check; ?> ;>
+					<label class="filtre-recherche" for="recherche-nouvelles" value="nouvelles" id="">Nouvelles</label>
 				</div>
 
 				<div class="filtre articles">
-					<input id="articles" class="resultat" type="checkbox" name="articles" value="1" <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="articles" id="">Articles</label>
+					<input id="recherche-articles" class="resultat" type="checkbox" name="recherche-articles" value="1" <?php echo $check; ?> ;>
+					<label class="filtre-recherche" for="recherche-articles" value="articles" id="">Articles</label>
 				</div>
 
 				<div class="filtre evenements">
-					<input id="evenements" class="resultat" type="checkbox" name="evenements" value="1"  <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="evenements" id="">Événements</label>
+					<input id="recherche-evenements" class="resultat" type="checkbox" name="recherche-evenements" value="1"  <?php echo $check; ?> ;>
+					<label class="filtre-recherche" for="recherche-evenements" value="evenements" id="">Événements</label>
 				</div>
 
 				<div class="filtre organisations">
-					<input id="organisations" class="resultat" type="checkbox" name="organisations" value="1"  <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="organisations" id="">Organisations</label>
+					<input id="recherche-organisations" class="resultat" type="checkbox" name="recherche-organisations" value="1"  <?php echo $check; ?> ;>
+					<label class="filtre-recherche" for="recherche-organisations" value="organisations" id="">Organisations</label>
 				</div>
 
 				<div class="filtre projets">
-					<input id="projets" class="resultat" type="checkbox" name="projets" value="1" <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="projets" id="">Projets</label>
+					<input id="recherche-projets" class="resultat" type="checkbox" name="recherche-projets" value="1" <?php echo $check; ?> ;>
+					<label class="filtre-recherche" for="recherche-projets" value="projets" id="">Projets</label>
 				</div>
 
 				<div class="filtre autre">
-					<input id="autre" class="resultat" type="checkbox" name="autre" value="1" <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="autre" id="">Autre</label>
+					<input id="recherche-autre" class="resultat" type="checkbox" name="recherche-autre" value="1" <?php echo $check; ?> ;>
+					<label class="filtre-recherche" for="recherche-autre" value="autre" id="">Autre</label>
 				</div>
 
-
-
-
-
+				<span class="fr">Date de parution</span>
 
 			</div>
-
 
 		</header>
 
@@ -56,21 +53,40 @@
 				<?php while ( have_posts() ) : the_post(); ?>
 					<?php
 					$class="" ;
+					$info=""; 
+					$date = get_the_date('j M y');
 					$type = get_post_type(); 
 					$url = get_permalink();
-					if ( is_category( '2' ) ||  has_category( '2') ) {$class = 'nouvelles';}
-					else if ( is_category( '3' ) ||  has_category( '3') ) {$class = 'articles';}
-					else if ( $type == 'organisations' ) {$class = 'organisations';}
-					else if ( $type == 'projets' ) {$class = 'projets';}
-					else if ( $type == 'evenements' ) {$class = 'evenements';}
-					else {$class = 'autre';}
+					if ( is_category( '2' ) ||  has_category( '2') ) {
+						$class = 'nouvelles';
+						$info = 'Par ' . get_the_author();
+					}
+					else if ( is_category( '3' ) ||  has_category( '3') ) {
+						$class = 'articles';
+						$info = 'Par ' . get_the_author();
+					}
+					else if ( $type == 'organisations' ) {
+						$class = 'organisations';
+					}
+					else if ( $type == 'projets' ) {
+						$class = 'projets';
+					}
+					else if ( $type == 'evenements' ) {
+						$class = 'evenements';
+					}
+					else {
+						$class = 'autre';
+					}
 					?>
 					<li class="<?php echo $class ?>">
 
 						<div class="content-wrapper">
 							<a href="<?php echo $url ?>">
 								<div class="content">
-									<h2><?php the_title(); ?></h2>
+									<h2 class="fl"><?php the_title(); ?></h2>
+									<span class="info fl"><?php echo $info; ?></span>
+									<span class="fr"><?php echo $date; ?></span>
+
 								</div>
 							</a>
 						</div>
