@@ -325,6 +325,9 @@ hr {
 	}
 
 	.filtre{
+		position: relative;
+		display: block;
+		float: left;
 		&.mot-cle{
 			.style-filtre();
 		}
@@ -404,7 +407,7 @@ hr {
 	.navigation {
 		position: relative;
 		background-color: @gris;
-		//border-bottom: 1px solid @grispale;
+		border-bottom: 1px solid @grispale;
 		li {
 			display: block;
 			float: left;
@@ -444,7 +447,6 @@ hr {
 		.principal {
 			float: right;
 			text-transform: uppercase;
-
 			a {
 				font-size: 1.25em;
 				padding: 0.75em 1em;
@@ -713,6 +715,7 @@ hr {
 		font-size: 1.8em;
 		color: @blanc;
 		font-family: @titre2;
+		margin-bottom: 3em;
 	}
 
 	.box-evenements{
@@ -1314,7 +1317,6 @@ hr {
 		}
 	}
 
-
 /* Footer */
 
 	form {
@@ -1344,18 +1346,18 @@ hr {
 
 	
 	.map-content{
-		overflow: hidden;
 		width: 100%;
 	}
 	
 	#menu-map{
 		padding-bottom: 0.5em;
-		overflow: hidden;
+		//overflow: hidden;
 		position: relative;
 		z-index: 30;
-		.box-shadow(0px 0px 9px 0px #1D1D1D);
+		border-top: 1px solid #696969;
+		//.box-shadow(0px 0px 9px 0px #1D1D1D);
 		a{
-			opacity: 0.9;
+			opacity: 0.8;
 			color: @blanc;
 			float: right;
 			margin-top: 0.65em;
@@ -1364,8 +1366,17 @@ hr {
 				opacity: 1;
 			}
 			i:before	{
-				content: "\f0b2";
+				content: "\f065";
 			}
+		}
+		.nbr-count{
+			position: absolute;
+			top: -1.3em;
+			left: 33%;
+			font-size: 3em;
+			font-family: 'Exo 2.0';
+			font-weight: 700;
+			color: white;
 		}
 
 	}
