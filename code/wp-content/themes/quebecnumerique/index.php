@@ -36,22 +36,22 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 					<?php $opacity = '1' ?>
 
 					<g id="test" class="organisations " opacity="<?php echo $opacity ?>">
-						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#9B2B78" points="994.595,244.59 534.72,22.201 937.352,-71.57 	"/>
+						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#9B2B78" points="1091.5,203.877 584.414,-6.327 987.046,-100.097 	"/>
 					</g>
 					<g id="Layer_2" class="articles" opacity="<?php echo $opacity ?>">
-						<polygon  style="filter:url(#dropshadow)" class="triangle" fill="#A0AD00" points="303.649,246.253 49.253,-28.406 462.604,-21.581 	"/>
+						<polygon  style="filter:url(#dropshadow)" class="triangle" fill="#A0AD00" points="220.5,131.928 56.242,-44.939 469.592,-38.114 	"/>
 					</g>
 					<g id="Layer_3" class="projets" opacity="<?php echo $opacity ?>">
-						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#009861" points="568.919,262.833 225.676,8.104 558.835,-113.713 	"/>
+						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#009861" points="492.5,141.324 119.07,-27.821 556.507,-30.78 	"/>
 					</g>
 					<g id="Layer_4" class="nouvelles" opacity="<?php echo $opacity ?>" >
-						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#00ACA7" points="33.108,250.671 -23,-47.708 297.297,-13.517 	"/>
+						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#00ACA7" points="-29.5,191.877 -22.5,-20.676 279.219,-21.995 	"/>
 					</g>
 					<g id="Layer_5" class="evenements" opacity="<?php echo $opacity ?>">
-						<polygon  style="filter:url(#dropshadow)" class="triangle" fill="#D39B00" points="397.297,212.161 445.946,-16.897 843.379,8.43 	"/>
+						<polygon  style="filter:url(#dropshadow)" class="triangle" fill="#D39B00" points="584.414,136.824 443.313,-37.993 840.746,-12.666 	"/>
 					</g>
 					<g id="Layer_6" class="orange" opacity="<?php echo $opacity ?>">
-						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#E14E24" points="722.973,266.888 681.757,-28.406 1012.162,-38.515 	"/>
+						<polygon style="filter:url(#dropshadow)" class="triangle" fill="#E14E24" points="796.5,145.386 751.56,-44.939 1074.693,-5.387 	"/>
 					</g>
 
 
@@ -63,16 +63,16 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 						<?php $opacity = '0.1' ?>
 
 						<g id="Layer_7" class="shadow" opacity="<?php echo $opacity ?>">
-							<polygon points="147.603,239.927 -94.5,6.324 431.5,-60.676 	"/>
+							<polygon points="143.39,193.797 -38.466,18.325 374.409,-50.818 	"/>
 						</g>
 						<g id="Layer_8" class="shadow" opacity="<?php echo $opacity ?>">
-							<polygon points="608.603,212.161 438,-107.336 872.206,-66.954 	"/>
+							<polygon  points="697.603,193.797 575.5,-21.995 961.206,-85.319 	"/>
 						</g>
 						<g id="Layer_9" class="shadow" opacity="<?php echo $opacity ?>">
-							<polygon points="419.532,246.115 164.287,-10.856 591.774,-96.995 	"/>
+							<polygon points="412.171,185.525 175.5,-37.993 541.5,-28.676 	"/>
 						</g>
 						<g id="Layer_10" class="shadow" opacity="<?php echo $opacity ?>">
-							<polygon points="862.603,249.375 692,-70.123 1166.5,21.469 	"/>
+							<polygon points="862.603,249.375 768.354,-50.818 1166.5,21.469 	"/>
 						</g>
 
 					</svg>
