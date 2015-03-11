@@ -672,7 +672,7 @@ hr {
 	}
 
 	.abstract{
-		top: -5%;
+		top: -7%;
 		 display: inline-block;
 		 position: absolute;
 		 width: 100%;
@@ -696,30 +696,42 @@ hr {
 
 
 	/* Animation */
-	#test{
-		-webkit-transform-origin: 0px 0px 0px;
-	    -webkit-animation-name: spin;
-	    -webkit-animation-duration: 40000ms;
-	    -webkit-animation-iteration-count: infinite;
-	    -webkit-animation-timing-function: linear;
-	    -moz-animation-name: spin;
-	    -moz-animation-duration: 40000ms;
-	    -moz-animation-iteration-count: infinite;
-	    -moz-animation-timing-function: linear;
-	    -ms-animation-name: spin;
-	    -ms-animation-duration: 40000ms;
-	    -ms-animation-iteration-count: infinite;
-	    -ms-animation-timing-function: linear;
+	/*#test{
+	  -webkit-animation: rotate 5s linear 0s  ;
+	  -moz-animation: rotate 5s linear 0s  ;
+	  -o-animation: rotate 5s linear 0s  ;
+	  -ms-animation: rotate 5s linear 0s  ;
+	  animation: rotate 5s linear 0s  ;
 	}
-	@keyframes spin {
-		  from {
-		    -webkit-transform:rotate(0deg);
-		  }
+	@-webkit-keyframes rotate {
+	  from {
+	    -webkit-transform: rotate(-20deg);
 
-		  to {
-		    -webkit-transform:rotate(5deg);
-		  }
+	  }
+	  to { 
+	    -webkit-transform: rotate(0deg);
+	  }
 	}
+
+	@-moz-keyframes rotate {
+	  from {
+	    -moz-transform: rotate(-20deg);
+
+	  }
+	  to { 
+	    -moz-transform: rotate(0deg);
+	  }
+	}
+
+	@-o-keyframes rotate {
+	  from {
+	    -o-transform: rotate(-20deg);
+
+	  }
+	  to { 
+	    -o-transform: rotate(0deg);
+	  }
+	}*/
 
 
 	.h2link (@color){
@@ -807,6 +819,7 @@ hr {
 		color: @blanc;
 		font-family: @titre2;
 		margin-bottom: 3em;
+		margin-top: 1em;
 	}
 
 	.box-evenements{
