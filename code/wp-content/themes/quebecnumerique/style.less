@@ -202,6 +202,12 @@ hr {
 		.m-btn-orange();
 	}
 
+    .noir-et-blanc () {
+	    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+	    filter: gray; /* IE6-9 */
+	    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+    }
+
 /* GENERAL */
 
 	.visuallyhidden {
@@ -270,6 +276,8 @@ hr {
 	.fl { float: left; }
 	.fn { float: none; }
 	.cb { clear: both; }
+
+	.pb1em { padding-bottom: 1em;}
 
 	.nouvelles-bg { background-color: @nouvelles; }
 	.articles-bg { background-color: @articles; }
@@ -610,7 +618,7 @@ hr {
 
 /* ACCUEIL */
 	
-	.accueil{ margin-top: 18%; }
+
 	.abstract-triangle(@color){ border-color: @color transparent transparent transparent; }
 	.abstract{
 		 top: 2%;
@@ -618,7 +626,7 @@ hr {
 		 position: absolute;
 		 width: 100%;
 		 vertical-align: middle; 
-		 opacity: 0.5;
+		 opacity: 0.7;
 
 		.abstract-svg{
 			  display: block;
@@ -636,7 +644,7 @@ hr {
 	}
 
 	.accueil{
-		margin-top: 11%;
+		margin-top: 13%;
 		h2 a{
 			display: block;
 			padding: 0.5em;
@@ -1695,10 +1703,48 @@ hr {
 
 /* CONTACT */
 	
+	.coordonees{
+		a{
+			background-color: rgb(225, 78, 36);
+			text-decoration: none;
+			color: white;
+			float: left; 
+			display: block;
+			font-size: 1.8em;
+			/* font-family: 'Exo 2'; */
+			/* font-weight: 700; */
+			padding: 0.4em;			
+		}
+
+	}
+
+	.equipe{
+		a{
+			
+			text-decoration: none;	
+			&:hover{
+				.img{opacity: 0.2;}
+			}
+		}
+	}
+
+
 	.membre{
-		height: 300px;
-		width: 300px;
-		background-size: cover;
+		width: 100%;
+		height: 0;
+		padding-bottom: 100%;
+		background-color: #2460ED;
+
+		.img{ 
+			width: 100%;
+			height: 0;
+			padding-bottom: 100%;
+			background-size: cover;
+			opacity: 0.9;
+			.noir-et-blanc ();
+			.transition();
+		}
+		
 	}
 
 

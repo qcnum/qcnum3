@@ -8,69 +8,60 @@ get_header(); ?>
 
 		<?php if( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-			<div class="large-wrapper">
-			
-				
-
-
+			<div class="coordonees large-wrapper group">
 				<div class="c12">
-
 					<div class="padding">
-						
 						<div class="entry-content">
 							<?php 
 							$telephone = get_field('telephone'); 
 							$email = get_field('courriel'); 
 							?>
 							<a href="#"><?php echo $telephone ?></a>
+							<hr class="clear">
 							<a href="#"><?php echo $email ?></a>
-
 						</div>
 
-						<footer class="entry-meta">
-
-							<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-						</footer>
-
 					</div>
-	
 				</div>
-
-
-
 			</div>
 
-			<section class="white-post group">
 
-				<div class="entry-content c6 center">
 
-					<?php the_field('texte_contributeurs'); ?>
+			<section class="equipe large-wrapper white-post group padding">
+
+				<div class="entry-content c12 padding ">
+					<h2><?php the_field('equipe_titre'); ?> </h2>
+					<?php the_field('equipe_texte'); ?>
 
 				</div>
 
 				<?php $membres = get_field('membres'); ?>
 
-				<!--div class="c7 equipe center"-->
 
-				<div class="c7 equipe">
-					<div class="padding">
+
+				<div class="group padding">
+				
 					
-						<?php foreach($membres as $m) : 
-							$nom = $m['nom'];
-							$photoid = $m['photo'];
-							$titre = $m['titre'];
-							$url = wp_get_attachment_image_src($photoid, 'medium');
-							?>
-							<div class="membre" style="background-image: url('<?php echo $url[0]; ?>')" >
-								<span><?php echo $nom; ?></span>
-								<span><?php echo $titre; ?></span>
+					<?php foreach($membres as $m) : 
+						$nom = $m['nom'];
+						$photoid = $m['photo'];
+						$titre = $m['titre'];
+						$url = wp_get_attachment_image_src($photoid, 'profil');
+						?>
+						<a href="#" class="c3 pb1em">
+							<div class="padding">
+								<div class="membre">
+									<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
+									<span><?php echo $nom; ?></span>
+									<span><?php echo $titre; ?></span>
+								</div>
 							</div>
+						</a>
 
 
-						<?php endforeach; ?>
+					<?php endforeach; ?>
 
-					</div>
+	
 				</div>
 
 			</section>
@@ -122,5 +113,9 @@ get_header(); ?>
 		<?php endwhile; ?>
 
 	</div><!-- #content -->
+
+<footer class="entry-meta">
+	<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
+</footer>
 
 <?php get_footer(); ?>
