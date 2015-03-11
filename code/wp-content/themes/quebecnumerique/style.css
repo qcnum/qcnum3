@@ -1224,9 +1224,6 @@ footer#colophon {
   color: #ffffff;
 }
 /* ACCUEIL */
-.accueil {
-  margin-top: 12%;
-}
 .abstract {
   top: 2%;
   display: inline-block;
@@ -1283,6 +1280,34 @@ footer#colophon {
 	    -o-transform: rotate(0deg);
 	  }
 	}*/
+.accueil {
+  margin-top: 11%;
+}
+.accueil h2 a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.accueil h2 a i {
+  float: right;
+  font-size: 0.6em;
+  line-height: 1.8em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
 .lieu {
   color: #cccccc;
   text-transform: uppercase;
@@ -1294,32 +1319,12 @@ footer#colophon {
   color: #d39b00;
 }
 .nouvelles h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   border-top: 2px solid #00aca7;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
 }
 .nouvelles h2 a span {
   color: #00aca7;
 }
 .nouvelles h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   color: #00aca7;
 }
 .nouvelles h2 a:hover {
@@ -1342,32 +1347,12 @@ footer#colophon {
   background-color: #00aca7;
 }
 .articles h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   border-top: 2px solid #a0ad00;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
 }
 .articles h2 a span {
   color: #a0ad00;
 }
 .articles h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   color: #a0ad00;
 }
 .articles h2 a:hover {
@@ -1407,32 +1392,12 @@ footer#colophon {
   background-color: #676c75;
 }
 .box-evenements h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   border-top: 2px solid #d39b00;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
 }
 .box-evenements h2 a span {
   color: #d39b00;
 }
 .box-evenements h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   color: #d39b00;
 }
 .box-evenements h2 a:hover {

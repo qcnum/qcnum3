@@ -60,7 +60,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 				<div class="shadow-svg">
 					<svg class="shadow-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 300" xml:space="preserve">
 
-						<?php $opacity = '0.1' ?>
+						<?php $opacity = '0.08' ?>
 
 						<g id="Layer_7" class="shadow" opacity="<?php echo $opacity ?>">
 							<polygon points="143.39,193.797 -38.466,18.325 374.409,-50.818 	"/>
