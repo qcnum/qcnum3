@@ -41,7 +41,7 @@ get_header(); ?>
 
 			</div>
 
-			<!--section class="white-post group">
+			<section class="white-post group">
 
 				<div class="entry-content c6 center">
 
@@ -49,29 +49,31 @@ get_header(); ?>
 
 				</div>
 
-				<?php $partenaires = get_field('partenaires', 'options'); ?>
-				
-				<div class="c7 partenaires center">
+				<?php $membres = get_field('membres'); ?>
+
+				<!--div class="c7 equipe center"-->
+
+				<div class="c7 equipe">
 					<div class="padding">
 					
-						<?php foreach($partenaires as $p) : 
-							$site = $p['site_web'];
-							$nom = $p['nom'];
-							$logoid = $p['logo'];
-							$logo = wp_get_attachment_image_src($logoid, 'medium');
+						<?php foreach($membres as $m) : 
+							$nom = $m['nom'];
+							$photoid = $m['photo'];
+							$titre = $m['titre'];
+							$url = wp_get_attachment_image_src($photoid, 'medium');
 							?>
-							<?php if($p['site_web']) : ?>
-								<a href="<?php echo $site; ?>"><img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>"></a>
-							<?php else : ?>
-								<img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>">
-							<?php endif; ?>
+							<div class="membre" style="background-image: url('<?php echo $url[0]; ?>')" >
+								<span><?php echo $nom; ?></span>
+								<span><?php echo $titre; ?></span>
+							</div>
+
 
 						<?php endforeach; ?>
 
 					</div>
 				</div>
 
-			</section-->
+			</section>
 
 			<!--section>
 

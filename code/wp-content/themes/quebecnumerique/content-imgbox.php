@@ -7,7 +7,6 @@
 				<div class="excerpt-hover"><?php the_excerpt(); ?></div>
 			</div>
 			<?php if(has_post_thumbnail()) : ?>
-				
 				<?php 
 				$id = get_post_thumbnail_id();
 				$url = wp_get_attachment_image_src( $id , 'rectangle');

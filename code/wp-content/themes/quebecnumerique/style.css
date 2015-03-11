@@ -2778,6 +2778,12 @@ form .advanced:hover {
   height: 100%;
   vertical-align: middle;
 }
+/* CONTACT */
+.membre {
+  height: 300px;
+  width: 300px;
+  background-size: cover;
+}
 /* Media Queries*/
 @media screen and (max-width: 1200px) {
   #masthead,
