@@ -319,13 +319,26 @@ function paging_nav() {
     echo '</div>';
 }
 
+function partition(Array $list, $p) {
+    $listlen = count($list);
+    $partlen = floor($listlen / $p);
+    $partrem = $listlen % $p;
+    $partition = array();
+    $mark = 0;
+    for($px = 0; $px < $p; $px ++) {
+        $incr = ($px < $partrem) ? $partlen + 1 : $partlen;
+        $partition[$px] = array_slice($list, $mark, $incr);
+        $mark += $incr;
+    }
+    return $partition;
+}
+
 function advanced_search_query($query) {
 
     $aSearch = array();
  
     if($query->is_search()) {
          
-        // tag search
         if (isset($_GET['mots-cles']) && is_array($_GET['mots-cles'])) {
 
             $aMC = array(

@@ -108,6 +108,11 @@ hr {
 		transition: @props;
 	}
 
+	.desaturate(){
+		-webkit-filter: grayscale(100%);
+		filter: url(desaturate.svg#greyscale) !important;
+	}
+
 	.rotate(@props, @origin) {
 		-webkit-transform: rotate(@props);
 		-moz-transform: rotate(@props);
@@ -283,11 +288,6 @@ hr {
 	  clear: both;
 	}
 
-	img {
-		//max-width: 100%;
-		//height: auto;
-	}
-
 	#masthead {
 		height: 6em;
 		position: fixed;
@@ -295,10 +295,6 @@ hr {
 		top: 0;
 		width: 100%;
 		z-index: 999;
-	}
-
-	#page {
-		//margin-top: 6em;
 	}
 
 	.style-filtre(@couleur-fond: @blanc, @couleur-text: @gris) {
@@ -346,39 +342,20 @@ hr {
 			}
 			&:hover { opacity: 0.9 }
 		}
-
 	}
 
 	.filtre{
 		position: relative;
 		display: block;
 		float: left;
-		&.mot-cle{
-			.style-filtre();
-		}
-		&.nouvelles{
-			.style-filtre(@nouvelles, @blanc);
-		}
-		&.articles{
-			.style-filtre(@articles, @blanc);
-		}
-		&.evenements{
-			.style-filtre(@evenements, @blanc);
-		}
-		&.organisations{
-			.style-filtre(@organisations, @blanc);
-		}
-		&.projets{
-			.style-filtre(@projets, @blanc);
-		}
-		&.autre{
-			.style-filtre(@orange, @blanc);
-		}
-		&.twitter{
-			.style-filtre(@twitter, @blanc);
-		}
-
-
+		&.mot-cle{ .style-filtre(); }
+		&.nouvelles{ .style-filtre(@nouvelles, @blanc); }
+		&.articles{ .style-filtre(@articles, @blanc); }
+		&.evenements{ .style-filtre(@evenements, @blanc); }
+		&.organisations{ .style-filtre(@organisations, @blanc); }
+		&.projets{ .style-filtre(@projets, @blanc); }
+		&.autre{ .style-filtre(@orange, @blanc); }
+		&.twitter{ .style-filtre(@twitter, @blanc); }
 	}	
 
 /* HEADER */
@@ -397,8 +374,6 @@ hr {
 		position: absolute;
 		.box-shadow(0px 0px 9px 0px #1D1D1D);
 		.transition(all 0.4s ease);
-
-
 	}
 
 	.retract {
@@ -408,31 +383,22 @@ hr {
 		.box-shadow(0px 0px 0px 0px #1D1D1D);
 	}
 
-
-
 	.site-description {
-		background-color: fade(@gris, 50%);
+		background-color: fade(@gris, 80%);
 		color: @blanc;
 		padding: 0.5em 0.5em 0.5em 1em;
 		display: block;
 		float: left;
 		margin-top: 0.5em;
 		font-family: 'Titillium Web','Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
-
 		position: absolute;
 		top: 3em;
 		left: 12em;
 		margin-left: 0.925925%;
 		.transition(all 0.2s ease);
-
 	}
 
-	.fadeout{
-		top: 2em;
-		//left: 11em;
-		opacity:0;
-
-	}
+	.fadeout { top: 2em; opacity:0; }
 
 
 	.navigation {
@@ -604,10 +570,9 @@ hr {
 	#searchform {
 		height: 2.5em;
 		position: relative;
-
+		h2 { color: @blanc; }
 		input {
 			position: relative;
-			//height: 100%;
 			padding: 0;
 			border: none;
 			margin: 0;
@@ -628,11 +593,6 @@ hr {
 			padding: 0 1em;
 			text-align: center;
 		}
-
-		h2 {
-			color: @blanc;
-		}
-
 	}
 
 	.recherche {
@@ -663,13 +623,8 @@ hr {
 
 /* ACCUEIL */
 	
-	.accueil{
-		  margin-top: 18%;
-	}
-	
-	.abstract-triangle(@color){
-		border-color: @color transparent transparent transparent;
-	}
+	.accueil{ margin-top: 18%; }
+	.abstract-triangle(@color){ border-color: @color transparent transparent transparent; }
 
 	.abstract{
 		top: -5%;
@@ -677,6 +632,7 @@ hr {
 		 position: absolute;
 		 width: 100%;
 		 vertical-align: middle; 
+		 opacity: 0.5;
 
 		.abstract-svg{
 			  display: block;
@@ -684,7 +640,6 @@ hr {
 			  top: 0;
 			  left: 0;
 		}
-
 	}
 
 	.shadow-svg{
@@ -815,9 +770,7 @@ hr {
 			color: @blanc; 
 			text-decoration: none; 
 			&:hover{
-				article{
-					background-color: lighten(@gris, 20%);	
-				}
+				article { background-color: lighten(@gris, 20%); }
 			}
 		}
 		h2 a { .h2link (@evenements); }
@@ -840,7 +793,7 @@ hr {
 			.content{
 				width: auto;
 				margin: auto;
-				padding: 0.5em;
+				padding: 1em;
 			}
 		}	
 	}
@@ -881,7 +834,6 @@ hr {
 
 	.img-box {
 		position: relative;
-		//margin-bottom: 3%;
 		.content {
 			position: absolute;
 			bottom: 0.5em;
@@ -889,7 +841,6 @@ hr {
 			z-index: 10;
 			margin-right: 0.5em;
 			max-height: 92%;
-			//.transition();
 		}
 		img{
 			width: 100%;
@@ -900,9 +851,7 @@ hr {
 		}
 		.excerpt-hover{
 			color: @noir;
-			//display: none;
 			height: 0;
-			//padding: 0.5em 0em;
 			font-size: 0.9em;
 			line-height: 1.3em;
 			overflow: hidden;
@@ -911,38 +860,10 @@ hr {
 			padding: 0em 0.5em 0 0.5em;
 			.transition(height 0.5s ease);
 		}
-		.excerpt-degrade{
-			//background-color: red;
-			width: 100%;
-			height: 20%;
-			position: absolute;
-			bottom: 0;
-			z-index: 30;
-			display: none;
-			//.transition();
-		}
 		a {
 			text-decoration: none;
 			color: @blanc;
 			display: block;
-			&:hover{
-				img{
-					opacity: 0.1;
-				}
-				.excerpt-hover{
-					//height: auto;
-					padding: 0.5em 0.5em 0 0.5em;
-					display: block;
-					height: 6.45em;
-					
-				}
-				.excerpt-degrade{
-					//display: block;
-				}
-				h3{
-					//background-color: transparent;
-				}
-			}
 		}
 		article{
 			margin-bottom: 1em;
@@ -1236,7 +1157,7 @@ hr {
 	}
 
 
-	article.white-post {
+	.white-post {
 		background-color: @blanc;
 		padding: 1em 0;
 		margin-bottom: 1em;
@@ -1258,6 +1179,12 @@ hr {
 	}
 
 
+	.a-propos {
+		text-align: center;
+		article .entry-title, article .entry-content { color: @blanc; }
+		.entry-title { font-size: 3em; }
+
+	}
 
 	.stuck {
 		position:fixed;
@@ -1573,9 +1500,7 @@ hr {
 	}
 
 	
-	.map-content{
-		width: 100%;
-	}
+	.map-content { width: 100%; }
 	
 	#menu-map{
 		padding-bottom: 0.5em;
@@ -1584,29 +1509,35 @@ hr {
 		z-index: 30;
 		border-top: 1px solid #696969;
 		//.box-shadow(0px 0px 9px 0px #1D1D1D);
-		a{
+		a {
 			opacity: 0.8;
 			color: @blanc;
 			float: right;
 			margin-top: 0.65em;
 			font-size: 1.5em;
-			&:hover{
-				opacity: 1;
-			}
-			i:before	{
-				content: "\f065";
-			}
+			&:hover { opacity: 1; }
+			i:before { content: "\f065"; }
 		}
 		.nbr-count{
 			position: absolute;
-			top: -1.3em;
+			top: -1.5em;
 			left: 33%;
 			font-size: 3em;
 			font-family: 'Exo 2';
 			font-weight: 700;
 			color: white;
-		}
 
+			&:after {
+				content: "|";
+				color: #696969;
+				position: absolute;
+				bottom: -1.55em;
+				font-size: .3em;
+				display: block;
+				width: 100%;
+				text-align: center;
+			}
+		}
 	}
 
 	#map {
@@ -1846,9 +1777,17 @@ hr {
 	@media screen and (max-width: 1200px){
 		#masthead, .page-header { font-size: 90%; }
 		
+	}
 
-
-
+	@media screen and (min-width: 1025px){
+		.img-box a:hover{
+			img { opacity: 0.1;	}
+			.excerpt-hover{
+				padding: 0.5em 0.5em 0 0.5em;
+				display: block;
+				height: 6.45em;
+			}
+		}
 	}
 
 	@media screen and (max-width: 1023px){
@@ -1898,6 +1837,8 @@ hr {
 				&.visible { top: 0; }
 			}
 		}
+
+		.img-box .content { font-size: 130%; }
 	}
 
 	@media screen and (max-width: 767px){
