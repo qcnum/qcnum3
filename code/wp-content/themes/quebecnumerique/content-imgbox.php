@@ -18,6 +18,5 @@
 			<?php else : ?>
 				<img src="http://placehold.it/700x500" alt="">
 			<?php endif; ?>
-			<div class="excerpt-degrade"></div>
 		</a>
 	</article>
