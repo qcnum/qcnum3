@@ -1225,40 +1225,50 @@ footer#colophon {
 }
 /* ACCUEIL */
 .accueil {
-  margin-top: 6em;
+  margin-top: 18%;
 }
 .abstract {
+  top: -5%;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  vertical-align: middle;
+}
+.abstract .abstract-svg {
+  display: block;
   position: absolute;
   top: 0;
-  height: 300px;
-  width: 100%;
-  /*div.triangle{
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 12em 12em 0 0;
-			position: absolute;
-			&.nouvelles{
-				.abstract-triangle(@nouvelles);
-			}
-			&.articles{
-				.abstract-triangle(@articles);
-			}
-			&.projets{
-				.abstract-triangle(@projets);
-			}
-			&.organisations{
-				.abstract-triangle(@organisations);
-			}
-			&.evenements{
-				.abstract-triangle(@evenements);
-			}
-		}*/
-
+  left: 0;
 }
-.abstract svg {
+.shadow-svg {
+  display: inline-block;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  top: 0;
+}
+/* Animation */
+#test {
+  -webkit-transform-origin: 0px 0px 0px;
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 40000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 40000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 40000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(5deg);
+  }
 }
 .lieu {
   color: #cccccc;
@@ -1301,6 +1311,9 @@ footer#colophon {
 }
 .nouvelles h2 a:hover {
   background-color: #2b2d31;
+}
+.nouvelles h2 a:hover i {
+  color: #ffffff;
 }
 .nouvelles .date {
   text-transform: uppercase;
@@ -1347,6 +1360,9 @@ footer#colophon {
 .articles h2 a:hover {
   background-color: #2b2d31;
 }
+.articles h2 a:hover i {
+  color: #ffffff;
+}
 .articles .date {
   text-transform: uppercase;
   font-weight: 700;
@@ -1372,6 +1388,9 @@ footer#colophon {
 .box-evenements a {
   color: #ffffff;
   text-decoration: none;
+}
+.box-evenements a:hover article {
+  background-color: #676c75;
 }
 .box-evenements h2 a {
   display: block;
@@ -1405,11 +1424,21 @@ footer#colophon {
 .box-evenements h2 a:hover {
   background-color: #2b2d31;
 }
+.box-evenements h2 a:hover i {
+  color: #ffffff;
+}
 .box-evenements h3 {
   font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-size: 1.5em;
+  margin-top: 2.5%;
 }
 .box-evenements article {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #5b6068;
   margin-bottom: 0.5em;
 }
 .box-evenements article img {
