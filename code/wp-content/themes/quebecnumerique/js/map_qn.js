@@ -217,7 +217,6 @@ function listMarkersTweets(cptReturn,maxID){
                         //}
                         
                     }
-                    alert(lastID);
                     if(cpt < limitTweets && lastID > 0){
                         listMarkersTweets(cpt,lastID)
                     }
