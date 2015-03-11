@@ -1228,7 +1228,7 @@ footer#colophon {
   margin-top: 18%;
 }
 .abstract {
-  top: -5%;
+  top: 2%;
   display: inline-block;
   position: absolute;
   width: 100%;
@@ -1248,28 +1248,69 @@ footer#colophon {
   top: 0;
 }
 /* Animation */
-#test {
-  -webkit-transform-origin: 0px 0px 0px;
-  -webkit-animation-name: spin;
-  -webkit-animation-duration: 40000ms;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-  -moz-animation-name: spin;
-  -moz-animation-duration: 40000ms;
-  -moz-animation-iteration-count: infinite;
-  -moz-animation-timing-function: linear;
-  -ms-animation-name: spin;
-  -ms-animation-duration: 40000ms;
-  -ms-animation-iteration-count: infinite;
-  -ms-animation-timing-function: linear;
+/*#test{
+	  -webkit-animation: rotate 5s linear 0s  ;
+	  -moz-animation: rotate 5s linear 0s  ;
+	  -o-animation: rotate 5s linear 0s  ;
+	  -ms-animation: rotate 5s linear 0s  ;
+	  animation: rotate 5s linear 0s  ;
+	}
+	@-webkit-keyframes rotate {
+	  from {
+	    -webkit-transform: rotate(-20deg);
+
+	  }
+	  to { 
+	    -webkit-transform: rotate(0deg);
+	  }
+	}
+
+	@-moz-keyframes rotate {
+	  from {
+	    -moz-transform: rotate(-20deg);
+
+	  }
+	  to { 
+	    -moz-transform: rotate(0deg);
+	  }
+	}
+
+	@-o-keyframes rotate {
+	  from {
+	    -o-transform: rotate(-20deg);
+
+	  }
+	  to { 
+	    -o-transform: rotate(0deg);
+	  }
+	}*/
+.accueil {
+  margin-top: 11%;
 }
-@keyframes spin {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(5deg);
-  }
+.accueil h2 a {
+  display: block;
+  padding: 0.5em;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  margin-bottom: 0.5em;
+  font-size: 0.9em;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+.accueil h2 a i {
+  float: right;
+  font-size: 0.6em;
+  line-height: 1.8em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .lieu {
   color: #cccccc;
@@ -1282,32 +1323,12 @@ footer#colophon {
   color: #d39b00;
 }
 .nouvelles h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   border-top: 2px solid #00aca7;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
 }
 .nouvelles h2 a span {
   color: #00aca7;
 }
 .nouvelles h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   color: #00aca7;
 }
 .nouvelles h2 a:hover {
@@ -1330,32 +1351,12 @@ footer#colophon {
   background-color: #00aca7;
 }
 .articles h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   border-top: 2px solid #a0ad00;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
 }
 .articles h2 a span {
   color: #a0ad00;
 }
 .articles h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   color: #a0ad00;
 }
 .articles h2 a:hover {
@@ -1382,6 +1383,7 @@ footer#colophon {
   color: #ffffff;
   font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   margin-bottom: 3em;
+  margin-top: 1em;
 }
 .box-evenements {
   margin-bottom: 1em;
@@ -1394,32 +1396,12 @@ footer#colophon {
   background-color: #676c75;
 }
 .box-evenements h2 a {
-  display: block;
-  padding: 0.5em;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   border-top: 2px solid #d39b00;
-  margin-bottom: 0.5em;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
 }
 .box-evenements h2 a span {
   color: #d39b00;
 }
 .box-evenements h2 a i {
-  float: right;
-  font-size: 0.6em;
-  line-height: 1.8em;
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
   color: #d39b00;
 }
 .box-evenements h2 a:hover {
