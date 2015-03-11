@@ -664,7 +664,7 @@ hr {
 /* ACCUEIL */
 	
 	.accueil{
-		margin-top: 6em;
+		  margin-top: 18%;
 	}
 	
 	.abstract-triangle(@color){
@@ -672,39 +672,55 @@ hr {
 	}
 
 	.abstract{
-		position: absolute;
-		top: 0;
-		height: 300px;
-		width: 100%;
+		top: -5%;
+		 display: inline-block;
+		 position: absolute;
+		 width: 100%;
+		 vertical-align: middle; 
 
-		svg{
-			width: 100%;
-			height: 100%;
+		.abstract-svg{
+			  display: block;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
 		}
 
-		/*div.triangle{
-			width: 0;
-			height: 0;
-			border-style: solid;
-			border-width: 12em 12em 0 0;
-			position: absolute;
-			&.nouvelles{
-				.abstract-triangle(@nouvelles);
-			}
-			&.articles{
-				.abstract-triangle(@articles);
-			}
-			&.projets{
-				.abstract-triangle(@projets);
-			}
-			&.organisations{
-				.abstract-triangle(@organisations);
-			}
-			&.evenements{
-				.abstract-triangle(@evenements);
-			}
-		}*/
 	}
+
+	.shadow-svg{
+		display: inline-block;
+		position: absolute;
+		width: 100%;
+		top: 0;		
+	}
+
+
+	/* Animation */
+	#test{
+		-webkit-transform-origin: 0px 0px 0px;
+	    -webkit-animation-name: spin;
+	    -webkit-animation-duration: 40000ms;
+	    -webkit-animation-iteration-count: infinite;
+	    -webkit-animation-timing-function: linear;
+	    -moz-animation-name: spin;
+	    -moz-animation-duration: 40000ms;
+	    -moz-animation-iteration-count: infinite;
+	    -moz-animation-timing-function: linear;
+	    -ms-animation-name: spin;
+	    -ms-animation-duration: 40000ms;
+	    -ms-animation-iteration-count: infinite;
+	    -ms-animation-timing-function: linear;
+	}
+	@keyframes spin {
+		  from {
+		    -webkit-transform:rotate(0deg);
+		  }
+
+		  to {
+		    -webkit-transform:rotate(5deg);
+		  }
+	}
+
 
 	.h2link (@color){
 		display: block;
@@ -726,6 +742,9 @@ hr {
 		}
 		&:hover {
 			background-color: darken(@gris, 5%);
+			i{
+				color: @blanc;
+			}
 		}
 
 	}
@@ -792,10 +811,24 @@ hr {
 
 	.box-evenements{
 		margin-bottom: 1em;
-		a { color: @blanc; text-decoration: none; }
+		a { 
+			color: @blanc; 
+			text-decoration: none; 
+			&:hover{
+				article{
+					background-color: lighten(@gris, 20%);	
+				}
+			}
+		}
 		h2 a { .h2link (@evenements); }
-		h3{ font-family: @titre2; font-size: 1.5em; }
+		h3{ 
+			font-family: @titre2; 
+			font-size: 1.5em; 
+			margin-top: 2.5%;
+		}
 		article{
+			.transition();
+			background-color: lighten(@gris, 15%);
 			margin-bottom: 0.5em;
 			img{
 				width: 15%;
