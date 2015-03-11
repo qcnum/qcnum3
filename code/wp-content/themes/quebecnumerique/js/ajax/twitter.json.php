@@ -26,8 +26,14 @@ foreach ($tags as $t) {
     $cpt++;
 }
 
+//Système de pagination
+$maxID = '';
+if(isset($_GET['maxID']) && $_GET['maxID'] > 0){
+    $maxID = '&max_id='.$_GET['maxID'];
+}
+
 //Construction de la requête, doc sur https://dev.twitter.com/docs/api/1.1/get/search/tweets for params
-$getfield = '?q=' . $hashtags . '+exclude:retweets&result_type=recent&count=100&geocode=46.803587,-71.242754,25km';
+$getfield = '?q=' . $hashtags . '+exclude:retweets&result_type=recent&count=100&geocode=46.803587,-71.242754,25km'.$maxID;
 //&result_type=recent&geocode=46.803587,-71.242754,400km
 
 //La requête ne comporte pas beaucoup de paramètres, on utilise donc la méthode GET au lieu de POST
