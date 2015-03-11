@@ -264,6 +264,12 @@ hr {
 	.fn { float: none; }
 	.cb { clear: both; }
 
+	.nouvelles-bg { background-color: @nouvelles; }
+	.articles-bg { background-color: @articles; }
+	.evenements-bg { background-color: @evenements; }
+	.projets-bg { background-color: @projets; }
+	.organisations-bg { background-color: @organisations; }
+	.orange-bg { background-color: @orange; }
 
 	.grispale-bg { background-color: @grispale; }
 	.gris-bg { background-color: @gris; }
@@ -637,10 +643,6 @@ hr {
 		&.hidden { top: -100%; .transition(all 0.5s ease); }
 	}
 
-	.fancyHead {
-		position: relative;
-
-	}
 
 	#breadcrumbs {
 		margin-top: 3em;
@@ -654,9 +656,48 @@ hr {
 	}
 
 /* ACCUEIL */
+	
+	.accueil{
+		margin-top: 6em;
+	}
+	
+	.abstract-triangle(@color){
+		border-color: @color transparent transparent transparent;
+	}
 
 	.abstract{
-		height: 100px;
+		position: absolute;
+		top: 0;
+		height: 300px;
+		width: 100%;
+
+		svg{
+			width: 100%;
+			height: 100%;
+		}
+
+		/*div.triangle{
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 12em 12em 0 0;
+			position: absolute;
+			&.nouvelles{
+				.abstract-triangle(@nouvelles);
+			}
+			&.articles{
+				.abstract-triangle(@articles);
+			}
+			&.projets{
+				.abstract-triangle(@projets);
+			}
+			&.organisations{
+				.abstract-triangle(@organisations);
+			}
+			&.evenements{
+				.abstract-triangle(@evenements);
+			}
+		}*/
 	}
 
 	.h2link (@color){
@@ -1298,17 +1339,17 @@ hr {
 
 /* RÉSULTATS RECHERCHE */
 
-.header-recherche{
-	margin: 0.5em;
-	span{
-		display: block;
-		font-size: 1.2em;
-		line-height: 2.8em;
-		margin-right: 0.5em;
-		color: #fff;
-	}
+	.header-recherche{
+		margin: 0.5em;
+		span{
+			display: block;
+			font-size: 1.2em;
+			line-height: 2.8em;
+			margin-right: 0.5em;
+			color: #fff;
+		}
 
-}
+	}
 
 	.style-resultat(@couleur){
 		margin-bottom: 1em;
@@ -1380,8 +1421,6 @@ hr {
 			.style-resultat(@orange);
 		}
 	}
-
-
 
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 	

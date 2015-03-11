@@ -264,6 +264,24 @@ footer#colophon {
 .cb {
   clear: both;
 }
+.nouvelles-bg {
+  background-color: #00aca7;
+}
+.articles-bg {
+  background-color: #a0ad00;
+}
+.evenements-bg {
+  background-color: #d39b00;
+}
+.projets-bg {
+  background-color: #009861;
+}
+.organisations-bg {
+  background-color: #9b2b78;
+}
+.orange-bg {
+  background-color: #e14e24;
+}
 .grispale-bg {
   background-color: #4d5057;
 }
@@ -1143,9 +1161,6 @@ footer#colophon {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
-.fancyHead {
-  position: relative;
-}
 #breadcrumbs {
   margin-top: 3em;
   margin-bottom: 1em;
@@ -1158,8 +1173,41 @@ footer#colophon {
   color: #ffffff;
 }
 /* ACCUEIL */
+.accueil {
+  margin-top: 6em;
+}
 .abstract {
-  height: 100px;
+  position: absolute;
+  top: 0;
+  height: 300px;
+  width: 100%;
+  /*div.triangle{
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 12em 12em 0 0;
+			position: absolute;
+			&.nouvelles{
+				.abstract-triangle(@nouvelles);
+			}
+			&.articles{
+				.abstract-triangle(@articles);
+			}
+			&.projets{
+				.abstract-triangle(@projets);
+			}
+			&.organisations{
+				.abstract-triangle(@organisations);
+			}
+			&.evenements{
+				.abstract-triangle(@evenements);
+			}
+		}*/
+
+}
+.abstract svg {
+  width: 100%;
+  height: 100%;
 }
 .lieu {
   color: #cccccc;

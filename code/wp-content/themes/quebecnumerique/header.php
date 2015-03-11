@@ -49,6 +49,8 @@ wp_head();
 
 </header><!-- #masthead -->
 
+
+
 	<?php if ( is_category() || is_archive() ) {
 		$queried_object = get_queried_object();
 		$id = $queried_object->cat_ID;	
@@ -76,7 +78,6 @@ wp_head();
 			$title = $term->name;
 		}
 
-
 		?>
 
 
@@ -90,11 +91,6 @@ wp_head();
 				</div>
 			</div>
 			
-			<!--div class="shapeheader tri1"></div>
-			<div class="shapeheader tri2"></div>
-			<div class="shapeheader tri3"></div>
-			<div class="shapeheader tri4"></div>
-			<div class="shapeheader tri5"></div-->
 			<hr class="clear"></hr>
 
 		</div>

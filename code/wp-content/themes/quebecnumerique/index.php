@@ -14,11 +14,38 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 ?>
 
-	<div id="content" role="main">
+	<div id="content" class="accueil" role="main">
 
 		<div class="abstract">
 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100% 100%" xml:space="preserve">
+<g id="Layer_7">
+	<polygon fill="#9B2B78" points="994.595,244.59 534.72,22.201 937.352,-71.57 	"/>
+</g>
+<g id="Layer_6">
+	<polygon fill="#A0AD00" points="303.649,246.253 49.253,-28.406 462.604,-21.581 	"/>
+</g>
+<g id="Layer_5">
+	<polygon fill="#009861" points="568.919,262.833 225.676,8.104 558.835,-113.713 	"/>
+</g>
+<g id="Layer_2">
+	<polygon fill="#00ACA7" points="33.108,250.671 -23,-47.708 297.297,-13.517 	"/>
+</g>
+<g id="Layer_3">
+	<polygon fill="#D39B00" points="397.297,212.161 445.946,-16.897 843.379,8.43 	"/>
+</g>
+<g id="Layer_4">
+	<polygon fill="#E14E24" points="722.973,266.888 681.757,-28.406 1012.162,-38.515 	"/>
+</g>
+</svg>
+
 		</div>
+
+
+		<hr class="clear">
+
+
 
 		<div class="group">
 
