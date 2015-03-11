@@ -509,20 +509,6 @@ hr {
 			position: relative;
 			z-index: 10;
 			.transition();
-
-			/*&:after {
-				content: "";
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				background-color: @noir;
-				right: -100%;
-				top: 0;
-				z-index: -1;
-				.transition();
-			}
-			&:hover { color: @blanc; }
-			&:hover:after { right: 0; }*/
 			&:hover { color: @orange; }
 		}
 
@@ -611,12 +597,11 @@ hr {
 
 
 	#breadcrumbs {
-		margin-top: 3em;
-		margin-bottom: 1em;
+		//text-align: right;
+		margin-bottom: 0.5em;
 		a, span {
 			text-transform: uppercase;
 			text-decoration: none;
-			font-weight: bold;
 			color: @blanc;
 		}
 	}
@@ -1175,7 +1160,6 @@ hr {
 			background-color: rgba(46, 173, 53, 0.7);
 			padding: 10px;
 		}
-	
 	}
 
 
@@ -1183,9 +1167,7 @@ hr {
 		background-color: @blanc;
 		padding: 1em 0;
 		margin-bottom: 1em;
-		//padding: 2.5em;
 		img { max-width: 100%; height: auto; }
-
 	}
 
 
@@ -1202,10 +1184,8 @@ hr {
 
 
 	.a-propos {
-		text-align: center;
+		//text-align: center;
 		article .entry-title, article .entry-content { color: @blanc; }
-		.entry-title { font-size: 3em; }
-
 	}
 
 	.stuck {
@@ -1239,18 +1219,14 @@ hr {
 		}
 	}
 
-
 	aside {
+		&.featured-img { background-color: transparent; }
 		background-color: lighten(@grispale, 60%);
 		margin-bottom: 1em;
 		font-size: 90%;
 		& > div { padding: 1em; }
 		img { max-width: 100%; height: auto; }
-	
-		h2 {
-			//font-size: 1em;
-			margin-bottom: 0.5em;
-		}
+		h2 { margin-bottom: 0.5em; }
 
 		.mot-cle {
 			font-size: 1.125em;
@@ -1266,14 +1242,11 @@ hr {
 	}
 
 	.sharing {
-		//font-size: 90%;
-		width: 3em;
 		& > div {
 			visibility: hidden;
 			opacity: 0;
 			position: absolute;
 			background-color: fade(@blanc, 85%);
-			width: 3em;
 			z-index: 999;
 			padding-top: 0.5em;
 			.transition();
@@ -1282,8 +1255,8 @@ hr {
 				opacity: 1; 
 				.transition(); 
 			}
-			a span {  opacity: 0; right: 10%; .transition();  }
-			a:hover span {  opacity: 1; right: 130%; .transition(); }
+			a span {  opacity: 0; right: 40%; .transition();  }
+			a:hover span {  opacity: 1; right: 165%; .transition(); }
 		}
 
 		a {
@@ -1355,7 +1328,6 @@ hr {
 			margin-right: 0.5em;
 			color: #fff;
 		}
-
 	}
 
 	.style-resultat(@couleur){
@@ -1381,15 +1353,11 @@ hr {
 			height: 5em;
 			padding: 0 1.5em;
 		}
-		a{
+		a {
 			text-decoration: none;
 			color: @gris;
 			.transition();
-			&:hover{
-				.content{
-					background-color: rgba(255, 255, 255, 1);
-				}
-			}
+			&:hover .content { background-color: rgba(255, 255, 255, 1); }
 		}
 		span{
 			font-size: 1.5em;
@@ -1401,61 +1369,37 @@ hr {
 					color: #C5C5C5;
 				}				
 			}
-
 		}
-
-
 	}	
 
-	.resultats{
+	.resultats {
 		.transition();
-		.nouvelles{
-			.style-resultat(@nouvelles);
-		}
-		.evenements{
-			.style-resultat(@evenements);
-		}
-		.projets{
-			.style-resultat(@projets);
-		}
-		.articles{
-			.style-resultat(@articles);
-		}
-		.organisations{
-			.style-resultat(@organisations);
-		}
-		.autre{
-			.style-resultat(@orange);
-		}
+		.nouvelles { .style-resultat(@nouvelles); }
+		.evenements { .style-resultat(@evenements); }
+		.projets { .style-resultat(@projets); }
+		.articles { .style-resultat(@articles); }
+		.organisations { .style-resultat(@organisations); }
+		.autre { .style-resultat(@orange); }
 	}
 
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
 	
-	.header-post-type{
-		//background-color: red;
-		//margin-top: -3em;
+	.header-post-type {
 		padding-top: 5em;
 		margin-bottom: 1.5em;
-		//margin-bottom: 1.8%;
 		background-image: url("images/shadow1.png");
 		background-attachment: fixed;
-		//background-position: left;
 
-		&.nouvelles{
-			background-color: @nouvelles;
-		}
-		&.articles{
-			background-color: @articles;
-		}
-		&.evenements{
-			background-color: @evenements;
-		}		
-		&.organisations{
-			background-color: @organisations;
-		}	
-		&.projets{
-			background-color: @projets;
-		}		
+		border-bottom: thin solid rgba(255, 255, 255, 0.06);
+		box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
+
+		&.nouvelles { background-color: @nouvelles; }
+		&.articles { background-color: @articles; }
+		&.evenements { background-color: @evenements; }		
+		&.organisations { background-color: @organisations; }	
+		&.projets { background-color: @projets; }
+		&.single-post { margin-bottom: 0; }
+
 		h1{
 			font-family: @titre1;
 			font-size: 3em;
@@ -1464,20 +1408,9 @@ hr {
 			color: @blanc;
 			margin: 1em 0 0.2em 0;
 		}
-		/*.shapeheader{
-			opacity: 0.05;
-			width: 0;
-			height: 0;
-			border-style: solid;	
-		}
-		.tri1{
-
-			border-width: 0 0 50% 50%;
-			border-color: transparent transparent @noir transparent;
-		}*/
 	}
 
-	.img-box article.c6-custom{
+	.img-box article.c6-custom {
 		margin: 0;
 		width: 48%;
 		margin-bottom: 2.8%;
@@ -1615,14 +1548,13 @@ hr {
 		}
 	}
 
+	.partenaires {
+		img { display: inline-block; padding: 3em; max-height: 5em; width: auto; }
+	}
+
 	#colophon {
 		.group { padding: 1em 0; }
 		.group.large-wrapper { padding: 1em 0.5em; }
-
-		.partenaires {
-			text-align: right;
-			img { display: inline-block; padding: 3em; max-height: 5em; width: auto; }
-		}
 
 		.gris-bg { color: @blanc; color: fade(@blanc, 50%); }
 
@@ -1677,7 +1609,6 @@ hr {
 
 	.organisation {
 		padding: 2em 0;
-
 		.all-org {
 			border-bottom: thin solid @grispale;
 			margin: 1em 0 2em 0;

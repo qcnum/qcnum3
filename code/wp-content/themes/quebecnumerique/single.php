@@ -27,30 +27,155 @@ $organisations = new WP_Query( array(
 
 				<div class="large-wrapper">
 
-					<div class="c8 fr group" role="main">
+					<div class="c7" role="main">
+
+						<div class="padding">
+
+							<header class="entry-header">
+
+								<h1 class="entry-title"><?php the_title(); ?></h1>
+								<span class="author"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></span>
+
+							</header>
+							
+							<div class="entry-content">
+
+								<?php the_content(); ?>
+								
+							</div>
+
+							<footer class="entry-meta">
+
+								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
+
+							</footer>
+
+						</div>
+
+					</div>
+
+					<secondary class="c5 fr group">
 
 						<div class="c11">
 
 							<div class="padding">
 
-								<header class="entry-header">
+								<aside class="featured-img">
+									<?php the_post_thumbnail('large'); ?>
+								</aside>
 
-									<h1 class="entry-title"><?php the_title(); ?></h1>
-									<span class="author"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></span>
+								<?php 
+								$map = get_field('localisation');
+								if ( $map ) : ?>
 
-								</header>
-								
-								<div class="entry-content">
+									<aside>
 
-									<?php the_content(); ?>
-									
-								</div>
+										<div>
 
-								<footer class="entry-meta">
+											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
+												
+										</div>
 
-									<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
+									</aside>
 
-								</footer>
+								<?php endif; ?>
+
+								<?php 
+								$motsCles = wp_get_post_terms(get_the_ID(), 'mots-cles');
+								if ( $motsCles ) : ?>
+
+									<aside>
+
+										<div class="group">
+
+											<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
+
+											<?php foreach ( $motsCles as $mc ) : ?>
+
+												<a class="mot-cle" href="<?php echo get_term_link( $mc, 'mots-cles' ); ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
+
+											<?php endforeach; ?>
+												
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php if ( $projets->have_posts() ) : ?>
+
+									<aside>
+
+										<div>
+
+											<h2><?php _e('Projets en lien', THEME_NAME); ?></h2>
+
+											<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
+
+												<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+											<?php endwhile; wp_reset_postdata(); ?>
+
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php if ( $evenements->have_posts() ) : ?>
+
+									<aside>
+
+										<div class="box-evenements">
+
+											<h2><?php _e('Événements en lien', THEME_NAME); ?></h2>
+
+											<?php while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
+												
+												<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+													<article class="grispale-bg group">
+														<?php the_post_thumbnail('thumbnail'); ?>
+														<div class="content">
+															<div class="ellipsis info-event">
+																<span class="date"><?php echo get_the_date(); ?></span>
+																<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
+															</div>
+															<h3 class="ellipsis"><?php the_title(); ?></h3>
+														</div>
+													</article>
+												</a>
+
+											<?php endwhile; wp_reset_postdata(); ?>
+
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php if ( $organisations->have_posts() ) : ?>
+
+									<aside>
+
+										<div>
+
+											<h2><?php _e('Organisation en lien', THEME_NAME); ?></h2>
+
+											<div class="group">
+
+												<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
+
+													<a class="c6" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+
+												<?php endwhile; wp_reset_postdata(); ?>
+
+											</div>
+
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
 
 							</div>
 
@@ -77,131 +202,6 @@ $organisations = new WP_Query( array(
 
 						</div>
 
-					</div>
-
-					<secondary class="c4">
-
-						<div class="padding">
-
-							<aside>
-								<?php the_post_thumbnail('large'); ?>
-							</aside>
-
-							<?php 
-							$map = get_field('localisation');
-							if ( $map ) : ?>
-
-								<aside>
-
-									<div>
-
-										<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
-											
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php 
-							$motsCles = wp_get_post_terms(get_the_ID(), 'mots-cles');
-							if ( $motsCles ) : ?>
-
-								<aside>
-
-									<div class="group">
-
-										<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
-
-										<?php foreach ( $motsCles as $mc ) : ?>
-
-											<a class="mot-cle" href="<?php echo get_term_link( $mc, 'mots-cles' ); ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
-
-										<?php endforeach; ?>
-											
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php if ( $projets->have_posts() ) : ?>
-
-								<aside>
-
-									<div>
-
-										<h2><?php _e('Projets en lien', THEME_NAME); ?></h2>
-
-										<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
-
-											<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-
-										<?php endwhile; wp_reset_postdata(); ?>
-
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php if ( $evenements->have_posts() ) : ?>
-
-								<aside>
-
-									<div class="box-evenements">
-
-										<h2><?php _e('Événements en lien', THEME_NAME); ?></h2>
-
-										<?php while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
-											
-											<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-												<article class="grispale-bg group">
-													<?php the_post_thumbnail('thumbnail'); ?>
-													<div class="content">
-														<div class="ellipsis info-event">
-															<span class="date"><?php echo get_the_date(); ?></span>
-															<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
-														</div>
-														<h3 class="ellipsis"><?php the_title(); ?></h3>
-													</div>
-												</article>
-											</a>
-
-										<?php endwhile; wp_reset_postdata(); ?>
-
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php if ( $organisations->have_posts() ) : ?>
-
-								<aside>
-
-									<div>
-
-										<h2><?php _e('Organisation en lien', THEME_NAME); ?></h2>
-
-										<div class="group">
-
-											<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
-
-												<a class="c6" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-
-											<?php endwhile; wp_reset_postdata(); ?>
-
-										</div>
-
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-						</div>
-
 					</secondary>
 
 				</div>
@@ -209,6 +209,17 @@ $organisations = new WP_Query( array(
 			</article>
 
 		<?php endwhile; ?>
+
+		<div class="related-posts">
+			
+			<h2>D'autres nouvelles qui pourraient vous intéresser...</h2>
+
+			<?php 
+			$related = get_posts();
+			?>
+
+
+		</div>
 
 	</div><!-- #content -->
 

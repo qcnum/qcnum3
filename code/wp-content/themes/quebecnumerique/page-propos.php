@@ -8,31 +8,33 @@ get_header(); ?>
 
 		<?php if( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
-			<article <?php post_class('group'); ?>>
-
-				<div class="c6 center">
+			<div class="large-wrapper">
 			
-					<header class="entry-header">
+				<article <?php post_class('group'); ?>>
 
-						<h1 class="entry-title"><?php the_title(); ?></h1>
+					<div class="c6">
 
-					</header>
+						<div class="padding">
+							
+							<div class="entry-content">
 
-					<div class="entry-content">
+								<?php the_content(); ?>
 
-						<?php the_content(); ?>
+							</div>
 
+							<footer class="entry-meta">
+
+								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
+
+							</footer>
+
+						</div>
+		
 					</div>
 
-					<footer class="entry-meta">
+				</article>
 
-						<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-					</footer>
-
-				</div>
-
-			</article>
+			</div>
 
 			<section class="white-post group">
 
@@ -44,7 +46,7 @@ get_header(); ?>
 
 				<?php $partenaires = get_field('partenaires', 'options'); ?>
 				
-				<div class="c7 partenaires">
+				<div class="c7 partenaires center">
 					<div class="padding">
 					
 						<?php foreach($partenaires as $p) : 

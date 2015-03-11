@@ -1084,20 +1084,6 @@ footer#colophon {
   -ms-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  /*&:after {
-				content: "";
-				position: absolute;
-				width: 100%;
-				height: 100%;
-				background-color: @noir;
-				right: -100%;
-				top: 0;
-				z-index: -1;
-				.transition();
-			}
-			&:hover { color: @blanc; }
-			&:hover:after { right: 0; }*/
-
 }
 .navigation a.fa-search:hover {
   color: #e14e24;
@@ -1213,14 +1199,12 @@ footer#colophon {
   transition: all 0.5s ease;
 }
 #breadcrumbs {
-  margin-top: 3em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 }
 #breadcrumbs a,
 #breadcrumbs span {
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: bold;
   color: #ffffff;
 }
 /* ACCUEIL */
@@ -1876,15 +1860,9 @@ footer#colophon {
   padding: 0.25em 0.5em;
   margin: 0 0.25em 0.25em 0;
 }
-.a-propos {
-  text-align: center;
-}
 .a-propos article .entry-title,
 .a-propos article .entry-content {
   color: #ffffff;
-}
-.a-propos .entry-title {
-  font-size: 3em;
 }
 .stuck {
   position: fixed;
@@ -1918,6 +1896,9 @@ aside {
   margin-bottom: 1em;
   font-size: 90%;
 }
+aside.featured-img {
+  background-color: transparent;
+}
 aside > div {
   padding: 1em;
 }
@@ -1939,15 +1920,11 @@ aside .mot-cle {
   float: left;
   margin: 0 0.25em 0.25em 0;
 }
-.sharing {
-  width: 3em;
-}
 .sharing > div {
   visibility: hidden;
   opacity: 0;
   position: absolute;
   background-color: rgba(255, 255, 255, 0.85);
-  width: 3em;
   z-index: 999;
   padding-top: 0.5em;
   -webkit-transition: all 0.2s ease;
@@ -1967,7 +1944,7 @@ aside .mot-cle {
 }
 .sharing > div a span {
   opacity: 0;
-  right: 10%;
+  right: 40%;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -1976,7 +1953,7 @@ aside .mot-cle {
 }
 .sharing > div a:hover span {
   opacity: 1;
-  right: 130%;
+  right: 165%;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -2382,18 +2359,8 @@ aside .mot-cle {
   margin-bottom: 1.5em;
   background-image: url("images/shadow1.png");
   background-attachment: fixed;
-  /*.shapeheader{
-			opacity: 0.05;
-			width: 0;
-			height: 0;
-			border-style: solid;	
-		}
-		.tri1{
-
-			border-width: 0 0 50% 50%;
-			border-color: transparent transparent @noir transparent;
-		}*/
-
+  border-bottom: thin solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
 }
 .header-post-type.nouvelles {
   background-color: #00aca7;
@@ -2409,6 +2376,9 @@ aside .mot-cle {
 }
 .header-post-type.projets {
   background-color: #009861;
+}
+.header-post-type.single-post {
+  margin-bottom: 0;
 }
 .header-post-type h1 {
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
@@ -2604,20 +2574,17 @@ form .advanced:hover {
 .rs a:hover {
   color: #ffffff;
 }
+.partenaires img {
+  display: inline-block;
+  padding: 3em;
+  max-height: 5em;
+  width: auto;
+}
 #colophon .group {
   padding: 1em 0;
 }
 #colophon .group.large-wrapper {
   padding: 1em 0.5em;
-}
-#colophon .partenaires {
-  text-align: right;
-}
-#colophon .partenaires img {
-  display: inline-block;
-  padding: 3em;
-  max-height: 5em;
-  width: auto;
 }
 #colophon .gris-bg {
   color: #ffffff;
