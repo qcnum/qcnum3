@@ -2819,7 +2819,7 @@ form .advanced:hover {
   }
 }
 @media screen and (min-width: 1025px) {
-  .img-box a:hover img {
+  .img-box a:hover .img {
     opacity: 0.1;
   }
   .img-box a:hover .excerpt-hover {
