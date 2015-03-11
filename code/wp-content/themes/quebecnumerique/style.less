@@ -73,6 +73,8 @@ Author URI: http://evollia.com/
 	@titre1: 'PT Sans Narrow', 'Arial' ,sans-serif;
 	@titre2: 'Exo 2','Helvetica Neue', 'Helvetica', 'Arial' ,sans-serif;
 
+
+
 /* =Int
 -------------------------------------------------------------- */
 
@@ -634,46 +636,6 @@ hr {
 		top: 0;		
 	}
 
-
-	/* Animation */
-	/*#test{
-	  -webkit-animation: rotate 5s linear 0s  ;
-	  -moz-animation: rotate 5s linear 0s  ;
-	  -o-animation: rotate 5s linear 0s  ;
-	  -ms-animation: rotate 5s linear 0s  ;
-	  animation: rotate 5s linear 0s  ;
-	}
-	@-webkit-keyframes rotate {
-	  from {
-	    -webkit-transform: rotate(-20deg);
-
-	  }
-	  to { 
-	    -webkit-transform: rotate(0deg);
-	  }
-	}
-
-	@-moz-keyframes rotate {
-	  from {
-	    -moz-transform: rotate(-20deg);
-
-	  }
-	  to { 
-	    -moz-transform: rotate(0deg);
-	  }
-	}
-
-	@-o-keyframes rotate {
-	  from {
-	    -o-transform: rotate(-20deg);
-
-	  }
-	  to { 
-	    -o-transform: rotate(0deg);
-	  }
-	}*/
-
-
 	.accueil{
 		margin-top: 11%;
 		h2 a{
@@ -849,11 +811,14 @@ hr {
 			margin-right: 0.5em;
 			max-height: 92%;
 		}
-		img{
+		.img{
 			width: 100%;
-			height: auto;
+			height: 0;
+			padding-bottom: 71.4285%;
+			background-size: cover;
 			vertical-align: bottom;
 			opacity: 1;
+
 			.transition(opacity 0.5s ease);
 		}
 		.excerpt-hover{
@@ -867,15 +832,21 @@ hr {
 			padding: 0em 0.5em 0 0.5em;
 			.transition(height 0.5s ease);
 		}
+
+
 		a {
 			text-decoration: none;
 			color: @blanc;
 			display: block;
+
 		}
 		article{
+			position: relative;
 			margin-bottom: 1em;
 			overflow: hidden;
-			position: relative;
+			width: 100%;
+			height: 0;
+			padding-bottom: 71.4285%;
 		}
 		h3{
 			position: relative;
