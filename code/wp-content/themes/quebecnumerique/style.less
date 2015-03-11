@@ -228,7 +228,7 @@ hr {
 			margin: 0 auto; 
 		}
 	}
-	
+
 	.padding { padding: 0 0.5em; }
 	.large-wrapper { padding: 0 0.5em; }
 
@@ -526,6 +526,11 @@ hr {
 			.evenements { .hover(@evenements); }
 			.organisations { .hover(@organisations); }
 			.projets { .hover(@projets); }
+
+			&.menu-toggle { 
+				display: none; 
+				li { .hover(@orange); }
+			}
 		}
 
 		a.fa-search { 
@@ -563,6 +568,7 @@ hr {
 			z-index: 200;
 			height: 100%;
 			width: 43em;
+			max-width: 100%;
 			.transition(all 0.5s ease);
 
 			.absolute {
@@ -845,39 +851,44 @@ hr {
 		//margin-bottom: 3%;
 		.content {
 			position: absolute;
-			bottom: 2%;
-			left: 2%;
+			bottom: 0.5em;
+			left: 0.5em;
 			z-index: 10;
 			margin-right: 0.5em;
 			max-height: 92%;
-			.transition(all 0.5s ease);
+			//.transition();
 		}
 		img{
 			width: 100%;
 			height: auto;
 			vertical-align: bottom;
-			.transition(all 0.5s ease);
+			opacity: 1;
+			.transition(opacity 0.5s ease);
 		}
 		.excerpt-hover{
 			color: @noir;
-			display: none;
+			//display: none;
 			height: 0;
-			padding: 0.4em 0.6em;
+			//padding: 0.5em 0em;
 			font-size: 0.9em;
 			line-height: 1.3em;
-			.transition(all 1s ease);
+			overflow: hidden;
+			clear: both;
+			background-color: fade(@blanc, 50%);
+			padding: 0em 0.5em 0 0.5em;
+			.transition(height 0.5s ease);
 		}
 		.excerpt-degrade{
-			background-color: red;
+			//background-color: red;
 			width: 100%;
 			height: 20%;
 			position: absolute;
 			bottom: 0;
 			z-index: 30;
 			display: none;
-			.transition(all 0.5s ease);
+			//.transition();
 		}
-		a{
+		a {
 			text-decoration: none;
 			color: @blanc;
 			display: block;
@@ -886,11 +897,14 @@ hr {
 					opacity: 0.1;
 				}
 				.excerpt-hover{
-					height: auto;
+					//height: auto;
+					padding: 0.5em 0.5em 0 0.5em;
 					display: block;
+					height: 6.45em;
+					
 				}
 				.excerpt-degrade{
-					display: block;
+					//display: block;
 				}
 				h3{
 					//background-color: transparent;
@@ -1479,27 +1493,12 @@ hr {
 	}
 
 	.cinq {
-
 		.group { position: relative; } 
-
-		.group:nth-child(odd) .c3:first-child {
-			width: 49.98%;
-		}
-		
+		.group:nth-child(odd) .c3:first-child { width: 49.98%; }
 		.group:nth-child(even) {
-
-			.c3:nth-child(3) {
-				clear: left;
-			}
-
-			.c3:last-child {
-				width: 49.98%;
-				position: absolute;
-				top: 0;
-				right: 0;
-			}
+			.c3:nth-child(3) { clear: left; }
+			.c3:last-child { width: 49.98%; position: absolute; top: 0; right: 0; }
 		}
-
 	}
 
 /* Footer */
@@ -1812,6 +1811,49 @@ hr {
 		#masthead, .page-header { font-size: 75%; }
 		#colophon { font-size: 85%; }
 		.contact-form { width: 64.81%; }
+
+		.cinq {
+			.group:after { content: none; }
+			.group .c3,
+			.group:nth-child(odd) .c3,
+			.group:nth-child(even) .c3,
+			.group:nth-child(even) .c3:nth-child(3),
+			.group:nth-child(even) .c3:last-child,
+			.group:nth-child(odd) .c3:first-child { 
+				width: 49.98%; 
+				clear: none;
+				position: relative;
+			}
+		}
+		
+		.navigation .principal {
+			&.menu-toggle { display: block; }
+
+			&#menu-principal {
+				position: fixed;
+				top: -150%;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: fade(@gris, 98%);
+				z-index: -1;
+				padding-top: 7em;
+				.transition(top 0.75s ease);
+
+				li {
+					float: none;
+					font-size: 200%;
+
+					a {
+						border-left: none;
+						border-bottom: thin solid rgba(255, 255, 255, 0.25);
+						box-shadow: inset -1px -1px 0 0px rgba(6, 6, 6, 0.6);
+					}
+				}
+				
+				&.visible { top: 0; }
+			}
+		}
 	}
 
 	@media screen and (max-width: 767px){
@@ -1821,3 +1863,26 @@ hr {
 
 	}
 
+	@media screen and (max-width: 600px){
+
+		.cinq {
+			.group .c3,
+			.group:nth-child(odd) .c3,
+			.group:nth-child(even) .c3,
+			.group:nth-child(even) .c3:nth-child(3),
+			.group:nth-child(even) .c3:last-child,
+			.group:nth-child(odd) .c3:first-child { 
+				width: 99.99%;
+			}
+		}
+
+		.navigation .principal#menu-principal { font-size: 75%; padding-top: 9em; }
+
+	}
+
+	@media screen and (max-width: 500px){
+		.home-link { font-size: 80%; }
+		.navigation .meta { margin-left: 10em; }
+		.site-description { left: 10em; }
+		.navigation .principal#menu-principal { font-size: 65%; }
+	}

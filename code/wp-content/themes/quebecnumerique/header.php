@@ -43,6 +43,9 @@ wp_head();
 			<?php wp_nav_menu( array( 'theme_location' => 'meta', 'container' => '', 'menu_class' => 'meta' ) ); ?>
 			<?php get_search_form(); ?>
 			<?php wp_nav_menu( array( 'theme_location' => 'navigation', 'container' => '', 'menu_class' => 'principal' ) ); ?>
+			<ul class="principal menu-toggle">
+				<li><a href="#">Menu</a></li>
+			</ul>
 		</nav><!-- #site-navigation -->
 		
 	</div>

@@ -10,6 +10,8 @@ var markers              = [];
 var allMarkers           = [];
 var markerCluster        = [];
 
+var limitTweets          = 500;
+
 jQuery.each(categories, function( index, value ) {
     markers[value] = [];
 });
@@ -87,7 +89,7 @@ var stylesCarte =[
             }
         ]
     }
-]
+];
 
 
 var infowindow = new google.maps.InfoWindow(
@@ -135,18 +137,7 @@ function initialize() {
     });
     
     //Twitter
-    var value = 'twitter';
-    
-    if(jQuery('#'+value+':checked').length > 0){
-            jQuery.get( directory_theme + "/js/ajax/"+value+".json.php?periode=&limit=", function(data) {
-                var cpt   = 0;
-                for (var i = 0; i < data.statuses.length; i++) {
-                    var latlng = new google.maps.LatLng(data.statuses[i].geo.coordinates[0], data.statuses[i].geo.coordinates[1]);
-                    createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
-                    cpt++;
-                }
-            });
-        }
+    listMarkersTweets();
 }
 
 function createMarker(latlng,name,html,image,category) {
@@ -200,4 +191,36 @@ function createMarker(latlng,name,html,image,category) {
             p.push(m[i].getPosition());
           }          
         });
+}
+
+function listMarkersTweets(cptReturn,maxID){
+    
+    cptReturn   = typeof cptReturn   !== 'undefined' ? cptReturn : 0;
+    maxID       = typeof maxID   !== 'undefined' ? maxID : 0;
+        
+    var value = 'twitter';
+    
+    if(jQuery('#'+value+':checked').length > 0){
+            jQuery.get( directory_theme + "/js/ajax/"+value+".json.php?maxID="+maxID+"periode=&limit=", function(data) {
+                if(data.statuses.length > 0){
+                    var cpt    = cptReturn;
+                    var lastID = 0;
+                    for (var i = 0; i < data.statuses.length; i++) {
+                        
+                        //if(data.statuses[i].id != maxID){
+                            var latlng = new google.maps.LatLng(data.statuses[i].geo.coordinates[0], data.statuses[i].geo.coordinates[1]);
+                            createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
+
+                            lastID = data.statuses[i].id;
+
+                            cpt++;
+                        //}
+                        
+                    }
+                    if(cpt < limitTweets && lastID > 0){
+                        listMarkersTweets(cpt,lastID)
+                    }
+                }
+            });
+        }
 }
