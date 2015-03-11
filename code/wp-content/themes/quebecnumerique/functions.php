@@ -319,4 +319,46 @@ function paging_nav() {
     echo '</div>';
 }
 
+function advanced_search_query($query) {
 
+    $aSearch = array();
+ 
+    if($query->is_search()) {
+         
+        // tag search
+        if (isset($_GET['mots-cles']) && is_array($_GET['mots-cles'])) {
+
+            $aMC = array(
+                'taxonomy' => 'mots-cles',
+                'field' => 'slug',
+                'terms' => $_GET['mots-cles'],
+                'operator' => 'IN'
+            );
+
+            array_push($aSearch, $aMC);
+        }
+
+        if (isset($_GET['quartiers']) && is_array($_GET['quartiers'])) {
+
+            $aQ = array(
+                'taxonomy' => 'quartier',
+                'field' => 'slug',
+                'terms' => $_GET['quartiers'],
+                'operator' => 'IN'
+            );
+
+            array_push($aSearch, $aQ);
+        }
+
+        $aSearch['relation'] = 'AND';
+        $query->set( 'tax_query', $aSearch );
+
+     
+        return $query;
+    }
+ 
+}
+
+add_action('pre_get_posts', 'advanced_search_query', 1000);
+
+add_filter( 'wpseo_metabox_prio', function() { return 'low';});

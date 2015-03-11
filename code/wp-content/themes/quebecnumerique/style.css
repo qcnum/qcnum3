@@ -1908,8 +1908,20 @@ footer#colophon {
 }
 article.white-post {
   background-color: #ffffff;
-  padding: 1.5em 0;
+  padding: 1em 0;
   margin-bottom: 1em;
+}
+article.white-post img {
+  max-width: 100%;
+  height: auto;
+}
+.list-secteurs span {
+  background-color: #d1d3d7;
+  color: #4d5057;
+  display: block;
+  float: left;
+  padding: 0.25em 0.5em;
+  margin: 0 0.25em 0.25em 0;
 }
 .stuck {
   position: fixed;
