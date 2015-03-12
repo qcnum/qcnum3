@@ -13,18 +13,6 @@ get_header(); ?>
 			$class="articles";
 		};
 		?>
-		<!--header class="page-header header-post-type <?php echo $class?>">
-			<div class="c12">
-				<h1 class="page-title"><?php single_cat_title(); ?></h1>
-			</div>
-			<div class="shapeheader tri1"></div>
-			<div class="shapeheader tri2"></div>
-			<div class="shapeheader tri3"></div>
-			<div class="shapeheader tri4"></div>
-			<div class="shapeheader tri5"></div>
-			<hr class="clear"></hr>
-
-		</header-->
 
 			
 			<div class="<?php echo $class?> group img-box">
@@ -74,6 +62,6 @@ get_header(); ?>
 
 	</div><!-- #content -->
 
-	<hr class="clear"></hr>
+	<hr class="clear">
 
 <?php get_footer(); ?>

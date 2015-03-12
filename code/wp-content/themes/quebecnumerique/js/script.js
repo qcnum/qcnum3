@@ -62,11 +62,18 @@ jQuery(document).ready(function(){
 
 
 
-	jQuery('.filtre-recherche').click(function(){
+	/*jQuery('.filtre-recherche').click(function(){
 		var $filtre = '.' + jQuery(this).attr('value');
 		jQuery('.resultats ' + $filtre).hide();
 		event.preventDefault();
-	});
+
+
+	
+		
+
+
+
+	}); */
 
 
 

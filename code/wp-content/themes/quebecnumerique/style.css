@@ -1214,7 +1214,7 @@ footer#colophon {
   right: 0;
   width: 43em;
   height: 100%;
-  background-color: rgba(55, 58, 63, 0.9);
+  background-color: rgba(55, 58, 63, 0.98);
   z-index: 100;
   padding: 2em;
   -webkit-box-sizing: border-box;
@@ -1502,7 +1502,7 @@ footer#colophon {
   line-height: 1.25em;
   clear: both;
 }
-.img-box div.triangle {
+.img-box span.triangle {
   width: 0;
   height: 0;
   border-style: solid;
@@ -1510,8 +1510,9 @@ footer#colophon {
   position: absolute;
   top: 0;
   left: 0;
+  display: block;
 }
-.img-box.nouvelles div.triangle {
+.img-box.nouvelles span.triangle {
   border-color: #00aca7 transparent transparent transparent;
 }
 .img-box.nouvelles .excerpt-degrade {
@@ -1522,7 +1523,7 @@ footer#colophon {
   background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
   background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
 }
-.img-box.articles div.triangle {
+.img-box.articles span.triangle {
   border-color: #a0ad00 transparent transparent transparent;
 }
 .img-box.articles .excerpt-degrade {
@@ -1891,6 +1892,9 @@ footer#colophon {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+}
+.sticky-event header h2 {
+  font-size: 1em;
 }
 aside {
   background-color: #eaebec;
