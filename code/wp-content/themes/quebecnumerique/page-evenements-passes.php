@@ -1,4 +1,7 @@
 <?php 
+/*
+* Template name: Événements passés
+*/
 get_header();
 
 $lastM;
@@ -9,18 +12,19 @@ query_posts(
 		'post_type' => 'evenements',
 		'meta_key' => 'enddate',
 		'orderby' => 'meta_value',
-		'order' => 'ASC',
+		'order' => 'DESC',
 		'posts_per_page' => -1,
 		'meta_query'  => array(
 			'relation' => 'AND',
 				array(
 				'key' => 'enddate',
 				'value' => $currentDate,
-				'compare' => '>='
+				'compare' => '<'
 			)
 		)
 	)
 );
+
 ?>
 
 

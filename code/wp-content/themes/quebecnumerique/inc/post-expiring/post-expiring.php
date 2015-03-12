@@ -40,7 +40,7 @@ class ExpiringPosts {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 		//wp_enqueue_script( 'post-expiring', plugins_url('assets/js/admin.js', __FILE__), array('jquery'), null, true );
 		//wp_enqueue_style( 'post-expiring', plugins_url('assets/css/post-expiring.css', __FILE__) );
-		wp_dequeue_style( 'acf-datepicker' );
+		//wp_dequeue_style( 'acf-datepicker' );
 		wp_enqueue_script( 'post-expiring', get_template_directory_uri() . '/inc/post-expiring/assets/js/admin.js', 'jquery', null, true );
 		wp_enqueue_style( 'post-expiring', get_template_directory_uri() . '/inc/post-expiring/assets/css/post-expiring.css' );
 	}

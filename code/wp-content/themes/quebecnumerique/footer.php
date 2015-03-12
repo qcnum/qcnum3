@@ -51,9 +51,9 @@
 					    	<?php 
 					    	$check="";
 					    	if ( is_home() || is_category( '3' ) ||  has_category( '3') || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="articles" class="selection" type="checkbox" name="articles" value="1" <?php echo $check; ?> ;>
+							<input id="articles" class="selection" type="checkbox" name="articles" <?php echo $check; ?>>
 
-							<label for="articles" id="">Articles</label>
+							<label for="articles">Articles</label>
 							<?php if ( is_home() ){
 								echo "<span class='nbr-count'>" . $nb_articles->category_count . "</span>";
 							}; ?>

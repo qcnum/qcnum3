@@ -5,10 +5,10 @@
 
 define("THEME_NAME", 'Québec Numérique');
 
-include_once('inc/advanced-custom-fields/acf.php');
-include_once('inc/acf-repeater/acf-repeater.php');
-include_once('inc/acf-options-page/acf-options-page.php');
-include_once('inc/post-expiring/post-expiring.php');
+//include_once('inc/advanced-custom-fields/acf.php');
+//include_once('inc/acf-repeater/acf-repeater.php');
+//include_once('inc/acf-options-page/acf-options-page.php');
+//include_once('inc/post-expiring/post-expiring.php');
 
 
 add_action( 'init', 'init' );
@@ -359,13 +359,9 @@ function posts_count( $wp_query = null ) {
     echo $output;
 }
 
-
 function advanced_search_query($query) {
-
     $aSearch = array();
- 
     if($query->is_search()) {
-         
         if (isset($_GET['mots-cles']) && is_array($_GET['mots-cles'])) {
 
             $aMC = array(
@@ -374,7 +370,6 @@ function advanced_search_query($query) {
                 'terms' => $_GET['mots-cles'],
                 'operator' => 'IN'
             );
-
             array_push($aSearch, $aMC);
         }
 
@@ -392,13 +387,47 @@ function advanced_search_query($query) {
 
         $aSearch['relation'] = 'AND';
         $query->set( 'tax_query', $aSearch );
-
-     
         return $query;
     }
- 
 }
 
 add_action('pre_get_posts', 'advanced_search_query', 1000);
 
 add_filter( 'wpseo_metabox_prio', function() { return 'low';});
+
+function save_evenement_meta( $post_id, $post, $update ) {
+
+    /*
+     * In production code, $slug should be set only once in the plugin,
+     * preferably as a class property, rather than in each function that needs it.
+     */
+    $slug = 'evenements';
+
+    // If this isn't a 'book' post, don't update it.
+    if ( $slug != $post->post_type ) {
+        return;
+    }
+
+
+    if ( !isset( $_REQUEST['enddate'] ) && isset( $_REQUEST['startdate'])) {
+        update_post_meta( $post_id, 'enddate', $_REQUEST['startdate'] );
+    }
+
+    if ( !isset( $_REQUEST['enddate'] ) && !isset( $_REQUEST['startdate'])) {
+        update_post_meta( $post_id, 'startdate', get_the_date($post_id) );
+        update_post_meta( $post_id, 'enddate', get_the_date($post_id) );
+    }
+}
+//add_action( 'save_post', 'save_evenement_meta', 10, 3 );
+
+
+
+function my_acf_save_post( $post_id ) {
+    if ( get_post_type($post_id) != 'evenements' ) { return; }
+    $debut = get_post_meta( $post_id, 'startdate' );
+    $fin = get_post_meta( $post_id, 'enddate' );
+    if( $fin[0] == "" ) { update_post_meta( $post_id, 'enddate', $debut[0] ); }
+}
+// run after ACF saves the $_POST['acf'] data
+add_action('acf/save_post', 'my_acf_save_post', 20);
+
