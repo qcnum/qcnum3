@@ -31,7 +31,7 @@ foreach($evenements->posts as $e){
     if(isset($localisation[0]['lat']) && !empty($localisation[0]['lat']) && isset($localisation[0]['lng']) && !empty($localisation[0]['lng'])){
         $ligne['id']     = $e->ID;
         $ligne['title']  = $e->post_title;
-        $ligne['window'] = $e->post_title.'<br />'.  get_the_permalink($e->ID);
+        $ligne['window'] = '<div class="nouvelles window"><h3>' . $e->post_title.'</h3><a class="btn-map" href="'. get_the_permalink($e->ID) .'">Plus de détails</a></div>';
         $ligne['lat']    = $localisation[0]['lat'];
         $ligne['long']   = $localisation[0]['lng'];
         array_push($data, $ligne);

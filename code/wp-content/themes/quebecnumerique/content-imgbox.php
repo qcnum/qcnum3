@@ -6,16 +6,22 @@
 				<h3 class="grisopac-bg"><?php the_title(); ?><span class="triangle"></span></h3>
 				<div class="excerpt-hover"><?php the_excerpt(); ?></div>
 			</div>
-			<?php if(has_post_thumbnail()) : ?>
-				<?php 
-				$id = get_post_thumbnail_id();
-				$url = wp_get_attachment_image_src( $id , 'rectangle');
-				?>
 
-				<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
+			<?php if(has_post_thumbnail()) : 
+				$id = get_post_thumbnail_id();
+			else : 
+				$category = get_the_category();
+				if ( $category[0]->cat_ID == 2) {$id = get_field('img-nouvelles', 'options'); }
+				if ( $category[0]->cat_ID == 3) {$id = get_field('img-articles', 'options'); }
 				
-			<?php else : ?>
-				<div class="img" style="background-image: url('http://placehold.it/700x500')" ></div>
-			<?php endif; ?>
+			endif; 
+
+			$url = wp_get_attachment_image_src( $id , 'rectangle');?>
+
+			<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
+				
+			
+				<!--div class="img" style="background-image: url('<?php echo get_template_directory_uri()?>/images/default.jpg')" ></div-->
+			
 		</a>
 	</article>
