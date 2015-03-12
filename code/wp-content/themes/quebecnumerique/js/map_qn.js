@@ -210,9 +210,20 @@ function listMarkersTweets(cptReturn,maxID){
                     var lastID = 0;
                     for (var i = 0; i < data.statuses.length; i++) {
                         
+                        /*Quelques variables pour agrémenter les infowindows :
+                         * - data.statuses[i].user.profile_image_url photo du profil
+                         * - data.statuses[i].user.name nom du profil
+                         * - data.statuses[i].user.url
+                         */
+                        
+                        var imgProfil ="";
+                        if(data.statuses[i].user.profile_image_url.length > 0){
+                            imgProfil = '<img src="'+data.statuses[i].user.profile_image_url+'" alt="">';
+                        }
+                        
                         //if(data.statuses[i].id != maxID){
                             var latlng = new google.maps.LatLng(data.statuses[i].geo.coordinates[0], data.statuses[i].geo.coordinates[1]);
-                            createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
+                            createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
 
                             lastID = data.statuses[i].id;
 

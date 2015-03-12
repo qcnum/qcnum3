@@ -18,6 +18,7 @@ function init() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('rectangle', 700, 500, true );
     add_image_size('thumb-nocrop', 200, 200, false );
+    add_image_size('profil', 400, 400, true );
     
 
 	register_sidebar( array(
@@ -328,6 +329,13 @@ function paging_nav() {
 
     echo '</div>';
 }
+
+
+function wpa57065_filter_where( $where = '' ) {
+    $where .= " AND post_date <= '" . date('Y-m-d') . "'";
+    return $where;
+}
+
 
 function partition(Array $list, $p) {
     $listlen = count($list);

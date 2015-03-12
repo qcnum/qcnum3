@@ -87,29 +87,29 @@ wp_head();
 	}
 	?>
 
-	<?php if(!is_front_page()) : ?>
+		<?php if (!is_front_page()){ ?>
+			<div class="page-header header-post-type <?php echo $class?>">
 
-		<div class="page-header header-post-type <?php echo $class?>">
-
-			<div class="large-wrapper">
-				<div class="c12">
-					<div class="padding">
-						<h1 class="page-title"><?php echo $title ?></h1>
+				<div class="large-wrapper">
+					<div class="c12">
+						<div class="padding">
+							<h1 class="page-title"><?php echo $title ?></h1>
+						</div>
 					</div>
-				</div>
 
-				<?php
-				if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
-					yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
-				} ?>
+					<?php
+					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
+						yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
+					} ?>
+
+				</div>
+				
+				<hr class="clear">
 
 			</div>
-			
-			<hr class="clear">
+		<?php 
+		};?>
 
-		</div>
-		
-	<?php endif; ?>
 
 	<div id="page" class="wrapper">
 
