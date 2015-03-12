@@ -110,12 +110,15 @@ jQuery(document).ready(function(){
 
 });
 
+
 function initialize() {
     var center = new google.maps.LatLng(46.815256, -71.225401);
+    var isDraggable = jQuery(document).width() > 480 ? true : false;
 
     map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           scrollwheel: false,
+          draggable: isDraggable,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP
     });

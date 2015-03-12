@@ -27,43 +27,145 @@ $projets = new WP_Query( array(
 
 				<div class="large-wrapper">
 
-					<div class="c8 fr group" role="main">
+					<div class="c7" role="main">
+
+						<div class="padding">
+
+							<header class="entry-header">
+
+								<h1 class="entry-title"><?php the_title(); ?></h1>
+
+							</header>
+							
+							<div class="entry-content">
+
+								<?php the_content(); ?>
+								
+							</div>
+
+							<footer class="entry-meta">
+
+								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
+
+							</footer>
+
+						</div>
+
+					</div>
+
+					<secondary class="c5 fr group">
 
 						<div class="c11">
 
 							<div class="padding">
 
-								<header class="entry-header">
+								<aside class="featured-img">
+									<?php the_post_thumbnail('large'); ?>
+								</aside>
 
-									<h1 class="entry-title"><?php the_title(); ?></h1>
+								<?php 
+								$map = get_field('localisation');
+								if ( $map ) : ?>
 
-									<?php 
-									$map = get_field('localisation');
-									if ( $map ) : ?>
+									<aside>
 
-										<aside>
-											<div class="info-event">
-												<div class="date">
-													<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
-												</div>
+										<div>
+
+											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
+												
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php 
+								$motsCles = wp_get_post_terms(get_the_ID(), 'mots-cles');
+								if ( $motsCles ) : ?>
+
+									<aside>
+
+										<div class="group">
+
+											<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
+
+											<?php foreach ( $motsCles as $mc ) : ?>
+
+												<a class="mot-cle" href="<?php echo get_term_link( $mc, 'mots-cles' ); ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
+
+											<?php endforeach; ?>
+												
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php if ( $projets->have_posts() ) : ?>
+
+									<aside>
+
+										<div>
+
+											<h2><?php _e('Projets en lien', THEME_NAME); ?></h2>
+
+											<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
+
+												<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
+
+											<?php endwhile; wp_reset_postdata(); ?>
+
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php if ( $nouvelles->have_posts() ) : ?>
+
+									<aside>
+
+										<div class="evenements">
+
+											<h2><?php _e('Nouvelles en lien', THEME_NAME); ?></h2>
+
+											<?php while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
+												
+												<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
+													<?php the_title(); ?>
+												</a>
+
+											<?php endwhile; wp_reset_postdata(); ?>
+
+										</div>
+
+									</aside>
+
+								<?php endif; ?>
+
+								<?php if ( $organisations->have_posts() ) : ?>
+
+									<aside>
+
+										<div>
+
+											<h2><?php _e('Organisation en lien', THEME_NAME); ?></h2>
+
+											<div class="group">
+
+												<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
+
+													<a class="c6" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+
+												<?php endwhile; wp_reset_postdata(); ?>
+
 											</div>
-										</aside>
 
-									<?php endif; ?>
+										</div>
 
-								</header>
-								
-								<div class="entry-content">
+									</aside>
 
-									<?php the_content(); ?>
-									
-								</div>
-
-								<footer class="entry-meta">
-
-									<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-								</footer>
+								<?php endif; ?>
 
 							</div>
 
@@ -87,106 +189,6 @@ $projets = new WP_Query( array(
 								</div>
 
 							</div>
-
-						</div>
-
-					</div>
-
-					<secondary class="c4">
-
-						<div class="padding">
-
-							<aside>
-								<?php the_post_thumbnail('large'); ?>
-							</aside>
-
-							<?php 
-							$motsCles = wp_get_post_terms(get_the_ID(), 'mots-cles');
-							if ( $motsCles ) : ?>
-
-								<aside>
-
-									<div class="group">
-
-										<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
-
-										<?php foreach ( $motsCles as $mc ) : ?>
-
-											<a class="mot-cle" href="<?php echo get_term_link( $mc, 'mots-cles' ); ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
-
-										<?php endforeach; ?>
-											
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php if ( $projets->have_posts() ) : ?>
-
-								<aside>
-
-									<div>
-
-										<h2><?php _e('Projets en lien', THEME_NAME); ?></h2>
-
-										<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
-
-											<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-
-										<?php endwhile; wp_reset_postdata(); ?>
-
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php if ( $nouvelles->have_posts() ) : ?>
-
-								<aside>
-
-									<div class="evenements">
-
-										<h2><?php _e('Nouvelles en lien', THEME_NAME); ?></h2>
-
-										<?php while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
-											
-											<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-												<?php the_title(); ?>
-											</a>
-
-										<?php endwhile; wp_reset_postdata(); ?>
-
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
-
-							<?php if ( $organisations->have_posts() ) : ?>
-
-								<aside>
-
-									<div>
-
-										<h2><?php _e('Organisation en lien', THEME_NAME); ?></h2>
-
-										<div class="group">
-
-											<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
-
-												<a class="c6" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-
-											<?php endwhile; wp_reset_postdata(); ?>
-
-										</div>
-
-									</div>
-
-								</aside>
-
-							<?php endif; ?>
 
 						</div>
 

@@ -52,63 +52,65 @@ wp_head();
 
 </header><!-- #masthead -->
 
-	<?php if ( is_category() || is_archive() ) {
-		$queried_object = get_queried_object();
-		$id = $queried_object->cat_ID;	
-		$name = $queried_object->name;
-		if ($id == 2) {
-		  	$class="nouvelles";
-		  	$title=$name;
-		} else if ($id == 3) {
-			$class="articles";
-			$title=$name;
-		} else if ($name == 'organisations')  {
-			$class="organisations";
-			$title = $queried_object->label;
-		} else if ($name == 'projets')  {
-			$class="projets";
-			$title = $queried_object->label;
-		} else if ($name == 'evenements')  {
-			$class="evenements";
-			$title = $queried_object->label;
-		};
 
-		if(is_tax()) {
-			$term = $wp_query->get_queried_object();
-			$class="organisations";
-			$title = $term->name;
+
+	<?php if ( is_category() || is_archive() || is_single() ) {
+			$queried_object = get_queried_object();
+			$id = $queried_object->cat_ID;	
+			$name = $queried_object->name;
+			if ($id == 2 || in_category(2)) {
+			  	$class="nouvelles";
+			  	$title=$name;
+			} else if ($id == 3 || in_category(3)) {
+				$class="articles";
+				$title=$name;
+			} else if ($name == 'organisations' || is_singular('organisations'))  {
+				$class="organisations";
+				$title = $queried_object->label;
+			} else if ($name == 'projets' || is_singular('projets'))  {
+				$class="projets";
+				$title = $queried_object->label;
+			} else if ($name == 'evenements' || is_singular('evenements'))  {
+				$class="evenements";
+				$title = $queried_object->label;
+			}
+
+			if(is_single()) { $class .= ' single-post'; }
+
+			if(is_tax()) {
+				$term = $wp_query->get_queried_object();
+				$class="organisations";
+				$title = $term->name;
+			}
+
+		} else {
+			$class = "normal";
+			$title = get_the_title();
 		}
-
-
 		?>
 
+		<?php if (!is_front_page()){ ?>
+			<div class="page-header header-post-type <?php echo $class?>">
 
-		<div class="page-header header-post-type <?php echo $class?>">
-
-			<div class="large-wrapper">
-				<div class="c12">
-					<div class="padding">
-						<h1 class="page-title"><?php echo $title ?></h1>
+				<div class="large-wrapper">
+					<div class="c12">
+						<div class="padding">
+							<h1 class="page-title"><?php echo $title ?></h1>
+						</div>
 					</div>
+
+					<?php
+					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
+						yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
+					} ?>
+
 				</div>
+				
+				<hr class="clear">
+
 			</div>
-			
-			<!--div class="shapeheader tri1"></div>
-			<div class="shapeheader tri2"></div>
-			<div class="shapeheader tri3"></div>
-			<div class="shapeheader tri4"></div>
-			<div class="shapeheader tri5"></div-->
-			<hr class="clear"></hr>
-
-		</div>
 		<?php 
-	};?>
-
-
-	<?php
-	if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
-		yoast_breadcrumb('<div class="group large-wrapper"><p class="c12" id="breadcrumbs"><div class="padding">','</p></div></div>');
-	} ?>
+		};?>
 
 
 	<div id="page" class="wrapper">

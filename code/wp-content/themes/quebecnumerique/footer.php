@@ -52,7 +52,7 @@
 
 							<?php 
 					    	$check="";
-					    	if ( is_home() || is_category( '3' )  ||  has_category( '3') ) {$check = 'checked="checked"';}?>
+					    	if ( is_home() || is_post_type_archive('evenements')  ||  is_singular('evenements') ) {$check = 'checked="checked"';}?>
 							<input id="evenements" class="selection" type="checkbox" name="evenements" value="1"  <?php echo $check; ?> ;>
 
 							<label for="evenements" id="">Événements</label>

@@ -54,7 +54,7 @@
 					<?php
 					$class="" ;
 					$info=""; 
-					$date = get_the_date('j M y');
+					$date = get_the_date('j F y');
 					$type = get_post_type(); 
 					$url = get_permalink();
 					if ( is_category( '2' ) ||  has_category( '2') ) {

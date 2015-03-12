@@ -18,6 +18,7 @@ function init() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('rectangle', 700, 500, true );
     add_image_size('thumb-nocrop', 200, 200, false );
+    add_image_size('profil', 400, 400, true );
     
 
 	register_sidebar( array(
@@ -319,9 +320,66 @@ function paging_nav() {
     echo '</div>';
 }
 
+
 function wpa57065_filter_where( $where = '' ) {
     $where .= " AND post_date <= '" . date('Y-m-d') . "'";
     return $where;
 }
 
 
+function partition(Array $list, $p) {
+    $listlen = count($list);
+    $partlen = floor($listlen / $p);
+    $partrem = $listlen % $p;
+    $partition = array();
+    $mark = 0;
+    for($px = 0; $px < $p; $px ++) {
+        $incr = ($px < $partrem) ? $partlen + 1 : $partlen;
+        $partition[$px] = array_slice($list, $mark, $incr);
+        $mark += $incr;
+    }
+    return $partition;
+}
+
+function advanced_search_query($query) {
+
+    $aSearch = array();
+ 
+    if($query->is_search()) {
+         
+        if (isset($_GET['mots-cles']) && is_array($_GET['mots-cles'])) {
+
+            $aMC = array(
+                'taxonomy' => 'mots-cles',
+                'field' => 'slug',
+                'terms' => $_GET['mots-cles'],
+                'operator' => 'IN'
+            );
+
+            array_push($aSearch, $aMC);
+        }
+
+        if (isset($_GET['quartiers']) && is_array($_GET['quartiers'])) {
+
+            $aQ = array(
+                'taxonomy' => 'quartier',
+                'field' => 'slug',
+                'terms' => $_GET['quartiers'],
+                'operator' => 'IN'
+            );
+
+            array_push($aSearch, $aQ);
+        }
+
+        $aSearch['relation'] = 'AND';
+        $query->set( 'tax_query', $aSearch );
+
+     
+        return $query;
+    }
+ 
+}
+
+add_action('pre_get_posts', 'advanced_search_query', 1000);
+
+add_filter( 'wpseo_metabox_prio', function() { return 'low';});

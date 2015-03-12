@@ -64,9 +64,8 @@ jQuery(document).ready(function(){
 
 	jQuery('.filtre-recherche').click(function(){
 		var $filtre = '.' + jQuery(this).attr('value');
-		alert($filtre)
 		jQuery('.resultats ' + $filtre).hide();
-		//event.preventDefault();
+		event.preventDefault();
 	});
 
 
@@ -88,6 +87,8 @@ jQuery(document).ready(function(){
             jQuery('.home-link').removeClass('retract');
             jQuery('.navigation .meta').removeClass('retract-tag');
         }
+
+        
 
     });
 
