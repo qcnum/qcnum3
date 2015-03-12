@@ -2545,6 +2545,15 @@ form .advanced:hover {
   -o-box-shadow: 0px 0px 9px 0px #d2d2d2;
   box-shadow: 0px 0px 9px 0px #d2d2d2;
 }
+.btn-map {
+  background-color: #e14e24;
+  float: left;
+  text-decoration: none;
+  padding: 0.2em 0.4em;
+  color: white;
+  font-weight: 600;
+  margin-top: 0.4em;
+}
 .full-screen-map {
   height: 100%;
   position: fixed;
