@@ -145,7 +145,7 @@ function init() {
             'label' => __( 'Quartiers' ),
             'public' => true,
             'hierarchical' => true,
-            'show_admin_column' => true,
+            'show_admin_column' => true
         )
     );
 
@@ -161,6 +161,16 @@ function init() {
     );
 
 }
+
+function custom_rewrite_rule() {
+    //add_rewrite_rule('^mots-cles/([^/]*)/?','/?s=&mots-cles[]=$matches[1]','top');
+
+    add_rewrite_rule('/?s=&mots-cles[]=$matches[1]','^mots-cles/([^/]+)/?','top');
+}
+add_action('init', 'custom_rewrite_rule', 10, 0);
+
+///?s=&mots-cles[]=test2
+
 
 function my_connection_types() {
 
