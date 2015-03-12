@@ -83,6 +83,7 @@ body {
 	font-family: @content;
 	font-weight: 400;
 	background-color: @grispale;
+	color: @gris;
 }
 
 .clear {
@@ -202,10 +203,10 @@ hr {
 		.m-btn-orange();
 	}
 
-    .noir-et-blanc () {
+    .noir-et-blanc (@pourcentage: 100%) {
 	    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
 	    filter: gray; /* IE6-9 */
-	    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+	    -webkit-filter: grayscale(@pourcentage); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
     }
 
 /* GENERAL */
@@ -291,11 +292,13 @@ hr {
 	.grisopac-bg { background-color: @grisopac;}
 	.blanc-bg { background-color: @blanc; }
 	.opac-bg { background-color: rgba(255,255,255,0.1);}
+	.bleufonce-bg {background-color: darken(@bleu, 30%);}
+
 
 	.group:after {
-	  content: "";
-	  display: table;
-	  clear: both;
+		content: "";
+		display: table;
+		clear: both;
 	}
 
 	#masthead {
@@ -770,8 +773,8 @@ hr {
 		h2 a { .h2link (@evenements); }
 		h3{ 
 			font-family: @titre2; 
-			font-size: 1.5em; 
-			margin-top: 2.5%;
+			font-size: 1.4em;
+			margin-top: 2%;
 		}
 		article{
 			.transition();
@@ -1726,26 +1729,39 @@ hr {
 	
 	.coordonees{
 		a{
-			background-color: rgb(225, 78, 36);
 			text-decoration: none;
 			color: white;
 			float: left; 
 			display: block;
-			font-size: 1.8em;
-			/* font-family: 'Exo 2'; */
-			/* font-weight: 700; */
-			padding: 0.4em;			
+			font-size: 1.5em;
+  			padding: 0.5em 0.8em;
+			margin-bottom: 0.5em;			
 		}
 
 	}
 
 	.equipe{
+		padding: 3em 0 5em;
+		margin-top: 3em;
 		a{
-			
 			text-decoration: none;	
+			color: @blanc;
 			&:hover{
-				.img{opacity: 0.2;}
+				.img{
+					opacity: 1;
+					.noir-et-blanc (60%);
+
+				}
+				i{
+					position: relative;
+					opacity: 1;
+				}
 			}
+		}
+		h2{
+			font-size: 2.5em;
+  			font-family: @titre2;
+  			font-weight: 400;
 		}
 	}
 
@@ -1755,7 +1771,7 @@ hr {
 		height: 0;
 		padding-bottom: 100%;
 		background-color: #2460ED;
-
+		position: relative;
 		.img{ 
 			width: 100%;
 			height: 0;
@@ -1764,6 +1780,35 @@ hr {
 			opacity: 0.9;
 			.noir-et-blanc ();
 			.transition();
+		}
+		.content{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			padding: 0.3em;
+			span{
+				position: relative;
+				text-transform: uppercase;
+				padding: 0.2em 0.5em;
+				display: block;		
+				float: left;
+				z-index: 20;
+
+			}
+			.titre{
+				font-size: 0.8em;
+				margin-bottom: -1em;
+			}
+			i{
+				font-size: 1.2em;
+				background-color: rgba(0,0,0,0.3);
+				padding: 0.1em 0.3em;
+				position: absolute;
+				opacity: 0;
+				z-index: 10;
+				.transition();
+			}
+		
 		}
 		
 	}

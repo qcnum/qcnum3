@@ -92,7 +92,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 				<div class="c6">
 					
-					<div class="nouvelles group trois img-box">
+					<div class="nouvelles group trois img-box padding">
 						<?php 
 						$titre = get_field('titre_nouvelles', 'options');
 						$url = get_category_link('2');
@@ -116,7 +116,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 					
 					</div>
 
-					<div class="articles group img-box">
+					<div class="articles group img-box padding">
 						<?php 
 						$titre = get_field('titre_articles', 'options');
 						$url = get_category_link('3');
@@ -141,7 +141,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 					<div class="padding">
 					
-						<div class="box-evenements group">
+						<div class="box-evenements group padding">
 							<?php 
 							$titre = get_field('titre_evenements', 'options');
 							?>
@@ -168,7 +168,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 					</div>
 
-					<div class="nouvelles group img-box">
+					<div class="nouvelles group img-box padding">
 						<?php $url = get_term_link($tag1);?>
 						<div class="padding">
 							<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag1_name?>"><?php echo $tag1_name?><i class="fa fa-plus"></i></a></h2>
@@ -184,7 +184,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 					
 					</div>
 
-					<div class="nouvelles group img-box">
+					<div class="nouvelles group img-box padding">
 						<?php $url = get_term_link($tag2);?> 
 						<div class="padding">
 							<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag2_name?>"><?php echo $tag2_name?><i class="fa fa-plus"></i></a></h2>

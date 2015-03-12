@@ -6,33 +6,38 @@ get_header(); ?>
 
 	<div id="content" role="main" class="a-propos">
 
-		<?php if( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
+
+
+		<?php if( have_posts() ) while ( have_posts() ) : the_post(); ?>
+ 
 			<div class="coordonees large-wrapper group">
 				<div class="c12">
 					<div class="padding">
 						<div class="entry-content">
 							<?php 
 							$telephone = get_field('telephone'); 
-							$email = get_field('courriel'); 
+							$mail = get_field('courriel'); 
 							?>
-							<a href="#"><?php echo $telephone ?></a>
-							<hr class="clear">
-							<a href="#"><?php echo $email ?></a>
-						</div>
+							<a href="mailto:<?php echo $mail ?>" class="bleufonce-bg"><?php echo $mail ?></a>
 
+							<hr class="clear">
+							<a href="tel:<?php echo $telephone ?>" class="bleufonce-bg"><?php echo $telephone ?></a>
+							
+						</div>
 					</div>
 				</div>
 			</div>
 
 
 
-			<section class="equipe large-wrapper white-post group padding">
+			<section class="equipe large-wrapper white-post group">
 
 				<div class="entry-content c12 padding ">
-					<h2><?php the_field('equipe_titre'); ?> </h2>
-					<?php the_field('equipe_texte'); ?>
-
+					<div class="padding">
+						<h2><?php the_field('equipe_titre'); ?> </h2>
+						<?php the_field('equipe_texte'); ?>
+					</div>
 				</div>
 
 				<?php $membres = get_field('membres'); ?>
@@ -46,14 +51,25 @@ get_header(); ?>
 						$nom = $m['nom'];
 						$photoid = $m['photo'];
 						$titre = $m['titre'];
+						$linkedin = $m['linkedin'];
 						$url = wp_get_attachment_image_src($photoid, 'profil');
+
 						?>
-						<a href="#" class="c3 pb1em">
+						<a href="<?php echo $linkedin ?>" class="c3 pb1em">
 							<div class="padding">
 								<div class="membre">
 									<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
-									<span><?php echo $nom; ?></span>
-									<span><?php echo $titre; ?></span>
+									<div class="content">
+										<i class="fa fa-linkedin"></i>
+										<hr class="clear">
+										<span class="bleufonce-bg"><?php echo $nom; ?></span>
+										<hr class="clear">
+										<?php if ($titre != null){ ?>
+										<span class="titre orange-bg"><?php echo $titre; ?></span>
+										<?php }; ?>
+										
+									</div>
+
 								</div>
 							</div>
 						</a>
@@ -66,49 +82,6 @@ get_header(); ?>
 
 			</section>
 
-			<!--section>
-
-				<div class="entry-content">
-
-					<?php the_field('texte_collaborateurs'); ?>
-
-					<?php
-					$collab = get_field('collaborateurs');
-					$chunk = partition($collab, 4); ?>
-
-					<div class="group">
-						<?php foreach ($chunk as $ch) : ?>
-							<div class="c3">
-								<?php foreach($ch as $c) :
-									$id = $c['ID'];
-									$name = $c['display_name'];
-									$titre = get_field('titre', 'user_'.$id);
-									$photo = $c['user_avatar'];
-									$desc = $c['user_description']; ?>
-									<div class="padding">
-										
-										<div class="white-post entry-content">
-											<div class="padding">
-												<?php echo get_avatar( $id, 200 ); ?> 
-												<h2><?php echo $name; ?></h2>
-												<?php echo $titre; ?>
-												<p><?php echo $desc; ?></p>
-												<a href="#" class="btn">Voir les collaborations</a>
-
-											</div>
-		
-										</div>
-									</div>
-									
-								<?php endforeach; ?>
-							</div>
-						<?php endforeach; ?>
-					</div>
-
-				</div>
-				
-
-			</section-->
 
 		<?php endwhile; ?>
 

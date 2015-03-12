@@ -6,6 +6,9 @@ get_header(); ?>
 
 	<div id="content" role="main" class="a-propos">
 
+
+
+
 		<?php if( have_posts() ) while ( have_posts() ) : the_post(); ?>
 
 			<div class="large-wrapper">
