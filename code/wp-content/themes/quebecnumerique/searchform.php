@@ -33,27 +33,27 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 
 				<div class="filtre nouvelles">
 					<input id="recherche-nouvelles" class="resultat" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_p)) { echo 'checked="checked"'; } ?>>
-					<label class="filtre-recherche" for="recherche-nouvelles" value="nouvelles">Nouvelles</label>
+					<label class="filtre-recherche" for="recherche-nouvelles">Nouvelles</label>
 				</div>
 
 				<div class="filtre articles">
 					<input id="recherche-articles" class="resultat" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_p)) { echo 'checked="checked"'; } ?>>
-					<label class="filtre-recherche" for="recherche-articles" value="articles">Articles</label>
+					<label class="filtre-recherche" for="recherche-articles">Articles</label>
 				</div>
 
 				<div class="filtre evenements">
 					<input id="recherche-evenements" class="resultat" type="checkbox" name="post_type[]" value="evenements" <?php if (in_array('evenements', $query_p)) { echo 'checked="checked"'; } ?>>
-					<label class="filtre-recherche" for="recherche-evenements" value="evenements">Événements</label>
+					<label class="filtre-recherche" for="recherche-evenements">Événements</label>
 				</div>
 
 				<div class="filtre organisations">
 					<input id="recherche-organisations" class="resultat" type="checkbox" name="post_type[]" value="organisations" <?php if (in_array('organisations', $query_p)) { echo 'checked="checked"'; } ?>>
-					<label class="filtre-recherche" for="recherche-organisations" value="organisations">Organisations</label>
+					<label class="filtre-recherche" for="recherche-organisations">Organisations</label>
 				</div>
 
 				<div class="filtre projets">
 					<input id="recherche-projets" class="resultat" type="checkbox" name="post_type[]" value="projets" <?php if (in_array('projets', $query_p)) { echo 'checked="checked"'; } ?>>
-					<label class="filtre-recherche" for="recherche-projets" value="projets">Projets</label>
+					<label class="filtre-recherche" for="recherche-projets">Projets</label>
 				</div>
 
 				<?php /* ?>
