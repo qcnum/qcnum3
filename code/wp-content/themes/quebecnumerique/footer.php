@@ -47,6 +47,19 @@
 							}; ?>
 						</div>
 
+						<div class="filtre articles">
+					    	<?php 
+					    	$check="";
+					    	if ( is_home() || is_category( '3' ) ||  has_category( '3') || is_page() ) {$check = 'checked="checked"';}?>
+							<input id="articles" class="selection" type="checkbox" name="articles" value="1" <?php echo $check; ?> ;>
+
+							<label for="articles" id="">Articles</label>
+							<?php if ( is_home() ){
+								echo "<span class='nbr-count'>" . $nb_articles->category_count . "</span>";
+							}; ?>
+						</div>
+
+
 						<div class="filtre evenements">
 
 							<?php 
@@ -56,7 +69,7 @@
 
 							<label for="evenements">Événements</label>
 							<?php if ( is_home() ){
-								echo "<span class='nbr-count'>" . $nb_articles->category_count . "</span>";
+								echo "<span class='nbr-count'>" . $nb_evenements->publish . "</span>";
 							}; ?>
 						</div>
 

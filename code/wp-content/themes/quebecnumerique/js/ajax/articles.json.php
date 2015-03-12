@@ -1,9 +1,9 @@
 <?php
 require_once('../../../../../wp-config.php');
 
-$nouvelles = new WP_Query(array(
+$articles = new WP_Query(array(
         'post_type' => 'post',
-        'cat' => '2',
+        'cat' => '3',
         'post_per_page' => 50,
         'orderby' => 'the_date', 
         'order' => 'DESC'));
@@ -15,7 +15,7 @@ $nouvelles = new WP_Query(array(
 //Exemple il faudra le générer plus tard
 $data    = array();
 
-foreach($nouvelles->posts as $e){
+foreach($articles->posts as $e){
     $localisation    = get_post_meta($e->ID, 'localisation');
     if(isset($localisation[0]['lat']) && !empty($localisation[0]['lat']) && isset($localisation[0]['lng']) && !empty($localisation[0]['lng'])){
         $ligne['id']     = $e->ID;

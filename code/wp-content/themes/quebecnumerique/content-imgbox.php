@@ -15,7 +15,7 @@
 				<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
 				
 			<?php else : ?>
-				<img src="http://placehold.it/700x500" alt="">
+				<div class="img" style="background-image: url('http://placehold.it/700x500')" ></div>
 			<?php endif; ?>
 		</a>
 	</article>

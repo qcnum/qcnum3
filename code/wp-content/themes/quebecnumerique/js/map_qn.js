@@ -5,7 +5,7 @@
 var directory_theme      = '/wp-content/themes/quebecnumerique';
 var map;
 
-var categories           = ['nouvelles','organisations','evenements','projets'];
+var categories           = ['nouvelles', 'articles' ,'organisations','evenements','projets'];
 var markers              = [];
 var allMarkers           = [];
 var markerCluster        = [];
@@ -20,6 +20,14 @@ markers['twitter'] = [];
 var stylesCluster        = [];
 stylesCluster['nouvelles']      = [{
         url: directory_theme + '/images/icon_gmap_cluster_n.png',
+        height: 37,
+        width: 37,
+        anchor: [16, 0],
+        textColor: '#ffffff',
+        textSize: 10
+      }];
+stylesCluster['articles']      = [{
+        url: directory_theme + '/images/icon_gmap_cluster_a.png',
         height: 37,
         width: 37,
         anchor: [16, 0],
