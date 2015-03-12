@@ -292,7 +292,7 @@ hr {
 	.grisopac-bg { background-color: @grisopac;}
 	.blanc-bg { background-color: @blanc; }
 	.opac-bg { background-color: rgba(255,255,255,0.1);}
-	.bleufonce-bg {background-color: darken(@bleu, 25%);}
+	.bleufonce-bg {background-color: darken(@bleu, 30%);}
 
 
 	.group:after {
@@ -1731,14 +1731,16 @@ hr {
 			color: white;
 			float: left; 
 			display: block;
-			font-size: 1.8em;
-			padding: 0.4em;
+			font-size: 1.5em;
+  			padding: 0.5em 0.8em;
 			margin-bottom: 0.5em;			
 		}
 
 	}
 
 	.equipe{
+		padding: 3em 0 5em;
+		margin-top: 3em;
 		a{
 			text-decoration: none;	
 			&:hover{
@@ -1747,6 +1749,11 @@ hr {
 					.noir-et-blanc (60%);
 				}
 			}
+		}
+		h2{
+			font-size: 2.5em;
+  			font-family: @titre2;
+  			font-weight: 400;
 		}
 	}
 

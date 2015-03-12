@@ -10,18 +10,19 @@ get_header(); ?>
 
 
 		<?php if( have_posts() ) while ( have_posts() ) : the_post(); ?>
-
+ 
 			<div class="coordonees large-wrapper group">
 				<div class="c12">
 					<div class="padding">
 						<div class="entry-content">
 							<?php 
 							$telephone = get_field('telephone'); 
-							$email = get_field('courriel'); 
+							$mail = get_field('courriel'); 
 							?>
-							<a href="#" class="bleufonce-bg"><?php echo $telephone ?></a>
+							<a href="mailto:<?php echo $mail ?>" class="bleufonce-bg"><?php echo $mail ?></a>
 							<hr class="clear">
-							<a href="#" class="bleufonce-bg"><?php echo $email ?></a>
+							<a href="tel:1-855-573-0307" class="bleufonce-bg"><?php echo $telephone ?></a>
+							
 						</div>
 					</div>
 				</div>
@@ -32,9 +33,10 @@ get_header(); ?>
 			<section class="equipe large-wrapper white-post group">
 
 				<div class="entry-content c12 padding ">
-					<h2><?php the_field('equipe_titre'); ?> </h2>
-					<?php the_field('equipe_texte'); ?>
-
+					<div class="padding">
+						<h2><?php the_field('equipe_titre'); ?> </h2>
+						<?php the_field('equipe_texte'); ?>
+					</div>
 				</div>
 
 				<?php $membres = get_field('membres'); ?>

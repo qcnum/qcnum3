@@ -302,7 +302,7 @@ footer#colophon {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .bleufonce-bg {
-  background-color: #0c1736;
+  background-color: #080e21;
 }
 .group:after {
   content: "";
@@ -2820,9 +2820,13 @@ form .advanced:hover {
   color: white;
   float: left;
   display: block;
-  font-size: 1.8em;
-  padding: 0.4em;
+  font-size: 1.5em;
+  padding: 0.5em 0.8em;
   margin-bottom: 0.5em;
+}
+.equipe {
+  padding: 3em 0 5em;
+  margin-top: 3em;
 }
 .equipe a {
   text-decoration: none;
@@ -2838,6 +2842,11 @@ form .advanced:hover {
   -webkit-filter: grayscale(60%);
   /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 
+}
+.equipe h2 {
+  font-size: 2.5em;
+  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: 400;
 }
 .membre {
   width: 100%;
