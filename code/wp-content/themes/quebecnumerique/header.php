@@ -97,13 +97,14 @@ wp_head();
 			<div class="page-header header-post-type <?php echo $class?>">
 
 				<div class="large-wrapper">
-					<?php if(!is_single()) : ?>
-						<div class="c12">
+					<div class="c12 top-title">
+						<?php if(!is_single()) : ?>
 							<div class="padding">
 								<h1 class="page-title"><?php echo $title ?></h1>
 							</div>
-						</div>
-					<?php endif; ?>
+						<?php endif; ?>
+					</div>
+					
 
 					<?php
 					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {

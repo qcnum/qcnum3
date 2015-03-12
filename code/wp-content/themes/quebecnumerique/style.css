@@ -770,7 +770,6 @@ footer#colophon {
 .navigation {
   position: relative;
   background-color: #373a3f;
-  border-bottom: 1px solid #4d5057;
 }
 .navigation li {
   display: block;
@@ -1515,24 +1514,8 @@ footer#colophon {
 .img-box.nouvelles span.triangle {
   border-color: #00aca7 transparent transparent transparent;
 }
-.img-box.nouvelles .excerpt-degrade {
-  background-color: rgba(255, 255, 255, 0);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#00aca7));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #00aca7);
-}
 .img-box.articles span.triangle {
   border-color: #a0ad00 transparent transparent transparent;
-}
-.img-box.articles .excerpt-degrade {
-  background-color: rgba(255, 255, 255, 0);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(#a0ad00));
-  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
-  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
-  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
-  background: -o-linear-gradient(top, rgba(255, 255, 255, 0), #a0ad00);
 }
 .entry-header h1 {
   color: #4d5057;
@@ -2388,6 +2371,9 @@ aside .mot-cle {
 .header-post-type.single-post {
   margin-bottom: 0;
 }
+.header-post-type .top-title {
+  min-height: 3em;
+}
 .header-post-type h1 {
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   font-size: 3em;
@@ -2413,6 +2399,10 @@ aside .mot-cle {
 .cinq .group:nth-child(odd) .c3:first-child {
   width: 49.98%;
 }
+.cinq .group:nth-child(odd) .c3:first-child article,
+.cinq .group:nth-child(odd) .c3:first-child .img {
+  padding-bottom: 72%;
+}
 .cinq .group:nth-child(even) .c3:nth-child(3) {
   clear: left;
 }
@@ -2421,6 +2411,10 @@ aside .mot-cle {
   position: absolute;
   top: 0;
   right: 0;
+}
+.cinq .group:nth-child(even) .c3:last-child article,
+.cinq .group:nth-child(even) .c3:last-child .img {
+  padding-bottom: 72%;
 }
 /* Footer */
 form input,

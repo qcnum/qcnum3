@@ -16,15 +16,15 @@ get_header(); ?>
 
 			
 			<div class="<?php echo $class?> group img-box">
-				<?php if ( have_posts() ) : ?>
 
-					<?php
-						$category_description = category_description();
-						if ( ! empty( $category_description ) )
-							echo '<div class="archive-meta">' . $category_description . '</div>';
-					?>
+				<div class="large-wrapper">
+					<?php if ( have_posts() ) : ?>
 
-					<div class="large-wrapper">
+						<?php
+							$category_description = category_description();
+							if ( ! empty( $category_description ) )
+								echo '<div class="archive-meta">' . $category_description . '</div>';
+						?>
 
 						<?php $cpt = 1; ?>
 
@@ -48,15 +48,16 @@ get_header(); ?>
 
 						</div>
 
-					</div>
+						<?php paging_nav(); ?>
 
-					<?php paging_nav(); ?>
+					<?php else : ?>
 
-				<?php else : ?>
+						<?php get_template_part( 'content', 'none' ); ?>
 
-					<?php get_template_part( 'content', 'none' ); ?>
+					<?php endif; ?>
 
-				<?php endif; ?>
+				</div>
+
 			</div>
 
 

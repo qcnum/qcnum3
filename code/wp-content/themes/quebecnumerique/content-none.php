@@ -1,13 +1,8 @@
 
-	<article <?php post_class(); ?>>
-
-		<header class="entry-header">
-
-			<h1 class="entry-title"><?php _e( 'Rien de trouvé', THEME_NAME ); ?></h1>
-
-		</header>
-
+	<article >
 		
+		<h2 class="grisopac-bg"><?php _e( 'Rien de trouvé', THEME_NAME ); ?></h2>
+
 		<div class="entry-content">
 
 			<?php if ( is_search() ) : ?>
@@ -21,11 +16,5 @@
 			<?php endif; ?>
 
 		</div>
-
-		<footer class="entry-meta">
-
-			<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-		</footer>
-
+				
 	</article>

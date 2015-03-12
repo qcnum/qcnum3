@@ -53,7 +53,7 @@ $organisations = new WP_Query( array(
 
 					</div>
 
-					<secondary class="c5 fr group">
+					<div class="c5 fr group">
 
 						<div class="c11">
 
@@ -212,7 +212,7 @@ $organisations = new WP_Query( array(
 
 						</div>
 
-					</secondary>
+					</div>
 
 				</div>
 
