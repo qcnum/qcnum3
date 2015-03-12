@@ -80,11 +80,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 			</div>
 
 
-
-
 		<hr class="clear">
-
-
 
 		<div class="group">
 

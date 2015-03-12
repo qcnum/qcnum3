@@ -15,7 +15,7 @@
 				<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
 				
 			<?php else : ?>
-				<div class="img" style="background-image: url('http://placehold.it/700x500')" ></div>
+				<div class="img" style="background-image: url('<?php echo get_template_directory_uri()?>/images/default.jpg')" ></div>
 			<?php endif; ?>
 		</a>
 	</article>
