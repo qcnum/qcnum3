@@ -6,8 +6,8 @@ $tag2 = get_field('dossier2', 'options');
 $tag1_name =  $tag1->name;
 $tag2_name =  $tag2->name;
 
-$dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag1_name, 'posts_per_page' => 2 ) );
-$dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2_name, 'posts_per_page' => 2 ) );
+if ($tag1_name != ''){ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag1_name, 'posts_per_page' => 2 ) );};
+if ($tag2_name != ''){ $dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2_name, 'posts_per_page' => 2 ) );};
 $nouvelles = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'posts_per_page' => 3 ) );
 $articles = new WP_Query( array( 'post_type' => 'post', 'cat' => '3', 'posts_per_page' => 2 ) );
 $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page' => 4, 'post_status' => array('publish', 'future'), 'order' => 'ASC' ) );
@@ -168,37 +168,47 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 					</div>
 
-					<div class="nouvelles group img-box padding">
-						<?php $url = get_term_link($tag1);?>
-						<div class="padding">
-							<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag1_name?>"><?php echo $tag1_name?><i class="fa fa-plus"></i></a></h2>
-						</div>
-
-						<?php if ( $dossier1->have_posts() ) while ( $dossier1->have_posts() ) : $dossier1->the_post(); ?>
-							<div class="c6">
-								<div class="padding">
-									<?php get_template_part('content', 'imgbox'); ?>
-								</div>
+					<?php if ($tag1_name != ''){ ?>
+						<div class="nouvelles group img-box padding">
+							<?php $url = get_term_link($tag1);?>
+							<div class="padding">
+								<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag1_name?>"><?php echo $tag1_name?><i class="fa fa-plus"></i></a></h2>
 							</div>
-						<?php endwhile; ?>
-					
-					</div>
 
-					<div class="nouvelles group img-box padding">
-						<?php $url = get_term_link($tag2);?> 
-						<div class="padding">
-							<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag2_name?>"><?php echo $tag2_name?><i class="fa fa-plus"></i></a></h2>
-						</div>
-
-						<?php if ( $dossier2->have_posts() ) while ( $dossier2->have_posts() ) : $dossier2->the_post(); ?>
-							<div class="c6">
-								<div class="padding">
-									<?php get_template_part('content', 'imgbox'); ?>
+							<?php if ( $dossier1->have_posts() ) while ( $dossier1->have_posts() ) : $dossier1->the_post(); ?>
+								<div class="c6">
+									<div class="padding">
+										<?php get_template_part('content', 'imgbox'); ?>
+									</div>
 								</div>
+							<?php endwhile; ?>
+						
+						</div>
+					<?php }; ?>
+
+
+
+					<?php if ($tag2_name != ''){ ?>
+						<div class="nouvelles group img-box padding">
+							<?php $url = get_term_link($tag2);?> 
+							<div class="padding">
+								<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag2_name?>"><?php echo $tag2_name?><i class="fa fa-plus"></i></a></h2>
 							</div>
-						<?php endwhile; ?>
-					
-					</div>
+
+							<?php if ( $dossier2->have_posts() ) while ( $dossier2->have_posts() ) : $dossier2->the_post(); ?>
+								<div class="c6">
+									<div class="padding">
+										<?php get_template_part('content', 'imgbox'); ?>
+									</div>
+								</div>
+							<?php endwhile; ?>
+						
+						</div>
+					<?php }; ?>
+
+
+
+
 
 				</div>
 
