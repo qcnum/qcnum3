@@ -36,10 +36,9 @@
 					<div class="padding">
 
 						<div class="filtre nouvelles">
-
 					    	<?php 
 					    	$check="";
-					    	if ( is_home() || is_category( '2' ) ||  has_category( '2') ) {$check = 'checked="checked"';}?>
+					    	if ( is_home() || is_category( '2' ) ||  has_category( '2') || is_page() ) {$check = 'checked="checked"';}?>
 							<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" value="1" <?php echo $check; ?> ;>
 
 							<label for="nouvelles" id="">Nouvelles</label>
@@ -52,7 +51,7 @@
 
 							<?php 
 					    	$check="";
-					    	if ( is_home() || is_post_type_archive('evenements')  ||  is_singular('evenements') ) {$check = 'checked="checked"';}?>
+					    	if ( is_home() || is_post_type_archive('evenements')  ||  is_singular('evenements') || is_page() ) {$check = 'checked="checked"';}?>
 							<input id="evenements" class="selection" type="checkbox" name="evenements" value="1"  <?php echo $check; ?> ;>
 
 							<label for="evenements" id="">Événements</label>
@@ -65,7 +64,7 @@
 
 							<?php 
 					    	$check="";
-					    	if ( is_home() ||  is_post_type_archive('organisations') || is_singular('organisations') ) {$check = 'checked="checked"';}?>
+					    	if ( is_home() ||  is_post_type_archive('organisations') || is_singular('organisations') || is_page() ) {$check = 'checked="checked"';}?>
 							<input id="organisations" class="selection" type="checkbox" name="organisations" value="1"  <?php echo $check; ?> ;>
 
 							<label for="organisations" id="">Organisations</label>
@@ -78,7 +77,7 @@
 
 							<?php 
 					    	$check="";
-					    	if ( is_home() ||  is_post_type_archive('projets') || is_singular('projets') ) {$check = 'checked="checked"';}?>
+					    	if ( is_home() ||  is_post_type_archive('projets') || is_singular('projets') || is_page() ) {$check = 'checked="checked"';}?>
 							<input id="projets" class="selection" type="checkbox" name="projets" value="1" <?php echo $check; ?> ;>
 
 							<label for="projets" id="">Projets</label>
@@ -89,7 +88,7 @@
 
 						<div class="filtre twitter">
 
-							<?php $check = 'checked="checked"';?>
+							<?php if ( is_home() || is_page() ) {$check = 'checked="checked"';}?>
 							<input id="twitter" class="selection" type="checkbox" name="twitter" value="1" <?php echo $check; ?> ;>
 							<label for="twitter" id="">Twitter</label>
 						</div>
