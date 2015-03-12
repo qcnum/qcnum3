@@ -1743,10 +1743,16 @@ hr {
 		margin-top: 3em;
 		a{
 			text-decoration: none;	
+			color: @blanc;
 			&:hover{
 				.img{
 					opacity: 1;
 					.noir-et-blanc (60%);
+
+				}
+				i{
+					position: relative;
+					opacity: 1;
 				}
 			}
 		}
@@ -1779,11 +1785,26 @@ hr {
 			left: 0;
 			padding: 0.3em;
 			span{
+				position: relative;
+				text-transform: uppercase;
 				padding: 0.2em 0.5em;
-				color: @blanc;
 				display: block;		
 				float: left;
-				margin-top: 0.2em;			
+				z-index: 20;
+
+			}
+			.titre{
+				font-size: 0.8em;
+				margin-bottom: -1em;
+			}
+			i{
+				font-size: 1.2em;
+				background-color: rgba(0,0,0,0.3);
+				padding: 0.1em 0.3em;
+				position: absolute;
+				opacity: 0;
+				z-index: 10;
+				.transition();
 			}
 		
 		}

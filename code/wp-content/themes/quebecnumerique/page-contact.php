@@ -20,8 +20,9 @@ get_header(); ?>
 							$mail = get_field('courriel'); 
 							?>
 							<a href="mailto:<?php echo $mail ?>" class="bleufonce-bg"><?php echo $mail ?></a>
+
 							<hr class="clear">
-							<a href="tel:1-855-573-0307" class="bleufonce-bg"><?php echo $telephone ?></a>
+							<a href="tel:<?php echo $telephone ?>" class="bleufonce-bg"><?php echo $telephone ?></a>
 							
 						</div>
 					</div>
@@ -50,17 +51,21 @@ get_header(); ?>
 						$nom = $m['nom'];
 						$photoid = $m['photo'];
 						$titre = $m['titre'];
+						$linkedin = $m['linkedin'];
 						$url = wp_get_attachment_image_src($photoid, 'profil');
+
 						?>
-						<a href="#" class="c3 pb1em">
+						<a href="<?php echo $linkedin ?>" class="c3 pb1em">
 							<div class="padding">
 								<div class="membre">
 									<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
 									<div class="content">
+										<i class="fa fa-linkedin"></i>
+										<hr class="clear">
 										<span class="bleufonce-bg"><?php echo $nom; ?></span>
 										<hr class="clear">
 										<?php if ($titre != null){ ?>
-											<span class="orange-bg"><?php echo $titre; ?></span>
+										<span class="titre orange-bg"><?php echo $titre; ?></span>
 										<?php }; ?>
 										
 									</div>

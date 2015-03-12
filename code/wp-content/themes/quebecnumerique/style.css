@@ -2830,6 +2830,7 @@ form .advanced:hover {
 }
 .equipe a {
   text-decoration: none;
+  color: #ffffff;
 }
 .equipe a:hover .img {
   opacity: 1;
@@ -2842,6 +2843,10 @@ form .advanced:hover {
   -webkit-filter: grayscale(60%);
   /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 
+}
+.equipe a:hover i {
+  position: relative;
+  opacity: 1;
 }
 .equipe h2 {
   font-size: 2.5em;
@@ -2883,11 +2888,29 @@ form .advanced:hover {
   padding: 0.3em;
 }
 .membre .content span {
+  position: relative;
+  text-transform: uppercase;
   padding: 0.2em 0.5em;
-  color: #ffffff;
   display: block;
   float: left;
-  margin-top: 0.2em;
+  z-index: 20;
+}
+.membre .content .titre {
+  font-size: 0.8em;
+  margin-bottom: -1em;
+}
+.membre .content i {
+  font-size: 1.2em;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.1em 0.3em;
+  position: absolute;
+  opacity: 0;
+  z-index: 10;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 /* Media Queries*/
 @media screen and (max-width: 1200px) {
