@@ -436,7 +436,7 @@ hr {
 	.navigation {
 		position: relative;
 		background-color: @gris;
-		border-bottom: 1px solid @grispale;
+		//border-bottom: 1px solid @grispale;
 		li {
 			display: block;
 			float: left;
@@ -896,15 +896,8 @@ hr {
 			display: block;
 		}
 
-		&.nouvelles {
-			span.triangle{border-color: @nouvelles transparent transparent transparent;}
-			.excerpt-degrade{.gradient (rgba(255,255,255,0),@nouvelles)}
-			
-		}
-		&.articles {
-			span.triangle{border-color: @articles transparent transparent transparent;}
-			.excerpt-degrade{.gradient (rgba(255,255,255,0), @articles)}
-		}
+		&.nouvelles span.triangle{border-color: @nouvelles transparent transparent transparent;}
+		&.articles span.triangle{border-color: @articles transparent transparent transparent;}
 
 	}
 
@@ -1402,7 +1395,7 @@ hr {
 		&.organisations { background-color: @organisations; }	
 		&.projets { background-color: @projets; }
 		&.single-post { margin-bottom: 0; }
-
+		.top-title { min-height: 3em; }
 		h1{
 			font-family: @titre1;
 			font-size: 3em;
@@ -1418,15 +1411,21 @@ hr {
 		width: 48%;
 		margin-bottom: 2.8%;
 		&:nth-child(odd) { float: left; }		
-		&:nth-child(even) { float: right; }	
+		&:nth-child(even) { float: right; }
 	}
 
 	.cinq {
 		.group { position: relative; } 
-		.group:nth-child(odd) .c3:first-child { width: 49.98%; }
+		.group:nth-child(odd) .c3:first-child { 
+			width: 49.98%; 
+			article, .img { padding-bottom: 72%; }
+		}
 		.group:nth-child(even) {
 			.c3:nth-child(3) { clear: left; }
-			.c3:last-child { width: 49.98%; position: absolute; top: 0; right: 0; }
+			.c3:last-child { 
+				width: 49.98%; position: absolute; top: 0; right: 0; 
+				article, .img { padding-bottom: 72%; }
+			}
 		}
 	}
 

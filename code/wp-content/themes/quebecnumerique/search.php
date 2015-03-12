@@ -92,7 +92,7 @@ if($_GET['quartiers'] || $_GET['mots-cles']) {
 							$class = 'autre';
 						}
 						?>
-						<li class="<?php echo $class ?>">
+						<li class="<?php echo $class ?> group">
 
 							<div class="content-wrapper">
 								<a href="<?php echo $url ?>">
@@ -108,7 +108,6 @@ if($_GET['quartiers'] || $_GET['mots-cles']) {
 							</div>
 
 						</li>
-						<hr class="clear">
 
 					<?php endwhile; ?>
 					</ul>

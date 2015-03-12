@@ -65,7 +65,7 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 
 			<div class="c6">
 
-				<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
+				<h3><?php _e('Mots-clés', THEME_NAME); ?></h3>
 
 				<?php $motsCles = get_terms('mots-cles');
 				foreach ($motsCles as $mc) {
@@ -82,7 +82,7 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 
 			<div class="c6">
 
-				<h2><?php _e('Quartier', THEME_NAME); ?></h2>
+				<h3><?php _e('Quartier', THEME_NAME); ?></h3>
 
 				<?php $quartiers = get_terms('quartier');
 				foreach ($quartiers as $q) {
