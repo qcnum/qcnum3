@@ -357,19 +357,38 @@ hr {
 		}
 	}
 
-	.filtre{
+	.filtre {
 		position: relative;
 		display: block;
 		float: left;
-		&.mot-cle{ .style-filtre(); }
-		&.nouvelles{ .style-filtre(@nouvelles, @blanc); }
-		&.articles{ .style-filtre(@articles, @blanc); }
-		&.evenements{ .style-filtre(@evenements, @blanc); }
-		&.organisations{ .style-filtre(@organisations, @blanc); }
-		&.projets{ .style-filtre(@projets, @blanc); }
-		&.autre{ .style-filtre(@orange, @blanc); }
-		&.twitter{ .style-filtre(@twitter, @blanc); }
+		&.mot-cle { .style-filtre(); }
+		&.nouvelles { .style-filtre(@nouvelles, @blanc); }
+		&.articles { .style-filtre(@articles, @blanc); }
+		&.evenements { .style-filtre(@evenements, @blanc); }
+		&.organisations { .style-filtre(@organisations, @blanc); }
+		&.projets { .style-filtre(@projets, @blanc); }
+		&.autre { .style-filtre(@orange, @blanc); }
+		&.twitter { .style-filtre(@twitter, @blanc); }
 	}	
+
+	.legende {
+		position: relative;
+		display: block;
+		float: right;
+		padding: 0.5em;
+		margin: 0 0 0.5em 0.5em;
+		font-size: 0.9em;
+		text-transform: uppercase;
+		font-family: @titre2;
+		color: @blanc;
+		&.nouvelles { background-color: @nouvelles; }
+		&.articles { background-color: @articles; }
+		&.evenements { background-color: @evenements; }
+		&.organisations { background-color: @organisations; }
+		&.projets { background-color: @projets; }
+		&.autre { background-color: @orange; }
+	}
+
 
 /* HEADER */
 
@@ -1201,7 +1220,7 @@ hr {
 	}
 
 	aside {
-		&.featured-img { background-color: transparent; }
+		&.featured-img { background-color: transparent; img { width: 100%; } }
 		background-color: lighten(@grispale, 60%);
 		margin-bottom: 1em;
 		font-size: 90%;

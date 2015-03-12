@@ -52,42 +52,40 @@ wp_head();
 
 </header><!-- #masthead -->
 
-
-
 	<?php if ( is_category() || is_archive() || is_single() ) {
-			$queried_object = get_queried_object();
-			$id = $queried_object->cat_ID;	
-			$name = $queried_object->name;
-			if ($id == 2 || in_category(2)) {
-			  	$class="nouvelles";
-			  	$title=$name;
-			} else if ($id == 3 || in_category(3)) {
-				$class="articles";
-				$title=$name;
-			} else if ($name == 'organisations' || is_singular('organisations'))  {
-				$class="organisations";
-				$title = $queried_object->label;
-			} else if ($name == 'projets' || is_singular('projets'))  {
-				$class="projets";
-				$title = $queried_object->label;
-			} else if ($name == 'evenements' || is_singular('evenements'))  {
-				$class="evenements";
-				$title = $queried_object->label;
-			}
+	$queried_object = get_queried_object();
+	$id = $queried_object->cat_ID;	
+	$name = $queried_object->name;
+	if ($id == 2 || in_category(2)) {
+	  	$class="nouvelles";
+	  	$title=$name;
+	} else if ($id == 3 || in_category(3)) {
+		$class="articles";
+		$title=$name;
+	} else if ($name == 'organisations' || is_singular('organisations'))  {
+		$class="organisations";
+		$title = $queried_object->label;
+	} else if ($name == 'projets' || is_singular('projets'))  {
+		$class="projets";
+		$title = $queried_object->label;
+	} else if ($name == 'evenements' || is_singular('evenements'))  {
+		$class="evenements";
+		$title = $queried_object->label;
+	}
 
-			if(is_single()) { $class .= ' single-post'; }
+	if(is_single()) { $class .= ' single-post'; }
 
-			if(is_tax()) {
-				$term = $wp_query->get_queried_object();
-				$class="organisations";
-				$title = $term->name;
-			}
+	if(is_tax()) {
+		$term = $wp_query->get_queried_object();
+		$class="organisations";
+		$title = $term->name;
+	}
 
-		} else {
-			$class = "normal";
-			$title = get_the_title();
-		}
-		?>
+	} else {
+		$class = "normal";
+		$title = get_the_title();
+	}
+	?>
 
 		<?php if (!is_front_page()){ ?>
 			<div class="page-header header-post-type <?php echo $class?>">

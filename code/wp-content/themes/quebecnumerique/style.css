@@ -682,6 +682,35 @@ footer#colophon {
 .filtre.twitter input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
 }
+.legende {
+  position: relative;
+  display: block;
+  float: right;
+  padding: 0.5em;
+  margin: 0 0 0.5em 0.5em;
+  font-size: 0.9em;
+  text-transform: uppercase;
+  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: #ffffff;
+}
+.legende.nouvelles {
+  background-color: #00aca7;
+}
+.legende.articles {
+  background-color: #a0ad00;
+}
+.legende.evenements {
+  background-color: #d39b00;
+}
+.legende.organisations {
+  background-color: #9b2b78;
+}
+.legende.projets {
+  background-color: #009861;
+}
+.legende.autre {
+  background-color: #e14e24;
+}
 /* HEADER */
 .home-link {
   margin-left: 0.925925%;
@@ -1870,6 +1899,9 @@ aside {
 }
 aside.featured-img {
   background-color: transparent;
+}
+aside.featured-img img {
+  width: 100%;
 }
 aside > div {
   padding: 1em;
