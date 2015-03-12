@@ -163,15 +163,6 @@ function init() {
 
 }
 
-function custom_rewrite_rule() {
-    //add_rewrite_rule('^mots-cles/([^/]*)/?','/?s=&mots-cles[]=$matches[1]','top');
-
-    add_rewrite_rule('/?s=&mots-cles[]=$matches[1]','^mots-cles/([^/]+)/?','top');
-}
-add_action('init', 'custom_rewrite_rule', 10, 0);
-
-///?s=&mots-cles[]=test2
-
 
 function my_connection_types() {
 
@@ -350,6 +341,24 @@ function partition(Array $list, $p) {
     }
     return $partition;
 }
+
+function posts_count( $wp_query = null ) {
+    if ( ! $wp_query )
+        global $wp_query;
+
+    $posts = min( ( int ) $wp_query->get( 'posts_per_page' ), $wp_query->found_posts );
+    $paged = max( ( int ) $wp_query->get( 'paged' ), 1 );
+    $count = ( $paged - 1 ) * $posts;
+
+    $output = $wp_query->found_posts . ' ';
+    if($wp_query->found_posts > 1) :
+        $output .= __('résultats', THEME_NAME);
+    else :
+        $output .= __('résultat', THEME_NAME);
+    endif;
+    echo $output;
+}
+
 
 function advanced_search_query($query) {
 

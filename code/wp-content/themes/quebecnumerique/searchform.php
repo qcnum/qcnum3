@@ -1,6 +1,17 @@
 <?php 
-$query_q = $_GET['quartiers']; 
-$query_mc = $_GET['mots-cles']; 
+if($_GET['quartiers'] || $_GET['mots-cles']) {
+	$query_q = $_GET['quartiers']; 
+	$query_mc = $_GET['mots-cles'];
+} else {
+	$o = get_queried_object();
+	$query_q = array();
+	$query_mc = array();
+	if($o->taxonomy == 'quartier') {
+		array_push($query_q, $o->slug); 
+	} elseif($o->taxonomy == 'mots-cles') {
+		array_push($query_mc, $o->slug); 
+	}
+}
 ?>
 
 	<a href="#" class="fa fa-search"></a>

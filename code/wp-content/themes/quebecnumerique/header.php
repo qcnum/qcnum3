@@ -85,6 +85,12 @@ wp_head();
 		$class = "normal";
 		$title = get_the_title();
 	}
+
+	if(is_search()) {
+		//$term = $wp_query->get_queried_object();
+		$class="normal";
+		$title = 'Recherche';
+	}
 	?>
 
 		<?php if (!is_front_page()){ ?>
