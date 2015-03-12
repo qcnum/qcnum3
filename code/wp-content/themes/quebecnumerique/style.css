@@ -1893,6 +1893,9 @@ footer#colophon {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.sticky-event header h2 {
+  font-size: 1em;
+}
 aside {
   background-color: #eaebec;
   margin-bottom: 1em;
