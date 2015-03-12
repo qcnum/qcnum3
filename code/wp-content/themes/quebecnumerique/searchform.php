@@ -56,11 +56,10 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 					<label class="filtre-recherche" for="recherche-projets">Projets</label>
 				</div>
 
-				<?php /* ?>
 				<div class="filtre autre">
-					<input id="recherche-autre" class="resultat" type="checkbox" name="post_type[]" value="1" <?php echo $check; ?> ;>
-					<label class="filtre-recherche" for="recherche-autre" value="autre" id="">Autre</label>
-				</div><?php */ ?>
+					<input id="recherche-autre" class="resultat" type="checkbox" name="post_type[]" value="page" <?php echo $check; ?>>
+					<label class="filtre-recherche" for="recherche-autre">Autre</label>
+				</div>
 
 			</div>
 
