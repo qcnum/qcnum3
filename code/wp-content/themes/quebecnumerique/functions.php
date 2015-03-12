@@ -319,4 +319,9 @@ function paging_nav() {
     echo '</div>';
 }
 
+function wpa57065_filter_where( $where = '' ) {
+    $where .= " AND post_date <= '" . date('Y-m-d') . "'";
+    return $where;
+}
+
 
