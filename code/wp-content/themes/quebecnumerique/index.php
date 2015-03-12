@@ -147,7 +147,18 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 									<article class="group">
-										<?php the_post_thumbnail('thumbnail'); ?>
+
+										<?php if(has_post_thumbnail()) : 
+											the_post_thumbnail('thumbnail');
+										else : 
+											$category = get_the_category();
+											$id = get_field('img-evenements', 'options'); 
+											$url = wp_get_attachment_image_src( $id , 'thumbnail');
+											?>
+											
+											<img src="<?php echo $url[0] ?>" alt="Événements">
+										<?php endif; ?>
+
 										<div class="content">
 											<div class="ellipsis info-event">
 												<span class="date"><?php echo get_the_date(); ?></span>

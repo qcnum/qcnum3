@@ -218,6 +218,7 @@ if( function_exists('acf_add_options_sub_page') ) {
     acf_add_options_sub_page(array( 'title' => 'Accueil' ));
     acf_add_options_sub_page(array( 'title' => 'Pied de page' ));
     acf_add_options_sub_page(array( 'title' => 'Réseaux sociaux' ));
+    acf_add_options_sub_page(array( 'title' => 'Images par défaut' ));
 
 }
 
