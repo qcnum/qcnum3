@@ -35,6 +35,8 @@ $projets = new WP_Query( array(
 
 								<h1 class="entry-title"><?php the_title(); ?></h1>
 
+								<?php echo get_the_date(); ?>
+
 							</header>
 							
 							<div class="entry-content">

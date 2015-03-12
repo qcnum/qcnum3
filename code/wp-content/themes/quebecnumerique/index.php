@@ -10,7 +10,7 @@ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles
 $dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2_name, 'posts_per_page' => 2 ) );
 $nouvelles = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'posts_per_page' => 3 ) );
 $articles = new WP_Query( array( 'post_type' => 'post', 'cat' => '3', 'posts_per_page' => 2 ) );
-$evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page' => 4 ) );
+$evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page' => 4, 'post_status' => array('publish', 'future'), 'order' => 'ASC' ) );
 
 ?>
 
@@ -18,9 +18,7 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 	<div id="content" class="accueil" role="main">
 
 
-		<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-
-
+		
 			<div class="abstract">
 				<svg class="abstract-svg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 300" xml:space="preserve">
 

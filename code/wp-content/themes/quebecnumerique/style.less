@@ -616,14 +616,13 @@ hr {
 		right: 0;
 		width: 43em;
 		height: 100%;
-		background-color: fade(@gris, 90%);
+		background-color: fade(@gris, 98%);
 		z-index: 100;
 		padding: 2em;
 		.box-sizing();
 		.transition(all 0.5s ease);
 		&.hidden { top: -100%; .transition(all 0.5s ease); }
 	}
-
 
 	#breadcrumbs {
 		//text-align: right;
@@ -883,7 +882,7 @@ hr {
 			line-height: 1.25em;
 			clear: both;
 		}
-		div.triangle{
+		span.triangle{
 			width: 0;
 			height: 0;
 			border-style: solid;
@@ -891,15 +890,16 @@ hr {
 			position: absolute;
 			top: 0;
 			left: 0;
+			display: block;
 		}
 
 		&.nouvelles {
-			div.triangle{border-color: @nouvelles transparent transparent transparent;}
+			span.triangle{border-color: @nouvelles transparent transparent transparent;}
 			.excerpt-degrade{.gradient (rgba(255,255,255,0),@nouvelles)}
 			
 		}
 		&.articles {
-			div.triangle{border-color: @articles transparent transparent transparent;}
+			span.triangle{border-color: @articles transparent transparent transparent;}
 			.excerpt-degrade{.gradient (rgba(255,255,255,0), @articles)}
 		}
 
@@ -1338,6 +1338,8 @@ hr {
 			margin-left: -100%;
 			background-color: @couleur;
 			height: 5em;
+
+
 		}	
 		.content-wrapper{
 			float: left;

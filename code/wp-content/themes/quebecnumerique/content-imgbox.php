@@ -3,7 +3,7 @@
 		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 			<div class="content">
 				<span class="date"><?php echo get_the_date(); ?></span>
-				<h3 class="grisopac-bg"><?php the_title(); ?><div class="triangle"></div></h3>
+				<h3 class="grisopac-bg"><?php the_title(); ?><span class="triangle"></span></h3>
 				<div class="excerpt-hover"><?php the_excerpt(); ?></div>
 			</div>
 			<?php if(has_post_thumbnail()) : ?>
