@@ -19,9 +19,5 @@
 			$url = wp_get_attachment_image_src( $id , 'rectangle');?>
 
 			<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
-				
-			
-				<!--div class="img" style="background-image: url('<?php echo get_template_directory_uri()?>/images/default.jpg')" ></div-->
-			
 		</a>
 	</article>

@@ -131,6 +131,9 @@ hr {
   border-top: thin solid #c7c7c7;
   margin: 1em 0 2em 0;
 }
+hr.for-responsive {
+  display: none;
+}
 /* FONCTIONS */
 .btn-orange {
   background-color: #e14e24;
@@ -2418,6 +2421,15 @@ aside .mot-cle:hover {
   text-transform: uppercase;
   color: #ffffff;
   margin: 1em 0 0.2em 0;
+  float: left;
+}
+.header-post-type .description {
+  color: #ffffff;
+  font-size: 1.1em;
+  line-height: 1.2em;
+  width: 50%;
+  float: right;
+  margin-bottom: 0.8em;
 }
 .img-box article.c6-custom {
   margin: 0;
@@ -3053,6 +3065,13 @@ form .advanced:hover {
   }
   .img-box .content {
     font-size: 130%;
+  }
+  .header-post-type .description {
+    width: 100%;
+    float: left;
+  }
+  hr.for-responsive {
+    display: inherit;
   }
 }
 @media screen and (max-width: 767px) {

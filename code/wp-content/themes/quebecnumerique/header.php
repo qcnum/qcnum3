@@ -78,8 +78,9 @@ wp_head();
 
 	if(is_tax()) {
 		$term = $wp_query->get_queried_object();
-		$class="organisations";
+		$class="nouvelles";
 		$title = $term->name;
+		$description = $term->description;
 	}
 
 	} else {
@@ -102,11 +103,14 @@ wp_head();
 						<?php if(!is_single()) : ?>
 							<div class="padding">
 								<h1 class="page-title"><?php echo $title ?></h1>
+								<?php if (is_tax()){ ?>
+									<hr class="clear for-responsive">
+									<p class="description"><?php echo $description ?></p>
+								<?php }; ?>
 							</div>
 						<?php endif; ?>
 					</div>
 					
-
 					<?php
 					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
 						yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');

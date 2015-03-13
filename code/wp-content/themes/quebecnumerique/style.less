@@ -101,6 +101,8 @@ hr {
 	margin: 1em 0 2em 0;
 }
 
+hr.for-responsive{display: none;}		
+
 /* FONCTIONS */
 
 	.transition(@props: all 0.2s ease) {
@@ -1436,6 +1438,15 @@ hr {
 			text-transform: uppercase;
 			color: @blanc;
 			margin: 1em 0 0.2em 0;
+			float: left;
+		}
+		.description{
+			color: @blanc;
+			font-size: 1.1em;
+			line-height: 1.2em;
+			width: 50%;
+			float: right;
+			margin-bottom: 0.8em;	
 		}
 	}
 
@@ -1924,6 +1935,13 @@ hr {
 		}
 
 		.img-box .content { font-size: 130%; }
+
+		.header-post-type .description{
+			width: 100%;
+  			float: left;
+		}
+
+		hr.for-responsive{display: inherit;}		
 	}
 
 	@media screen and (max-width: 767px){
