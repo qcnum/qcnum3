@@ -7,7 +7,7 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 	$o = get_queried_object();
 	$query_q = array();
 	$query_mc = array();
-	if($o->taxonomy == 'quartier') {
+	if($o->taxonomy == 'quartiers') {
 		array_push($query_q, $o->slug); 
 	} elseif($o->taxonomy == 'mots-cles') {
 		array_push($query_mc, $o->slug); 
@@ -84,7 +84,7 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 
 				<h3><?php _e('Quartier', THEME_NAME); ?></h3>
 
-				<?php $quartiers = get_terms('quartier');
+				<?php $quartiers = get_terms('quartiers');
 				foreach ($quartiers as $q) {
 					$q_slug = $q->slug;
 					$q_id = $q->term_id;

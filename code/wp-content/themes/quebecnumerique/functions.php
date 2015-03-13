@@ -140,7 +140,7 @@ function init() {
 
 
     register_taxonomy(
-        'quartier',
+        'quartiers',
         array('projets', 'evenements', 'organisations', 'post'),
         array(
             'label' => __( 'Quartiers' ),
@@ -377,7 +377,7 @@ function advanced_search_query($query) {
         if (isset($_GET['quartiers']) && is_array($_GET['quartiers'])) {
 
             $aQ = array(
-                'taxonomy' => 'quartier',
+                'taxonomy' => 'quartiers',
                 'field' => 'slug',
                 'terms' => $_GET['quartiers'],
                 'operator' => 'IN'

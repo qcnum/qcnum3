@@ -21,7 +21,7 @@ $recherche = $_GET['recherche'];
 
 		<h2>Quartier</h2>
 
-		<?php $quartiers = get_terms('quartier');
+		<?php $quartiers = get_terms('quartiers');
 		foreach ($quartiers as $q) {
 			$q_slug = $q->slug;
 			$q_id = $q->term_id;

@@ -7,7 +7,7 @@ $currentDate = time() + $diffGMT;
 query_posts(
 	array(
 		'post_type' => 'evenements',
-		'meta_key' => 'enddate',
+		'meta_key' => 'startdate',
 		'orderby' => 'meta_value',
 		'order' => 'ASC',
 		'posts_per_page' => -1,
@@ -35,7 +35,7 @@ query_posts(
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php 
-						setlocale(LC_ALL, 'fr_CA');
+						
 						$startDate = get_field('startdate');
 						$myDate = strftime('%e %B %Y', $startDate/1000);
 
@@ -51,11 +51,9 @@ query_posts(
 						$startHrs = get_field('hrs_debut');
 						$endHrs = get_field('hrs_fin');
 						
-						$month = strftime('%B', $endDate/1000); 
+						$month = strftime('%b', $endDate/1000); 
 						if($month != $lastM && $lastM != null) { 
-
 							/* On change de mois */
-
 							$lastM = $month; 
 							$firstMonth = $month;
 							echo '</div></section>';
@@ -64,9 +62,7 @@ query_posts(
 							echo $firstMonth . ' ' . get_the_date('Y');
 							echo '</h2></header><div class="c11 fr">';
 						} elseif($month != $lastM && $lastM == null) {
-
 							/* Premier mois */
-
 							$lastM = $month; 
 							$firstMonth = $month;
 							echo '<header class="c1"><h2>';
