@@ -113,24 +113,20 @@ $projets = new WP_Query( array(
 
 							<div class="padding">
 
-								<aside class="featured-img">
-									<?php the_post_thumbnail('large'); ?>
-								</aside>
+								<?php if(has_post_thumbnail()) : ?>
+									<aside class="featured-img">
+										<?php the_post_thumbnail('large'); ?>
+									</aside>
+								<?php endif; ?>
 
 								<?php 
 								$map = get_field('localisation');
 								if ( $map ) : ?>
-
 									<aside>
-
 										<div>
-
-											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
-												
+											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>	
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
 								<?php 

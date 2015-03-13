@@ -5,6 +5,12 @@ wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.min.js', 'jqu
 <script>
 jQuery(document).ready(function(){
 
+	jQuery('.slick').on('init', function(event, slick, currentSlide, nextSlide){
+		jQuery(this).removeClass('hide');
+		jQuery('.loading').addClass('hide');
+
+	});
+
 	jQuery('.slick').slick({
 		centerMode: true,
 		variableWidth: true,
@@ -33,6 +39,8 @@ jQuery(document).ready(function(){
 	] */
 	});
 
+
+
 });
 </script>
 
@@ -58,7 +66,12 @@ jQuery(document).ready(function(){
 
 						</div>
 
-						<div class="slick group">
+						<div class="loading">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/loading-blanc.gif" alt="">
+
+						</div>
+	
+						<div class="slick group hide">
 
 							<?php
 							$posts = get_posts(array(

@@ -86,9 +86,11 @@ $projets = new WP_Query( array(
 
 							<div class="padding">
 
-								<aside class="featured-img">
-									<?php the_post_thumbnail('large'); ?>
-								</aside>
+								<?php if(has_post_thumbnail()) : ?>
+									<aside class="featured-img">
+										<?php the_post_thumbnail('large'); ?>
+									</aside>
+								<?php endif; ?>
 
 								<?php 
 								$map = get_field('localisation');
