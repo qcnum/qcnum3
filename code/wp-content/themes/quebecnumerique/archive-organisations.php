@@ -12,31 +12,37 @@ jQuery(document).ready(function(){
 	});
 
 	jQuery('.slick').slick({
-		centerMode: true,
 		variableWidth: true,
 		autoplay: true,
+		slidesToScroll: 4,
 		autoplaySpeed: 4000,
-		/*responsive: [{
-			breakpoint: 1024,
+		infinite: false,
+		responsive: [{
+			breakpoint: 1600,
 			settings: {
 				slidesToShow: 3,
-				slidesToScroll: 3,
-				infinite: true
+				slidesToScroll: 1,
+				infinite: false,
+				centerMode: true
 			}
 		}, {
-			breakpoint: 600,
+			breakpoint: 1200,
 			settings: {
 				slidesToShow: 2,
-				slidesToScroll: 2
+				slidesToScroll: 1,
+				infinite: true,
+				centerMode: true
 			}
 		}, {
-		breakpoint: 480,
+		breakpoint: 767,
 		settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				centerMode: true
 			}
 		}
-	] */
+	]
 	});
 
 
@@ -68,7 +74,6 @@ jQuery(document).ready(function(){
 
 						<div class="loading">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/loading-blanc.gif" alt="">
-
 						</div>
 	
 						<div class="slick group hide">

@@ -17,6 +17,7 @@ function init() {
     register_nav_menus( array( 'meta' => 'Meta' ) );
 	add_theme_support( 'post-thumbnails' );
 	add_image_size('rectangle', 700, 500, true );
+    add_image_size('rectangle-nocrop', 700, 500 );
     add_image_size('thumb-nocrop', 200, 200, false );
     add_image_size('profil', 400, 400, true );
 

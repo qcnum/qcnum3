@@ -4,25 +4,17 @@
 
 		<div class="blanc-bg group">
 
-			<div class="c12 group all-org">
-				<h2 class="h2 fl"><?php //echo $category->name; ?></h2>
-			</div>
-
 			<?php if ( have_posts() ) : ?>
 
-				<?php while ( have_posts() ) : the_post(); ?>
+				<div class="partenaires">
 
-					<div class="c6">
+					<?php while ( have_posts() ) : the_post(); ?>
 
-						<div class="white-box event">
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 
-							<img src="http://placehold.it/300x300" alt="">
-							
-						</div>
-						
-					</div>
+					<?php endwhile; ?>
 
-				<?php endwhile; ?>
+				</div>
 
 			<?php else : ?>
 

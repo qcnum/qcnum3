@@ -10,7 +10,7 @@ query_posts(
 		'meta_key' => 'startdate',
 		'orderby' => 'meta_value',
 		'order' => 'ASC',
-		'posts_per_page' => -1,
+		//'posts_per_page' => -1,
 		'meta_query'  => array(
 			'relation' => 'AND',
 				array(
@@ -50,6 +50,12 @@ query_posts(
 
 						$startHrs = get_field('hrs_debut');
 						$endHrs = get_field('hrs_fin');
+
+						if($startHrs && !$endHrs) {
+							$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+						} elseif($startHrs && $endHrs) {
+							$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+						}
 						
 						$month = strftime('%b', $endDate/1000); 
 						if($month != $lastM && $lastM != null) { 
@@ -77,7 +83,11 @@ query_posts(
 
 									<div class="c2">
 										<div class="padding">
-											<?php the_post_thumbnail('thumb-nocrop'); ?>
+											<?php 
+											if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
+											else : $id = get_field('img-evenements', 'options'); endif; 
+											$url = wp_get_attachment_image_src( $id , 'thumb-nocrop'); ?>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo $url[0]; ?>" alt=""></a>
 										</div>
 									</div>
 
@@ -85,16 +95,10 @@ query_posts(
 										<div class="padding">
 											<div class="entry-content">
 												<div class="ellipsis info-event">
-													<span class="date">
-														<?php echo $date; ?>
-													</span>
+													<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
 													<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
 												</div>
-												<p><?php if($startHrs && !$endHrs) {
-							echo '<span class="hrs">' . date('G\hi', $startHrs) . '</span>';
-						} elseif($startHrs && $endHrs) {
-							echo '<span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
-						} ?></p>
+												
 												<h3 class="h2"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 												<?php the_excerpt(); ?>
 												<hr class="clear">

@@ -18,8 +18,6 @@
 					<span>404</span>
 					<p>Désolé, la page que vous cherchez n'existe pas.</p>
 
-					<?php _e( 'Page introuvable', THEME_NAME ); ?>
-
 				</div>
 
 			</article>

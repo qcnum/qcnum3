@@ -29,29 +29,43 @@ $organisations = new WP_Query( array(
 
 					<div class="c7" role="main">
 
-						<div class="padding">
-
-							<header class="entry-header">
-
-								<h1 class="entry-title"><?php the_title(); ?></h1>
-								<span class="author"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></span>
-
-							</header>
+						<div class="padding entry-content">
 							
-							<div class="entry-content">
-
-								<?php the_content(); ?>
-								
-							</div>
-
-							<footer class="entry-meta">
-
-								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-							</footer>
+							<?php the_content(); ?>
 
 						</div>
 
+						<div class="author entry-content group">
+
+							<hr>
+									
+							<?php 
+							$id =  get_the_author_meta( 'ID' );
+							$name = get_the_author_meta( 'display_name' );
+							$titre = get_field('titre', 'user_'.$id);
+							$desc = get_the_author_meta( 'description' ); ?>
+
+							<div class="c2"><div class="padding"><?php echo get_avatar( $id, 200 ); ?></div></div>
+							<div class="c10">
+								<div class="padding">
+									<h2 class="h4"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></h2>
+									<?php if($desc) : ?><p><?php echo $desc; ?></p><?php endif; ?>
+									<?php 
+									$collab = get_posts('posts_per_page=3&author='.$id);
+									if($collab) : ?>
+										<h3 class="h5"><?php _e('Collaborations récentes'); ?></h3>
+										<ul>
+										<?php foreach($collab as $post) : setup_postdata( $post ); ?>
+											<li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+										<?php endforeach; ?>
+										</ul>
+									<?php endif; wp_reset_postdata(); ?>
+									<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?> " class="btn" title="<?php _e('Voir toutes les collaborations', THEME_NAME); ?>"><?php _e('Voir toutes les collaborations', THEME_NAME); ?></a>
+								</div>
+							</div>
+							
+						</div>
+							
 					</div>
 
 					<div class="c5 fr group">
@@ -88,15 +102,21 @@ $organisations = new WP_Query( array(
 
 							<div class="padding">
 
-								<?php if(has_post_thumbnail()) : ?>
-									<aside class="featured-img">
-										<?php the_post_thumbnail('large'); ?>
-									</aside>
-								<?php endif; ?>
+								<aside class="featured-img">
+									<?php if(has_post_thumbnail()) : 
+										$id = get_post_thumbnail_id();
+									else : 
+										$category = get_the_category();
+										if ( $category[0]->cat_ID == 2) {$id = get_field('img-nouvelles', 'options'); }
+										if ( $category[0]->cat_ID == 3) {$id = get_field('img-articles', 'options'); }
+									endif; 
+									$url = wp_get_attachment_image_src( $id , 'rectangle-nocrop'); ?>
+									<img src="<?php echo $url[0]; ?>" alt="">
+								</aside>
 
 								<?php 
 								$map = get_field('localisation');
-								if ( $map ) : ?>
+								if ( $map["address"] != "" ) : ?>
 									<aside class="info-event">
 										<div class="date">
 											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>	
@@ -173,9 +193,9 @@ $organisations = new WP_Query( array(
 
 			</article>
 
+			<?php related_posts(); ?>
+
 		<?php endwhile; ?>
-			
-		<?php related_posts(); ?>
 
 	</div><!-- #content -->
 
