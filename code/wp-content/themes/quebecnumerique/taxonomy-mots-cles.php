@@ -1,12 +1,12 @@
 <?php 
 get_header();
 $term = get_queried_object(); 
-query_posts( array( 'post_type' => 'post', 'mots-cles' => $term->name ));
+query_posts( array( 'post_type' => 'post', 'cat' => '2' ,'mots-cles' => $term->name ));
 ?>
 
 	<div id="content" class="large-wrapper" role="main">
 
-		<div class="<?php echo $class?> group img-box">
+		<div class="nouvelles group img-box">
 
 			<div class="large-wrapper">
 				<?php if ( have_posts() ) : ?>
