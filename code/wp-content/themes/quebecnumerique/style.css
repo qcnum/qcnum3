@@ -325,7 +325,7 @@ footer#colophon {
   display: block;
   float: left;
 }
-.filtre.mot-cle input[type="checkbox"] {
+.filtre input[type="checkbox"] {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -336,7 +336,7 @@ footer#colophon {
   border: 0;
   display: none;
 }
-.filtre.mot-cle input[type="checkbox"] + label {
+.filtre input[type="checkbox"] + label {
   display: block;
   float: left;
   padding: 0.25em 0.4em;
@@ -349,12 +349,12 @@ footer#colophon {
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
 }
-.filtre.mot-cle input[type="checkbox"] + label:after {
+.filtre input[type="checkbox"] + label:after {
   font-family: FontAwesome;
   content: "\f055";
   margin-left: 0.6em;
 }
-.filtre.mot-cle input[type="checkbox"] + label:hover {
+.filtre input[type="checkbox"] + label:hover {
   opacity: 0.9;
 }
 .filtre.mot-cle input[type="checkbox"]:checked + label {
@@ -370,38 +370,6 @@ footer#colophon {
 .filtre.mot-cle input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
 }
-.filtre.nouvelles input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.nouvelles input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.nouvelles input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.nouvelles input[type="checkbox"] + label:hover {
-  opacity: 0.9;
-}
 .filtre.nouvelles input[type="checkbox"]:checked + label {
   opacity: 1;
   background-color: #00aca7;
@@ -413,38 +381,6 @@ footer#colophon {
   content: "\f057";
 }
 .filtre.nouvelles input[type="checkbox"]:checked + label:hover {
-  opacity: 0.9;
-}
-.filtre.articles input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.articles input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.articles input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.articles input[type="checkbox"] + label:hover {
   opacity: 0.9;
 }
 .filtre.articles input[type="checkbox"]:checked + label {
@@ -460,38 +396,6 @@ footer#colophon {
 .filtre.articles input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
 }
-.filtre.evenements input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.evenements input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.evenements input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.evenements input[type="checkbox"] + label:hover {
-  opacity: 0.9;
-}
 .filtre.evenements input[type="checkbox"]:checked + label {
   opacity: 1;
   background-color: #d39b00;
@@ -503,38 +407,6 @@ footer#colophon {
   content: "\f057";
 }
 .filtre.evenements input[type="checkbox"]:checked + label:hover {
-  opacity: 0.9;
-}
-.filtre.organisations input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.organisations input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.organisations input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.organisations input[type="checkbox"] + label:hover {
   opacity: 0.9;
 }
 .filtre.organisations input[type="checkbox"]:checked + label {
@@ -550,38 +422,6 @@ footer#colophon {
 .filtre.organisations input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
 }
-.filtre.projets input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.projets input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.projets input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.projets input[type="checkbox"] + label:hover {
-  opacity: 0.9;
-}
 .filtre.projets input[type="checkbox"]:checked + label {
   opacity: 1;
   background-color: #009861;
@@ -595,38 +435,6 @@ footer#colophon {
 .filtre.projets input[type="checkbox"]:checked + label:hover {
   opacity: 0.9;
 }
-.filtre.autre input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.autre input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.autre input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.autre input[type="checkbox"] + label:hover {
-  opacity: 0.9;
-}
 .filtre.autre input[type="checkbox"]:checked + label {
   opacity: 1;
   background-color: #e14e24;
@@ -638,38 +446,6 @@ footer#colophon {
   content: "\f057";
 }
 .filtre.autre input[type="checkbox"]:checked + label:hover {
-  opacity: 0.9;
-}
-.filtre.twitter input[type="checkbox"] {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  width: 1px;
-  margin: -1px;
-  padding: 0;
-  border: 0;
-  display: none;
-}
-.filtre.twitter input[type="checkbox"] + label {
-  display: block;
-  float: left;
-  padding: 0.25em 0.4em;
-  margin: 0.5em 0.5em 0em 0;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 1.25em;
-  border: 1px solid #ffffff;
-  opacity: 0.6;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-.filtre.twitter input[type="checkbox"] + label:after {
-  font-family: FontAwesome;
-  content: "\f055";
-  margin-left: 0.6em;
-}
-.filtre.twitter input[type="checkbox"] + label:hover {
   opacity: 0.9;
 }
 .filtre.twitter input[type="checkbox"]:checked + label {
@@ -2574,17 +2350,19 @@ form .advanced:hover {
   z-index: 30;
   border-top: 1px solid #696969;
 }
-#menu-map a {
+#menu-map #full-screen {
   opacity: 0.8;
   color: #ffffff;
   float: right;
-  margin-top: 0.65em;
   font-size: 1.5em;
+  position: absolute;
+  top: 0.55em;
+  right: 0.2em;
 }
-#menu-map a:hover {
+#menu-map #full-screen:hover {
   opacity: 1;
 }
-#menu-map a i:before {
+#menu-map #full-screen i:before {
   content: "\f065";
 }
 #menu-map .nbr-count {
@@ -2663,7 +2441,7 @@ form .advanced:hover {
 .full-screen-map #map {
   height: 100%;
 }
-.full-screen-map #menu-map i:before {
+.full-screen-map #menu-map #full-screen i:before {
   content: "\f057";
 }
 .rs {
@@ -3083,6 +2861,16 @@ form .advanced:hover {
     clear: none;
     position: relative;
   }
+  .trois .c6,
+  .img-box .c6 {
+    width: 100%;
+  }
+  .box-evenements article {
+    font-size: 80%;
+  }
+  .box-evenements article img {
+    width: 17%;
+  }
   .navigation .principal.menu-toggle {
     display: block;
   }
@@ -3113,8 +2901,8 @@ form .advanced:hover {
   .navigation .principal#menu-principal.visible {
     top: 0;
   }
-  .img-box .content {
-    font-size: 130%;
+  .filtre {
+    font-size: 85%;
   }
   .header-post-type .description {
     width: 100%;
@@ -3124,9 +2912,35 @@ form .advanced:hover {
     display: inherit;
   }
 }
+@media screen and (max-width: 820px) {
+  .footer-apropos .c5 {
+    width: 98.14%;
+  }
+  .footer-apropos .c7 {
+    width: 98.14%;
+  }
+  .partenaires img {
+    padding: 5%;
+    max-width: 100%;
+  }
+  .contact-form {
+    width: 98.14%;
+  }
+}
 @media screen and (max-width: 767px) {
   .contact-form {
     width: 98.14%;
+  }
+  .accueil .c6 {
+    width: 99.99%;
+  }
+  .trois .c6,
+  .img-box .c6 {
+    width: 49.98%;
+  }
+  .nbr-count,
+  .stats {
+    display: none;
   }
 }
 @media screen and (max-width: 600px) {
@@ -3144,6 +2958,10 @@ form .advanced:hover {
   }
 }
 @media screen and (max-width: 500px) {
+  .trois .c6,
+  .img-box .c6 {
+    width: 99.99%;
+  }
   .home-link {
     font-size: 80%;
   }
@@ -3155,5 +2973,8 @@ form .advanced:hover {
   }
   .navigation .principal#menu-principal {
     font-size: 65%;
+  }
+  .img-box .content {
+    font-size: 120%;
   }
 }

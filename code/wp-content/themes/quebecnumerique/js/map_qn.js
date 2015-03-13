@@ -120,12 +120,18 @@ jQuery(document).ready(function(){
 
 
 function initialize() {
+    var isZoomable = false;
     var center = new google.maps.LatLng(46.815256, -71.225401);
     var isDraggable = jQuery(document).width() > 480 ? true : false;
+    /* On modifie les propriété de zoom et de drag quand one st en mode plein écran de la carte */
+    if ( jQuery(".map-content").hasClass('full-screen-map') ) { isDraggable = true;}
+    if ( jQuery(".map-content").hasClass('full-screen-map') ) { isZoomable = true;}
 
+
+    
     map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
-          scrollwheel: false,
+          scrollwheel: isZoomable,
           draggable: isDraggable,
           center: center,
           mapTypeId: google.maps.MapTypeId.ROADMAP

@@ -157,7 +157,7 @@
 
 		<div class="blanc-bg">
 
-			<div class="large-wrapper group">
+			<div class="large-wrapper group footer-apropos">
 				
 				<?php 
 				$propos = get_field('propos', 'options');
