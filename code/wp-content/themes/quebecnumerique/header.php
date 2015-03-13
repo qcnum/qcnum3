@@ -102,9 +102,6 @@ wp_head();
 					<div class="c12 top-title">
 						<div class="padding">
 							<h1 class="page-title"><?php echo $title; ?></h1>
-							<?php if(is_singular('post')) { ?>
-								<span class="author"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></span>
-							<?php } ?>
 							<?php if (is_tax('mots-cles')){ ?>
 								<hr class="clear for-responsive">
 								<p class="description"><?php echo $description; ?></p>

@@ -1014,12 +1014,16 @@ footer#colophon {
 }
 #breadcrumbs {
   margin-bottom: 0.5em;
+  overflow: hidden;
 }
 #breadcrumbs a,
 #breadcrumbs span {
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
+}
+#breadcrumbs strong {
+  display: none;
 }
 /* ACCUEIL */
 .abstract {
