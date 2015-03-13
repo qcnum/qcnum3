@@ -29,27 +29,10 @@ $organisations = new WP_Query( array(
 
 					<div class="c7" role="main">
 
-						<div class="padding">
-
-							<header class="entry-header">
-
-								<h1 class="entry-title"><?php the_title(); ?></h1>
-								<span class="author"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></span>
-
-							</header>
+						<div class="padding entry-content">
 							
-							<div class="entry-content">
-
-								<?php the_content(); ?>
-								
-							</div>
-
-							<footer class="entry-meta">
-
-								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-							</footer>
-
+							<?php the_content(); ?>
+						
 						</div>
 
 					</div>

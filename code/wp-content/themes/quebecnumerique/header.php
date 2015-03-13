@@ -78,11 +78,15 @@ wp_head();
 			$class .= ' single-post'; 
 			$title = get_the_title();
 		}
-		if(is_tax()) {
+		if(is_tax('mots-cles')) {
 			$term = $wp_query->get_queried_object();
 			$class = "nouvelles";
 			$title = $term->name;
 			$description = $term->description;
+		} elseif(is_tax('secteurs')) {
+			$term = $wp_query->get_queried_object();
+			$class = "organisations single-post";
+			$title = $term->name;
 		}
 	} elseif( is_search() ) {
 		$title = 'Recherche';
@@ -98,7 +102,10 @@ wp_head();
 					<div class="c12 top-title">
 						<div class="padding">
 							<h1 class="page-title"><?php echo $title; ?></h1>
-							<?php if (is_tax()){ ?>
+							<?php if(is_singular('post')) { ?>
+								<span class="author"><?php _e('Par', THEME_NAME); ?> <?php the_author(); ?></span>
+							<?php } ?>
+							<?php if (is_tax('mots-cles')){ ?>
 								<hr class="clear for-responsive">
 								<p class="description"><?php echo $description; ?></p>
 							<?php }; ?>
@@ -106,7 +113,7 @@ wp_head();
 					</div>
 					
 					<?php
-					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_archive() && !is_category( $category )) {
+					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category( $category )) {
 						yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
 					} ?>
 

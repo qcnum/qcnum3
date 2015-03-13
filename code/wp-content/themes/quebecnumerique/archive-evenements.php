@@ -10,7 +10,7 @@ query_posts(
 		'meta_key' => 'startdate',
 		'orderby' => 'meta_value',
 		'order' => 'ASC',
-		'posts_per_page' => -1,
+		//'posts_per_page' => -1,
 		'meta_query'  => array(
 			'relation' => 'AND',
 				array(
@@ -87,7 +87,7 @@ query_posts(
 											if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
 											else : $id = get_field('img-evenements', 'options'); endif; 
 											$url = wp_get_attachment_image_src( $id , 'thumb-nocrop'); ?>
-											<img src="<?php echo $url[0]; ?>" alt="">
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo $url[0]; ?>" alt=""></a>
 										</div>
 									</div>
 

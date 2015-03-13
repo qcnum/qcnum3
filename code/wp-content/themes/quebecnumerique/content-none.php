@@ -1,20 +1,25 @@
 
-	<article >
-		
-		<h2 class="grisopac-bg"><?php _e( 'Rien de trouvé', THEME_NAME ); ?></h2>
+	<div class="cinq">
 
-		<div class="entry-content">
+		<div class="group">
 
-			<?php if ( is_search() ) : ?>
+			<div class="c3">
+				<div class="padding">
+					<article >
+					<div class="content content-none">
+						<h3 class="grisopac-bg"><?php _e( 'Rien de trouvé', THEME_NAME ); ?></h3>
+						<div class="excerpt-hover"><p><?php _e( 'Désolé, mais rien ne correspond à votre critère de recherche. Veuillez réessayer avec d\'autres mots-clés.', THEME_NAME ); ?></p></div>
+					</div>
 
-				<p><?php _e( 'Désolé, mais rien ne correspond à votre critère de recherche. Veuillez réessayer avec d\'autres mots-clés.', THEME_NAME ); ?></p>
+					<?php 
+					$id = get_field('img-nouvelles', 'options');
+					$url = wp_get_attachment_image_src( $id , 'rectangle'); ?>
+					<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
+					</article>
 
-			<?php else : ?>
-
-				<p><?php _e( 'Il semblerait que nous ne soyons pas en mesure de trouver votre contenu. Essayez en lançant une recherche.', THEME_NAME ); ?></p>
-
-			<?php endif; ?>
+				</div>
+			</div>
 
 		</div>
-				
-	</article>
+
+	</div>

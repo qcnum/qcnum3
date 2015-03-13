@@ -29,7 +29,7 @@
 													if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
 													else : $id = get_field('img-evenements', 'options'); endif; 
 													$url = wp_get_attachment_image_src( $id , 'thumb-nocrop'); ?>
-													<img src="<?php echo $url[0]; ?>" alt="">
+													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo $url[0]; ?>" alt=""></a>
 												</aside>
 											</div>
 										</div>
@@ -49,12 +49,12 @@
 												<?php the_excerpt(); ?>
 
 												<?php 
-												if ( $organisations->have_posts() ) :
-													while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
+												if ( $organisations->have_posts() ) : $numO = $organisations->post_count; ?>
+												<p><strong><?php echo _n('Organisation', 'Organisations', $numO, THEME_NAME); ?> : </strong>
+													<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
 														<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-													<?php endwhile; wp_reset_postdata();
-												endif;
-												?>
+													<?php endwhile; wp_reset_postdata(); ?></p>
+												<?php endif; ?>
 
 											</div>
 										</div>

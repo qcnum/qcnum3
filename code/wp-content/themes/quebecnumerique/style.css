@@ -1296,6 +1296,37 @@ footer#colophon {
 .img-box.articles span.triangle {
   border-color: #a0ad00 transparent transparent transparent;
 }
+.img-box .content-none {
+  bottom: initial;
+  top: 0.5em;
+}
+.img-box .content-none h3 {
+  color: #ffffff;
+}
+.img-box .content-none .excerpt-hover {
+  height: auto;
+  padding: 0.5em;
+}
+/*a.hover-shadow {
+		position: relative;
+		display: block;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			z-index: 100;
+			right: 0;
+			opacity: 0;
+			box-shadow: inset 0 0 10em fade(@noir, 25%);
+			-moz-box-shadow: inset 0 0 10em fade(@noir, 25%);
+			-webkit-box-shadow: inset 0 0 10em fade(@noir, 25%);
+			.transition();
+		}
+		&:hover:before { opacity: 1; }
+		img { position: relative; z-index: 0; margin-bottom: -2px; }
+	}*/
 .entry-header h1 {
   color: #4d5057;
   font-size: 2em;
@@ -1343,6 +1374,25 @@ footer#colophon {
 .entry-content .h6 a {
   text-decoration: none;
   color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.entry-content h1 a:hover,
+.entry-content .h1 a:hover,
+.entry-content h2 a:hover,
+.entry-content .h2 a:hover,
+.entry-content h3 a:hover,
+.entry-content .h3 a:hover,
+.entry-content h4 a:hover,
+.entry-content .h4 a:hover,
+.entry-content h5 a:hover,
+.entry-content .h5 a:hover,
+.entry-content h6 a:hover,
+.entry-content .h6 a:hover {
+  color: #e14e24;
 }
 .entry-content h2,
 .entry-content .h2 {
@@ -1722,7 +1772,7 @@ aside.featured-img {
   box-shadow: none;
 }
 aside.featured-img img {
-  width: 100%;
+  max-width: 100%;
 }
 aside.info-event {
   margin-bottom: 1em;
@@ -2598,7 +2648,7 @@ form .advanced:hover {
 }
 .slick-slider .slick-next,
 .slick-slider .slick-prev {
-  opacity: 0.3;
+  opacity: 0;
   position: absolute;
   height: 100%;
   top: 0;
@@ -2685,7 +2735,7 @@ form .advanced:hover {
 .slick-slide {
   text-align: center;
   float: left;
-  height: 15em;
+  height: 10em;
   min-height: 1px;
   display: none;
 }
@@ -2941,6 +2991,9 @@ form .advanced:hover {
   .nbr-count,
   .stats {
     display: none;
+  }
+  .slick-slide {
+    height: 5em;
   }
 }
 @media screen and (max-width: 600px) {
