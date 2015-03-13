@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){
+/*jQuery(document).ready(function(){
 
  	jQuery(window).scroll(function () {
  		$hauteur = jQuery(this).scrollTop();
@@ -9,7 +9,7 @@ jQuery(document).ready(function(){
 
     });
 
-});
+});*/
 
 
 
