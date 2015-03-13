@@ -53,7 +53,7 @@ wp_head();
 
 </header><!-- #masthead -->
 
-<<<<<<< HEAD
+
 	<?php if ( is_category() || is_archive() || is_single() || is_author() ) {
 	$queried_object = get_queried_object();
 	$id = $queried_object->cat_ID;	
@@ -74,73 +74,37 @@ wp_head();
 		$class="evenements";
 		$title = $queried_object->label;
 	}
-
-	if(is_single()) { $class .= ' single-post'; }
-
-	if(is_tax()) {
+	
+	if(is_single()) { 
+		$class .= ' single-post'; 
+		$title = get_the_title();
+	}
+	if(is_tax('mots-cles')) {
 		$term = $wp_query->get_queried_object();
-		$class="nouvelles";
+		$class = "nouvelles";
 		$title = $term->name;
 		$description = $term->description;
+	} elseif(is_tax('secteurs')) {
+		$term = $wp_query->get_queried_object();
+		$class = "organisations single-post";
+		$title = $term->name;
 	}
-
-=======
-	<?php 
-	if ( is_category() || is_archive() || is_single() ) {
-		$queried_object = get_queried_object();
-		$id = $queried_object->cat_ID;	
-		$name = $queried_object->name;
-		if ($id == 2 || in_category(2)) {
-		  	$class = "nouvelles";
-		  	$title = $name;
-		} else if ($id == 3 || in_category(3)) {
-			$class = "articles";
-			$title = $name;
-		} else if ($name == 'organisations' || is_singular('organisations'))  {
-			$class = "organisations";
-			$title = $queried_object->label;
-		} else if ($name == 'projets' || is_singular('projets'))  {
-			$class = "projets";
-			$title = $queried_object->label;
-		} else if ($name == 'evenements' || is_singular('evenements'))  {
-			$class = "evenements";
-			$title = $queried_object->label;
-		}
-		if(is_single()) { 
-			$class .= ' single-post'; 
-			$title = get_the_title();
-		}
-		if(is_tax('mots-cles')) {
-			$term = $wp_query->get_queried_object();
-			$class = "nouvelles";
-			$title = $term->name;
-			$description = $term->description;
-		} elseif(is_tax('secteurs')) {
-			$term = $wp_query->get_queried_object();
-			$class = "organisations single-post";
-			$title = $term->name;
-		}
 	} elseif( is_search() ) {
 		$title = 'Recherche';
->>>>>>> b431bae24535642fb9d6e609147d622b1680e260
+
 	} else {
 		$title = get_the_title();
 	}
-<<<<<<< HEAD
 
-	if(is_search()) {
-		//$term = $wp_query->get_queried_object();
-		$class="normal";
-		$title = 'Recherche';
-	}
+
+
 
 	if(is_author())	{
 		$class="nouvelles";
 		$nom = $queried_object->display_name;
 		$title = '<span class="texte-reduit">Articles par : </span>' . $nom;	
 	}
-=======
->>>>>>> b431bae24535642fb9d6e609147d622b1680e260
+
 	?>
 
 		<?php if (!is_front_page()){ ?>
