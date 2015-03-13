@@ -88,15 +88,21 @@ $organisations = new WP_Query( array(
 
 							<div class="padding">
 
-								<?php if(has_post_thumbnail()) : ?>
-									<aside class="featured-img">
-										<?php the_post_thumbnail('large'); ?>
-									</aside>
-								<?php endif; ?>
+								<aside class="featured-img">
+									<?php if(has_post_thumbnail()) : 
+										$id = get_post_thumbnail_id();
+									else : 
+										$category = get_the_category();
+										if ( $category[0]->cat_ID == 2) {$id = get_field('img-nouvelles', 'options'); }
+										if ( $category[0]->cat_ID == 3) {$id = get_field('img-articles', 'options'); }
+									endif; 
+									$url = wp_get_attachment_image_src( $id , 'rectangle-nocrop'); ?>
+									<img src="<?php echo $url[0]; ?>" alt="">
+								</aside>
 
 								<?php 
 								$map = get_field('localisation');
-								if ( $map ) : ?>
+								if ( $map["address"] != "" ) : ?>
 									<aside class="info-event">
 										<div class="date">
 											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>	
@@ -173,9 +179,9 @@ $organisations = new WP_Query( array(
 
 			</article>
 
+			<?php related_posts(); ?>
+
 		<?php endwhile; ?>
-			
-		<?php related_posts(); ?>
 
 	</div><!-- #content -->
 

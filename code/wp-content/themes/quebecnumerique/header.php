@@ -53,45 +53,41 @@ wp_head();
 
 </header><!-- #masthead -->
 
-	<?php if ( is_category() || is_archive() || is_single() ) {
-	$queried_object = get_queried_object();
-	$id = $queried_object->cat_ID;	
-	$name = $queried_object->name;
-	if ($id == 2 || in_category(2)) {
-	  	$class="nouvelles";
-	  	$title=$name;
-	} else if ($id == 3 || in_category(3)) {
-		$class="articles";
-		$title=$name;
-	} else if ($name == 'organisations' || is_singular('organisations'))  {
-		$class="organisations";
-		$title = $queried_object->label;
-	} else if ($name == 'projets' || is_singular('projets'))  {
-		$class="projets";
-		$title = $queried_object->label;
-	} else if ($name == 'evenements' || is_singular('evenements'))  {
-		$class="evenements";
-		$title = $queried_object->label;
-	}
-
-	if(is_single()) { $class .= ' single-post'; }
-
-	if(is_tax()) {
-		$term = $wp_query->get_queried_object();
-		$class="nouvelles";
-		$title = $term->name;
-		$description = $term->description;
-	}
-
-	} else {
-		$class = "normal";
-		$title = get_the_title();
-	}
-
-	if(is_search()) {
-		//$term = $wp_query->get_queried_object();
-		$class="normal";
+	<?php 
+	if ( is_category() || is_archive() || is_single() ) {
+		$queried_object = get_queried_object();
+		$id = $queried_object->cat_ID;	
+		$name = $queried_object->name;
+		if ($id == 2 || in_category(2)) {
+		  	$class = "nouvelles";
+		  	$title = $name;
+		} else if ($id == 3 || in_category(3)) {
+			$class = "articles";
+			$title = $name;
+		} else if ($name == 'organisations' || is_singular('organisations'))  {
+			$class = "organisations";
+			$title = $queried_object->label;
+		} else if ($name == 'projets' || is_singular('projets'))  {
+			$class = "projets";
+			$title = $queried_object->label;
+		} else if ($name == 'evenements' || is_singular('evenements'))  {
+			$class = "evenements";
+			$title = $queried_object->label;
+		}
+		if(is_single()) { 
+			$class .= ' single-post'; 
+			$title = get_the_title();
+		}
+		if(is_tax()) {
+			$term = $wp_query->get_queried_object();
+			$class = "nouvelles";
+			$title = $term->name;
+			$description = $term->description;
+		}
+	} elseif( is_search() ) {
 		$title = 'Recherche';
+	} else {
+		$title = get_the_title();
 	}
 	?>
 
@@ -100,15 +96,13 @@ wp_head();
 
 				<div class="large-wrapper">
 					<div class="c12 top-title">
-						<?php if(!is_single()) : ?>
-							<div class="padding">
-								<h1 class="page-title"><?php echo $title ?></h1>
-								<?php if (is_tax()){ ?>
-									<hr class="clear for-responsive">
-									<p class="description"><?php echo $description ?></p>
-								<?php }; ?>
-							</div>
-						<?php endif; ?>
+						<div class="padding">
+							<h1 class="page-title"><?php echo $title; ?></h1>
+							<?php if (is_tax()){ ?>
+								<hr class="clear for-responsive">
+								<p class="description"><?php echo $description; ?></p>
+							<?php }; ?>
+						</div>
 					</div>
 					
 					<?php

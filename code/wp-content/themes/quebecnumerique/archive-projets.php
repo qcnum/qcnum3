@@ -24,7 +24,13 @@
 									<div class="padding">
 										<div class="c3">
 											<div class="padding">
-												<?php the_post_thumbnail('thumb-nocrop'); ?>
+												<aside class="featured-img">
+													<?php 
+													if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
+													else : $id = get_field('img-evenements', 'options'); endif; 
+													$url = wp_get_attachment_image_src( $id , 'thumb-nocrop'); ?>
+													<img src="<?php echo $url[0]; ?>" alt="">
+												</aside>
 											</div>
 										</div>
 										<div class="c7">

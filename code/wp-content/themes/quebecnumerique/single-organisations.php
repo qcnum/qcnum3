@@ -1,10 +1,10 @@
 <?php 
 get_header(); 
-$nouvelles = new WP_Query( array(
+/*$nouvelles = new WP_Query( array(
 	'connected_type' => 'organisations-to-post',
 	'connected_items' => get_queried_object(),
 	'nopaging' => true,
-) );
+) ); */
 
 $evenements = new WP_Query( array(
 	'connected_type' => 'organisations-to-evenements',
@@ -29,26 +29,10 @@ $projets = new WP_Query( array(
 
 					<div class="c7" role="main">
 
-						<div class="padding">
+						<div class="padding entry-content">
 
-							<header class="entry-header">
-
-								<h1 class="entry-title"><?php the_title(); ?></h1>
-
-							</header>
+							<?php the_content(); ?>
 							
-							<div class="entry-content">
-
-								<?php the_content(); ?>
-								
-							</div>
-
-							<footer class="entry-meta">
-
-								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-							</footer>
-
 						</div>
 
 					</div>
@@ -86,80 +70,53 @@ $projets = new WP_Query( array(
 
 							<div class="padding">
 
-								<?php if(has_post_thumbnail()) : ?>
-									<aside class="featured-img">
-										<?php the_post_thumbnail('large'); ?>
-									</aside>
-								<?php endif; ?>
+								<aside class="featured-img">
+									<?php 
+									if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
+									else : $id = get_field('img-organisations', 'options'); endif; 
+									$url = wp_get_attachment_image_src( $id , 'rectangle-nocrop'); ?>
+									<img src="<?php echo $url[0]; ?>" alt="">
+								</aside>
 
 								<?php 
 								$map = get_field('localisation');
-								if ( $map ) : ?>
-
-									<aside>
-
-										<div>
-
-											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>
-												
+								if ( $map["address"] != "" ) : ?>
+									<aside class="info-event">
+										<div class="date">
+											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>	
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
 								<?php 
 								$motsCles = wp_get_post_terms(get_the_ID(), 'mots-cles');
-								if ( $motsCles ) : ?>
-
+								if ( $motsCles ) : $numMC = count($motsCles); ?>
 									<aside>
-
 										<div class="group">
-
-											<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
-
+											<h2 class="h2"><?php echo _n('Mot-clé', 'Mots-clés', $numMC, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
 											<?php foreach ( $motsCles as $mc ) : ?>
-
-												<a class="mot-cle" href="<?php echo get_term_link( $mc, 'mots-cles' ); ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
-
-											<?php endforeach; ?>
-												
+												<a class="mot-cle" href="/index.php?s=&amp;mots-cles[]=<?php echo $mc->slug; ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
+											<?php endforeach; ?>	
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
-								<?php if ( $projets->have_posts() ) : ?>
-
+								<?php if ( $projets->have_posts() ) : $numP = $projets->post_count; ?>
 									<aside>
-
 										<div>
-
-											<h2><?php _e('Projets en lien', THEME_NAME); ?></h2>
-
+											<h2 class="h2"><?php echo _n('Projet', 'Projets', $numP, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
 											<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
-
 												<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-
 											<?php endwhile; wp_reset_postdata(); ?>
-
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
-								<?php if ( $evenements->have_posts() ) : ?>
-
+								<?php if ( $evenements->have_posts() ) : $numE = $evenements->post_count; ?>
 									<aside>
-
 										<div class="box-evenements">
-
-											<h2><?php _e('Événements en lien', THEME_NAME); ?></h2>
-
+											<h2><?php echo _n('Événement', 'Événements', $numE, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
 											<?php while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
-												
 												<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
 													<article class="grispale-bg group">
 														<?php the_post_thumbnail('thumbnail'); ?>
@@ -172,37 +129,9 @@ $projets = new WP_Query( array(
 														</div>
 													</article>
 												</a>
-
 											<?php endwhile; wp_reset_postdata(); ?>
-
 										</div>
-
 									</aside>
-
-								<?php endif; ?>
-
-								<?php if ( $nouvelles->have_posts() ) : ?>
-
-									<aside>
-
-										<div>
-
-											<h2><?php _e('Nouvelles en lien', THEME_NAME); ?></h2>
-
-											<div class="group">
-
-												<?php while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
-
-													<a class="c6" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-
-												<?php endwhile; wp_reset_postdata(); ?>
-
-											</div>
-
-										</div>
-
-									</aside>
-
 								<?php endif; ?>
 
 							</div>
@@ -214,6 +143,8 @@ $projets = new WP_Query( array(
 				</div>
 
 			</article>
+
+			<?php related_posts(); ?>
 
 		<?php endwhile; ?>
 

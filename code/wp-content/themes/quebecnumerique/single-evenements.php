@@ -1,10 +1,10 @@
 <?php 
 get_header(); 
-$nouvelles = new WP_Query( array(
+/*$nouvelles = new WP_Query( array(
 	'connected_type' => 'evenements-to-post',
 	'connected_items' => get_queried_object(),
 	'nopaging' => true,
-) );
+) ); */
 
 $organisations = new WP_Query( array(
 	'connected_type' => 'organisations-to-evenements',
@@ -51,22 +51,19 @@ $projets = new WP_Query( array(
 								$endHrs = get_field('hrs_fin');
 
 								if($startHrs && !$endHrs) {
-									echo '<span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+									$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
 								} elseif($startHrs && $endHrs) {
-									echo '<span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+									$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
 								}
 								?>
 
 
 								<div class="ellipsis info-event">
-									<span class="date"><?php echo $date; ?></span>
+									<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
 									<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
 								</div>
-								<h3 class="h2"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-								<?php the_excerpt(); ?>
-								<hr class="clear">
-								<p><a class="btn" href="<?php the_permalink(); ?>" title="<?php _e('En savoir plus', THEME_NAME); ?>"><?php _e('En savoir plus', THEME_NAME); ?></a></p>
-
+								<?php the_content(); ?>
+							
 							</div>
 
 							<footer class="entry-meta">
@@ -113,17 +110,19 @@ $projets = new WP_Query( array(
 
 							<div class="padding">
 
-								<?php if(has_post_thumbnail()) : ?>
-									<aside class="featured-img">
-										<?php the_post_thumbnail('large'); ?>
-									</aside>
-								<?php endif; ?>
+								<aside class="featured-img">
+									<?php 
+									if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
+									else : $id = get_field('img-evenements', 'options'); endif; 
+									$url = wp_get_attachment_image_src( $id , 'rectangle-nocrop'); ?>
+									<img src="<?php echo $url[0]; ?>" alt="">
+								</aside>
 
 								<?php 
 								$map = get_field('localisation');
-								if ( $map ) : ?>
-									<aside>
-										<div>
+								if ( $map["address"] != "" ) : ?>
+									<aside class="info-event">
+										<div class="date">
 											<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>	
 										</div>
 									</aside>
@@ -131,90 +130,39 @@ $projets = new WP_Query( array(
 
 								<?php 
 								$motsCles = wp_get_post_terms(get_the_ID(), 'mots-cles');
-								if ( $motsCles ) : ?>
-
+								if ( $motsCles ) : $numMC = count($motsCles); ?>
 									<aside>
-
 										<div class="group">
-
-											<h2><?php _e('Mots-clés', THEME_NAME); ?></h2>
-
+											<h2 class="h2"><?php echo _n('Mot-clé', 'Mots-clés', $numMC, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
 											<?php foreach ( $motsCles as $mc ) : ?>
-
-												<a class="mot-cle" href="<?php echo get_term_link( $mc, 'mots-cles' ); ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
-
-											<?php endforeach; ?>
-												
+												<a class="mot-cle" href="/index.php?s=&amp;mots-cles[]=<?php echo $mc->slug; ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
+											<?php endforeach; ?>	
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
-								<?php if ( $projets->have_posts() ) : ?>
-
+								<?php if ( $projets->have_posts() ) : $numP = $projets->post_count; ?>
 									<aside>
-
 										<div>
-
-											<h2><?php _e('Projets en lien', THEME_NAME); ?></h2>
-
+											<h2 class="h2"><?php echo _n('Projet', 'Projets', $numP, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
 											<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
-
 												<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-
 											<?php endwhile; wp_reset_postdata(); ?>
-
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
-								<?php if ( $nouvelles->have_posts() ) : ?>
-
+								<?php if ( $organisations->have_posts() ) : $numO = $organisations->post_count; ?>
 									<aside>
-
-										<div class="evenements">
-
-											<h2><?php _e('Nouvelles en lien', THEME_NAME); ?></h2>
-
-											<?php while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
-												
-												<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-													<?php the_title(); ?>
-												</a>
-
-											<?php endwhile; wp_reset_postdata(); ?>
-
-										</div>
-
-									</aside>
-
-								<?php endif; ?>
-
-								<?php if ( $organisations->have_posts() ) : ?>
-
-									<aside>
-
 										<div>
-
-											<h2><?php _e('Organisation en lien', THEME_NAME); ?></h2>
-
-											<div class="group">
-
+											<h2><?php echo _n('Organisation', 'Organisations', $numO, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
+											<div class="group org">
 												<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
-
-													<a class="c6" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-
+													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
 												<?php endwhile; wp_reset_postdata(); ?>
-
 											</div>
-
 										</div>
-
 									</aside>
-
 								<?php endif; ?>
 
 							</div>
@@ -226,6 +174,8 @@ $projets = new WP_Query( array(
 				</div>
 
 			</article>
+
+			<?php related_posts(); ?>
 
 		<?php endwhile; ?>
 
