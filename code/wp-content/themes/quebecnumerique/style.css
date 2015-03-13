@@ -1025,9 +1025,6 @@ footer#colophon {
   text-decoration: none;
   color: #ffffff;
 }
-#breadcrumbs strong {
-  display: none;
-}
 /* ACCUEIL */
 .abstract {
   top: 2%;
