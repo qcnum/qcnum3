@@ -2391,7 +2391,7 @@ form .advanced:hover {
 .full-screen-map #map {
   height: 100%;
 }
-.full-screen-map #menu-map i:before {
+.full-screen-map #menu-map #full-screen i:before {
   content: "\f057";
 }
 .rs {
@@ -2815,7 +2815,7 @@ form .advanced:hover {
   .img-box .c6 {
     width: 100%;
   }
-  .box-evenements {
+  .box-evenements article {
     font-size: 80%;
   }
   .box-evenements article img {
@@ -2923,5 +2923,8 @@ form .advanced:hover {
   }
   .navigation .principal#menu-principal {
     font-size: 65%;
+  }
+  .img-box .content {
+    font-size: 120%;
   }
 }
