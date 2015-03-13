@@ -1,6 +1,7 @@
 <?php 
-get_header(); 
-//query_posts();
+get_header();
+$term = get_queried_object(); 
+query_posts( array( 'post_type' => 'post', 'mots-cles' => $term->name ));
 ?>
 
 	<div id="content" class="large-wrapper" role="main">
