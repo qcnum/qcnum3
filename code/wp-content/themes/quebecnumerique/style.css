@@ -1661,13 +1661,19 @@ footer#colophon {
 aside {
   background-color: #eaebec;
   margin-bottom: 1em;
-  font-size: 90%;
+  box-shadow: inset -1px -1px 0px 0px #fcfcfc;
+  border: thin solid #e2e2e2;
 }
 aside.featured-img {
   background-color: transparent;
+  border: none;
+  box-shadow: none;
 }
 aside.featured-img img {
   width: 100%;
+}
+aside.info-event {
+  margin-bottom: 1em;
 }
 aside > div {
   padding: 1em;
@@ -1676,8 +1682,28 @@ aside img {
   max-width: 100%;
   height: auto;
 }
+aside .box-evenements a {
+  font-size: 85%;
+}
 aside h2 {
-  margin-bottom: 0.5em;
+  line-height: 1em;
+  padding-bottom: 0.25em;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  font-weight: 700;
+  display: block;
+  font-size: 2em;
+}
+aside h3 a {
+  text-decoration: none;
+}
+aside .org {
+  text-align: center;
+}
+aside .org img {
+  padding: 1em;
+  display: inline-block;
+  max-height: 5em;
+  width: auto;
 }
 aside .mot-cle {
   font-size: 1.125em;
@@ -1685,10 +1711,21 @@ aside .mot-cle {
   color: #ffffff;
   text-transform: none;
   text-decoration: none;
-  padding: 0.25em;
+  padding: 0.35em 0.35em 0.2em 0.35em;
   display: block;
   float: left;
   margin: 0 0.25em 0.25em 0;
+  border: thin solid #373a3f;
+  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0.25);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+aside .mot-cle:hover {
+  background-color: #373a3f;
+  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0);
 }
 .sharing > div {
   visibility: hidden;
@@ -2470,6 +2507,28 @@ form .advanced:hover {
   margin-top: 1em;
   display: block;
 }
+.organisation .loading {
+  width: 100%;
+  height: 11em;
+  padding-top: 4em;
+  text-align: center;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.organisation .slick {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.organisation .hide {
+  display: none;
+  opacity: 0;
+}
 /* Slider */
 .slick-slider {
   position: relative;
@@ -2587,6 +2646,8 @@ form .advanced:hover {
   padding: 0 4em;
   vertical-align: middle;
   display: inline-block;
+  max-height: 100%;
+  width: auto;
 }
 .slick-slide.slick-loading img {
   display: none;

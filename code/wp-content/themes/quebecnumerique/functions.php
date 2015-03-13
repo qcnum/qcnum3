@@ -19,7 +19,6 @@ function init() {
 	add_image_size('rectangle', 700, 500, true );
     add_image_size('thumb-nocrop', 200, 200, false );
     add_image_size('profil', 400, 400, true );
-    
 
 	register_sidebar( array(
 		'name' => __( 'Main Sidebar', THEME_NAME ),
@@ -396,33 +395,6 @@ add_action('pre_get_posts', 'advanced_search_query', 1000);
 
 add_filter( 'wpseo_metabox_prio', function() { return 'low';});
 
-function save_evenement_meta( $post_id, $post, $update ) {
-
-    /*
-     * In production code, $slug should be set only once in the plugin,
-     * preferably as a class property, rather than in each function that needs it.
-     */
-    $slug = 'evenements';
-
-    // If this isn't a 'book' post, don't update it.
-    if ( $slug != $post->post_type ) {
-        return;
-    }
-
-
-    if ( !isset( $_REQUEST['enddate'] ) && isset( $_REQUEST['startdate'])) {
-        update_post_meta( $post_id, 'enddate', $_REQUEST['startdate'] );
-    }
-
-    if ( !isset( $_REQUEST['enddate'] ) && !isset( $_REQUEST['startdate'])) {
-        update_post_meta( $post_id, 'startdate', get_the_date($post_id) );
-        update_post_meta( $post_id, 'enddate', get_the_date($post_id) );
-    }
-}
-//add_action( 'save_post', 'save_evenement_meta', 10, 3 );
-
-
-
 function my_acf_save_post( $post_id ) {
     if ( get_post_type($post_id) != 'evenements' ) { return; }
     $debut = get_post_meta( $post_id, 'startdate' );
@@ -432,3 +404,6 @@ function my_acf_save_post( $post_id ) {
 // run after ACF saves the $_POST['acf'] data
 add_action('acf/save_post', 'my_acf_save_post', 20);
 
+
+add_action('get_footer','lm_dequeue_footer_styles');
+function lm_dequeue_footer_styles() { wp_dequeue_style('yarppRelatedCss'); }
