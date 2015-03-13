@@ -53,7 +53,7 @@ wp_head();
 
 </header><!-- #masthead -->
 
-	<?php if ( is_category() || is_archive() || is_single() ) {
+	<?php if ( is_category() || is_archive() || is_single() || is_author() ) {
 	$queried_object = get_queried_object();
 	$id = $queried_object->cat_ID;	
 	$name = $queried_object->name;
@@ -92,6 +92,12 @@ wp_head();
 		//$term = $wp_query->get_queried_object();
 		$class="normal";
 		$title = 'Recherche';
+	}
+
+	if(is_author())	{
+		$class="nouvelles";
+		$nom = $queried_object->display_name;
+		$title = '<span class="texte-reduit">Articles par : </span>' . $nom;	
 	}
 	?>
 

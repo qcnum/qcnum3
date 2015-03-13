@@ -490,6 +490,9 @@ footer#colophon {
 .legende.autre {
   background-color: #e14e24;
 }
+.texte-reduit {
+  font-size: 0.6em;
+}
 /* HEADER */
 .home-link {
   margin-left: 0.925925%;
@@ -2166,6 +2169,8 @@ aside .mot-cle:hover {
   margin-bottom: 1.5em;
   background-image: url("images/shadow1.png");
   background-attachment: fixed;
+  z-index: 20;
+  position: relative;
   border-bottom: thin solid rgba(255, 255, 255, 0.06);
   box-shadow: inset 0px -1px 0px 0px rgba(255, 255, 255, 0.1);
 }
@@ -2206,6 +2211,7 @@ aside .mot-cle:hover {
   width: 50%;
   float: right;
   margin-bottom: 0.8em;
+  text-align: right;
 }
 .img-box article.c6-custom {
   margin: 0;
@@ -2380,6 +2386,14 @@ form .advanced:hover {
   color: white;
   font-weight: 600;
   margin-top: 0.4em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.btn-map:hover {
+  background-color: #b93d19;
 }
 .full-screen-map {
   height: 100%;
@@ -2770,6 +2784,27 @@ form .advanced:hover {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+/* À PROPOS */
+.collaborateur {
+  text-align: center;
+  padding: 2em 1.5em;
+}
+.collaborateur a {
+  margin-top: 0.5em;
+}
+.collaborateur h2 {
+  margin-top: 0.2em;
+}
+/* 404 */
+.erreur404 {
+  position: relative;
+  z-index: 20;
+  font-size: 3em;
+  color: white;
+  text-transform: uppercase;
+  font-family: Pt Sans Narrow;
+  font-weight: 700;
+}
 /* Media Queries*/
 @media screen and (max-width: 1200px) {
   #masthead,
@@ -2857,9 +2892,14 @@ form .advanced:hover {
   .header-post-type .description {
     width: 100%;
     float: left;
+    text-align: left;
+    font-size: 1.3em;
   }
   hr.for-responsive {
     display: inherit;
+  }
+  .equipe .c3 {
+    width: 33%;
   }
 }
 @media screen and (max-width: 820px) {
@@ -2875,6 +2915,9 @@ form .advanced:hover {
   }
   .contact-form {
     width: 98.14%;
+  }
+  .equipe .c3 {
+    width: 49.99%;
   }
 }
 @media screen and (max-width: 767px) {
@@ -2926,5 +2969,8 @@ form .advanced:hover {
   }
   .img-box .content {
     font-size: 120%;
+  }
+  .equipe .c3 {
+    width: 99.99%;
   }
 }

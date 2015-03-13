@@ -2,6 +2,8 @@
 
 		<div id="content" role="main">
 
+			<?php include 'fancy-header.php'; ?>
+
 			<article <?php post_class(); ?>>
 
 				<header class="entry-header">
@@ -10,7 +12,11 @@
 
 				</header>
 
-				<div class="entry-content">
+				<div class="entry-content erreur404">
+
+					<span>Erreur</span>
+					<span>404</span>
+					<p>Désolé, la page que vous cherchez n'existe pas.</p>
 
 					<?php _e( 'Page introuvable', THEME_NAME ); ?>
 

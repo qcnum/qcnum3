@@ -81,9 +81,9 @@ get_header(); ?>
 					$collab = get_field('collaborateurs');
 					$chunk = partition($collab, 4); ?>
 
-					<div class="group">
+					<div class="group padding">
 						<?php foreach ($chunk as $ch) : ?>
-							<div class="c3">
+							<div class="c3 ">
 								<?php foreach($ch as $c) :
 									$id = $c['ID'];
 									$name = $c['display_name'];
@@ -92,15 +92,16 @@ get_header(); ?>
 									$desc = $c['user_description']; ?>
 									<div class="padding">
 										
-										<div class="white-post entry-content">
-											<div class="padding">
+										<div class="white-post entry-content collaborateur">
+											<!--div class="padding"-->
 												<?php echo get_avatar( $id, 200 ); ?> 
 												<h2><?php echo $name; ?></h2>
-												<?php echo $titre; ?>
+												<sapn><?php echo $titre; ?></span>
 												<p><?php echo $desc; ?></p>
-												<a href="#" class="btn">Voir les collaborations</a>
 
-											</div>
+												<a href="<?php echo get_author_posts_url($id); ?>" class="btn">Voir les collaborations</a>
+
+											<!--/div-->
 		
 										</div>
 									</div>
