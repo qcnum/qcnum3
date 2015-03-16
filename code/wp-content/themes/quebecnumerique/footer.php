@@ -1,30 +1,23 @@
 
 	</div><!-- #main -->
 
-	<?php
-		if ( is_home() ) {
-		    ?>
-		    <div class="large-wrapper group">
-				<div class="stats c12">
-					<div class="padding">
-						<?php 
-						$stats = get_field('phrase_stats', 'options');
-						?>
-						<p><?php echo $stats ?></p>
-				
-						<?php
-						$nb_evenements = wp_count_posts('evenements');
-						$nb_organisations = wp_count_posts('organisations');
-						$nb_projets = wp_count_posts('projets');
-						$nb_articles = get_category('3');
-						$nb_nouvelles = get_category('2');
-						?>
-					</div>
+	<?php if ( is_home() ) { ?>
+		<div class="large-wrapper group">
+			<div class="stats c12">
+				<div class="padding">
+					<?php $stats = get_field('phrase_stats', 'options'); ?>
+					<p><?php echo $stats ?></p>
+					<?php
+					$nb_evenements = wp_count_posts('evenements');
+					$nb_organisations = wp_count_posts('organisations');
+					$nb_projets = wp_count_posts('projets');
+					$nb_articles = get_category('3');
+					$nb_nouvelles = get_category('2');
+					?>
 				</div>
 			</div>
-		    <?php
-		}
-		?>
+		</div>
+	<?php } ?>
      
     <div class="map-content">
 	    <nav id="menu-map" class="gris-bg">
@@ -187,6 +180,13 @@
 
 						<?php endforeach; ?>
 
+					</div>
+				</div>
+
+				<div class="copyright c12">
+					<div class="padding">
+						<p><?php _e('Réalisé par', THEME_NAME); ?><a href="http://evollia.com" title="<?php _e('Site web d\'Evollia', THEME_NAME); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/evollia.png" alt="Evollia"></a></p>
+						<hr>
 					</div>
 				</div>
 

@@ -994,6 +994,7 @@ hr.for-responsive{display: none;}
 		.alignnone {
 			max-width: 100%;
 			height: auto;
+			.box-sizing();
 			img { width: 100%; height: auto; }
 		}
 
@@ -1012,10 +1013,10 @@ hr.for-responsive{display: none;}
 			}
 		}
 
-		.alignleft { float: left; margin: 10px 20px 10px 5px; }
-		.alignright { float: right; margin: 10px 5px 10px 20px; }
-		.aligncenter { clear: both; display: block; margin: 15px auto 20px auto; }
-		.alignnone { margin: 10px 20px 10px 5px; }
+		.alignleft { float: left; padding: 10px 20px 10px 5px; }
+		.alignright { float: right; padding: 10px 5px 10px 20px; }
+		.aligncenter { clear: both; display: block; padding: 15px auto 20px auto; }
+		.alignnone { padding: 10px 20px 10px 5px; }
 
 		.fl{float: left};
 		.fr{float: right}
@@ -1857,6 +1858,7 @@ hr.for-responsive{display: none;}
 			padding-top: 0.3em;
 			a { color: @orange; text-decoration: none; font-weight: bolder; }
 		}
+		.partenaires { text-align: right; }
 
 		form {
 			color: @blanc;
@@ -1891,6 +1893,29 @@ hr.for-responsive{display: none;}
 				display: table;
 				clear: both;
 			}
+		}
+	}
+
+	.copyright {
+		padding-top: 1em;
+		text-align: right;
+		color: lighten(@grispale, 10%);
+		position: relative;
+		p {
+			background-color: @blanc;
+			padding: 0 0.5em;
+			position: relative;
+			z-index: 99;
+			font-family: @titre2;
+			float: right;
+		}
+		img { margin-left: 0.75em; }
+		hr { 
+			position: absolute; 
+			bottom: 0.4em; 
+			margin: 0;
+			width: 95%; 
+			border-top-color: lighten(@grispale, 50%);
 		}
 	}
 
@@ -2264,6 +2289,12 @@ hr.for-responsive{display: none;}
 		.slick-slide { height: 5em; }
 		.accueil { margin-top: 25%; }
 		.header-post-type h1 { font-size: 2em; }
+		#colophon .gris-bg .c6 { 
+			text-align: center; 
+			margin-top: 0.5em; margin-bottom: 0.5em;
+			width: 100%;
+			.rs { text-align: center; a { padding: 0 0.4em; } }
+		}
 	}
 
 	@media screen and (max-width: 600px){
@@ -2282,6 +2313,12 @@ hr.for-responsive{display: none;}
 
 		.navigation .principal#menu-principal { font-size: 75%; padding-top: 9em; }
 
+		#colophon form .gform_body ul li:first-child,
+		#colophon form .gform_body ul li {
+			margin: 0 0 0.5em 0;
+			float: none;
+			width: 100%;
+		}
 	}
 
 	@media screen and (max-width: 500px){
