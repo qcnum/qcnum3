@@ -20,7 +20,6 @@ get_header(); ?>
 							$mail = get_field('courriel'); 
 							?>
 							<a href="mailto:<?php echo $mail ?>" class="bleufonce-bg"><?php echo $mail ?></a>
-
 							<hr class="clear">
 							<a href="tel:<?php echo $telephone ?>" class="bleufonce-bg"><?php echo $telephone ?></a>
 							
