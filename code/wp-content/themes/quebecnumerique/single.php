@@ -30,8 +30,6 @@ $organisations = new WP_Query( array(
 					<div class="c7" role="main">
 
 						<div class="padding entry-content">
-
-							<?php next_post_link( $format, $link, $in_same_term = false, $excluded_terms = '', $taxonomy = 'category' ); ?>
 							
 							<?php the_content(); ?>
 

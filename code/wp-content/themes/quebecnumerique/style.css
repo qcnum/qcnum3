@@ -1661,6 +1661,13 @@ footer#colophon {
   background-color: rgba(46, 173, 53, 0.7);
   padding: 10px;
 }
+.entry-content blockquote {
+  color: #373a3f;
+  padding-left: 1em;
+  margin-left: 0.5em;
+  border-left: 0.25em solid #eaebec;
+  margin-bottom: 1em;
+}
 .white-post {
   background-color: #ffffff;
   padding: 1em 0;
