@@ -1025,9 +1025,6 @@ footer#colophon {
   text-decoration: none;
   color: #ffffff;
 }
-#breadcrumbs strong {
-  display: none;
-}
 /* ACCUEIL */
 .abstract {
   top: 2%;
@@ -1681,6 +1678,9 @@ footer#colophon {
   float: left;
   padding: 0.25em 0.5em;
   margin: 0 0.25em 0.25em 0;
+}
+.all-projets .c6:nth-child(odd) {
+  clear: left;
 }
 .a-propos article .entry-title,
 .a-propos article .entry-content {
@@ -3008,6 +3008,15 @@ form .advanced:hover {
   }
   .equipe .c3 {
     width: 33%;
+  }
+  .single #content > article > .large-wrapper > .c7,
+  .single #content > article > .large-wrapper > .c5 {
+    width: 100%;
+    float: none;
+    margin-bottom: 2em;
+  }
+  .single #content > article > .large-wrapper > .c5 > .c1 {
+    float: right;
   }
 }
 @media screen and (max-width: 820px) {

@@ -6,7 +6,7 @@
 
 			<div class="large-wrapper">
 
-				<div class="group">
+				<div class="group all-projets">
 				
 					<?php while ( have_posts() ) : the_post(); ?>
 
