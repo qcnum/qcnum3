@@ -309,18 +309,18 @@ function get_social_media() {
 function paging_nav() {
     global $wp_query;
     $big = 999999999;
-
-    echo '<div class="pagination">';
-
+    echo '<div class="pagination"><div>';
     echo paginate_links( array(
         'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
         'format' => '?paged=%#%',
         'current' => max( 1, get_query_var('paged') ),
-        'total' => $wp_query->max_num_pages
+        'total' => $wp_query->max_num_pages,
+        'prev_text'    => __(''),
+        'next_text'    => __('')
     ) );
-
-    echo '</div>';
+    echo '</div></div>';
 }
+
 
 
 function wpa57065_filter_where( $where = '' ) {

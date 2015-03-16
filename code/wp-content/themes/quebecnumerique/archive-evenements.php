@@ -10,7 +10,7 @@ query_posts(
 		'meta_key' => 'startdate',
 		'orderby' => 'meta_value',
 		'order' => 'ASC',
-		//'posts_per_page' => -1,
+		'posts_per_page' => -1,
 		'meta_query'  => array(
 			'relation' => 'AND',
 				array(

@@ -30,6 +30,8 @@ $organisations = new WP_Query( array(
 					<div class="c7" role="main">
 
 						<div class="padding entry-content">
+
+							 <?php edit_post_link(); ?> 
 							
 							<?php the_content(); ?>
 

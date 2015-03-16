@@ -48,7 +48,15 @@ get_header(); ?>
 
 						</div>
 
-						<?php paging_nav(); ?>
+						<?php 
+
+						$category = get_the_category();
+						if ( $category[0]->cat_ID == 2) { $cat = 'nouvelles'; }
+						if ( $category[0]->cat_ID == 3) { $cat = 'chroniques'; }
+						echo do_shortcode('[ajax_load_more post_type="post" category="'.$cat.'" scroll="false" posts_per_page="8" transition="fade" button_label="Afficher plus de '.$cat.'"]'); 
+						?>
+						
+						<?php //paging_nav(); ?>
 
 					<?php else : ?>
 
