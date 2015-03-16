@@ -118,6 +118,12 @@ $projets = new WP_Query( array(
 									<img src="<?php echo $url[0]; ?>" alt="">
 								</aside>
 
+								<?php if(get_field('lien_inscription')) : ?>
+									<aside class="featured-img btn-inscription">
+										<a href="<?php the_permalink(); ?>" class="btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
+									</aside>
+								<?php endif; ?>
+
 								<?php 
 								$map = get_field('localisation');
 								if ( $map["address"] != "" ) : ?>
@@ -153,14 +159,12 @@ $projets = new WP_Query( array(
 								<?php endif; ?>
 
 								<?php if ( $organisations->have_posts() ) : $numO = $organisations->post_count; ?>
-									<aside>
-										<div>
-											<h2><?php echo _n('Organisation', 'Organisations', $numO, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
-											<div class="group org">
-												<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
-													<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-												<?php endwhile; wp_reset_postdata(); ?>
-											</div>
+									<aside class="featured-img">
+										<h2><?php echo _n('Organisation', 'Organisations', $numO, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
+										<div class="group org">
+											<?php while ( $organisations->have_posts() ) : $organisations->the_post(); ?>
+												<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+											<?php endwhile; wp_reset_postdata(); ?>
 										</div>
 									</aside>
 								<?php endif; ?>
