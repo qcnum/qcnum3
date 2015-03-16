@@ -6,11 +6,30 @@ $tag2 = get_field('dossier2', 'options');
 $tag1_name =  $tag1->name;
 $tag2_name =  $tag2->name;
 
+$diffGMT = get_option('gmt_offset') * 3600;  
+$currentDate = time() + $diffGMT;
+
 if ($tag1_name != ''){ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag1_name, 'posts_per_page' => 2 ) );};
 if ($tag2_name != ''){ $dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2_name, 'posts_per_page' => 2 ) );};
 $nouvelles = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'posts_per_page' => 3 ) );
 $articles = new WP_Query( array( 'post_type' => 'post', 'cat' => '3', 'posts_per_page' => 2 ) );
-$evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page' => 4, 'post_status' => array('publish', 'future'), 'order' => 'ASC' ) );
+
+$evenements = new WP_Query( 
+	array( 
+		'post_type' => 'evenements', 
+		'posts_per_page' => 4, 
+		'meta_key' => 'startdate',
+		'orderby' => 'meta_value',
+		'order' => 'ASC',
+		'meta_query'  => array(
+			'relation' => 'AND',
+				array(
+				'key' => 'enddate',
+				'value' => $currentDate,
+				'compare' => '>='
+			)
+		)
+	) );
 
 ?>
 
@@ -145,6 +164,26 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 							<?php if ( $evenements->have_posts() ) while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
 
+								<?php 
+								$startDate = get_field('startdate');
+								$myDate = strftime('%e %B %Y', $startDate/1000);
+								$endDate = get_field('enddate');
+								$myDate2 = strftime('%e %B %Y', $endDate/1000);
+								if($startDate != $endDate) {
+									$date = 'Du ' . $myDate . ' au ' . $myDate2;
+								} else {
+									$date = 'Le ' . $myDate;
+								}
+								$startHrs = get_field('hrs_debut');
+								$endHrs = get_field('hrs_fin');
+
+								if($startHrs && !$endHrs) {
+									$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+								} elseif($startHrs && $endHrs) {
+									$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+								}
+								?>
+
 								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 									<article class="group">
 
@@ -161,8 +200,8 @@ $evenements = new WP_Query( array( 'post_type' => 'evenements', 'posts_per_page'
 
 										<div class="content">
 											<div class="ellipsis info-event">
-												<span class="date"><?php echo get_the_date(); ?></span>
-												<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
+												<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
+												<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
 											</div>
 											<h3 class="ellipsis"><?php the_title(); ?></h3>
 										</div>
