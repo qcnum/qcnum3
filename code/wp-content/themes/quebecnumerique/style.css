@@ -3107,18 +3107,57 @@ form .advanced:hover {
   .contact-form {
     width: 64.81%;
   }
-  .cinq .group:after {
+  .cinq .group:after,
+  .alm-listing .group:after {
     content: none;
   }
+  .cinq .c3,
+  .alm-listing .c3,
   .cinq .group .c3,
+  .alm-listing .group .c3,
   .cinq .group:nth-child(odd) .c3,
+  .alm-listing .group:nth-child(odd) .c3,
   .cinq .group:nth-child(even) .c3,
+  .alm-listing .group:nth-child(even) .c3,
   .cinq .group:nth-child(even) .c3:nth-child(3),
+  .alm-listing .group:nth-child(even) .c3:nth-child(3),
   .cinq .group:nth-child(even) .c3:last-child,
-  .cinq .group:nth-child(odd) .c3:first-child {
+  .alm-listing .group:nth-child(even) .c3:last-child,
+  .cinq .group:nth-child(odd) .c3:first-child,
+  .alm-listing .group:nth-child(odd) .c3:first-child {
     width: 49.98%;
     clear: none;
     position: relative;
+  }
+  .cinq .c3 article,
+  .alm-listing .c3 article,
+  .cinq .group .c3 article,
+  .alm-listing .group .c3 article,
+  .cinq .group:nth-child(odd) .c3 article,
+  .alm-listing .group:nth-child(odd) .c3 article,
+  .cinq .group:nth-child(even) .c3 article,
+  .alm-listing .group:nth-child(even) .c3 article,
+  .cinq .group:nth-child(even) .c3:nth-child(3) article,
+  .alm-listing .group:nth-child(even) .c3:nth-child(3) article,
+  .cinq .group:nth-child(even) .c3:last-child article,
+  .alm-listing .group:nth-child(even) .c3:last-child article,
+  .cinq .group:nth-child(odd) .c3:first-child article,
+  .alm-listing .group:nth-child(odd) .c3:first-child article,
+  .cinq .c3 .img,
+  .alm-listing .c3 .img,
+  .cinq .group .c3 .img,
+  .alm-listing .group .c3 .img,
+  .cinq .group:nth-child(odd) .c3 .img,
+  .alm-listing .group:nth-child(odd) .c3 .img,
+  .cinq .group:nth-child(even) .c3 .img,
+  .alm-listing .group:nth-child(even) .c3 .img,
+  .cinq .group:nth-child(even) .c3:nth-child(3) .img,
+  .alm-listing .group:nth-child(even) .c3:nth-child(3) .img,
+  .cinq .group:nth-child(even) .c3:last-child .img,
+  .alm-listing .group:nth-child(even) .c3:last-child .img,
+  .cinq .group:nth-child(odd) .c3:first-child .img,
+  .alm-listing .group:nth-child(odd) .c3:first-child .img {
+    padding-bottom: 72%;
   }
   .trois .c6,
   .img-box .c6 {
@@ -3230,12 +3269,20 @@ form .advanced:hover {
   }
 }
 @media screen and (max-width: 600px) {
+  .cinq .c3,
+  .alm-listing .c3,
   .cinq .group .c3,
+  .alm-listing .group .c3,
   .cinq .group:nth-child(odd) .c3,
+  .alm-listing .group:nth-child(odd) .c3,
   .cinq .group:nth-child(even) .c3,
+  .alm-listing .group:nth-child(even) .c3,
   .cinq .group:nth-child(even) .c3:nth-child(3),
+  .alm-listing .group:nth-child(even) .c3:nth-child(3),
   .cinq .group:nth-child(even) .c3:last-child,
-  .cinq .group:nth-child(odd) .c3:first-child {
+  .alm-listing .group:nth-child(even) .c3:last-child,
+  .cinq .group:nth-child(odd) .c3:first-child,
+  .alm-listing .group:nth-child(odd) .c3:first-child {
     width: 99.99%;
   }
   .navigation .principal#menu-principal {
