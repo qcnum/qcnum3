@@ -1018,6 +1018,7 @@ footer#colophon {
 #breadcrumbs {
   margin-bottom: 0.5em;
   overflow: hidden;
+  line-height: 1.5em;
 }
 #breadcrumbs a,
 #breadcrumbs span {
@@ -3266,6 +3267,12 @@ form .advanced:hover {
   }
   .slick-slide {
     height: 5em;
+  }
+  .accueil {
+    margin-top: 25%;
+  }
+  .header-post-type h1 {
+    font-size: 2em;
   }
 }
 @media screen and (max-width: 600px) {
