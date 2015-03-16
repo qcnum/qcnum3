@@ -1667,6 +1667,7 @@ footer#colophon {
   margin-left: 0.5em;
   border-left: 0.25em solid #eaebec;
   margin-bottom: 1em;
+  overflow: hidden;
 }
 .white-post {
   background-color: #ffffff;
