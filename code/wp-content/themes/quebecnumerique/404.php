@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-		<div id="content" role="main">
+		<div id="content" role="main" class="">
 
 			<?php include 'fancy-header.php'; ?>
 
@@ -12,10 +12,9 @@
 
 				</header>
 
-				<div class="entry-content erreur404">
+				<div class="entry-content erreur404 c10 center">
 
-					<span>Erreur</span>
-					<span>404</span>
+					<span>Erreur</span><span class="span-404">404</span>
 					<p>Désolé, la page que vous cherchez n'existe pas.</p>
 
 				</div>
