@@ -107,7 +107,7 @@ wp_head();
 
 	?>
 
-		<?php if (!is_front_page()){ ?>
+		<?php if (!is_front_page() && !is_404() ){ ?>
 			<div class="page-header header-post-type <?php echo $class?>">
 
 				<div class="large-wrapper">

@@ -84,7 +84,7 @@ query_posts(
 											<?php 
 											if(has_post_thumbnail()) : $id = get_post_thumbnail_id();
 											else : $id = get_field('img-evenements', 'options'); endif; 
-											$url = wp_get_attachment_image_src( $id , 'thumb-nocrop'); ?>
+											$url = wp_get_attachment_image_src( $id , 'thumbnail'); ?>
 											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php echo $url[0]; ?>" alt=""></a>
 										</div>
 									</div>

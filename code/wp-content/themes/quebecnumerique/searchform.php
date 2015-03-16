@@ -38,7 +38,7 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 
 				<div class="filtre articles">
 					<input id="recherche-articles" class="resultat" type="checkbox" name="post_type[]" value="post" <?php if (in_array('post', $query_p)) { echo 'checked="checked"'; } ?>>
-					<label class="filtre-recherche" for="recherche-articles">Articles</label>
+					<label class="filtre-recherche" for="recherche-articles">Chroniques</label>
 				</div>
 
 				<div class="filtre evenements">
