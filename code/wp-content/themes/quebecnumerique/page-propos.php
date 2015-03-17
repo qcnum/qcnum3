@@ -56,7 +56,7 @@ get_header(); ?>
 							$logo = wp_get_attachment_image_src($logoid, 'medium');
 							?>
 							<?php if($p['site_web']) : ?>
-								<a href="<?php echo $site; ?>"><img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>"></a>
+								<a href="<?php echo $site; ?>" target="_blank"><img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>"></a>
 							<?php else : ?>
 								<img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>">
 							<?php endif; ?>
