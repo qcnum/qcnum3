@@ -2,27 +2,27 @@
 
 	<div id="content">
 
-		<div class="blanc-bg group">
+		<article <?php post_class('white-post group'); ?>>
 
-			<?php if ( have_posts() ) : ?>
+			<div class="c12">
 
-				<div class="partenaires">
+				<div class="padding entry-content">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+					<?php if ( have_posts() ) : ?>
 
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
+						<ul>
+							<?php while ( have_posts() ) : the_post(); ?>
+								<li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+							<?php endwhile; ?>
+						</ul>
 
-					<?php endwhile; ?>
+					<?php endif; ?>
 
 				</div>
 
-			<?php else : ?>
+			</div>
 
-				<?php get_template_part( 'content', 'none' ); ?>
-					
-			<?php endif; ?>
-
-		</div>
+		</article>
 
 	</div><!-- #content -->
 			

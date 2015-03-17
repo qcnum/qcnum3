@@ -145,7 +145,7 @@
 			
 				<div class="c6 email">
 					<div class="padding">
-						<?php _e('Pour informations', THEME_NAME); ?> : <a href="mailto:<?php echo get_option( 'admin_email' ); ?>"><?php echo get_option( 'admin_email' ); ?></a>
+						<?php _e('Pour informations', THEME_NAME); ?> : <a href="mailto:<?php echo antispambot(get_option('admin_email')); ?>"><?php echo antispambot(get_option('admin_email')); ?></a>
 					</div>
 				</div>
 

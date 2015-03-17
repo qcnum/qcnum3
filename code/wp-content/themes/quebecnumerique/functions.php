@@ -386,6 +386,10 @@ function advanced_search_query($query) {
             array_push($aSearch, $aQ);
         }
 
+         if (isset($_GET['post_type']) && is_array($_GET['post_type'])) {
+            $query->set( 'post_type', array($_GET['post_type']) );
+        }
+
         $aSearch['relation'] = 'AND';
         $query->set( 'tax_query', $aSearch );
         return $query;
@@ -408,3 +412,8 @@ add_action('acf/save_post', 'my_acf_save_post', 20);
 
 add_action('get_footer','lm_dequeue_footer_styles');
 function lm_dequeue_footer_styles() { wp_dequeue_style('yarppRelatedCss'); }
+
+add_filter('wpseo_locale', 'override_og_locale');
+function override_og_locale($locale) {
+    return "fr_CA";
+}

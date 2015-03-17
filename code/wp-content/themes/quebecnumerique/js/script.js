@@ -27,6 +27,11 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 	});
 
+	jQuery('.critere').click(function(){
+		jQuery('.recherche, #searchform').toggleClass('hidden');
+		event.preventDefault();
+	});
+
 	jQuery('#searchform').submit(function(){
 		jQuery('.unecat').each(function(){
 			if (this.checked) {
@@ -59,6 +64,15 @@ jQuery(document).ready(function(){
         });
         initialize();
     });
+
+
+    if (jQuery.isFunction(jQuery.fn.chosen)) {
+		jQuery('select').chosen({
+			disable_search_threshold : 10,
+			placeholder_text_multiple : " ",
+			placeholder_text_single : " "
+		});
+	}
 
 
 
@@ -99,10 +113,10 @@ jQuery(document).ready(function(){
 
     });
 
- 	//resize();
- 	//jQuery(window).resize(function(){
- 	//	resize();
- 	//});
+ 	resize();
+ 	jQuery(window).resize(function(){
+ 		resize();
+ 	});
 
 });
 
