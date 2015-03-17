@@ -126,13 +126,27 @@ query_posts(
 
 				</section>
 
-				<?php paging_nav(); ?>
+				<?php //paging_nav(); ?>
 
 			</div>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<div class="large-wrapper">
+
+				<section class="group">
+					<header class="c1"><h2>:(</h2></header>
+					<div class="c11 fr">
+						<article class="white-post evenements group">
+							<div class="padding">
+								<div class="c12">
+									<p><?php _e('Aucun événement à venir', THEME_NAME); ?></p>
+								</div>
+							</div>
+						</article>
+					</div>
+				</section>
+			</div>
 				
 		<?php endif; ?>
 

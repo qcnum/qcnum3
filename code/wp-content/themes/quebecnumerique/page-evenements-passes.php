@@ -39,10 +39,8 @@ query_posts(
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php 
-						setlocale(LC_ALL, 'fr_CA');
 						$startDate = get_field('startdate');
 						$myDate = strftime('%e %B %Y', $startDate/1000);
-
 						$endDate = get_field('enddate');
 						$myDate2 = strftime('%e %B %Y', $endDate/1000);
 
@@ -54,8 +52,14 @@ query_posts(
 
 						$startHrs = get_field('hrs_debut');
 						$endHrs = get_field('hrs_fin');
+
+						if($startHrs && !$endHrs) {
+							$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+						} elseif($startHrs && $endHrs) {
+							$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+						}
 						
-						$month = strftime('%B', $endDate/1000); 
+						$month = strftime('%b', $endDate/1000); 
 						if($month != $lastM && $lastM != null) { 
 
 							/* On change de mois */
@@ -85,24 +89,17 @@ query_posts(
 
 									<div class="c2">
 										<div class="padding">
-											<?php the_post_thumbnail('thumb-nocrop'); ?>
+											<?php the_post_thumbnail('thumbnail'); ?>
 										</div>
 									</div>
 
-									<div class="c8">
+									<div class="c10">
 										<div class="padding">
 											<div class="entry-content">
 												<div class="ellipsis info-event">
-													<span class="date">
-														<?php echo $date; ?>
-													</span>
+													<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
 													<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
 												</div>
-												<p><?php if($startHrs && !$endHrs) {
-							echo '<span class="hrs">' . date('G\hi', $startHrs) . '</span>';
-						} elseif($startHrs && $endHrs) {
-							echo '<span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
-						} ?></p>
 												<h3 class="h2"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
 												<?php the_excerpt(); ?>
 												<hr class="clear">
@@ -112,37 +109,6 @@ query_posts(
 										</div>
 									</div>
 									
-									<div class="c2">
-										
-										<div class="fr padding">
-											<div class="sharing">
-												<a href="#" class="sharer" title="Sharing"><i class="fa fa-share-alt"></i></a>
-												<div>
-													<?php 
-													$urlimg = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); 
-													$title = get_the_title(); $title = urlencode($title);
-													$desc = get_the_excerpt(); $desc = urlencode($desc);
-													$source = get_bloginfo('name'); $source = urlencode($source);
-													?>
-
-													<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>" class="fb" title="Facebook"><span>Facebook</span> <i class="fa fa-facebook"></i></a>
-													<a target="_blank" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>&amp;text=<?php echo $title; ?>&amp;via=<?php echo $source; ?>" class="tw" title="Twitter"><span>Twitter</span> <i class="fa fa-twitter"></i></a>
-													<a target="_blank" href="https://plus.google.com/share?url=<?php the_permalink(); ?>&amp;title=<?php echo $title; ?>" class="gp" title="Google+"><span>Google+</span> <i class="fa fa-google-plus"></i></a>
-													<a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php echo $title; ?>&amp;summary=<?php echo $desc; ?>&amp;source=<?php echo $source; ?>" class="li" title="Linkedin"><span>Linkedin</span> <i class="fa fa-linkedin"></i></a>
-													<a target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&amp;media=<?php echo $urlimg; ?>&amp;description=<?php echo $desc; ?>" class="pin" title="Pinterest"><span>Pinterest</span> <i class="fa fa-pinterest-p"></i></a>
-													<a href="mailto:?subject=<?php echo $title; ?>&amp;body=<?php echo $desc; ?>" class="email" title="Courriel"><span>Courriel</span> <i class="fa fa-envelope"></i></a>
-													
-												</div>
-											</div>
-										</div>
-										<?php if(get_field('lien_inscription')) : ?>
-											<div class="padding fr">
-												<a href="<?php the_permalink(); ?>" class="btn-orange">M'inscrire</a>
-											</div>
-										<?php endif; ?>
-						
-									</div>
-
 								</div>
 
 							</article>
@@ -153,7 +119,7 @@ query_posts(
 
 				</section>
 
-				<?php paging_nav(); ?>
+				<?php //paging_nav(); ?>
 
 			</div>
 
