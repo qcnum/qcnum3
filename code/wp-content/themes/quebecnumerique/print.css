@@ -1,24 +1,73 @@
 body, .header-post-type {
-  background: none;
+  background: none !important;
+  background-color: transparent !important;
 }
 .navigation .meta,
 .navigation .principal,
 #searchform,
 .navigation a.fa-search,
-.abstract {
-  opacity: 0;
+.abstract,
+#colophon form, .rs, .sharing,
+.map-content,
+.img-box .img,
+.btn-inscription  {
+  display: none;
 }
 
 .accueil {
-  margin-top: 9%;
+  margin-top: 3%;
 }
 
 #menu-map .nbr-count,
 .header-post-type h1,
-#breadcrumbs a, #breadcrumbs span {
+#breadcrumbs a, #breadcrumbs span,
+.img-box h3 {
   color: #000000;
 }
 
-#colophon form, .rs, .sharing {
-  display: none;
+
+.single #content > article > .large-wrapper > .c7,
+.single #content > article > .large-wrapper > .c5 {
+  width: 100%;
+  float: none;
+  margin-bottom: 2em;
+}
+.single #content > article > .large-wrapper > .c5 > .c11 {
+  width: 100%;
+}
+
+.page-header { font-size: 75%; }
+.header-post-type { padding-top: 0em; }
+
+#masthead { position: relative; }
+
+.img-box article {
+  padding-bottom: inherit;
+  height: auto;
+  background-color: transparent !important;
+}
+
+.img-box .content {
+  position: relative;
+  bottom: inherit;
+  left: inherit;
+  z-index: 10;
+  margin-right: 0;
+  max-height: none;
+}
+
+.img-box .excerpt-hover {
+  height: auto;
+  padding: 0.5em;
+}
+
+.trois .c6, .img-box .c6,
+.accueil .c6, .nouvelles .c6, .chroniques .c6,
+.cinq .group .c3,
+.footer-apropos .c5, #colophon .partenaires {
+  width: 100% !important;
+}
+
+.cinq .c3 article {
+  padding-bottom: 0 !important;
 }
