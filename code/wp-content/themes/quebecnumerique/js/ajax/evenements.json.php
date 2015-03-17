@@ -5,7 +5,7 @@ add_filter( 'posts_where', 'wpa57065_filter_where' );
 
 $evenements = new WP_Query(array(
         'post_type' => 'evenements',
-        'post_per_page' => 50,
+        'posts_per_page' => 50,
         'orderby' => 'the_date', 
         'order' => 'DESC',
 	'meta_query' => array(
