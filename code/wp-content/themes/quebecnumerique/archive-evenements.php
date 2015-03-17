@@ -110,7 +110,7 @@ query_posts(
 										
 										<?php if(get_field('lien_inscription')) : ?>
 											<div class="padding">
-												<a href="<?php the_permalink(); ?>" class="fr btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
+												<a href="<?php the_field('lien_inscription'); ?>" class="fr btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
 											</div>
 										<?php endif; ?>
 						
