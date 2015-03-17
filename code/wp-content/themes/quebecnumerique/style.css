@@ -576,6 +576,14 @@ footer#colophon {
   font-size: 1.25em;
   padding: 0 0.5em;
   text-transform: lowercase;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .meta a:hover {
+  color: #e14e24;
 }
 .navigation .retract-tag {
   margin-left: 9.5em;

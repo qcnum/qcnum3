@@ -1,0 +1,24 @@
+body, .header-post-type {
+  background: none;
+}
+.navigation .meta,
+.navigation .principal,
+#searchform,
+.navigation a.fa-search,
+.abstract {
+  opacity: 0;
+}
+
+.accueil {
+  margin-top: 9%;
+}
+
+#menu-map .nbr-count,
+.header-post-type h1,
+#breadcrumbs a, #breadcrumbs span {
+  color: #000000;
+}
+
+#colophon form, .rs, .sharing {
+  display: none;
+}

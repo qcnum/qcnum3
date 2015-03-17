@@ -131,7 +131,7 @@ function init() {
         'mots-cles',
         array('projets', 'evenements', 'organisations', 'post'),
         array(
-            'label' => __( 'Mots-clés' ),
+            'label' => __( 'Mots-clés - À utiliser' ),
             'public' => true,
             'hierarchical' => true,
             'show_admin_column' => true,
