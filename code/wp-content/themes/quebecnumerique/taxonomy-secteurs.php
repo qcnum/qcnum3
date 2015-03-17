@@ -9,9 +9,15 @@
 				<div class="partenaires">
 
 					<?php while ( have_posts() ) : the_post(); ?>
-
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a>
-
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+							<?php 
+							if(has_post_thumbnail()) :
+								the_post_thumbnail('medium');
+							else:
+								echo '<span class="no-img">' . get_the_title() . '</span>';
+							endif; 
+							?>
+						</a>
 					<?php endwhile; ?>
 
 				</div>

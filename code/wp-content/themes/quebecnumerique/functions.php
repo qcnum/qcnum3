@@ -386,6 +386,10 @@ function advanced_search_query($query) {
             array_push($aSearch, $aQ);
         }
 
+         if (isset($_GET['post_type']) && is_array($_GET['post_type'])) {
+            $query->set( 'post_type', array($_GET['post_type']) );
+        }
+
         $aSearch['relation'] = 'AND';
         $query->set( 'tax_query', $aSearch );
         return $query;

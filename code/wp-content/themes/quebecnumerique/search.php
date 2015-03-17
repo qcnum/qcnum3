@@ -15,45 +15,58 @@ if($_GET['quartiers'] || $_GET['mots-cles']) {
 }
 ?>
 
-	<div id="content" class="large-wrapper" role="main">
+	<?php /* ?><article class="white-post group">
+		<div class="large-wrapper">
+			<div class="c12 entry-content">
+				<div class="padding">
 
-		<?php if(isset($_GET['s'])) : ?>
+					<?php if(isset($_GET['s']) && $_GET['s'] != "") : ?>
+						<h2 class="fl">Terme recherché</h2>
+						<p><?php echo $_GET['s']; ?></p>
+					<?php endif; ?>
 
-			<h2>Terme recherché</h2>
-			<p><?php echo $_GET['s']; ?></p>
+					<?php if($query_mc) : ?>
+						<h2><?php echo _n('Mot-clé', 'Mots-clés', count($query_mc), THEME_NAME); ?></h2>
+						<p>
+						<?php 
+						$prefix = '';
+						foreach($query_mc as $mc) : ?>
+							<?php $list .= $prefix . $mc; $prefix = ', '; ?></li>
+						<?php endforeach; ?>
+						<?php echo $list; ?>
+						</p>
+					<?php endif; ?>
 
-		<?php endif; ?>
+					<?php if($query_q) : ?>
+						<h2><?php echo _n('Quartier', 'Quartiers', count($query_q), THEME_NAME); ?></h2>
+						<p>
+						<?php 
+						$prefix = '';
+						foreach($query_q as $q) : ?>
+							<?php $list2 .= $prefix . $q; $prefix = ', '; ?></li>
+						<?php endforeach; ?>
+						<?php echo $list2; ?>
+						</p>
+					<?php endif;?>
 
-		<?php if($query_mc) : ?>
+				</div>
+			</div>
+		</div>
+	</article><?php */ ?>
 
-			<h2><?php echo _n('Mot-clé', 'Mots-clés', count($query_mc), THEME_NAME); ?></h2>
-			<?php foreach($query_mc as $mc) : ?>
-				<p><?php echo $mc; ?></p>
-			<?php endforeach; ?>
-
-		<?php endif; ?>
-
-		<?php if($query_q) : ?>
-
-			<h2><?php echo _n('Quartier', 'Quartiers', count($query_q), THEME_NAME); ?></h2>
-			<?php foreach($query_q as $q) : ?>
-				<p><?php echo $q; ?></p>
-			<?php endforeach; ?>
-
-		<?php endif; ?>
-		
+	<div id="content" class="large-wrapper group" role="main">
 
 		<header class="page-header c12">
 			<div class="padding">
 				<div class="group">
-					<div class="c6"><?php echo posts_count(); ?></div>
+					<div class="c6 postCount"><?php echo posts_count(); ?> | <a href="#" class="critere" title="<?php _e('Afficher mes critères', THEME); ?>"><?php _e('Afficher mes critères', THEME); ?></a></div>
 					<div class="c6">
-						<span class="legende autre">Autre</span>
-						<span class="legende projets">Projets</span>
-						<span class="legende organisations">Organisations</span>
-						<span class="legende evenements">Événements</span>
-						<span class="legende articles">Articles</span>
-						<span class="legende nouvelles">Nouvelles</span>
+						<span class="legende autre"><?php _e('Autre', THEME_NAME); ?></span>
+						<span class="legende projets"><?php _e('Projets', THEME_NAME); ?></span>
+						<span class="legende organisations"><?php _e('Organisations', THEME_NAME); ?></span>
+						<span class="legende evenements"><?php _e('Événements', THEME_NAME); ?></span>
+						<span class="legende articles"><?php _e('Articles', THEME_NAME); ?></span>
+						<span class="legende nouvelles"><?php _e('Nouvelles', THEME_NAME); ?></span>
 					</div>
 				</div>
 			</div>
@@ -93,7 +106,6 @@ if($_GET['quartiers'] || $_GET['mots-cles']) {
 						}
 						?>
 						<li class="<?php echo $class ?> group">
-
 							<div class="content-wrapper">
 								<a href="<?php echo $url ?>">
 									<div class="content">
@@ -103,10 +115,7 @@ if($_GET['quartiers'] || $_GET['mots-cles']) {
 									</div>
 								</a>
 							</div>
-
-							<div class="pastille">
-							</div>
-
+							<div class="pastille"></div>
 						</li>
 
 					<?php endwhile; ?>
@@ -117,8 +126,17 @@ if($_GET['quartiers'] || $_GET['mots-cles']) {
 
 			<?php else : ?>
 
-				<?php get_template_part( 'content', 'none' ); ?>
-					
+				<ul>
+					<li class="no-result group">
+						<div class="content-wrapper">
+							<div class="content">
+								<h2><?php _e('Aucun résultat ne correspond à vos critères de recherche', THEME_NAME); ?></h2>
+							</div>
+						</div>
+						<div class="pastille"></div>
+					</li>
+				</ul>
+
 			<?php endif; ?>
 
 		</div>

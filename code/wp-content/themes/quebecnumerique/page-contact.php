@@ -19,7 +19,7 @@ get_header(); ?>
 							$telephone = get_field('telephone'); 
 							$mail = get_field('courriel'); 
 							?>
-							<a href="mailto:<?php echo $mail ?>" class="bleufonce-bg"><?php echo $mail ?></a>
+							<a href="mailto:<?php echo antispambot($mail); ?>" class="bleufonce-bg"><?php echo antispambot($mail); ?></a>
 							<hr class="clear">
 							<a href="tel:<?php echo $telephone ?>" class="bleufonce-bg"><?php echo $telephone ?></a>
 							

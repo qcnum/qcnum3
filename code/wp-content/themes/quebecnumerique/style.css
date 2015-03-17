@@ -208,18 +208,6 @@ footer#colophon {
 .large-wrapper {
   padding: 0 0.5em;
 }
-/*.c1 { width: 6.48%; }
-	.c2 { width: 14.81%; }
-	.c3 { width: 23.14%; }
-	.c4 { width: 31.48%; }
-	.c5 { width: 39.81%; }
-	.c6 { width: 48.14%; }
-	.c7 { width: 56.48%; }
-	.c8 { width: 64.81%; }
-	.c9 { width: 73.14%; }
-	.c10 { width: 81.48%; }
-	.c11 { width: 89.81%; }
-	.c12 { width: 98.14%; }*/
 .c1 {
   width: 8.33%;
 }
@@ -343,7 +331,8 @@ footer#colophon {
   margin: 0.5em 0.5em 0em 0;
   color: #ffffff;
   cursor: pointer;
-  font-size: 1.25em;
+  font-size: 1.15em;
+  font-weight: lighter;
   border: 1px solid #ffffff;
   opacity: 0.6;
   -webkit-background-clip: padding-box;
@@ -911,7 +900,7 @@ footer#colophon {
   top: 0;
   z-index: 200;
   height: 100%;
-  width: 43em;
+  width: 45em;
   max-width: 100%;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -920,7 +909,7 @@ footer#colophon {
   transition: all 0.5s ease;
 }
 .navigation #searchform.hidden {
-  right: -43em;
+  right: -45em;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -975,6 +964,30 @@ footer#colophon {
   border: none;
   margin: 0;
 }
+#searchform .recherche input[type="submit"] {
+  background-color: #e14e24;
+  color: #ffffff;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  float: right;
+  padding: 0.75em 2em;
+  background-color: #cf441c;
+}
+#searchform .recherche input[type="submit"]:hover {
+  background-color: #b93d19;
+}
 #searchform input[type="text"] {
   width: 100%;
   padding: 0 3.5em 0 11em;
@@ -993,7 +1006,7 @@ footer#colophon {
   position: fixed;
   top: 3em;
   right: 0;
-  width: 43em;
+  width: 45em;
   height: 100%;
   background-color: rgba(55, 58, 63, 0.98);
   z-index: 100;
@@ -1006,6 +1019,15 @@ footer#colophon {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
+}
+.recherche h3 {
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+.recherche .c12 {
+  margin-bottom: 2em;
 }
 .recherche.hidden {
   top: -100%;
@@ -1597,6 +1619,20 @@ p.list-secteurs span {
 .a-propos article .entry-content {
   color: #ffffff;
 }
+.postCount {
+  color: #ffffff;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  margin-top: 0.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.postCount a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.postCount a:hover {
+  color: #e14e24;
+}
 .stuck {
   position: fixed;
   top: 0;
@@ -1767,7 +1803,7 @@ aside .mot-cle:hover {
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   font-size: 1.25em;
   text-decoration: none;
-  color: #e14e24;
+  color: #ffffff;
   text-align: center;
   width: 1.5em;
   display: inline-block;
@@ -1776,13 +1812,13 @@ aside .mot-cle:hover {
   font-weight: bold;
 }
 .pagination .page-numbers.dots:hover {
-  color: #e14e24;
+  color: #ffffff;
 }
 .pagination .page-numbers:hover {
   color: #000;
 }
 .pagination .page-numbers.current {
-  background-color: #e14e24;
+  background-color: #373a3f;
   color: #ffffff;
 }
 .pagination .page-numbers.next,
@@ -2068,6 +2104,13 @@ button.alm-load-more-btn.loading:before {
   float: left;
   width: 100%;
 }
+.resultats .nouvelles .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
+}
 .resultats .nouvelles .content {
   margin-left: 6em;
   line-height: 5em;
@@ -2116,6 +2159,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .evenements .content-wrapper {
   float: left;
   width: 100%;
+}
+.resultats .evenements .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
 }
 .resultats .evenements .content {
   margin-left: 6em;
@@ -2166,6 +2216,13 @@ button.alm-load-more-btn.loading:before {
   float: left;
   width: 100%;
 }
+.resultats .projets .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
+}
 .resultats .projets .content {
   margin-left: 6em;
   line-height: 5em;
@@ -2214,6 +2271,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .articles .content-wrapper {
   float: left;
   width: 100%;
+}
+.resultats .articles .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
 }
 .resultats .articles .content {
   margin-left: 6em;
@@ -2264,6 +2328,13 @@ button.alm-load-more-btn.loading:before {
   float: left;
   width: 100%;
 }
+.resultats .organisations .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
+}
 .resultats .organisations .content {
   margin-left: 6em;
   line-height: 5em;
@@ -2313,6 +2384,13 @@ button.alm-load-more-btn.loading:before {
   float: left;
   width: 100%;
 }
+.resultats .autre .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
+}
 .resultats .autre .content {
   margin-left: 6em;
   line-height: 5em;
@@ -2337,6 +2415,62 @@ button.alm-load-more-btn.loading:before {
   color: #7e828c;
 }
 .resultats .autre span.info:before {
+  content: '|';
+  margin: 0 1em;
+  color: #C5C5C5;
+}
+.resultats .no-result {
+  margin-bottom: 1em;
+  overflow: hidden;
+  font-size: 0.7em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.resultats .no-result .pastille {
+  float: left;
+  width: 5em;
+  margin-left: -100%;
+  background-color: #373a3f;
+  height: 5em;
+}
+.resultats .no-result .content-wrapper {
+  float: left;
+  width: 100%;
+}
+.resultats .no-result .content-wrapper h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 50%;
+}
+.resultats .no-result .content {
+  margin-left: 6em;
+  line-height: 5em;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 5em;
+  padding: 0 1.5em;
+}
+.resultats .no-result a {
+  text-decoration: none;
+  color: #373a3f;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.resultats .no-result a:hover .content {
+  background-color: #ffffff;
+}
+.resultats .no-result span {
+  font-size: 1.5em;
+  color: #7e828c;
+}
+.resultats .no-result span.info:before {
   content: '|';
   margin: 0 1em;
   color: #C5C5C5;
@@ -3174,6 +3308,30 @@ body div#ui-datepicker-div[style] {
   max-height: 5em;
   width: auto;
 }
+.partenaires .no-img {
+  vertical-align: middle;
+  display: inline-block;
+  width: auto;
+  font-size: 3em;
+  font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  font-weight: bold;
+  padding: 0 1.33em;
+  color: #373a3f;
+  text-align: left;
+  text-transform: lowercase;
+  height: 1.5em;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.partenaires .no-img:hover {
+  color: #373a3f;
+}
+.partenaires a {
+  text-decoration: none;
+}
 #colophon .group {
   padding: 1em 0;
 }
@@ -3476,8 +3634,6 @@ body div#ui-datepicker-div[style] {
   width: auto;
 }
 .slick-slide span.no-img {
-  display: inline-block;
-  width: auto;
   font-size: 3em;
   font-family: 'Exo 2', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   font-weight: bold;
@@ -3724,6 +3880,10 @@ body div#ui-datepicker-div[style] {
   .alm-listing .group:nth-child(odd) .c3:first-child .img {
     padding-bottom: 72%;
   }
+  .cinq .recherche .c12,
+  .alm-listing .recherche .c12 {
+    font-size: 120%;
+  }
   .trois .c6,
   .img-box .c6 {
     width: 100%;
@@ -3763,9 +3923,6 @@ body div#ui-datepicker-div[style] {
   }
   .navigation .principal#menu-principal.visible {
     top: 0;
-  }
-  .filtre {
-    font-size: 85%;
   }
   .header-post-type .description {
     width: 100%;
@@ -3821,6 +3978,13 @@ body div#ui-datepicker-div[style] {
   }
   .equipe .c3 {
     width: 49.99%;
+  }
+  .navigation #searchform,
+  .recherche {
+    width: 100%;
+  }
+  .navigation #searchform.hidden {
+    right: -100%;
   }
 }
 @media screen and (max-width: 767px) {

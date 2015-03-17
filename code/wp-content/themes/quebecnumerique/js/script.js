@@ -27,6 +27,11 @@ jQuery(document).ready(function(){
 		event.preventDefault();
 	});
 
+	jQuery('.critere').click(function(){
+		jQuery('.recherche, #searchform').toggleClass('hidden');
+		event.preventDefault();
+	});
+
 	jQuery('#searchform').submit(function(){
 		jQuery('.unecat').each(function(){
 			if (this.checked) {

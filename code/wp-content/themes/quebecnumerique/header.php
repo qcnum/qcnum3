@@ -113,9 +113,6 @@ wp_head();
 		$title = get_the_title();
 	}
 
-
-
-
 	if(is_author())	{
 		$class="nouvelles";
 		$nom = $queried_object->display_name;
@@ -124,32 +121,31 @@ wp_head();
 
 	?>
 
-		<?php if (!is_front_page() && !is_404() ){ ?>
-			<div class="page-header header-post-type <?php echo $class?>">
+	<?php if (!is_front_page() && !is_404() ){ ?>
+		<div class="page-header header-post-type <?php echo $class?>">
 
-				<div class="large-wrapper">
-					<div class="c12 top-title">
-						<div class="padding">
-							<h1 class="page-title"><?php echo $title; ?></h1>
-							<?php if (is_tax('mots-cles')){ ?>
-								<hr class="clear for-responsive">
-								<p class="description"><?php echo $description; ?></p>
-							<?php }; ?>
-						</div>
+			<div class="large-wrapper">
+				<div class="c12 top-title">
+					<div class="padding">
+						<h1 class="page-title"><?php echo $title; ?></h1>
+						<?php if (is_tax('mots-cles')){ ?>
+							<hr class="clear for-responsive">
+							<p class="description"><?php echo $description; ?></p>
+						<?php }; ?>
 					</div>
-					
-					<?php
-					if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category( $category )) {
-						yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
-					} ?>
-
 				</div>
 				
-				<hr class="clear">
+				<?php
+				if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category($category) && !is_search()) {
+					yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
+				} ?>
 
 			</div>
-		<?php 
-		};?>
+			
+			<hr class="clear">
+
+		</div>
+	<?php }; ?>
 
 
 	<div id="page" class="wrapper">
