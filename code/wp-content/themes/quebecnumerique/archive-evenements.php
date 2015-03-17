@@ -106,7 +106,7 @@ query_posts(
 										</div>
 									</div>
 									
-									<div class="c2">
+									<div class="c2 inscription">
 										
 										<?php if(get_field('lien_inscription')) : ?>
 											<div class="padding">
