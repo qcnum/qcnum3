@@ -61,6 +61,15 @@ jQuery(document).ready(function(){
     });
 
 
+    if (jQuery.isFunction(jQuery.fn.chosen)) {
+		jQuery('select').chosen({
+			disable_search_threshold : 10,
+			placeholder_text_multiple : " ",
+			placeholder_text_single : " "
+		});
+	}
+
+
 
 	/*jQuery('.filtre-recherche').click(function(){
 		var $filtre = '.' + jQuery(this).attr('value');
@@ -99,10 +108,10 @@ jQuery(document).ready(function(){
 
     });
 
- 	//resize();
- 	//jQuery(window).resize(function(){
- 	//	resize();
- 	//});
+ 	resize();
+ 	jQuery(window).resize(function(){
+ 		resize();
+ 	});
 
 });
 

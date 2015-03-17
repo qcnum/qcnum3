@@ -23,7 +23,7 @@ jQuery(document).ready(function(){
 				slidesToShow: 3,
 				slidesToScroll: 1,
 				infinite: false,
-				centerMode: true
+				//centerMode: true
 			}
 		}, {
 			breakpoint: 1200,
@@ -80,17 +80,23 @@ jQuery(document).ready(function(){
 
 							<?php
 							$posts = get_posts(array(
-							'post_type' => 'organisations',
-							'taxonomy' => $category->taxonomy,
-							'term' => $category->slug,
-							'nopaging' => true,
-							'posts_per_page' => -1
+								'post_type' => 'organisations',
+								'taxonomy' => $category->taxonomy,
+								'term' => $category->slug,
+								'nopaging' => true,
+								'posts_per_page' => -1
 							));
 							foreach($posts as $post): 
-								setup_postdata($post);
-								?>
-
-								<div><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium'); ?></a></div>
+								setup_postdata($post); ?>
+								<div><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+									<?php 
+									if(has_post_thumbnail()) :
+										the_post_thumbnail('medium');
+									else:
+										echo '<span class="no-img">' . get_the_title() . '</span>';
+									endif; 
+									?> 
+								</a></div>
 
 							<?php endforeach; ?>
 

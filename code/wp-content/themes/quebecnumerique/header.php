@@ -34,6 +34,7 @@
 <![endif]-->
 <?php 
 wp_enqueue_script('jquery');
+wp_enqueue_script('chosen', get_template_directory_uri() . '/js/chosen.jquery.min.js', 'jquery', '', true);
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', 'jquery', '', true);
 wp_head(); 
 ?>
