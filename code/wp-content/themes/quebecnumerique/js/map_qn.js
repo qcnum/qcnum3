@@ -124,19 +124,16 @@ jQuery(document).ready(function(){
 function initialize() {
 
     var isZoomable = false;
-    var isDraggable = true;
     var center = new google.maps.LatLng(46.815256, -71.225401);
-    //var isDraggable = jQuery(document).width() > 960 ? true : false;
-    var isiPad = /ipad/i.test(navigator.userAgent.toLowerCase());
+    var isDraggable = jQuery(document).width() > 480 ? true : false;
+    var isiDevice = /ipad|iphone|ipod/i.test(navigator.userAgent.toLowerCase());
+    var isAndroid = /android/i.test(navigator.userAgent.toLowerCase());
 
-    /* On modifie les propriété de zoom et de drag quand one st en mode plein écran de la carte */
-    if (isiPad){isDraggable = false; }
+    /* On modifie les propriété de zoom et de drag quand on est en mode plein écran de la carte */
+    if ( isiDevice || isAndroid ){ isDraggable = false; }
     if ( jQuery(".map-content").hasClass('full-screen-map') ) { isDraggable = true;}
     if ( jQuery(".map-content").hasClass('full-screen-map') ) { isZoomable = true;}
-    
-
-
-    
+     
     map = new google.maps.Map(document.getElementById('map'), {
           zoom: 14,
           scrollwheel: isZoomable,
@@ -240,6 +237,8 @@ function createMarker(latlng,name,html,image,category,cluster) {
         
     return marker;
 }
+
+
 
 function listMarkersTweets(cptReturn,maxID){
     
