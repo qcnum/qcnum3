@@ -139,12 +139,28 @@ function initialize() {
         
     map.setOptions({styles: stylesCarte});
     
+    //cas si single
+    var lngSingle = '';
+    var latSingle = '';
+    if(jQuery('#singleMapLat').length && jQuery('#singleMapLat').val() != '' && jQuery('#singleMapLng').length && jQuery('#singleMapLng').val() != '' ){
+        latSingle     = jQuery('#singleMapLat').val();
+        lngSingle     = jQuery('#singleMapLng').val();
+    }
+    
     jQuery.each(categories, function( index, value ) {
         if(jQuery('#'+value+':checked').length > 0){
             jQuery.get( directory_theme + "/js/ajax/"+value+".json.php?periode=&limit=", function(data) {
                 for (var i = 0; i < data.length; i++) {
-                    var latlng = new google.maps.LatLng(data[i].lat, data[i].long);
-                    createMarker(latlng,data[i].title,data[i].window,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
+                    var latlng     = new google.maps.LatLng(data[i].lat, data[i].long);
+                    var iconMarker = directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png';
+                    
+                    //cas si single
+                    if(latSingle == data[i].lat && lngSingle == data[i].long){
+                        iconMarker = directory_theme + '/images/icon_gmap_single_'+value.substr(0,1)+'.png';
+                        createMarker(latlng,data[i].title,data[i].window,iconMarker,value,0);
+                    }else{
+                        createMarker(latlng,data[i].title,data[i].window,iconMarker,value,1);
+                    }
                 }
             });
         }
@@ -157,7 +173,7 @@ function initialize() {
     listMarkersTweets();
 }
 
-function createMarker(latlng,name,html,image,category) {
+function createMarker(latlng,name,html,image,category,cluster) {
     var min = .999999;
     var max = 1.000001;
     
@@ -188,8 +204,11 @@ function createMarker(latlng,name,html,image,category) {
         title: name,
         zIndex: Math.round(latlng.lat()*-100000)<<5
         });
-        marker.mycategory = category;                                 
-        markers[category].push(marker);
+        
+        marker.mycategory = category; 
+        if(cluster){
+            markers[category].push(marker);
+        }
         allMarkers.push(marker);
 
     google.maps.event.addListener(marker, 'click', function() {
@@ -197,20 +216,26 @@ function createMarker(latlng,name,html,image,category) {
         infowindow.open(map,marker);
         });
     
-    markerCluster[category] = new MarkerClusterer(map, markers[category], {
-          styles: stylesCluster[category]
-        });
+    if(cluster){
+        markerCluster[category] = new MarkerClusterer(map, markers[category], {
+              styles: stylesCluster[category]
+            });
 
-    google.maps.event.addListener(markerCluster[category], "click", function (c) {
-          var m = c.getMarkers();
-          var p = [];
-          for (var i = 0; i < m.length; i++ ){
-            p.push(m[i].getPosition());
-          }          
-        });
+        google.maps.event.addListener(markerCluster[category], "click", function (c) {
+              var m = c.getMarkers();
+              var p = [];
+              for (var i = 0; i < m.length; i++ ){
+                p.push(m[i].getPosition());
+              }          
+            });
+    }
+        
+    return marker;
 }
 
 function listMarkersTweets(cptReturn,maxID){
+    
+    var markerCree;
     
     cptReturn   = typeof cptReturn   !== 'undefined' ? cptReturn : 0;
     maxID       = typeof maxID   !== 'undefined' ? maxID : 0;
@@ -237,8 +262,16 @@ function listMarkersTweets(cptReturn,maxID){
                         
                         //if(data.statuses[i].id != maxID){
                             var latlng = new google.maps.LatLng(data.statuses[i].geo.coordinates[0], data.statuses[i].geo.coordinates[1]);
-                            createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value);
-
+                            if(i == 0){
+                                markerCree = createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value,0);
+                            
+                                alert('@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil);
+                                infowindow.setContent('@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil); 
+                                infowindow.open(map,markerCree);
+                            }else{
+                                markerCree = createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value,1);
+                            }
+                            
                             lastID = data.statuses[i].id;
 
                             cpt++;

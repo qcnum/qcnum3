@@ -17,7 +17,18 @@
 				</div>
 			</div>
 		</div>
-	<?php } ?>
+	<?php } 
+            //Ajout Marker Single spécial
+            if(is_single()){
+                $singleMap = get_field('localisation');
+                if(isset($singleMap['lat']) && $singleMap['lat'] != '' && isset($singleMap['lng']) && $singleMap['lng'] != ''  ){
+        ?>
+            <input type="hidden" id="singleMapLat" value="<?php echo $singleMap['lat']; ?>" />
+            <input type="hidden" id="singleMapLng" value="<?php echo $singleMap['lng']; ?>" />
+        <?php 
+                }
+            }
+        ?>
      
     <div class="map-content">
 	    <nav id="menu-map" class="gris-bg">
