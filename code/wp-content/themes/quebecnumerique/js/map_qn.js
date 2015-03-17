@@ -265,7 +265,6 @@ function listMarkersTweets(cptReturn,maxID){
                             if(i == 0){
                                 markerCree = createMarker(latlng,'@'+data.statuses[i].user.screen_name,'@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil,directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value,0);
                             
-                                alert('@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil);
                                 infowindow.setContent('@'+data.statuses[i].user.screen_name+' : '+data.statuses[i].text+' '+imgProfil); 
                                 infowindow.open(map,markerCree);
                             }else{
