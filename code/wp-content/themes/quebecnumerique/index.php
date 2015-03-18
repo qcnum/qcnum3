@@ -9,8 +9,8 @@ $tag2_name =  $tag2->name;
 $diffGMT = get_option('gmt_offset') * 3600;  
 $currentDate = time() + $diffGMT;
 
-if ($tag1_name != ''){ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag1_name, 'posts_per_page' => 2 ) );};
-if ($tag2_name != ''){ $dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2_name, 'posts_per_page' => 2 ) );};
+if ($tag1_name != ''){ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag1->slug, 'posts_per_page' => 2 ) );};
+if ($tag2_name != ''){ $dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2->slug, 'posts_per_page' => 2 ) );};
 $nouvelles = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'posts_per_page' => 3 ) );
 $articles = new WP_Query( array( 'post_type' => 'post', 'cat' => '3', 'posts_per_page' => 2 ) );
 
