@@ -589,7 +589,7 @@ footer#colophon {
   transition: all 0.2s ease;
 }
 .navigation .meta a:hover {
-  color: #e14e24;
+  color: #f3bbab;
 }
 .navigation .retract-tag {
   margin-left: 9.5em;
@@ -1259,6 +1259,7 @@ footer#colophon {
   text-transform: uppercase;
   font-weight: 700;
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+  line-height: 1.25em;
 }
 .ellipsis {
   white-space: nowrap;
@@ -3676,6 +3677,26 @@ form .gfield_error textarea {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
+article .juiz_sps_links {
+  margin-top: 0;
+}
+article .juiz_sps_links ul {
+  float: right;
+}
+article .juiz_sps_links .juiz_sps_item {
+  float: right;
+}
+article .juiz_sps_links .juiz_sps_item a {
+  padding: 0.5em 0.75em 0.5em 0.75em;
+}
+article .juiz_sps_links .juiz_sps_item a .juiz_sps_network_name {
+  display: none;
+}
+article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
+  margin-right: 0;
+  width: 1em;
+  text-align: center;
+}
 /* À PROPOS */
 .collaborateur {
   text-align: center;
@@ -4015,20 +4036,37 @@ body div#ui-datepicker-div[style] {
     width: 33%;
   }
   .single #content > article > .large-wrapper > .c7,
-  .single #content > article > .large-wrapper > .c5 {
+  .single #content > article > .large-wrapper > .c4 {
     width: 100%;
     float: none;
     margin-bottom: 2em;
   }
-  .single #content > article > .large-wrapper > .c5 > .c11 {
+  .single #content > article > .large-wrapper > .c4 {
+    padding-top: 2em;
+    border-top: thin solid #ecedef;
+  }
+  .single #content > article > .large-wrapper .sharing {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+  }
+  .single #content > article > .large-wrapper .sharing a.sharer {
+    margin-bottom: 0;
+    border-radius: 100%;
+    padding: 0.15em 0.35em;
+    bottom: 0em;
+    right: 0em;
+    float: right;
+    z-index: 9999;
+  }
+  .single #content > article > .large-wrapper .sharing > div {
     width: 100%;
   }
-  .single #content > article > .large-wrapper > .c5 > .c1 {
-    width: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 99;
+  .single #content > article > .large-wrapper .sharing > div a {
+    float: left;
+    padding: 0 0.5em;
   }
   .sharing {
     font-size: 100%;
@@ -4076,6 +4114,13 @@ body div#ui-datepicker-div[style] {
   }
   .sticky-event section > .c11 .evenements .inscription {
     width: 100%;
+  }
+  .group.related-posts .c3 {
+    width: 50%;
+    margin-bottom: 2em;
+  }
+  .group.related-posts .c3:nth-child(odd) {
+    clear: left;
   }
 }
 @media screen and (max-width: 767px) {
@@ -4125,6 +4170,10 @@ body div#ui-datepicker-div[style] {
   .search-results .resultats {
     font-size: 75%;
   }
+  .single #content > article > .large-wrapper .sharing > div {
+    font-size: 75%;
+    padding-top: 1em;
+  }
 }
 @media screen and (max-width: 600px) {
   .cinq .c3,
@@ -4160,6 +4209,9 @@ body div#ui-datepicker-div[style] {
   }
   .all-projets .c9 .list-secteurs {
     clear: both;
+  }
+  .group.related-posts .c3 {
+    width: 100%;
   }
 }
 @media screen and (max-width: 500px) {
