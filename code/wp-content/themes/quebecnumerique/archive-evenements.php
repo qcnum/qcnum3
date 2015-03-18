@@ -1,7 +1,7 @@
 <?php 
 get_header();
 
-$lastM;
+$lastM = '';
 $diffGMT = get_option('gmt_offset') * 3600;  
 $currentDate = time() + $diffGMT;
 query_posts(
@@ -10,7 +10,7 @@ query_posts(
 		'meta_key' => 'startdate',
 		'orderby' => 'meta_value',
 		'order' => 'ASC',
-		'posts_per_page' => -1,
+		'posts_per_page' => -1,
 		'meta_query'  => array(
 			'relation' => 'AND',
 				array(

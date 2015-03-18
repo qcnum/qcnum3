@@ -3295,6 +3295,9 @@ form .gfield_error textarea {
 #colophon form .gform_body ul input[type='email'] {
   height: 4em;
 }
+#colophon form .gform_body ul label {
+  display: none;
+}
 #colophon form .gfield_error input[type='text'],
 #colophon form .gfield_error input[type='email'],
 #colophon form .gfield_error textarea {

@@ -146,12 +146,11 @@ $projets = new WP_Query( array(
 					<div class="c1 fr">
 						<div class="padding">
 							<?php 
-							//$jsps_networks = array( 'facebook, twitter, google, pinterest, linkedin, mail' );
-							/* show counters */
-							//$show_counters = 1;
-							//juiz_sps( $jsps_networks, $show_counters );
-
-							echo do_shortcode('[juiz_sps buttons="facebook, twitter, google, pinterest, linkedin, mail" counters="1"]'); ?>
+							$jsps_networks = array( 'facebook, twitter, google, pinterest, linkedin, mail' );
+							$show_counters = 1;
+							juiz_sps($jsps_networks, $show_counters);
+							//echo do_shortcode('[juiz_social buttons="facebook"]');
+							//echo do_shortcode('[juiz_sps buttons="facebook, twitter, google, pinterest, linkedin, mail" counters="1"]'); ?>
 						</div>
 					</div>
 

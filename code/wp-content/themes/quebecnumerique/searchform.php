@@ -1,12 +1,12 @@
 <?php 
-if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
-	$query_q = $_GET['quartiers']; 
-	$query_mc = $_GET['mots-cles'];
-	$query_p = $_GET['post_type'];
-} else {
+$query_q = array();
+$query_mc= array();
+$query_p = array();
+if(isset($_GET['quartiers'])) { $query_q = $_GET['quartiers']; }
+if(isset($_GET['mots-cles'])) { $query_mc = $_GET['mots-cles']; }
+if(isset($_GET['post_type'])) { $query_p = $_GET['post_type']; }
+if(empty($query_q) && empty($query_mc) && empty($query_p)) {
 	$o = get_queried_object();
-	$query_q = array();
-	$query_mc = array();
 	if($o->taxonomy == 'quartiers') {
 		array_push($query_q, $o->slug); 
 	} elseif($o->taxonomy == 'mots-cles') {

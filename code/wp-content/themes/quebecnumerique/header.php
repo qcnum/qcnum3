@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="print" href="<?php echo get_template_directory_uri(); ?>/print.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
+<?php /* ?>
 <link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-72x72.png">
@@ -27,7 +27,7 @@
 <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/images/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/images/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#ffffff"><?php */ ?>
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
@@ -135,7 +135,7 @@ wp_head();
 				</div>
 				
 				<?php
-				if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category($category) && !is_search()) {
+				if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category() && !is_search()) {
 					yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
 				} ?>
 
