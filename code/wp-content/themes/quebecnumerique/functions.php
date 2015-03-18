@@ -330,7 +330,6 @@ function paging_nav() {
 }
 
 
-
 function wpa57065_filter_where( $where = '' ) {
     $where .= " AND post_date <= '" . date('Y-m-d') . "'";
     return $where;
@@ -442,6 +441,8 @@ add_action('acf/save_post', 'my_acf_save_post', 20);
 
 add_action('get_footer','lm_dequeue_footer_styles');
 function lm_dequeue_footer_styles() { wp_dequeue_style('yarppRelatedCss'); }
+add_action('wp_print_styles','lm_dequeue_header_styles');
+function lm_dequeue_header_styles() { wp_dequeue_style('yarppWidgetCss'); }
 
 add_filter('wpseo_locale', 'override_og_locale');
 function override_og_locale($locale) {

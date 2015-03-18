@@ -76,7 +76,13 @@ $projets = new WP_Query( array(
 
 					</div>
 
-					<div class="c4 fr">
+					<div class="c1">
+						<div class="padding">
+							<?php echo do_shortcode('[juiz_sps counters="1" buttons="facebook, twitter, google, pinterest, linkedin, mail"]'); ?>
+						</div>
+					</div>
+
+					<div class="c4">
 
 						<div class="padding">
 
@@ -141,18 +147,6 @@ $projets = new WP_Query( array(
 
 						</div>
 
-					</div>
-
-					<div class="c1 fr">
-						<div class="padding">
-							<?php 
-							//$jsps_networks = array( 'facebook, twitter, google, pinterest, linkedin, mail' );
-							/* show counters */
-							//$show_counters = 1;
-							//juiz_sps( $jsps_networks, $show_counters );
-
-							echo do_shortcode('[juiz_sps buttons="facebook, twitter, google, pinterest, linkedin, mail" counters="1"]'); ?>
-						</div>
 					</div>
 
 				</div>

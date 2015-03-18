@@ -5,42 +5,26 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
 <title><?php wp_title( '|' ); ?></title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Sans:400,700%7CExo+2:400,300,500%7CTitillium+Web:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <link rel="stylesheet" type="text/css" media="print" href="<?php echo get_template_directory_uri(); ?>/print.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<link href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" rel="icon" type="image/ico" />
 
-<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_template_directory_uri(); ?>/images/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/<?php echo get_template_directory_uri(); ?>/images/faviconapple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="<?php echo get_template_directory_uri(); ?>/images/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/images/favicon/favicon-16x16.png">
-<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/images/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/images/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
 <![endif]-->
 <?php 
 wp_enqueue_script('jquery');
+wp_enqueue_script('map', 'http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false', 'jquery', '', true);
+wp_enqueue_script('clusterer', get_template_directory_uri() . '/js/markerclusterer_packed.js.js', 'jquery', '', true);
+wp_enqueue_script('map_qn', get_template_directory_uri() . '/js/map_qn.js', 'jquery', '', true);
 wp_enqueue_script('chosen', get_template_directory_uri() . '/js/chosen.jquery.min.js', 'jquery', '', true);
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', 'jquery', '', true);
 wp_head(); 
 ?>
-
-<script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
-<script src="<?php echo get_template_directory_uri() . '/js/markerclusterer_packed.js';?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/js/map_qn.js';?>"></script>
 
 </head>
 
@@ -161,7 +145,7 @@ wp_head();
 				</div>
 				
 				<?php
-				if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category($category) && !is_search()) {
+				if ( function_exists('yoast_breadcrumb') && !is_front_page() && !is_category() && !is_search()) {
 					yoast_breadcrumb('<div class="padding" id="breadcrumbs">','</div>');
 				} ?>
 
