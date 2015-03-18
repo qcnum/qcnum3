@@ -74,7 +74,16 @@ if(empty($query_q) && empty($query_mc) && empty($query_p)) {
 				<h3><?php _e('Mots-clés', THEME_NAME); ?></h3>
 
 				<div class="group">
-					<?php $motsCles = get_terms('mots-cles');
+					<?php 
+					$args = array(
+						'orderby' => 'count',
+						'order' => 'DESC',
+						'hide_empty' => true,
+					    'parent ' => 0,
+					    'number' => 15
+					);
+					$motsCles = get_terms('mots-cles', $args);
+
 					foreach ($motsCles as $mc) {
 						$mc_slug = $mc->slug;
 						$mc_id = $mc->term_id;

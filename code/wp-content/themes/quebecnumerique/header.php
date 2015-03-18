@@ -102,6 +102,10 @@ wp_head();
 		$title = '<span class="texte-reduit">Articles par : </span>' . $nom;	
 	}
 
+	/// ajout des mots cles
+
+
+
 	?>
 
 	<?php if (!is_front_page() && !is_404() ){ ?>
@@ -114,6 +118,28 @@ wp_head();
 						<?php if (is_tax('mots-cles')){ ?>
 							<hr class="clear for-responsive">
 							<p class="description"><?php echo $description; ?></p>
+						<?php }; 
+						if ( is_category()){ ?>
+							<div class="group-mots-cles">
+								<ul>
+								<?php 
+								$args = array(
+									'orderby' => 'count',
+									'order' => 'DESC',
+									'hide_empty' => true,
+								    'parent ' => 0,
+								    'number' => 15
+								);
+								$motsCles = get_terms('mots-cles', $args);
+								foreach ($motsCles as $mc) {
+									$id = $mc->object_id;
+									$url = get_term_link($mc);
+
+									$mc_name = $mc->name;?>
+									<a class="mot-cle" href="<?php echo $url; ?>"><?php echo $mc_name;?></a>
+								<?php } ?>
+								</ul>
+							</div>
 						<?php }; ?>
 					</div>
 				</div>

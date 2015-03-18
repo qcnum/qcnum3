@@ -486,6 +486,37 @@ footer#colophon {
 .texte-reduit {
   font-size: 0.6em;
 }
+.mot-cle {
+  font-size: 1.125em;
+  background-color: #4d5057;
+  color: #ffffff;
+  text-transform: none;
+  text-decoration: none;
+  padding: 0.35em 0.35em 0.2em 0.35em;
+  display: block;
+  float: left;
+  margin: 0 0.25em 0.25em 0;
+  border: thin solid #373a3f;
+  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0.25);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.mot-cle:hover {
+  background-color: #373a3f;
+  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0);
+}
+.group-mots-cles {
+  width: 50%;
+  float: right;
+  margin-bottom: 0.8em;
+  text-align: right;
+}
+.group-mots-cles a {
+  float: right;
+}
 /* HEADER */
 .home-link {
   margin-left: 0.925925%;
@@ -1809,28 +1840,6 @@ aside .org img {
   display: inline-block;
   max-height: 5em;
   width: auto;
-}
-aside .mot-cle {
-  font-size: 1.125em;
-  background-color: #4d5057;
-  color: #ffffff;
-  text-transform: none;
-  text-decoration: none;
-  padding: 0.35em 0.35em 0.2em 0.35em;
-  display: block;
-  float: left;
-  margin: 0 0.25em 0.25em 0;
-  border: thin solid #373a3f;
-  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0.25);
-  -webkit-transition: all 0.2s ease;
-  -moz-transition: all 0.2s ease;
-  -ms-transition: all 0.2s ease;
-  -o-transition: all 0.2s ease;
-  transition: all 0.2s ease;
-}
-aside .mot-cle:hover {
-  background-color: #373a3f;
-  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0);
 }
 .pagination {
   margin: 1em 0 2em 0;

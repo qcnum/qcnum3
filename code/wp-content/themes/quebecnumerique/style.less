@@ -385,6 +385,34 @@ hr.for-responsive{display: none;}
 		font-size: 0.6em;
 	}
 
+	.mot-cle {
+		font-size: 1.125em;
+		background-color: @grispale;
+		color: @blanc;
+		text-transform: none;
+		text-decoration: none;
+		padding: 0.35em 0.35em 0.2em 0.35em;
+		display: block;
+		float: left;
+		margin: 0 0.25em 0.25em 0;
+		border: thin solid @gris;
+		box-shadow: inset -1px -1px 0px 0px fade(@blanc, 25%);
+		.transition();
+		&:hover {
+			background-color: @gris;
+			box-shadow: inset -1px -1px 0px 0px fade(@blanc, 0%);
+		}
+	}
+
+	.group-mots-cles{
+		width: 50%;
+		float: right;
+		margin-bottom: 0.8em;	
+		text-align: right;	
+		a{float: right;}	
+	}
+
+
 /* HEADER */
 
 	.home-link {
@@ -1279,25 +1307,7 @@ hr.for-responsive{display: none;}
 				width: auto;
 			}
 		}
-
-		.mot-cle {
-			font-size: 1.125em;
-			background-color: @grispale;
-			color: @blanc;
-			text-transform: none;
-			text-decoration: none;
-			padding: 0.35em 0.35em 0.2em 0.35em;
-			display: block;
-			float: left;
-			margin: 0 0.25em 0.25em 0;
-			border: thin solid @gris;
-			box-shadow: inset -1px -1px 0px 0px fade(@blanc, 25%);
-			.transition();
-			&:hover {
-				background-color: @gris;
-				box-shadow: inset -1px -1px 0px 0px fade(@blanc, 0%);
-			}
-		} 
+ 
 	}
 
 	.pagination {
