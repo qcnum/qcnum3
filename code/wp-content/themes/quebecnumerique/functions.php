@@ -131,7 +131,7 @@ function init() {
         'mots-cles',
         array('projets', 'evenements', 'organisations', 'post'),
         array(
-            'label' => __( 'Mots-clés - À utiliser' ),
+            'label' => __( 'Mots-clés' ),
             'public' => true,
             'hierarchical' => true,
             'show_admin_column' => true,
@@ -417,3 +417,14 @@ add_filter('wpseo_locale', 'override_og_locale');
 function override_og_locale($locale) {
     return "fr_CA";
 }
+
+function unregister_taxonomy(){
+    register_taxonomy('post_tag', array());
+}
+add_action('init', 'unregister_taxonomy');
+
+function remove_menus(){
+    remove_menu_page('edit-tags.php?taxonomy=post_tag'); // Post tags
+}
+
+add_action( 'admin_menu', 'remove_menus' );

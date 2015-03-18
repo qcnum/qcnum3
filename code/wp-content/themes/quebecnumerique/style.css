@@ -506,6 +506,9 @@ footer#colophon {
   -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
+.home-link:hover {
+  background-color: #cf441c;
+}
 .retract {
   height: 3.1em;
   width: 9.5em;

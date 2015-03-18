@@ -135,7 +135,7 @@ query_posts(
 			<div class="large-wrapper">
 
 				<section class="group">
-					<header class="c1"><h2>:(</h2></header>
+					<header class="c1"><h2>⊙︿⊙</h2></header>
 					<div class="c11 fr">
 						<article class="white-post evenements group">
 							<div class="padding">
