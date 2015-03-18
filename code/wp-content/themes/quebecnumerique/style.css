@@ -486,7 +486,8 @@ footer#colophon {
 .texte-reduit {
   font-size: 0.6em;
 }
-.mot-cle {
+.group-mots-cles .mot-cle,
+aside .mot-cle {
   font-size: 1.125em;
   background-color: #4d5057;
   color: #ffffff;
@@ -504,7 +505,8 @@ footer#colophon {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.mot-cle:hover {
+.group-mots-cles .mot-cle:hover,
+aside .mot-cle:hover {
   background-color: #373a3f;
   box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0);
 }
@@ -514,7 +516,7 @@ footer#colophon {
   margin-bottom: 0.8em;
   text-align: right;
 }
-.group-mots-cles a {
+.group-mots-cles a.mot-cle {
   float: right;
 }
 /* HEADER */
