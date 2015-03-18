@@ -19,7 +19,7 @@
 <?php 
 wp_enqueue_script('jquery');
 wp_enqueue_script('map', 'http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false', 'jquery', '', true);
-wp_enqueue_script('clusterer', get_template_directory_uri() . '/js/markerclusterer_packed.js.js', 'jquery', '', true);
+wp_enqueue_script('clusterer', get_template_directory_uri() . '/js/markerclusterer_packed.js', 'jquery', '', true);
 wp_enqueue_script('map_qn', get_template_directory_uri() . '/js/map_qn.js', 'jquery', '', true);
 wp_enqueue_script('chosen', get_template_directory_uri() . '/js/chosen.jquery.min.js', 'jquery', '', true);
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', 'jquery', '', true);
