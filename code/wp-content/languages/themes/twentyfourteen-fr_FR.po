@@ -396,6 +396,8 @@ msgstr "L'équipe de WordPress"
 msgid "Full Width Page"
 msgstr "Page plein écran"
 
+#. Translators: If there are characters in your language that are not supported
+#. by Lato, translate this to 'off'. Do not translate into your own language.
 #: functions.php:213
 msgctxt "Lato font: on or off"
 msgid "on"

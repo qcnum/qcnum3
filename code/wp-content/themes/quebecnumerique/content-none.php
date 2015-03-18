@@ -10,7 +10,13 @@
 						</div>
 
 						<?php 
-						$id = get_field('img-nouvelles', 'options');
+						$queried_object = get_queried_object();
+						$id = $queried_object->cat_ID;	
+						$name = $queried_object->name;
+						if ($id == 2) { $id = get_field('img-nouvelles', 'options'); } 
+						elseif ($id == 3) { $id = get_field('img-articles', 'options'); } 
+						elseif ($name == 'projets') { $id = get_field('img-projets', 'options');
+						} else { $id = get_field('img-nouvelles', 'options'); }
 						$url = wp_get_attachment_image_src( $id , 'rectangle'); ?>
 						<div class="img" style="background-image: url('<?php echo $url[0]; ?>')" ></div>
 						</article>

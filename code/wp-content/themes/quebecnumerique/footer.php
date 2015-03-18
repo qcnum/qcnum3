@@ -129,45 +129,34 @@
 	</div>
 
 	<footer id="colophon" role="contentinfo">
-	
 
 		<div class="large-wrapper group">
-				
-			<div class="c6 center contact-form entry-content">
+			<div class="c5 center contact-form entry-content">
 				<?php echo do_shortcode('[gravityform id=1 title=true description=true]'); ?>
 			</div>
-
 		</div>
 
 		<div class="gris-bg">
-
 			<div class="large-wrapper group">
-			
 				<div class="c6 email">
 					<div class="padding">
 						<?php _e('Pour informations', THEME_NAME); ?> : <a href="mailto:<?php echo antispambot(get_option('admin_email')); ?>"><?php echo antispambot(get_option('admin_email')); ?></a>
 					</div>
 				</div>
-
 				<div class="c6">
 					<div class="padding">
 						<?php echo get_social_media(); ?>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 
 		<div class="blanc-bg">
-
 			<div class="large-wrapper group footer-apropos">
-				
 				<?php 
 				$propos = get_field('propos', 'options');
 				$partenaires = get_field('partenaires', 'options');
 				?>
-
 				<div class="c5 entry-content">
 					<div class="padding">
 						<?php echo $propos; ?>
@@ -176,7 +165,6 @@
 
 				<div class="c7 partenaires">
 					<div class="padding">
-					
 						<?php foreach($partenaires as $p) : 
 							$site = $p['site_web'];
 							$nom = $p['nom'];
@@ -188,9 +176,7 @@
 							<?php else : ?>
 								<img src="<?php echo $logo[0]; ?>" alt="<?php echo $nom; ?>">
 							<?php endif; ?>
-
 						<?php endforeach; ?>
-
 					</div>
 				</div>
 
@@ -200,9 +186,7 @@
 						<hr>
 					</div>
 				</div>
-
 			</div>
-
 		</div>
 
 	</footer><!-- #colophon -->
