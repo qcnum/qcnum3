@@ -5,6 +5,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=no" />
 <title><?php wp_title( '|' ); ?></title>
+<meta http-equiv="X-UA-Compatible" content="IE=9">
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Sans:400,700%7CExo+2:400,300,500%7CTitillium+Web:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
@@ -17,14 +18,13 @@
 <![endif]-->
 <?php 
 wp_enqueue_script('jquery');
+wp_enqueue_script('map', 'http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false', 'jquery', '', true);
+wp_enqueue_script('clusterer', get_template_directory_uri() . '/js/markerclusterer_packed.js.js', 'jquery', '', true);
+wp_enqueue_script('map_qn', get_template_directory_uri() . '/js/map_qn.js', 'jquery', '', true);
 wp_enqueue_script('chosen', get_template_directory_uri() . '/js/chosen.jquery.min.js', 'jquery', '', true);
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', 'jquery', '', true);
 wp_head(); 
 ?>
-
-<script src="http://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false"></script>
-<script src="<?php echo get_template_directory_uri() . '/js/markerclusterer_packed.js';?>"></script>
-<script src="<?php echo get_template_directory_uri() . '/js/map_qn.js';?>"></script>
 
 </head>
 

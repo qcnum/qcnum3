@@ -72,7 +72,13 @@ $organisations = new WP_Query( array(
 							
 					</div>
 
-					<div class="c4 fr">
+					<div class="c1">
+						<div class="padding">
+							<?php echo do_shortcode('[juiz_sps counters="1" buttons="facebook, twitter, google, pinterest, linkedin, mail"]'); ?>
+						</div>
+					</div>
+
+					<div class="c4">
 
 						<div class="padding">
 
@@ -161,13 +167,6 @@ $organisations = new WP_Query( array(
 
 						</div>
 
-					</div>
-
-
-					<div class="c1 fr">
-						<div class="padding">
-							<?php echo do_shortcode('[juiz_sps counters="1" buttons="facebook, twitter, google, pinterest, linkedin, mail"]'); ?>
-						</div>
 					</div>
 
 				</div>

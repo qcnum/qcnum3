@@ -290,6 +290,7 @@ footer#colophon {
   background-color: #ffffff;
 }
 .opac-bg {
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
 }
 .bleufonce-bg {
@@ -2150,6 +2151,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .nouvelles .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -2206,6 +2208,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .evenements .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -2262,6 +2265,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .projets .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -2318,6 +2322,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .articles .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -2374,6 +2379,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .organisations .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -2430,6 +2436,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .autre .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -2486,6 +2493,7 @@ button.alm-load-more-btn.loading:before {
 .resultats .no-result .content {
   margin-left: 6em;
   line-height: 5em;
+  background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
   height: 5em;
   padding: 0 1.5em;
@@ -3670,6 +3678,7 @@ form .gfield_error textarea {
 }
 .membre .content i {
   font-size: 1.2em;
+  background-color: #000000;
   background-color: rgba(0, 0, 0, 0.3);
   padding: 0.1em 0.3em;
   position: absolute;
@@ -3682,7 +3691,7 @@ form .gfield_error textarea {
   transition: all 0.2s ease;
 }
 article .juiz_sps_links {
-  margin-top: 0;
+  margin: 0;
 }
 article .juiz_sps_links ul {
   float: right;
@@ -3874,7 +3883,8 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
     width: 33%;
   }
   .single #content > article > .large-wrapper > .c7,
-  .single #content > article > .large-wrapper > .c4 {
+  .single #content > article > .large-wrapper > .c4,
+  .single #content > article > .large-wrapper > .c1 {
     width: 100%;
     float: none;
     margin-bottom: 2em;
@@ -3883,28 +3893,14 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
     padding-top: 2em;
     border-top: thin solid #ecedef;
   }
-  .single #content > article > .large-wrapper .sharing {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    z-index: 999;
+  .single #content > article > .large-wrapper > .c1 {
+    overflow: hidden;
   }
-  .single #content > article > .large-wrapper .sharing a.sharer {
-    margin-bottom: 0;
-    border-radius: 100%;
-    padding: 0.15em 0.35em;
-    bottom: 0em;
-    right: 0em;
-    float: right;
-    z-index: 9999;
-  }
-  .single #content > article > .large-wrapper .sharing > div {
-    width: 100%;
-  }
-  .single #content > article > .large-wrapper .sharing > div a {
+  .single #content > article > .large-wrapper .juiz_sps_links ul {
     float: left;
-    padding: 0 0.5em;
+  }
+  .single #content > article > .large-wrapper .juiz_sps_links .juiz_sps_item {
+    float: none;
   }
   .sharing {
     font-size: 100%;
