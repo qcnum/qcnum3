@@ -67,6 +67,8 @@ $organisations = new WP_Query( array(
 									<a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?> " class="btn" title="<?php _e('Voir toutes les collaborations', THEME_NAME); ?>"><?php _e('Voir toutes les collaborations', THEME_NAME); ?></a>
 								</div>
 							</div>
+
+							<?php comments_template(); ?>
 							
 						</div>
 							
