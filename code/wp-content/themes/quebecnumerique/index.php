@@ -229,7 +229,7 @@ $evenements = new WP_Query(
 						<div class="nouvelles group img-box padding">
 							<?php $url = get_term_link($tag2);?> 
 							<div class="padding">
-								<h2><a class="gris-bg" href="<?php echo $url ?>" title="<?php echo $tag2_name?>"><?php echo $tag2_name?><i class="fa fa-plus"></i></a></h2>
+								<h2><a class="gris-bg" href="<?php echo $url; ?>" title="<?php echo $tag2_name?>"><?php echo $tag2_name?><i class="fa fa-plus"></i></a></h2>
 							</div>
 
 							<?php if ( $dossier2->have_posts() ) while ( $dossier2->have_posts() ) : $dossier2->the_post(); ?>

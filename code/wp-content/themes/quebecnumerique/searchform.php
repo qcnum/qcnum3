@@ -74,7 +74,16 @@ if($_GET['quartiers'] || $_GET['mots-cles'] || $_GET['post_type']) {
 				<h3><?php _e('Mots-clés', THEME_NAME); ?></h3>
 
 				<div class="group">
-					<?php $motsCles = get_terms('mots-cles');
+					<?php 
+					$args = array(
+						'orderby' => 'count',
+						'order' => 'DESC',
+						'hide_empty' => true,
+					    'parent ' => 0,
+					    'number' => 15
+					);
+					$motsCles = get_terms('mots-cles', $args);
+
 					foreach ($motsCles as $mc) {
 						$mc_slug = $mc->slug;
 						$mc_id = $mc->term_id;
