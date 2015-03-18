@@ -155,62 +155,57 @@ $evenements = new WP_Query(
 				<div class="c6">
 
 					<div class="padding">
+
+						<?php if ( $evenements->have_posts() ) : ?>
 					
-						<div class="box-evenements group padding">
-							<?php 
-							$titre = get_field('titre_evenements', 'options');
-							?>
-							<h2><a class="gris-bg" href="<?php echo get_post_type_archive_link( 'evenements' ); ?>" title="<?php echo $titre?>"><?php echo $titre?><i class="fa fa-plus"></i></a></h2>
+							<div class="box-evenements group padding">
+								<?php $titre = get_field('titre_evenements', 'options'); ?>
+								<h2><a class="gris-bg" href="<?php echo get_post_type_archive_link( 'evenements' ); ?>" title="<?php echo $titre?>"><?php echo $titre?><i class="fa fa-plus"></i></a></h2>
+								<?php while ( $evenements->have_posts() ) : $evenements->the_post();
+									$startDate = get_field('startdate');
+									$myDate = strftime('%e %B %Y', $startDate/1000);
+									$endDate = get_field('enddate');
+									$myDate2 = strftime('%e %B %Y', $endDate/1000);
+									if($startDate != $endDate) { $date = 'Du ' . $myDate . ' au ' . $myDate2; } 
+									else { $date = 'Le ' . $myDate; }
+									$startHrs = get_field('hrs_debut');
+									$endHrs = get_field('hrs_fin');
+									if($startHrs && !$endHrs) {
+										$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+									} elseif($startHrs && $endHrs) {
+										$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+									}
+									?>
 
-							<?php if ( $evenements->have_posts() ) while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
+									<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+										<article class="group">
 
-								<?php 
-								$startDate = get_field('startdate');
-								$myDate = strftime('%e %B %Y', $startDate/1000);
-								$endDate = get_field('enddate');
-								$myDate2 = strftime('%e %B %Y', $endDate/1000);
-								if($startDate != $endDate) {
-									$date = 'Du ' . $myDate . ' au ' . $myDate2;
-								} else {
-									$date = 'Le ' . $myDate;
-								}
-								$startHrs = get_field('hrs_debut');
-								$endHrs = get_field('hrs_fin');
+											<?php if(has_post_thumbnail()) : 
+												the_post_thumbnail('thumbnail');
+											else : 
+												$category = get_the_category();
+												$id = get_field('img-evenements', 'options'); 
+												$url = wp_get_attachment_image_src( $id , 'thumbnail');
+												?>
+												
+												<img src="<?php echo $url[0] ?>" alt="Événements">
+											<?php endif; ?>
 
-								if($startHrs && !$endHrs) {
-									$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
-								} elseif($startHrs && $endHrs) {
-									$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
-								}
-								?>
-
-								<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-									<article class="group">
-
-										<?php if(has_post_thumbnail()) : 
-											the_post_thumbnail('thumbnail');
-										else : 
-											$category = get_the_category();
-											$id = get_field('img-evenements', 'options'); 
-											$url = wp_get_attachment_image_src( $id , 'thumbnail');
-											?>
-											
-											<img src="<?php echo $url[0] ?>" alt="Événements">
-										<?php endif; ?>
-
-										<div class="content">
-											<div class="ellipsis info-event">
-												<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
-												<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
+											<div class="content">
+												<div class="ellipsis info-event">
+													<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
+													<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
+												</div>
+												<h3 class="ellipsis"><?php the_title(); ?></h3>
 											</div>
-											<h3 class="ellipsis"><?php the_title(); ?></h3>
-										</div>
-									</article>
-								</a>
+										</article>
+									</a>
 
-							<?php endwhile; ?>
-						
-						</div>
+								<?php endwhile; ?>
+							
+							</div>
+
+						<?php endif; ?>
 
 					</div>
 
@@ -231,8 +226,6 @@ $evenements = new WP_Query(
 						
 						</div>
 					<?php }; ?>
-
-
 
 					<?php if ($tag2_name != ''){ ?>
 						<div class="nouvelles group img-box padding">

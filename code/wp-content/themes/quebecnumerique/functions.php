@@ -208,6 +208,14 @@ function my_connection_types() {
         'admin_column' => 'any'
     ) );
 
+     p2p_register_connection_type( array(
+        'name' => 'organisations-to-organisations',
+        'from' => 'organisations',
+        'to' => 'organisations',
+        'admin_column' => 'any',
+        'reciprocal' => true
+    ) );
+
 
 }
 add_action( 'p2p_init', 'my_connection_types' );
