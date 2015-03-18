@@ -498,7 +498,6 @@ aside .mot-cle {
   float: left;
   margin: 0 0.25em 0.25em 0;
   border: thin solid #373a3f;
-  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0.25);
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
@@ -508,7 +507,6 @@ aside .mot-cle {
 .group-mots-cles .mot-cle:hover,
 aside .mot-cle:hover {
   background-color: #373a3f;
-  box-shadow: inset -1px -1px 0px 0px rgba(255, 255, 255, 0);
 }
 .group-mots-cles {
   width: 50%;
