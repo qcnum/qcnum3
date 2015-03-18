@@ -2,11 +2,12 @@
 
 	<div id="content" role="main">
 
-		<?php if ( have_posts() ) : ?>
+		<div class="large-wrapper">
 
-			<div class="large-wrapper">
+			<div class="group all-projets">
 
-				<div class="group all-projets">
+				<?php if ( have_posts() ) : ?>
+
 				
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -67,15 +68,15 @@
 
 					<?php paging_nav(); ?>
 
-				</div>
-				
+				<?php else : ?>
+
+					<?php get_template_part( 'content', 'none' ); ?>
+						
+				<?php endif; ?>
+
 			</div>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
 				
-		<?php endif; ?>
+		</div>
 
 	</div><!-- #content -->
 	

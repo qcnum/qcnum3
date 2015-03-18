@@ -4,7 +4,7 @@ require_once('../../../../../wp-config.php');
 
 $projets = new WP_Query(array(
         'post_type' => 'projets',
-        'post_per_page' => 100,
+        'posts_per_page' => 100,
         'orderby' => 'the_date', 
         'order' => 'DESC'));
 

@@ -579,6 +579,14 @@ footer#colophon {
   font-size: 1.25em;
   padding: 0 0.5em;
   text-transform: lowercase;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.navigation .meta a:hover {
+  color: #e14e24;
 }
 .navigation .retract-tag {
   margin-left: 9.5em;
@@ -1026,10 +1034,11 @@ footer#colophon {
   top: 3em;
   right: 0;
   width: 45em;
-  height: 100%;
+  height: 96%;
   background-color: rgba(55, 58, 63, 0.98);
   z-index: 100;
-  padding: 2em;
+  padding: 3% 2em;
+  overflow-y: scroll;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -1049,7 +1058,7 @@ footer#colophon {
   margin-bottom: 2em;
 }
 .recherche.hidden {
-  top: -100%;
+  top: -120%;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -1539,7 +1548,6 @@ footer#colophon {
 .entry-content .gform_description {
   line-height: 1.5em;
   padding-bottom: 1em;
-  display: block;
 }
 .entry-content p a,
 .entry-content li a,
@@ -1551,6 +1559,9 @@ footer#colophon {
 .entry-content li a:hover,
 .entry-content .gform_description a:hover {
   text-decoration: underline;
+}
+.entry-content .gform_description {
+  display: block;
 }
 .entry-content ul,
 .entry-content ol {
@@ -4103,6 +4114,13 @@ body div#ui-datepicker-div[style] {
   .slick-slide span.no-img {
     font-size: 2em;
     max-width: 10em;
+  }
+  .search-results .page-header .c6 {
+    width: 100%;
+    margin-bottom: 1em;
+  }
+  .search-results .resultats {
+    font-size: 75%;
   }
 }
 @media screen and (max-width: 600px) {

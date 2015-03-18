@@ -4,7 +4,7 @@ require_once('../../../../../wp-config.php');
 $articles = new WP_Query(array(
         'post_type' => 'post',
         'cat' => '3',
-        'post_per_page' => 50,
+        'posts_per_page' => 50,
         'orderby' => 'the_date', 
         'order' => 'DESC'));
 

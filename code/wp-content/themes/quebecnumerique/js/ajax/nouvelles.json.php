@@ -4,7 +4,7 @@ require_once('../../../../../wp-config.php');
 $nouvelles = new WP_Query(array(
         'post_type' => 'post',
         'cat' => '2',
-        'post_per_page' => 50,
+        'posts_per_page' => 50,
         'orderby' => 'the_date', 
         'order' => 'DESC'));
 

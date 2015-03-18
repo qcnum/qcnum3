@@ -3,7 +3,7 @@ require_once('../../../../../wp-config.php');
 
 $organisations = new WP_Query(array(
         'post_type' => 'organisations',
-        'post_per_page' => 2000,
+        'posts_per_page' => 2000,
         'orderby' => 'post_title', 
         'order' => 'ASC'));
 
