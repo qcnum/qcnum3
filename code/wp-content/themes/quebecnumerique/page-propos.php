@@ -36,17 +36,19 @@ get_header(); ?>
 
 			</div>
 
-			<section class="white-post group">
+			<section class="white-post group equipe">
 
-				<div class="entry-content c6 center">
+				<div class="entry-content c12 padding">
 
+					<div class="padding">
 					<?php the_field('texte_contributeurs'); ?>
+					</div>
 
 				</div>
 
 				<?php $partenaires = get_field('partenaires', 'options'); ?>
 				
-				<div class="c7 partenaires center">
+				<div class="c12 partenaires padding">
 					<div class="padding">
 					
 						<?php foreach($partenaires as $p) : 
@@ -68,11 +70,12 @@ get_header(); ?>
 
 			</section>
 
-			<section>
+			<section class="group equipe collaborateurs">
 
-				<div class="entry-content">
-
-					<?php the_field('texte_collaborateurs'); ?>
+				<div class="entry-content padding">
+					<div class="padding white-text">
+						<?php the_field('texte_collaborateurs'); ?>
+					</div>
 
 					<?php
 					$collab = get_field('collaborateurs');
@@ -92,8 +95,8 @@ get_header(); ?>
 										<div class="white-post entry-content collaborateur">
 											<!--div class="padding"-->
 												<?php echo get_avatar( $id, 200 ); ?> 
-												<h2><?php echo $name; ?></h2>
-												<sapn><?php echo $titre; ?></span>
+												<h3><?php echo $name; ?></h3>
+												<span><?php echo $titre; ?></span>
 												<p><?php echo $desc; ?></p>
 
 												<a href="<?php echo get_author_posts_url($id); ?>" class="btn">Voir les collaborations</a>
