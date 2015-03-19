@@ -3610,10 +3610,11 @@ form .gfield_error textarea {
 }
 .slick-slide img,
 .slick-slide span.no-img {
-  padding: 0 4em;
+  padding: 0 5%;
   vertical-align: middle;
   display: inline-block;
   max-height: 100%;
+  max-width: 90%;
   width: auto;
 }
 .slick-slide span.no-img {
@@ -3987,6 +3988,22 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   .navigation .principal#menu-principal.visible {
     top: 0;
   }
+  #menu-meta {
+    opacity: 0;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    padding-left: 0;
+    margin-left: 0;
+    -webkit-transition: top 0.75s ease;
+    -moz-transition: top 0.75s ease;
+    -ms-transition: top 0.75s ease;
+    -o-transition: top 0.75s ease;
+    transition: top 0.75s ease;
+  }
+  #menu-meta.visible {
+    opacity: 1;
+  }
   .header-post-type .description {
     width: 100%;
     float: left;
@@ -4121,7 +4138,7 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    width: 100%;
+    width: 90%;
   }
   #colophon .gris-bg .c6 .rs {
     text-align: center;
@@ -4173,7 +4190,7 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   }
   .navigation .principal#menu-principal {
     font-size: 75%;
-    padding-top: 9em;
+    padding-top: 7em;
   }
   #colophon form .gform_body ul li:first-child,
   #colophon form .gform_body ul li {
@@ -4188,6 +4205,9 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   }
   .all-projets .c9 .list-secteurs {
     clear: both;
+  }
+  .coordonees {
+    font-size: 80%;
   }
   .group.related-posts .c3 {
     width: 100%;
@@ -4244,10 +4264,10 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
 }
 @media screen and (max-width: 479px) {
   .home-link {
-    font-size: 55%;
+    font-size: 65%;
   }
   .navigation .meta {
-    margin-left: 9em;
+    margin-left: 8em;
   }
 }
 .ui-datepicker {
