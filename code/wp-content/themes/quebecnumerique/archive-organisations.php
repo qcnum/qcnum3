@@ -15,7 +15,7 @@ jQuery(document).ready(function(){
 		variableWidth: true,
 		autoplay: true,
 		slidesToScroll: 1,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 222000,
 		infinite: false,
 		touchMove: false,
 		//centerMode: true,
@@ -33,11 +33,13 @@ jQuery(document).ready(function(){
 				slidesToShow: 2,
 				slidesToScroll: 1,
 				//infinite: true,
-				centerMode: true
+				centerMode: true,
+				variableWidth: true
 			}
 		}, {
 		breakpoint: 767,
 		settings: {
+				variableWidth: true,
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				//infinite: true,
