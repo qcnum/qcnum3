@@ -49,7 +49,6 @@ get_header(); ?>
 						</div>
 
 						<?php 
-
 						$category = get_the_category();
 						if ( $category[0]->cat_ID == 2) { $cat = 'nouvelles'; }
 						if ( $category[0]->cat_ID == 3) { $cat = 'chroniques'; }

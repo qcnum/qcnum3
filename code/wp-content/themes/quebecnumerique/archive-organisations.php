@@ -1,11 +1,6 @@
 <?php 
 get_header(); 
 wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.min.js', 'jquery', '', true);
-query_posts(array(
-	'orderby' => 'term_order',
-	'hide_empty' => false,
-	'post_type' => 'organisations'
-));
 ?>
 <script>
 jQuery(document).ready(function(){
@@ -58,7 +53,7 @@ jQuery(document).ready(function(){
 		
 			<?php if ( have_posts() ) :
 
-				$categories = get_terms('secteurs', 'orderby=menu_orderhide_empty=1');
+				$categories = get_terms('secteurs', 'orderby=term_orderhide_empty=1');
 				foreach( $categories as $category ): ?>
 
 					<div class="organisation entry-content">
