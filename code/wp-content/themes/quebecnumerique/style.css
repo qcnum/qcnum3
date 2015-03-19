@@ -4204,10 +4204,10 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
 }
 @media screen and (max-width: 479px) {
   .home-link {
-    font-size: 55%;
+    font-size: 50%;
   }
   .navigation .meta {
-    margin-left: 9em;
+    margin-left: 8em;
   }
 }
 .ui-datepicker {
