@@ -267,15 +267,15 @@ function listMarkersTweets(cptReturn,maxID){
                         
                         //if(data.statuses[i].id != maxID){
                             var latlng = new google.maps.LatLng(data.statuses[i].geo.coordinates[0], data.statuses[i].geo.coordinates[1]);
-                            if(i == 0){
+                            /*if(i == 0){
                                  markerCree = createMarker(latlng,'@'+data.statuses[i].user.screen_name,'<div class=twitter-window>' + imgProfil + '<div class="content"><a href="https://twitter.com/@' + data.statuses[i].user.screen_name + '" target="_blank"><h3>@'+ data.statuses[i].user.screen_name +'</h3></a><hr class="clear"><p>'+data.statuses[i].text+'</p></div></div>', directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value,1);
                             
                                 infowindow.setContent('<div class=twitter-window>' + imgProfil + '<div class="content"><a href="https://twitter.com/@' + data.statuses[i].user.screen_name + '" target="_blank"><h3>@'+ data.statuses[i].user.screen_name +'</h3></a><hr class="clear"><p>'+data.statuses[i].text+'</p></div></div>'); 
                                 infowindow.open(map,markerCree);
-                            }else{
+                            }else{*/
                                 markerCree = createMarker(latlng,'@'+data.statuses[i].user.screen_name,'<div class=twitter-window>' + imgProfil + '<div class="content"><a href="https://twitter.com/@' + data.statuses[i].user.screen_name + '" target="_blank"><h3>@'+data.statuses[i].user.screen_name+'</h3></a><hr class="clear"><p>'+data.statuses[i].text+'</p></div></div>', directory_theme + '/images/icon_gmap_'+value.substr(0,1)+'.png',value,1);
                                
-                            }
+                            //}
                             
                             lastID = data.statuses[i].id;
 
