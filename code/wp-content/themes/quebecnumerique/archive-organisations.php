@@ -16,14 +16,14 @@ jQuery(document).ready(function(){
 		autoplay: true,
 		slidesToScroll: 4,
 		autoplaySpeed: 1000,
-		infinite: false,
+		infinite: true,
 		touchMove: false,
 		responsive: [{
 			breakpoint: 1600,
 			settings: {
 				slidesToShow: 3,
 				slidesToScroll: 1,
-				infinite: false,
+				//infinite: false,
 				//centerMode: true
 			}
 		}, {
@@ -31,7 +31,7 @@ jQuery(document).ready(function(){
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
-				infinite: true,
+				//infinite: true,
 				centerMode: true
 			}
 		}, {
@@ -39,7 +39,7 @@ jQuery(document).ready(function(){
 		settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				infinite: true,
+				//infinite: true,
 				centerMode: true
 			}
 		}
