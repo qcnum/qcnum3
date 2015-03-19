@@ -13,8 +13,7 @@ get_header(); ?>
  
 			<div class="coordonees large-wrapper group">
 				<div class="c12">
-					<div class="padding">
-						<div class="entry-content">
+					<div class="entry-content">
 							<?php 
 							$telephone = get_field('telephone'); 
 							$mail = get_field('courriel'); 
@@ -23,7 +22,6 @@ get_header(); ?>
 							<hr class="clear">
 							<a href="tel:<?php echo $telephone ?>" class="gris-bg"><?php echo $telephone ?><i class="fa fa-plus"></i></a>
 							
-						</div>
 					</div>
 				</div>
 			</div>
