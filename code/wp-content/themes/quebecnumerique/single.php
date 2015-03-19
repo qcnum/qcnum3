@@ -68,7 +68,7 @@ $organisations = new WP_Query( array(
 								</div>
 							</div>
 
-							<?php comments_template(); ?>
+							<?php // comments_template(); ?>
 							
 						</div>
 							
