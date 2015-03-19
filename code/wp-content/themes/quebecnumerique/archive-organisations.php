@@ -1,11 +1,6 @@
 <?php 
 get_header(); 
 wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.min.js', 'jquery', '', true);
-query_posts(array(
-	'orderby' => 'term_order',
-	'hide_empty' => false,
-	'post_type' => 'organisations'
-));
 ?>
 <script>
 jQuery(document).ready(function(){
@@ -20,14 +15,16 @@ jQuery(document).ready(function(){
 		variableWidth: true,
 		autoplay: true,
 		slidesToScroll: 4,
-		autoplaySpeed: 4000,
-		infinite: false,
+		autoplaySpeed: 1000,
+		//infinite: true,
+		touchMove: false,
+		//centerMode: true,
 		responsive: [{
 			breakpoint: 1600,
 			settings: {
 				slidesToShow: 3,
 				slidesToScroll: 1,
-				infinite: false,
+				//infinite: false,
 				//centerMode: true
 			}
 		}, {
@@ -35,7 +32,7 @@ jQuery(document).ready(function(){
 			settings: {
 				slidesToShow: 2,
 				slidesToScroll: 1,
-				infinite: true,
+				//infinite: true,
 				centerMode: true
 			}
 		}, {
@@ -43,7 +40,7 @@ jQuery(document).ready(function(){
 		settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				infinite: true,
+				//infinite: true,
 				centerMode: true
 			}
 		}
@@ -58,7 +55,7 @@ jQuery(document).ready(function(){
 		
 			<?php if ( have_posts() ) :
 
-				$categories = get_terms('secteurs', 'orderby=menu_orderhide_empty=1');
+				$categories = get_terms('secteurs', 'orderby=term_order&hide_empty=1');
 				foreach( $categories as $category ): ?>
 
 					<div class="organisation entry-content">
