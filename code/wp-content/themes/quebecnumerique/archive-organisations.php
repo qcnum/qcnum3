@@ -12,38 +12,21 @@ jQuery(document).ready(function(){
 	});
 
 	jQuery('.slick').slick({
-		variableWidth: true,
-		autoplay: true,
-		slidesToScroll: 1,
-		autoplaySpeed: 222000,
-		infinite: false,
-		touchMove: false,
-		//centerMode: true,
+		slidesToShow: 4,
 		responsive: [{
 			breakpoint: 1600,
 			settings: {
-				slidesToShow: 3,
-				slidesToScroll: 1,
-				//infinite: false,
-				//centerMode: true
+				slidesToShow: 3
 			}
 		}, {
 			breakpoint: 1200,
 			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 1,
-				//infinite: true,
-				centerMode: true,
-				variableWidth: true
+				slidesToShow: 2
 			}
 		}, {
 		breakpoint: 767,
 		settings: {
-				variableWidth: true,
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				//infinite: true,
-				centerMode: true
+				slidesToShow: 1
 			}
 		}
 	]

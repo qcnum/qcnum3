@@ -3602,10 +3602,11 @@ form .gfield_error textarea {
 }
 .slick-slide img,
 .slick-slide span.no-img {
-  padding: 0 4em;
+  padding: 0 5%;
   vertical-align: middle;
   display: inline-block;
   max-height: 100%;
+  max-width: 90%;
   width: auto;
 }
 .slick-slide span.no-img {
@@ -4119,7 +4120,7 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
     text-align: center;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
-    width: 100%;
+    width: 90%;
   }
   #colophon .gris-bg .c6 .rs {
     text-align: center;
