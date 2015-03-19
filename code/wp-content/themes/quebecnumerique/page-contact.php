@@ -30,7 +30,7 @@ get_header(); ?>
 
 			<section class="equipe large-wrapper white-post group">
 
-				<div class="entry-content c12 padding ">
+				<div class="entry-content c12 ">
 					<div class="padding">
 						<h2><?php the_field('equipe_titre'); ?> </h2>
 						<?php the_field('equipe_texte'); ?>
