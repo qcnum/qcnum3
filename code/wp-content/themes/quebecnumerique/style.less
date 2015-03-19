@@ -385,7 +385,7 @@ hr.for-responsive{display: none;}
 		font-size: 0.6em;
 	}
 
-	.mot-cle {
+	aside .mot-cle {
 		font-size: 1.125em;
 		background-color: @grispale;
 		color: @blanc;
@@ -400,13 +400,39 @@ hr.for-responsive{display: none;}
 		&:hover { background-color: @gris; }
 	}
 
-	.group-mots-cles{
+	.group-mots-cles {
 		width: 50%;
 		float: right;
 		margin-bottom: 0.8em;	
-		text-align: right;	
-		a{float: right;}	
+		text-align: right;
+		span{
+			font-weight: 700;
+  			font-size: 1.2em;
+  			margin: 0 0.4em 0.3em 0; 
+			display: block;
+			margin-bottom: 0.2em;
+			color: @blanc;
+			text-transform: uppercase;
+			font-family: @titre1;
+
+		}	
+		.mot-cle {
+			font-size: 1.125em;
+			background-color: rgba( 60, 60, 60, 0.6);
+			color: @blanc;
+			text-transform: none;
+			text-decoration: none;
+			padding: 0.35em 0.35em 0.2em 0.35em;
+			display: block;
+			float: right;
+			margin: 0 0.25em 0.25em 0;
+			.transition();
+			&:hover { background-color: @gris; }
+		}		
 	}
+
+
+
 
 
 /* HEADER */
@@ -2275,7 +2301,7 @@ hr.for-responsive{display: none;}
 		.touch-callout();
 
 		.slick-next, .slick-prev {
-			opacity: 0;
+			opacity: 0.3;
 			position: absolute;
 			height: 100%;
 			top: 0;
@@ -2379,18 +2405,45 @@ hr.for-responsive{display: none;}
 	.coordonees {
 		margin: 3em 0;
 		a {
-		text-decoration: none;
-		color: white;
-		float: left; 
-		display: block;
-		font-size: 1.5em;
-		padding: 0.5em 0.8em;
-		margin: 0.5em;
+			text-decoration: none;
+			color: white;
+			float: left; 
+			display: block;
+			font-size: 1.5em;
+			padding: 0.5em 0.8em;
+			margin: 0.5em;
+			border-top: 2px solid @orange;
+			i{
+				float: right;
+				font-size: 0.6em;
+				line-height: 1.8em;
+				margin-left: 0.8em;
+				.transition();				
+			}
 			.transition();
 			&:hover{
 				background-color: @orange;
 			}
 		}
+
+		/*a{
+			display: block;
+			padding: 0.5em;
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+			font-family: @titre1;
+			margin-bottom: 0.5em;
+			font-size: 0.9em;
+			.transition(0.4s);	
+			i{
+				float: right;
+				font-size: 0.6em;
+				line-height: 1.8em;
+				.transition();				
+			}
+		}*/
+
 	}
 
 	.equipe{

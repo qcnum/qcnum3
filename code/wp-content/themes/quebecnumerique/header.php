@@ -120,15 +120,16 @@ wp_head();
 							<p class="description"><?php echo $description; ?></p>
 						<?php }; 
 						if ( is_category()){ ?>
+							
 							<div class="group-mots-cles">
-								<ul>
+								<span>Mots-clés populaires</span>
 								<?php 
 								$args = array(
 									'orderby' => 'count',
 									'order' => 'DESC',
 									'hide_empty' => true,
 								    'parent ' => 0,
-								    'number' => 15
+								    'number' => 10
 								);
 								$motsCles = get_terms('mots-cles', $args);
 								foreach ($motsCles as $mc) {
@@ -138,7 +139,6 @@ wp_head();
 									$mc_name = $mc->name;?>
 									<a class="mot-cle" href="<?php echo $url; ?>"><?php echo $mc_name;?></a>
 								<?php } ?>
-								</ul>
 							</div>
 						<?php }; ?>
 					</div>

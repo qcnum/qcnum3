@@ -486,7 +486,7 @@ footer#colophon {
 .texte-reduit {
   font-size: 0.6em;
 }
-.mot-cle {
+aside .mot-cle {
   font-size: 1.125em;
   background-color: #4d5057;
   color: #ffffff;
@@ -503,7 +503,7 @@ footer#colophon {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.mot-cle:hover {
+aside .mot-cle:hover {
   background-color: #373a3f;
 }
 .group-mots-cles {
@@ -512,8 +512,34 @@ footer#colophon {
   margin-bottom: 0.8em;
   text-align: right;
 }
-.group-mots-cles a {
+.group-mots-cles span {
+  font-weight: 700;
+  font-size: 1.2em;
+  margin: 0 0.4em 0.3em 0;
+  display: block;
+  margin-bottom: 0.2em;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
+}
+.group-mots-cles .mot-cle {
+  font-size: 1.125em;
+  background-color: rgba(60, 60, 60, 0.6);
+  color: #ffffff;
+  text-transform: none;
+  text-decoration: none;
+  padding: 0.35em 0.35em 0.2em 0.35em;
+  display: block;
   float: right;
+  margin: 0 0.25em 0.25em 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.group-mots-cles .mot-cle:hover {
+  background-color: #373a3f;
 }
 /* HEADER */
 .home-link {
@@ -3438,7 +3464,7 @@ form .gfield_error textarea {
 }
 .slick-slider .slick-next,
 .slick-slider .slick-prev {
-  opacity: 0;
+  opacity: 0.3;
   position: absolute;
   height: 100%;
   top: 0;
@@ -3590,6 +3616,24 @@ form .gfield_error textarea {
 /* CONTACT */
 .coordonees {
   margin: 3em 0;
+  /*a{
+			display: block;
+			padding: 0.5em;
+			text-decoration: none;
+			color: white;
+			text-transform: uppercase;
+			font-family: @titre1;
+			margin-bottom: 0.5em;
+			font-size: 0.9em;
+			.transition(0.4s);	
+			i{
+				float: right;
+				font-size: 0.6em;
+				line-height: 1.8em;
+				.transition();				
+			}
+		}*/
+
 }
 .coordonees a {
   text-decoration: none;
@@ -3599,6 +3643,18 @@ form .gfield_error textarea {
   font-size: 1.5em;
   padding: 0.5em 0.8em;
   margin: 0.5em;
+  border-top: 2px solid #e14e24;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.coordonees a i {
+  float: right;
+  font-size: 0.6em;
+  line-height: 1.8em;
+  margin-left: 0.8em;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -ms-transition: all 0.2s ease;
