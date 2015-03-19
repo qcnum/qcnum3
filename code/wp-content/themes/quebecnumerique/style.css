@@ -1317,6 +1317,12 @@ aside .mot-cle:hover {
   font-weight: 700;
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
   line-height: 1.25em;
+  float: left;
+  margin-bottom: 0.5em;
+}
+.info-event .lieu {
+  float: left;
+  margin-bottom: 0.5em;
 }
 .ellipsis {
   white-space: nowrap;
