@@ -1504,22 +1504,10 @@ hr.for-responsive{display: none;}
 
 	/* Loading :before */
 	button.alm-load-more-btn.loading:before {
-		content: "\f110";
+		content: "\f021";
 		font-family: FontAwesome;
 		margin-right: 0.5em;
-		//background: url('images/ajax-loader.gif') no-repeat center center;
-		//width: 20px;
-		//height: 30px;
-		//margin: 6px;		
-		//-webkit-border-radius:3px;
-		//-moz-border-radius:3px;
-		//border-radius:3px;
-		//display: inline-block;
-		//z-index: 0;
-		//content: '';
-		//position: absolute;
-		//left: 0;
-		//overflow: hidden;
+
 	    -webkit-animation-name: spinnerRotate;
 	    -webkit-animation-duration: 1s;
 	    -webkit-animation-iteration-count: infinite;
@@ -2239,7 +2227,7 @@ hr.for-responsive{display: none;}
 
 			.gform_footer {
 				clear: both;
-				input[type="submit"] { float: right; }
+				input[type="submit"] { float: right;   padding: 0.8em 1.5em; }
 			}
 
 			input, textarea, button {
@@ -2332,7 +2320,7 @@ hr.for-responsive{display: none;}
 		.touch-callout();
 
 		.slick-next, .slick-prev {
-			opacity: 0;
+			opacity: 0.15;
 			position: absolute;
 			height: 100%;
 			top: 0;
@@ -2562,9 +2550,7 @@ hr.for-responsive{display: none;}
 
 /* À PROPOS */
 
-	.collaborateurs{
 
-	}	
 
 	.collaborateur{
 		text-align: center;
@@ -2601,6 +2587,11 @@ hr.for-responsive{display: none;}
 			header { width: 16.66%; }
 			section > .c11 { width: 83.33%; }
 		}
+
+		.a-propos article .c6{
+			width: 98.14%
+		}	
+
 	}
 
 	@media screen and (min-width: 1025px){
