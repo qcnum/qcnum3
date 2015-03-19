@@ -1,4 +1,11 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$queried_object = get_queried_object();
+query_posts(array(
+	'post_type' => 'post',
+	'mots-cles' => $queried_object->slug
+));
+?>
 
 	<div id="content" class="large-wrapper" role="main">
 
@@ -6,12 +13,6 @@
 
 			<div class="large-wrapper">
 				<?php if ( have_posts() ) : ?>
-
-					<?php
-						$category_description = category_description();
-						if ( ! empty( $category_description ) )
-							echo '<div class="archive-meta">' . $category_description . '</div>';
-					?>
 
 					<?php $cpt = 1; ?>
 
@@ -35,7 +36,9 @@
 
 					</div>
 
-					<?php paging_nav(); ?>
+					<?php 
+					echo do_shortcode('[ajax_load_more post_type="post" taxonomy="mots-cles" offset="15" pause="true" scroll="false" posts_per_page="8" transition="fade" button_label="Afficher plus de mots-clés"]'); 
+					?>
 
 				<?php else : ?>
 

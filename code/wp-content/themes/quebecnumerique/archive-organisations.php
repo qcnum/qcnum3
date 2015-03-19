@@ -1,6 +1,11 @@
 <?php 
 get_header(); 
 wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.min.js', 'jquery', '', true);
+query_posts(array(
+	'orderby' => 'term_order',
+	'hide_empty' => false,
+	'post_type' => 'organisations'
+));
 ?>
 <script>
 jQuery(document).ready(function(){

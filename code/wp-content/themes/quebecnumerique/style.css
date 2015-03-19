@@ -3926,7 +3926,11 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
     float: none;
     font-size: 200%;
   }
+  .navigation .principal#menu-principal li:before {
+    left: 0.5em;
+  }
   .navigation .principal#menu-principal li a {
+    padding: 0.75em 1em 0.75em 2em;
     border-left: none;
     border-bottom: thin solid rgba(255, 255, 255, 0.25);
     box-shadow: inset -1px -1px 0 0px rgba(6, 6, 6, 0.6);
