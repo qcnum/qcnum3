@@ -37,7 +37,7 @@ query_posts(array(
 					</div>
 
 					<?php 
-					echo do_shortcode('[ajax_load_more post_type="post" taxonomy="mots-cles" offset="15" pause="true" scroll="false" posts_per_page="8" transition="fade" button_label="Afficher plus de mots-clés"]'); 
+					echo do_shortcode('[ajax_load_more post_type="post" taxonomy="mots-cles" taxonomy_terms="'.$queried_object->slug.'" offset="15" pause="true" scroll="false" posts_per_page="8" transition="fade" button_label="Afficher plus de mots-clés"]'); 
 					?>
 
 				<?php else : ?>

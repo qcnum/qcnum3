@@ -14,9 +14,9 @@ jQuery(document).ready(function(){
 	jQuery('.slick').slick({
 		variableWidth: true,
 		autoplay: true,
-		slidesToScroll: 4,
-		autoplaySpeed: 1000,
-		//infinite: true,
+		slidesToScroll: 1,
+		autoplaySpeed: 2000,
+		infinite: false,
 		touchMove: false,
 		//centerMode: true,
 		responsive: [{
