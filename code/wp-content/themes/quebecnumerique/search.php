@@ -40,10 +40,10 @@
 						<li class="<?php echo $class ?> group">
 							<div class="content-wrapper">
 								<a href="<?php echo $url ?>">
-									<div class="content">
+									<div class="content group">
 										<h2 class="fl"><?php the_title(); ?></h2>
 										<span class="info fl"><?php echo $info; ?></span>
-										<span class="fr"><?php echo $date; ?></span>
+										<span class="search-date fr"><?php echo $date; ?></span>
 									</div>
 								</a>
 							</div>

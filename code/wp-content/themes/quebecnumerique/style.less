@@ -1590,13 +1590,11 @@ hr.for-responsive{display: none;}
 			float: left; width: 100%; 
 			h2 { .ellipsis(); max-width: 50%; }
 		}
-		.content{
+		.content {
 			margin-left: 6em;
-			line-height: 5em;
 			background-color: @blanc;
 			background-color: fade(@blanc, 90%);
-			height: 5em;
-			padding: 0 1.5em;
+			padding: 1.75em 1.5em;
 		}
 		a {
 			text-decoration: none;
@@ -1604,12 +1602,17 @@ hr.for-responsive{display: none;}
 			.transition();
 			&:hover .content { background-color: @blanc; }
 		}
+		.search-date {
+			font-family: @titre1;
+			font-size: 1.25em;
+			text-transform: uppercase;
+		}
 		span{
 			font-size: 1.5em;
 			color: lighten(@grispale, 20%);  
 			&.info:before{
 				content: '|';
-				margin: 0 1em;
+				margin: 0 0.5em;
 				color: #C5C5C5;
 			}				
 		}
@@ -2740,6 +2743,8 @@ hr.for-responsive{display: none;}
 		.search-results  {
 			.page-header .c6 { width: 100%; margin-bottom: 1em; }
 			.resultats { font-size: 75%; }
+			.content-wrapper h2 { width: 100%; max-width: none; margin-bottom: 1em; }
+			span.info:before { content: none; }
 		}
 
 		.single #content > article > .large-wrapper .sharing > div { font-size: 75%; padding-top: 1em; }
@@ -2787,12 +2792,13 @@ hr.for-responsive{display: none;}
 		.navigation .principal#menu-principal { font-size: 65%; }
 		.img-box .content { font-size: 120%; }
 		.equipe .c3{width: 99.99%;}
+		.site-description { display: none; }
 	}
 
 	@media screen and (max-width: 479px){
 		.home-link { font-size: 65%; }
-		.navigation .meta { margin-left: 8em; }
-		.site-description { left: 8em; }
+		//.navigation .meta { margin-left: 8em; }
+		//.site-description { left: 8em; }
 	}
 
 
