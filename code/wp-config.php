@@ -72,6 +72,7 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
 	define('DB_HOST', 'localhost');
 	define('WP_SITEURL', 'http://www.quebecnumerique.com');
 	define('WP_HOME', 'http://www.quebecnumerique.com');
+  define('WP_DEBUG', false); 
         //Apps Twitter
         define('oauth_access_token',"421936727-GRdijS26xhEkqczDWeFSvHacHLThOju15jxX2N8d");
         define('oauth_access_token_secret',"PScrCDTDLjKVrjUJIZ4NjlelKisjNyAYwVk40TjpADH8W");
