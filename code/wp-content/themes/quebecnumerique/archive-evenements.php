@@ -89,32 +89,33 @@ query_posts(
 										</div>
 									</div>
 
-									<div class="c8">
-										<div class="padding">
-											<div class="entry-content">
-												<div class="ellipsis info-event">
+									<div class="c10">
+										<div class="c10">
+											<div class="entry-content padding">
+												<div class="info-event">
 													<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
 													<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
 												</div>
+												<hr class="clear" >
 												
 												<h3 class="h2"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-												<?php the_excerpt(); ?>
+												<div class="excerpt"><?php the_excerpt(); ?></div>
 												<hr class="clear">
 												<p><a class="btn" href="<?php the_permalink(); ?>" title="<?php _e('En savoir plus', THEME_NAME); ?>"><?php _e('En savoir plus', THEME_NAME); ?></a></p>
-
 											</div>
+										</div>
+										<div class="c2 inscription">
+										
+											<?php if(get_field('lien_inscription')) : ?>
+												<div class="padding">
+													<a href="<?php the_field('lien_inscription'); ?>" target="_blank" class="fr btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
+												</div>
+											<?php endif; ?>
+						
 										</div>
 									</div>
 									
-									<div class="c2 inscription">
-										
-										<?php if(get_field('lien_inscription')) : ?>
-											<div class="padding">
-												<a href="<?php the_field('lien_inscription'); ?>" target="_blank" class="fr btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
-											</div>
-										<?php endif; ?>
-						
-									</div>
+
 
 								</div>
 
