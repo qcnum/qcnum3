@@ -12,6 +12,7 @@
 <link rel="stylesheet" type="text/css" media="print" href="<?php echo get_template_directory_uri(); ?>/print.css" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <link href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico" rel="icon" type="image/ico" />
+<meta name="google-site-verification" content="j15aq2IelYcYrB361tm4L6u3KNx8q36z8HsxXmIQF50" />
 
 <!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>

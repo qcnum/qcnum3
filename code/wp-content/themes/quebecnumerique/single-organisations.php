@@ -57,7 +57,7 @@ $projets = new WP_Query( array(
 							<?php 
 							$map = get_field('localisation');
 							if ( $map["address"] != "" ) : ?>
-								<aside class="info-event">
+								<aside class="info-event group">
 									<div class="date">
 										<i class="fa fa-map-marker"></i> <?php echo $map['address']; ?>	
 									</div>
