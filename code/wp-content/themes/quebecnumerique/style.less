@@ -2553,12 +2553,10 @@ hr.for-responsive{display: none;}
 		}
 
 		.trois, .img-box { .c6 { width: 100%; } }
-
 		.box-evenements article{ font-size: 80%; img{width: 17%;} }
 		
 		.navigation .principal {
 			&.menu-toggle { display: block; }
-
 			&#menu-principal {
 				position: fixed;
 				top: -150%;
@@ -2573,13 +2571,14 @@ hr.for-responsive{display: none;}
 				li {
 					float: none;
 					font-size: 200%;
+					&:before { left: 0.5em; }
 					a {
+						padding: 0.75em 1em 0.75em 2em;
 						border-left: none;
 						border-bottom: thin solid rgba(255, 255, 255, 0.25);
 						box-shadow: inset -1px -1px 0 0px rgba(6, 6, 6, 0.6);
 					}
-				}
-				&.visible { top: 0; }
+				} &.visible { top: 0; }
 			}
 		}
 

@@ -1,4 +1,13 @@
-<?php get_header(); ?>
+<?php 
+get_header(); 
+$queried_object = get_queried_object();
+query_posts(array(
+	'posts_per_page' => -1,
+	'orderby' => 'name',
+	'order' => 'ASC',
+	'secteurs' => $queried_object->slug
+));
+?>
 
 	<div id="content">
 

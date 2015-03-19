@@ -18,115 +18,122 @@
 			</div>
 		</div>
 	<?php } 
-            //Ajout Marker Single spécial
-            if(is_single()){
-                $singleMap = get_field('localisation');
-                if(isset($singleMap['lat']) && $singleMap['lat'] != '' && isset($singleMap['lng']) && $singleMap['lng'] != ''  ){
-        ?>
-            <input type="hidden" id="singleMapLat" value="<?php echo $singleMap['lat']; ?>" />
-            <input type="hidden" id="singleMapLng" value="<?php echo $singleMap['lng']; ?>" />
-        <?php 
-                }
-            }
-        ?>
-     
-    <div class="map-content">
-	    <nav id="menu-map" class="gris-bg">
 
-	    	<div class="large-wrapper group">
 
-				<div class="c12">
+	if(!is_tax('secteurs')) :
 
-					<div class="padding">
 
-						<div class="filtre nouvelles">
-					    	<?php 
-					    	$check="";
-					    	if ( is_home() || is_category( '2' ) ||  has_category( '2') || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" <?php echo $check; ?>>
+	    //Ajout Marker Single spécial
+	    if(is_single()){
+	        $singleMap = get_field('localisation');
+	        if(isset($singleMap['lat']) && $singleMap['lat'] != '' && isset($singleMap['lng']) && $singleMap['lng'] != ''  ){
+	    ?>
+	        <input type="hidden" id="singleMapLat" value="<?php echo $singleMap['lat']; ?>" />
+	        <input type="hidden" id="singleMapLng" value="<?php echo $singleMap['lng']; ?>" />
+	    <?php 
+	            }
+	        }
+	    ?>
+	     
+	    <div class="map-content">
+		    <nav id="menu-map" class="gris-bg">
 
-							<label for="nouvelles">Nouvelles</label>
-							<?php if ( is_home() ){
-								echo "<span class='nbr-count'>" . $nb_nouvelles->category_count . "</span>";
-							}; ?>
+		    	<div class="large-wrapper group">
+
+					<div class="c12">
+
+						<div class="padding">
+
+							<div class="filtre nouvelles">
+						    	<?php 
+						    	$check="";
+						    	if ( is_home() || is_category( '2' ) ||  has_category( '2') || is_page() ) {$check = 'checked="checked"';}?>
+								<input id="nouvelles" class="selection" type="checkbox" name="nouvelles" <?php echo $check; ?>>
+
+								<label for="nouvelles">Nouvelles</label>
+								<?php if ( is_home() ){
+									echo "<span class='nbr-count'>" . $nb_nouvelles->category_count . "</span>";
+								}; ?>
+							</div>
+
+							<div class="filtre articles">
+						    	<?php 
+						    	$check="";
+						    	if ( is_home() || is_category( '3' ) ||  has_category( '3') || is_page() ) {$check = 'checked="checked"';}?>
+								<input id="articles" class="selection" type="checkbox" name="articles" <?php echo $check; ?>>
+
+								<label for="articles">Chroniques</label>
+								<?php if ( is_home() ){
+									echo "<span class='nbr-count'>" . $nb_articles->category_count . "</span>";
+								}; ?>
+							</div>
+
+
+							<div class="filtre evenements">
+
+								<?php 
+						    	$check="";
+						    	if ( is_home() || is_post_type_archive('evenements')  ||  is_singular('evenements') || is_page() ) {$check = 'checked="checked"';}?>
+								<input id="evenements" class="selection" type="checkbox" name="evenements" <?php echo $check; ?>>
+
+								<label for="evenements">Événements</label>
+								<?php if ( is_home() ){
+									echo "<span class='nbr-count'>" . $nb_evenements->publish . "</span>";
+								}; ?>
+							</div>
+
+							<div class="filtre organisations">
+
+								<?php 
+						    	$check="";
+						    	if ( is_home() ||  is_post_type_archive('organisations') || is_singular('organisations') || is_page() ) {$check = 'checked="checked"';}?>
+								<input id="organisations" class="selection" type="checkbox" name="organisations" <?php echo $check; ?>>
+
+								<label for="organisations">Organisations</label>
+								<?php if ( is_home() ){
+									echo "<span class='nbr-count'>" . $nb_organisations->publish . "</span>";
+								}; ?>
+							</div>
+
+							<div class="filtre projets">
+
+								<?php 
+						    	$check="";
+						    	if ( is_home() ||  is_post_type_archive('projets') || is_singular('projets') || is_page() ) {$check = 'checked="checked"';}?>
+								<input id="projets" class="selection" type="checkbox" name="projets" <?php echo $check; ?>>
+
+								<label for="projets">Projets</label>
+								<?php if ( is_home() ){
+									echo "<span class='nbr-count'>" . $nb_projets->publish . "</span>";
+								}; ?>
+							</div>
+
+							<div class="filtre twitter">
+
+								<?php if ( is_home() || is_page() ) {$check = 'checked="checked"';}?>
+								<input id="twitter" class="selection" type="checkbox" name="twitter" <?php echo $check; ?>>
+								<label for="twitter">Twitter</label>
+							</div>
+
+
+					    	<a href="#" id="full-screen">
+					    		<i class="fa"></i>
+					    	</a>
+
 						</div>
-
-						<div class="filtre articles">
-					    	<?php 
-					    	$check="";
-					    	if ( is_home() || is_category( '3' ) ||  has_category( '3') || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="articles" class="selection" type="checkbox" name="articles" <?php echo $check; ?>>
-
-							<label for="articles">Chroniques</label>
-							<?php if ( is_home() ){
-								echo "<span class='nbr-count'>" . $nb_articles->category_count . "</span>";
-							}; ?>
-						</div>
-
-
-						<div class="filtre evenements">
-
-							<?php 
-					    	$check="";
-					    	if ( is_home() || is_post_type_archive('evenements')  ||  is_singular('evenements') || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="evenements" class="selection" type="checkbox" name="evenements" <?php echo $check; ?>>
-
-							<label for="evenements">Événements</label>
-							<?php if ( is_home() ){
-								echo "<span class='nbr-count'>" . $nb_evenements->publish . "</span>";
-							}; ?>
-						</div>
-
-						<div class="filtre organisations">
-
-							<?php 
-					    	$check="";
-					    	if ( is_home() ||  is_post_type_archive('organisations') || is_singular('organisations') || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="organisations" class="selection" type="checkbox" name="organisations" <?php echo $check; ?>>
-
-							<label for="organisations">Organisations</label>
-							<?php if ( is_home() ){
-								echo "<span class='nbr-count'>" . $nb_organisations->publish . "</span>";
-							}; ?>
-						</div>
-
-						<div class="filtre projets">
-
-							<?php 
-					    	$check="";
-					    	if ( is_home() ||  is_post_type_archive('projets') || is_singular('projets') || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="projets" class="selection" type="checkbox" name="projets" <?php echo $check; ?>>
-
-							<label for="projets">Projets</label>
-							<?php if ( is_home() ){
-								echo "<span class='nbr-count'>" . $nb_projets->publish . "</span>";
-							}; ?>
-						</div>
-
-						<div class="filtre twitter">
-
-							<?php if ( is_home() || is_page() ) {$check = 'checked="checked"';}?>
-							<input id="twitter" class="selection" type="checkbox" name="twitter" <?php echo $check; ?>>
-							<label for="twitter">Twitter</label>
-						</div>
-
-
-				    	<a href="#" id="full-screen">
-				    		<i class="fa"></i>
-				    	</a>
 
 					</div>
 
-				</div>
+		    	</div>
 
-	    	</div>
+		    </nav>
 
-	    </nav>
+			<div id="map">
 
-		<div id="map">
-
+			</div>
 		</div>
-	</div>
+
+	<?php endif; ?>
 
 	<footer id="colophon" role="contentinfo">
 
