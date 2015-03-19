@@ -8,9 +8,7 @@ $tag2_name =  $tag2->name;
 
 $diffGMT = get_option('gmt_offset') * 3600;  
 $currentDate = time() + $diffGMT;
-
-if ($tag1_name != ''){ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag1->slug, 'posts_per_page' => 2 ) );};
-if ($tag2_name != ''){ $dossier2 = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'mots-cles' => $tag2->slug, 'posts_per_page' => 2 ) );};
+$aIdNews = array();
 $nouvelles = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'posts_per_page' => 3 ) );
 $articles = new WP_Query( array( 'post_type' => 'post', 'cat' => '3', 'posts_per_page' => 2 ) );
 
@@ -115,6 +113,7 @@ $evenements = new WP_Query(
 						<div>
 
 							<?php if ( $nouvelles->have_posts() ) while ( $nouvelles->have_posts() ) : $nouvelles->the_post(); ?>
+								<?php array_push($aIdNews, get_the_ID()); ?>
 								<div class="c6">
 									<div class="padding">
 										<?php get_template_part('content', 'imgbox'); ?>
@@ -125,6 +124,8 @@ $evenements = new WP_Query(
 						</div>
 					
 					</div>
+
+					
 
 					<?php if ( $articles->have_posts() ) : ?>
 
@@ -151,6 +152,11 @@ $evenements = new WP_Query(
 				</div>
 
 				<div class="c6">
+
+					<?php 
+					if ($tag1_name != ''){ $dossier1 = new WP_Query( array( 'post_type' => 'post', 'post__not_in' => $aIdNews, 'cat' => '2', 'mots-cles' => $tag1->slug, 'posts_per_page' => 2 ) );};
+					if ($tag2_name != ''){ $dossier2 = new WP_Query( array( 'post_type' => 'post', 'post__not_in' => $aIdNews, 'cat' => '2', 'mots-cles' => $tag2->slug, 'posts_per_page' => 2 ) );};
+					?>
 
 					<div class="padding">
 
