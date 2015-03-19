@@ -22,12 +22,6 @@ get_header(); ?>
 
 							</div>
 
-							<footer class="entry-meta">
-
-								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-							</footer>
-
 						</div>
 		
 					</div>

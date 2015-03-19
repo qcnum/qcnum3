@@ -84,8 +84,4 @@ get_header(); ?>
 
 	</div><!-- #content -->
 
-<footer class="entry-meta">
-	<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-</footer>
-
 <?php get_footer(); ?>

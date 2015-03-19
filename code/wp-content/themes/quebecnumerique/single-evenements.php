@@ -66,12 +66,6 @@ $projets = new WP_Query( array(
 							
 							</div>
 
-							<footer class="entry-meta">
-
-								<?php edit_post_link( __( 'Edit', THEME_NAME ), '<span class="edit-link">', '</span>' ); ?>
-
-							</footer>
-
 						</div>
 
 					</div>
