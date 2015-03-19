@@ -16,9 +16,9 @@ jQuery(document).ready(function(){
 		autoplay: true,
 		slidesToScroll: 4,
 		autoplaySpeed: 1000,
-		infinite: true,
+		//infinite: true,
 		touchMove: false,
-		centerMode: true,
+		//centerMode: true,
 		responsive: [{
 			breakpoint: 1600,
 			settings: {
