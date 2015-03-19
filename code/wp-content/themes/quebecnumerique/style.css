@@ -3978,6 +3978,15 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   hr.for-responsive {
     display: inherit;
   }
+  .group-mots-cles {
+    width: 100%;
+    float: left;
+    text-align: left;
+    margin-top: 0.5em;
+  }
+  .group-mots-cles .mot-cle {
+    float: left;
+  }
   .equipe .c3 {
     width: 33%;
   }
