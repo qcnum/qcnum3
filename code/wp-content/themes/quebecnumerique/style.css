@@ -2098,7 +2098,7 @@ button.alm-load-more-btn.done:before {
 }
 /* Loading :before */
 button.alm-load-more-btn.loading:before {
-  content: "\f110";
+  content: "\f021";
   font-family: FontAwesome;
   margin-right: 0.5em;
   -webkit-animation-name: spinnerRotate;
@@ -3377,6 +3377,7 @@ form .gfield_error textarea {
 }
 #colophon form .gform_footer input[type="submit"] {
   float: right;
+  padding: 0.8em 1.5em;
 }
 #colophon form input,
 #colophon form textarea,
@@ -3492,7 +3493,7 @@ form .gfield_error textarea {
 }
 .slick-slider .slick-next,
 .slick-slider .slick-prev {
-  opacity: 0;
+  opacity: 0.15;
   position: absolute;
   height: 100%;
   top: 0;
@@ -3842,6 +3843,9 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   }
   .sticky-event section > .c11 {
     width: 83.33%;
+  }
+  .a-propos article .c6 {
+    width: 98.14%;
   }
 }
 @media screen and (min-width: 1025px) {
