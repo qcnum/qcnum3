@@ -15,8 +15,9 @@ jQuery(document).ready(function(){
 		variableWidth: true,
 		autoplay: true,
 		slidesToScroll: 4,
-		autoplaySpeed: 4000,
+		autoplaySpeed: 1000,
 		infinite: false,
+		touchMove: false,
 		responsive: [{
 			breakpoint: 1600,
 			settings: {
