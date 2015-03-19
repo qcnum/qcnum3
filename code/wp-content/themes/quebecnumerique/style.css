@@ -206,7 +206,7 @@ footer#colophon {
   padding: 0 0.5em;
 }
 .large-wrapper {
-  padding: 0 0.5em;
+  padding: 0 1.5em;
 }
 .c1 {
   width: 8.33%;
@@ -2036,15 +2036,16 @@ aside .org img {
 }
 button.alm-load-more-btn {
   font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1em;
+  font-size: 1.1em;
   font-weight: 600;
+  text-transform: uppercase;
   width: auto;
   line-height: 2.5em;
   background: #ed7070;
   color: #ffffff;
   border: none;
   margin: 0 0 0.25em;
-  padding: 0 2em;
+  padding: 0.5em 2em;
   display: inline-block;
   position: relative;
   -webkit-transition: padding 0.25s ease-in-out;
@@ -2099,13 +2100,10 @@ button.alm-load-more-btn.done:before {
 }
 /* Loading :before */
 button.alm-load-more-btn.loading:before {
-  background: #ffffff url('images/ajax-loader.gif') no-repeat center center;
+  content: '/f110';
   width: 30px;
   height: 30px;
   margin: 6px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   display: inline-block;
   z-index: 0;
   content: '';
@@ -2123,14 +2121,17 @@ button.alm-load-more-btn.loading:before {
   display: block;
 }
 .ajax-load-more-wrap.white button.alm-load-more-btn {
-  background-color: #fff;
-  color: #666;
-  border: 1px solid #efefef;
+  background-color: #e14e24;
+  color: #ffffff;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
 }
 .ajax-load-more-wrap.white button.alm-load-more-btn:hover,
 .ajax-load-more-wrap.white button.alm-load-more-btn.done {
-  background-color: #efefef;
-  color: #333;
+  background-color: #b93d19;
 }
 .ajax-load-more-wrap.white button.alm-load-more-btn.done {
   border-color: #fff;
