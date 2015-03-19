@@ -38,9 +38,9 @@ get_header(); ?>
 
 			<section class="white-post group equipe">
 
-				<div class="entry-content c12 padding">
+				<div class="entry-content large-wrapper">
 
-					<div class="padding">
+					<div class="c12">
 					<?php the_field('texte_contributeurs'); ?>
 					</div>
 
@@ -48,7 +48,7 @@ get_header(); ?>
 
 				<?php $partenaires = get_field('partenaires', 'options'); ?>
 				
-				<div class="c12 partenaires padding">
+				<div class="c12 partenaires">
 					<div class="padding">
 					
 						<?php foreach($partenaires as $p) : 
@@ -72,7 +72,7 @@ get_header(); ?>
 
 			<section class="group equipe collaborateurs">
 
-				<div class="entry-content padding">
+				<div class="entry-content large-wrapper">
 					<div class="padding white-text">
 						<?php the_field('texte_collaborateurs'); ?>
 					</div>
@@ -81,7 +81,7 @@ get_header(); ?>
 					$collab = get_field('collaborateurs');
 					$chunk = partition($collab, 4); ?>
 
-					<div class="group padding">
+					<div class="group">
 						<?php foreach ($chunk as $ch) : ?>
 							<div class="c3 ">
 								<?php foreach($ch as $c) :

@@ -120,7 +120,7 @@ wp_head();
 							<p class="description"><?php echo $description; ?></p>
 						<?php }; 
 						if ( is_category()){ ?>
-							
+							<hr class="clear for-responsive">
 							<div class="group-mots-cles">
 								<span>Mots-clés populaires</span>
 								<?php 

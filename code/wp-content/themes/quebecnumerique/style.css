@@ -2211,9 +2211,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .nouvelles .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .nouvelles a {
   text-decoration: none;
@@ -2227,18 +2229,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .nouvelles a:hover .content {
   background-color: #ffffff;
 }
-.resultats .nouvelles .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .nouvelles span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .nouvelles span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 .resultats .evenements {
@@ -2271,9 +2268,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .evenements .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .evenements a {
   text-decoration: none;
@@ -2287,18 +2286,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .evenements a:hover .content {
   background-color: #ffffff;
 }
-.resultats .evenements .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .evenements span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .evenements span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 .resultats .projets {
@@ -2331,9 +2325,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .projets .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .projets a {
   text-decoration: none;
@@ -2347,18 +2343,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .projets a:hover .content {
   background-color: #ffffff;
 }
-.resultats .projets .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .projets span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .projets span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 .resultats .articles {
@@ -2391,9 +2382,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .articles .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .articles a {
   text-decoration: none;
@@ -2407,18 +2400,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .articles a:hover .content {
   background-color: #ffffff;
 }
-.resultats .articles .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .articles span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .articles span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 .resultats .organisations {
@@ -2451,9 +2439,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .organisations .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .organisations a {
   text-decoration: none;
@@ -2467,18 +2457,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .organisations a:hover .content {
   background-color: #ffffff;
 }
-.resultats .organisations .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .organisations span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .organisations span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 .resultats .autre {
@@ -2511,9 +2496,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .autre .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .autre a {
   text-decoration: none;
@@ -2527,18 +2514,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .autre a:hover .content {
   background-color: #ffffff;
 }
-.resultats .autre .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .autre span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .autre span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 .resultats .no-result {
@@ -2571,9 +2553,11 @@ button.alm-load-more-btn.loading:before {
 }
 .resultats .no-result .content {
   margin-left: 6em;
+  line-height: 5em;
   background-color: #ffffff;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 1.75em 1.5em;
+  height: 5em;
+  padding: 0 1.5em;
 }
 .resultats .no-result a {
   text-decoration: none;
@@ -2587,18 +2571,13 @@ button.alm-load-more-btn.loading:before {
 .resultats .no-result a:hover .content {
   background-color: #ffffff;
 }
-.resultats .no-result .search-date {
-  font-family: 'PT Sans Narrow', 'Arial', sans-serif;
-  font-size: 1.25em;
-  text-transform: uppercase;
-}
 .resultats .no-result span {
   font-size: 1.5em;
   color: #7e828c;
 }
 .resultats .no-result span.info:before {
   content: '|';
-  margin: 0 0.5em;
+  margin: 0 1em;
   color: #C5C5C5;
 }
 /* ARCHIVE DE TYPES (Nouvelles, articles, événements,...) */
@@ -3701,6 +3680,7 @@ form .gfield_error textarea {
   transition: all 0.2s ease;
 }
 .coordonees a i {
+  color: #e14e24;
   float: right;
   font-size: 0.6em;
   line-height: 1.8em;
@@ -3712,7 +3692,10 @@ form .gfield_error textarea {
   transition: all 0.2s ease;
 }
 .coordonees a:hover {
-  background-color: #e14e24;
+  background-color: #1f2124;
+}
+.coordonees a:hover i {
+  color: #ffffff;
 }
 .equipe {
   padding: 3em 0 5em;
@@ -3999,6 +3982,15 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   hr.for-responsive {
     display: inherit;
   }
+  .group-mots-cles {
+    width: 100%;
+    float: left;
+    text-align: left;
+    margin-top: 0.5em;
+  }
+  .group-mots-cles .mot-cle {
+    float: left;
+  }
   .equipe .c3 {
     width: 33%;
   }
@@ -4124,14 +4116,6 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   .search-results .resultats {
     font-size: 75%;
   }
-  .search-results .content-wrapper h2 {
-    width: 100%;
-    max-width: none;
-    margin-bottom: 1em;
-  }
-  .search-results span.info:before {
-    content: none;
-  }
   .single #content > article > .large-wrapper .sharing > div {
     font-size: 75%;
     padding-top: 1em;
@@ -4175,6 +4159,9 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   .group.related-posts .c3 {
     width: 100%;
   }
+  .coordonees a {
+    font-size: 1.3em;
+  }
 }
 @media screen and (max-width: 500px) {
   .trois .c6,
@@ -4199,13 +4186,16 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   .equipe .c3 {
     width: 99.99%;
   }
-  .site-description {
-    display: none;
-  }
 }
 @media screen and (max-width: 479px) {
   .home-link {
     font-size: 65%;
+  }
+  .navigation .meta {
+    margin-left: 8em;
+  }
+  .site-description {
+    left: 8em;
   }
 }
 .ui-datepicker {
