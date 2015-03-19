@@ -66,10 +66,10 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
         define('consumer_secret',"0xz8sAWVfphJ9GnSIVf50GUj6xaDF5gycfovfn7zwOpMZri4UZ");
          
 } else {
-	define('DB_NAME', '');
-	define('DB_USER', '');
-	define('DB_PASSWORD', '');
-	define('DB_HOST', '');
+	define('DB_NAME', 'webaqueb_qcnum_2015_production');
+	define('DB_USER', 'webaqueb_qcnum');
+	define('DB_PASSWORD', 'Inkfwn7MdWSL');
+	define('DB_HOST', 'localhost');
 	define('WP_SITEURL', 'http://www.quebecnumerique.com');
 	define('WP_HOME', 'http://www.quebecnumerique.com');
         //Apps Twitter
