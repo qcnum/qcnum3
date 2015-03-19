@@ -3979,6 +3979,22 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   .navigation .principal#menu-principal.visible {
     top: 0;
   }
+  #menu-meta {
+    opacity: 0;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    padding-left: 0;
+    margin-left: 0;
+    -webkit-transition: top 0.75s ease;
+    -moz-transition: top 0.75s ease;
+    -ms-transition: top 0.75s ease;
+    -o-transition: top 0.75s ease;
+    transition: top 0.75s ease;
+  }
+  #menu-meta.visible {
+    opacity: 1;
+  }
   .header-post-type .description {
     width: 100%;
     float: left;
@@ -4171,6 +4187,9 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   .all-projets .c9 .list-secteurs {
     clear: both;
   }
+  .coordonees {
+    font-size: 80%;
+  }
   .group.related-posts .c3 {
     width: 100%;
   }
@@ -4210,7 +4229,7 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
 }
 @media screen and (max-width: 479px) {
   .home-link {
-    font-size: 50%;
+    font-size: 65%;
   }
   .navigation .meta {
     margin-left: 8em;

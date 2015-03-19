@@ -42,6 +42,7 @@ jQuery(document).ready(function(){
 
 	jQuery('.menu-toggle a').click(function(){
 		jQuery('#menu-principal').toggleClass('visible');
+		jQuery('#menu-meta').toggleClass('visible');
 		event.preventDefault();
 	});
 

@@ -2659,6 +2659,17 @@ hr.for-responsive{display: none;}
 			}
 		}
 
+		#menu-meta {
+			opacity: 0;
+			position: fixed;
+			bottom: 1em;
+			left: 1em;
+			padding-left: 0;
+			margin-left: 0;
+			.transition(top 0.75s ease);
+			&.visible { opacity: 1; }
+		}
+
 		//.filtre { font-size: 85%; }
 
 		.header-post-type .description { width: 100%; float: left; text-align: left; font-size: 1.3em; }
@@ -2781,7 +2792,7 @@ hr.for-responsive{display: none;}
 			margin: 0 auto;
 			.list-secteurs { clear: both; }
 		}
-
+		.coordonees { font-size: 80%; }
 		.group.related-posts .c3 { width: 100%; }
 		.coordonees a { font-size: 1.3em;}
 		.ajax-load-more-wrap.white button.alm-load-more-btn{ font-size: 0.9em; }
@@ -2799,7 +2810,7 @@ hr.for-responsive{display: none;}
 	}
 
 	@media screen and (max-width: 479px){
-		.home-link { font-size: 50%; }
+		.home-link { font-size: 65%; }
 		.navigation .meta { margin-left: 8em; }
 	}
 
