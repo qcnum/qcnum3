@@ -18,6 +18,7 @@ jQuery(document).ready(function(){
 		autoplaySpeed: 1000,
 		infinite: true,
 		touchMove: false,
+		centerMode: true,
 		responsive: [{
 			breakpoint: 1600,
 			settings: {
