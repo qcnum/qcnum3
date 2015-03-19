@@ -23,6 +23,7 @@ wp_enqueue_script('clusterer', get_template_directory_uri() . '/js/markercluster
 wp_enqueue_script('map_qn', get_template_directory_uri() . '/js/map_qn.js', 'jquery', '', true);
 wp_enqueue_script('chosen', get_template_directory_uri() . '/js/chosen.jquery.min.js', 'jquery', '', true);
 wp_enqueue_script('script', get_template_directory_uri() . '/js/script.js', 'jquery', '', true);
+wp_enqueue_script('script', get_template_directory_uri() . '/js/sticky.js', 'jquery', '', true);
 wp_head(); 
 ?>
 

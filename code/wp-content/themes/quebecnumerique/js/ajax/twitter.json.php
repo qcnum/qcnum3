@@ -79,8 +79,20 @@ foreach ($tags as $t) {
     }
 }
 
+//$allResponse = '{"errors":[{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88}]}';
+//$allResponse = json_decode($allResponse);
+//print_r($allResponse);
 
-$allResponse = json_encode($allResponse);
+if(isset($allResponse->errors[0]->code) && $allResponse->errors[0]->code == '88'){  
+    $allResponse = get_option('twitterJson');   
+}else{
+    $allResponse = json_encode($allResponse);
+    if(get_option('twitterJson')){
+        update_option('twitterJson', $allResponse);
+    }else{
+        add_option( 'twitterJson', $allResponse );
+    }
+}
 
 header('Content-type: application/json');
 echo $allResponse;
