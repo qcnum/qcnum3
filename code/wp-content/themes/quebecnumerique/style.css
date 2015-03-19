@@ -4120,6 +4120,15 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
     font-size: 75%;
     padding-top: 1em;
   }
+  #map-content {
+    margin-top: 3em;
+  }
+  .abstract {
+    top: 8%;
+  }
+  .nouvelles .padding {
+    padding: 0;
+  }
 }
 @media screen and (max-width: 600px) {
   .cinq .c3,
@@ -4161,6 +4170,9 @@ article .juiz_sps_links .juiz_sps_item a .juiz_sps_icon {
   }
   .coordonees a {
     font-size: 1.3em;
+  }
+  .ajax-load-more-wrap.white button.alm-load-more-btn {
+    font-size: 0.9em;
   }
 }
 @media screen and (max-width: 500px) {
