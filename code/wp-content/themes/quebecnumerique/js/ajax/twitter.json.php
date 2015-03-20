@@ -95,4 +95,6 @@ if(isset($allResponse->errors[0]->code) && $allResponse->errors[0]->code == '88'
 }
 
 header('Content-type: application/json');
+header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date dans le passé
 echo $allResponse;
