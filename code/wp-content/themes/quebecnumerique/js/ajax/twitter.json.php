@@ -92,13 +92,13 @@ foreach ($tags as $t) {
         
         $allResponse = array_merge_recursive($allResponse,$responseArray);
                
-        $hashtagsComplete .= $hashtags;         
+        $hashtagsComplete .= '+OR+'.$hashtags;         
         $hashtags = '';
         $cpt = 0;
     }
 }
 if($hashtags != '' && $cpt > 0){
-    $hashtagsComplete .= $hashtags; 
+    $hashtagsComplete .= '+OR+'.$hashtags; 
     $responseArray = listTweets($hashtags);
     $allResponse = array_merge_recursive($allResponse,$responseArray);
 }
