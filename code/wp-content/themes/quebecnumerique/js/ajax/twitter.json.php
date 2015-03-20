@@ -76,8 +76,9 @@ function listTweets($hashtags = ''){
 
 
 $allResponse = array();
-$hashtagsComplete = '';
 $tags     = get_terms( 'mots-cles',array('hide_empty' => 0));
+print_r($tags);
+echo '<br /><br />';
 $hashtags = '';
 $cpt      = 0;
 foreach ($tags as $t) {
@@ -92,13 +93,11 @@ foreach ($tags as $t) {
         
         $allResponse = array_merge_recursive($allResponse,$responseArray);
                
-        $hashtagsComplete .= '+OR+'.$hashtags;         
         $hashtags = '';
         $cpt = 0;
     }
 }
 if($hashtags != '' && $cpt > 0){
-    $hashtagsComplete .= '+OR+'.$hashtags; 
     $responseArray = listTweets($hashtags);
     $allResponse = array_merge_recursive($allResponse,$responseArray);
 }
