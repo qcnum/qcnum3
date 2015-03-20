@@ -78,6 +78,11 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
         define('oauth_access_token_secret',"zedYzsR75jaVyoNEJlz4ygWXBvstRILGFuYj59tdZzhQT");
         define('consumer_key',"YB2FxzPteMURUPKkMIjr11b5d");
         define('consumer_secret',"wX7Ty1QlheU9zUSZCp9fq1iaqMoDmWPjkuyNCbJfBPjDgq9WTR");
+        //Apps Twitter
+        //define('oauth_access_token',"421936727-GRdijS26xhEkqczDWeFSvHacHLThOju15jxX2N8d");
+        //define('oauth_access_token_secret',"PScrCDTDLjKVrjUJIZ4NjlelKisjNyAYwVk40TjpADH8W");
+        //define('consumer_key',"5T1S4slgI6sDOmItbHsBrnlnG");
+        //define('consumer_secret',"0xz8sAWVfphJ9GnSIVf50GUj6xaDF5gycfovfn7zwOpMZri4UZ");
 }
 
 define('DB_CHARSET', 'utf8');
