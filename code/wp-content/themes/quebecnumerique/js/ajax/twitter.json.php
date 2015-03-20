@@ -69,11 +69,13 @@ foreach ($tags as $t) {
                             ->buildOauth($url, $requestMethod)
                            ->performRequest();
         
-        if(empty($allResponse)){
-            $allResponse = json_decode($response, true);
-        }else{
-            $allResponse = array_merge_recursive($allResponse,json_decode($response, true));
-        }                
+        $responseArray = json_decode($response, true);
+        echo '=>' . count($responseArray['statuses']).'<br />';
+        /*if(empty($allResponse)){
+            $allResponse = $responseArray;
+        }else{*/
+            $allResponse = array_merge_recursive($allResponse,$responseArray);
+        //}                
         $hashtags = '';
         $cpt = 0;
     }
