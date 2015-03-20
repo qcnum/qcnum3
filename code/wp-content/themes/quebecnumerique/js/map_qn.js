@@ -249,6 +249,7 @@ function listMarkersTweets(cptReturn,maxID){
     var nocache = new Date().getTime();
     
     if(jQuery('#'+value+':checked').length > 0){
+            alert(directory_theme + "/js/ajax/"+value+".json.php?maxID="+maxID+"periode=&limit=&cache="+nocache);
             jQuery.get( directory_theme + "/js/ajax/"+value+".json.php?maxID="+maxID+"periode=&limit=&cache="+nocache, function(data) {
                 if(data.statuses.length > 0){
                     var cpt    = cptReturn;
