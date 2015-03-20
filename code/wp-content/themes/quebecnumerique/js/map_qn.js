@@ -252,6 +252,7 @@ function listMarkersTweets(cptReturn,maxID){
             alert(directory_theme + "/js/ajax/"+value+".json.php?maxID="+maxID+"periode=&limit=&cache="+nocache);
             jQuery.get( directory_theme + "/js/ajax/"+value+".json.php?maxID="+maxID+"periode=&limit=&cache="+nocache, function(data) {
                 if(data.statuses.length > 0){
+                    alert(data.statuses.length);
                     var cpt    = cptReturn;
                     var lastID = 0;
                     for (var i = 0; i < data.statuses.length; i++) {

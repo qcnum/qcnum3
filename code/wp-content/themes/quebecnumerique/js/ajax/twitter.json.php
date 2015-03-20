@@ -83,7 +83,7 @@ foreach ($tags as $t) {
 //$allResponse = json_decode($allResponse);
 //print_r($allResponse);
 
-if(isset($allResponse->errors[0]->code) && $allResponse->errors[0]->code == '88'){  
+/*if(isset($allResponse->errors[0]->code) && $allResponse->errors[0]->code == '88'){  
     $allResponse = get_option('twitterJson');   
 }else{
     $allResponse = json_encode($allResponse);
@@ -92,7 +92,9 @@ if(isset($allResponse->errors[0]->code) && $allResponse->errors[0]->code == '88'
     }else{
         add_option( 'twitterJson', $allResponse );
     }
-}
+}*/
+
+$allResponse = json_encode($allResponse);
 
 header('Content-type: application/json');
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
