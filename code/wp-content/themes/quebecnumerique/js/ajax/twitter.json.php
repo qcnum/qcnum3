@@ -45,7 +45,7 @@ $settings = array(
 $url = 'https://api.twitter.com/1.1/search/tweets.json';
 
 $allResponse = array();
-
+$hashtagsComplete = '';
 $tags     = get_terms( 'mots-cles',array('hide_empty' => 0));
 $hashtags = '';
 $cpt      = 0;
@@ -82,7 +82,8 @@ foreach ($tags as $t) {
             $allResponse = $responseArray;
         }else{*/
             $allResponse = array_merge_recursive($allResponse,$responseArray);
-        //}                
+        //}       
+        $hashtagsComplete .= $hashtags;         
         $hashtags = '';
         $cpt = 0;
     }
@@ -103,6 +104,8 @@ foreach ($tags as $t) {
     }
 }*/
 //print_r($allResponse);
+echo '<br />'.$hashtagsComplete.'<br />';
+
 echo count($allResponse['statuses']);exit;
 
 $allResponse = json_encode($allResponse);
