@@ -93,6 +93,8 @@ foreach ($tags as $t) {
         add_option( 'twitterJson', $allResponse );
     }
 }*/
+//print_r($allResponse);
+echo count($allResponse['statuses']);exit;
 
 $allResponse = json_encode($allResponse);
 
