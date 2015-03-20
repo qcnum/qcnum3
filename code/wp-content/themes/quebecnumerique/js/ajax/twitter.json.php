@@ -33,29 +33,19 @@ require_once('../../../../../wp-config.php');
 //Inclusion du oAuth Wrapper PHP
 require_once('../../inc/api-twitter/TwitterAPIExchange.php');
 
-/** Déclaration des tokens, à mettre entre les guillemets - a voir sur: https://dev.twitter.com/apps/ **/
-$settings = array(
-    'oauth_access_token'        => oauth_access_token,
-    'oauth_access_token_secret' => oauth_access_token_secret,
-    'consumer_key'              => consumer_key,
-    'consumer_secret'           => consumer_secret
-);
+function listTweets($hashtags = ''){
+    
+        /** Déclaration des tokens, à mettre entre les guillemets - a voir sur: https://dev.twitter.com/apps/ **/
+        $settings = array(
+            'oauth_access_token'        => oauth_access_token,
+            'oauth_access_token_secret' => oauth_access_token_secret,
+            'consumer_key'              => consumer_key,
+            'consumer_secret'           => consumer_secret
+        );
 
-//On spécifie l'URL de l'API que l'on utilise
-$url = 'https://api.twitter.com/1.1/search/tweets.json';
-
-$allResponse = array();
-$hashtagsComplete = '';
-$tags     = get_terms( 'mots-cles',array('hide_empty' => 0));
-$hashtags = '';
-$cpt      = 0;
-foreach ($tags as $t) {
-    if($cpt > 0){
-        $hashtags .= '+OR+';
-    }
-    $hashtags .= clean($t->name);
-    $cpt++;
-    if($cpt > 25){
+        //On spécifie l'URL de l'API que l'on utilise
+        $url = 'https://api.twitter.com/1.1/search/tweets.json';
+    
         echo '<br />'.$hashtags.'<br />';
         //Système de pagination
         $maxID = '';
@@ -78,15 +68,39 @@ foreach ($tags as $t) {
         
         $responseArray = json_decode($response, true);
         echo '=>' . count($responseArray['statuses']).'<br />';
-        /*if(empty($allResponse)){
-            $allResponse = $responseArray;
-        }else{*/
-            $allResponse = array_merge_recursive($allResponse,$responseArray);
-        //}       
+        
+        return $responseArray;
+}
+
+
+
+
+$allResponse = array();
+$hashtagsComplete = '';
+$tags     = get_terms( 'mots-cles',array('hide_empty' => 0));
+$hashtags = '';
+$cpt      = 0;
+foreach ($tags as $t) {
+    if($cpt > 0){
+        $hashtags .= '+OR+';
+    }
+    $hashtags .= clean($t->name);
+    $cpt++;
+    if($cpt > 25){
+        
+        $responseArray = listTweets($hashtags);
+        
+        $allResponse = array_merge_recursive($allResponse,$responseArray);
+               
         $hashtagsComplete .= $hashtags;         
         $hashtags = '';
         $cpt = 0;
     }
+}
+if($hashtags != '' && $cpt > 0){
+    $hashtagsComplete .= $hashtags; 
+    $responseArray = listTweets($hashtags);
+    $allResponse = array_merge_recursive($allResponse,$responseArray);
 }
 
 //$allResponse = '{"errors":[{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88},{"message":"Rate limit exceeded","code":88}]}';
