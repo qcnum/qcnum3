@@ -77,8 +77,6 @@ function listTweets($hashtags = ''){
 
 $allResponse = array();
 $tags     = get_terms( 'mots-cles',array('hide_empty' => 0));
-print_r($tags);
-echo '<br /><br />';
 $hashtags = '';
 $cpt      = 0;
 foreach ($tags as $t) {
@@ -87,9 +85,10 @@ foreach ($tags as $t) {
     }
     $hashtags .= clean($t->name);
     $cpt++;
-    if($cpt > 25){
+    if($cpt > 9){
         
         $responseArray = listTweets($hashtags);
+        //echo '=>' . count($responseArray['statuses']).'<br />';
         
         $allResponse = array_merge_recursive($allResponse,$responseArray);
                
@@ -117,7 +116,6 @@ if($hashtags != '' && $cpt > 0){
     }
 }*/
 //print_r($allResponse);
-echo '<br />'.$hashtagsComplete.'<br />';
 
 echo count($allResponse['statuses']);exit;
 
