@@ -49,7 +49,7 @@ foreach ($tags as $t) {
     $hashtags .= clean($t->name);
     $cpt++;
     if($cpt > 25){
-
+        echo '<br />'.$hashtags.'<br />';
         //Système de pagination
         $maxID = '';
         if(isset($_GET['maxID']) && $_GET['maxID'] > 0){
