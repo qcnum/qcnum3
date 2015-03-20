@@ -46,7 +46,6 @@ function listTweets($hashtags = ''){
         //On spécifie l'URL de l'API que l'on utilise
         $url = 'https://api.twitter.com/1.1/search/tweets.json';
     
-        echo '<br />'.$hashtags.'<br />';
         //Système de pagination
         $maxID = '';
         if(isset($_GET['maxID']) && $_GET['maxID'] > 0){
@@ -67,7 +66,6 @@ function listTweets($hashtags = ''){
                            ->performRequest();
         
         $responseArray = json_decode($response, true);
-        echo '=>' . count($responseArray['statuses']).'<br />';
         
         return $responseArray;
 }
@@ -88,7 +86,6 @@ foreach ($tags as $t) {
     if($cpt > 9){
         
         $responseArray = listTweets($hashtags);
-        //echo '=>' . count($responseArray['statuses']).'<br />';
         
         $allResponse = array_merge_recursive($allResponse,$responseArray);
                
@@ -117,9 +114,14 @@ if($hashtags != '' && $cpt > 0){
 }*/
 //print_r($allResponse);
 
-echo count($allResponse['statuses']);exit;
-
 $allResponse = json_encode($allResponse);
+
+if(get_option('twitterJson')){
+    update_option('twitterJson', $allResponse);
+    update_option('twitterJson_maj', date('Y-m-d h:i:s'));
+}else{
+    add_option( 'twitterJson_maj', date('Y-m-d h:i:s'));
+}
 
 header('Content-type: application/json');
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
