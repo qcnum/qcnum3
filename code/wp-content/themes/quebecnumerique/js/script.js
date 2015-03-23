@@ -58,6 +58,17 @@ jQuery(document).ready(function(){
         initialize();
     });
 
+    jQuery(document).bind('keydown', function(e) { 
+        if (e.which == 27) {
+            if (jQuery(".map-content").hasClass('full-screen-map')){
+            	jQuery(".map-content").removeClass('full-screen-map');
+            }
+        }
+    }); 
+
+
+
+
     jQuery('.resultat').change(function(){
         markerCluster = [];
         jQuery.each(categories, function( index, value ) {
@@ -81,13 +92,6 @@ jQuery(document).ready(function(){
 		var $filtre = '.' + jQuery(this).attr('value');
 		jQuery('.resultats ' + $filtre).hide();
 		event.preventDefault();
-
-
-	
-		
-
-
-
 	}); */
 
 
@@ -113,16 +117,16 @@ jQuery(document).ready(function(){
         
 
     });
-
+	/*
  	resize();
  	jQuery(window).resize(function(){
  		resize();
- 	});
+ 	});*/
 
 });
 
 
-
+/*
 function resize() {
 
 	element = jQuery(window);
@@ -138,4 +142,4 @@ function resize() {
 
 	}
 
-}
+}*/
