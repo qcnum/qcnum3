@@ -4,6 +4,8 @@ get_header();
 $lastM = '';
 $diffGMT = get_option('gmt_offset') * 3600;  
 $currentDate = time() + $diffGMT;
+$deuxjours = $currentDate-(48*60*60);
+
 query_posts(
 	array(
 		'post_type' => 'evenements',
@@ -15,7 +17,7 @@ query_posts(
 			'relation' => 'AND',
 				array(
 				'key' => 'enddate',
-				'value' => $currentDate,
+				'value' => $deuxjours,
 				'compare' => '>='
 			)
 		)
