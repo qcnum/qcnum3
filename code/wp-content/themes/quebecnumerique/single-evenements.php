@@ -1,10 +1,5 @@
 <?php 
 get_header(); 
-/*$nouvelles = new WP_Query( array(
-	'connected_type' => 'evenements-to-post',
-	'connected_items' => get_queried_object(),
-	'nopaging' => true,
-) ); */
 
 $organisations = new WP_Query( array(
 	'connected_type' => 'organisations-to-evenements',
@@ -14,6 +9,12 @@ $organisations = new WP_Query( array(
 
 $projets = new WP_Query( array(
 	'connected_type' => 'projets-to-evenements',
+	'connected_items' => get_queried_object(),
+	'nopaging' => true,
+) );
+
+$evenements = new WP_Query( array(
+	'connected_type' => 'evenements-to-evenements',
 	'connected_items' => get_queried_object(),
 	'nopaging' => true,
 ) );
@@ -58,10 +59,29 @@ $projets = new WP_Query( array(
 								?>
 
 
-								<div class="ellipsis info-event">
-									<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
-									<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
+								<div class="info-event group">
+									<div class="c5">
+										<h2 class="h4"><i class="fa fa-clock-o"></i> <?php _e('Quand', THEME_NAME); ?></h2>
+										<p class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></p>
+									</div>
+
+									<?php if(get_field('nom_du_lieu')) : ?>
+										<div class="c4">
+											<h2 class="h4"><i class="fa fa-map-marker"></i> <?php _e('Où', THEME_NAME); ?></h2>
+											<p class="lieu"><?php the_field('nom_du_lieu'); ?></p>
+										</div>
+									<?php endif; ?>
+
+									<?php if(get_field('prix')) : ?>
+										<div class="c2">
+											<h2 class="h4"><i class="fa fa-dollar"></i> <?php _e('Prix', THEME_NAME); ?></h2>
+											<p class="date"><?php the_field('prix'); ?></p>
+										</div>
+									<?php endif; ?>
+
 								</div>
+								
+
 								<?php the_content(); ?>
 							
 							</div>
@@ -113,6 +133,53 @@ $projets = new WP_Query( array(
 										<?php foreach ( $motsCles as $mc ) : ?>
 											<a class="mot-cle" href="/index.php?s=&amp;mots-cles[]=<?php echo $mc->slug; ?>" title="<?php echo $mc->name; ?>"><?php echo $mc->name ?></a>
 										<?php endforeach; ?>	
+									</div>
+								</aside>
+							<?php endif; ?>
+
+							<?php if ( $evenements->have_posts() ) : $numE = $evenements->post_count; ?>
+								<aside>
+									<div class="box-evenements">
+										<h2><?php echo _n('Événement', 'Événements', $numE, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
+										<?php while ( $evenements->have_posts() ) : $evenements->the_post();
+											$startDate = get_field('startdate');
+											$myDate = strftime('%e %B %Y', $startDate/1000);
+											$endDate = get_field('enddate');
+											$myDate2 = strftime('%e %B %Y', $endDate/1000);
+											if($startDate != $endDate) { $date = 'Du ' . $myDate . ' au ' . $myDate2; } 
+											else { $date = 'Le ' . $myDate; }
+											$startHrs = get_field('hrs_debut');
+											$endHrs = get_field('hrs_fin');
+											if($startHrs && !$endHrs) {
+												$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+											} elseif($startHrs && $endHrs) {
+												$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+											}
+											?>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<article class="group">
+
+													<?php if(has_post_thumbnail()) : 
+														the_post_thumbnail('thumbnail');
+													else : 
+														$category = get_the_category();
+														$id = get_field('img-evenements', 'options'); 
+														$url = wp_get_attachment_image_src( $id , 'thumbnail');
+														?>
+														
+														<img src="<?php echo $url[0] ?>" alt="Événements">
+													<?php endif; ?>
+
+													<div class="content">
+														<div class="ellipsis info-event">
+															<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
+															<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
+														</div>
+														<h3 class="ellipsis"><?php the_title(); ?></h3>
+													</div>
+												</article>
+											</a>
+										<?php endwhile; wp_reset_postdata(); ?>
 									</div>
 								</aside>
 							<?php endif; ?>

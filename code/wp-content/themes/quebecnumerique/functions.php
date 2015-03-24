@@ -216,6 +216,14 @@ function my_connection_types() {
         'reciprocal' => true
     ) );
 
+    p2p_register_connection_type( array(
+        'name' => 'evenements-to-evenements',
+        'from' => 'evenements',
+        'to' => 'evenements',
+        'admin_column' => 'any',
+        'reciprocal' => true
+    ) );
+
 
 }
 add_action( 'p2p_init', 'my_connection_types' );
