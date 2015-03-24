@@ -188,9 +188,13 @@ $evenements = new WP_Query( array(
 								<aside>
 									<div>
 										<h2 class="h2"><?php echo _n('Projet', 'Projets', $numP, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
-										<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
-											<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-										<?php endwhile; wp_reset_postdata(); ?>
+										<div class="entry-content">
+											<ul>
+												<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
+													<li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+												<?php endwhile; wp_reset_postdata(); ?>
+											</ul>
+										</div>
 									</div>
 								</aside>
 							<?php endif; ?>
