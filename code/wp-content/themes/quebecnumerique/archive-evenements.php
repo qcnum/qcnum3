@@ -4,7 +4,7 @@ get_header();
 $lastM = '';
 $diffGMT = get_option('gmt_offset') * 3600;  
 $currentDate = time() + $diffGMT;
-$deuxjours = $currentDate-(48*60*60);
+$unjour = $currentDate-(24*60*60);
 
 query_posts(
 	array(
@@ -17,7 +17,7 @@ query_posts(
 			'relation' => 'AND',
 				array(
 				'key' => 'enddate',
-				'value' => $deuxjours,
+				'value' => $unjour,
 				'compare' => '>='
 			)
 		)

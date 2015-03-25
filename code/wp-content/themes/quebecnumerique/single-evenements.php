@@ -110,7 +110,7 @@ $evenements = new WP_Query( array(
 
 							<?php if(get_field('lien_inscription')) : ?>
 								<aside class="featured-img btn-inscription">
-									<a href="<?php the_field('lien_inscription'); ?>" class="btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
+									<a href="<?php the_field('lien_inscription'); ?>" target="_blank" class="btn-orange"><?php _e('M\'inscrire', THEME_NAME); ?></a>
 								</aside>
 							<?php endif; ?>
 
