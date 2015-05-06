@@ -8,6 +8,7 @@ $tag2_name =  $tag2->name;
 
 $diffGMT = get_option('gmt_offset') * 3600;  
 $currentDate = time() + $diffGMT;
+$unjour = $currentDate-(48*60*60);
 $aIdNews = array();
 $nouvelles = new WP_Query( array( 'post_type' => 'post', 'cat' => '2', 'posts_per_page' => 3 ) );
 $articles = new WP_Query( array( 'post_type' => 'post', 'cat' => '3', 'posts_per_page' => 2 ) );
@@ -23,7 +24,7 @@ $evenements = new WP_Query(
 			'relation' => 'AND',
 				array(
 				'key' => 'enddate',
-				'value' => $currentDate,
+				'value' => $unjour,
 				'compare' => '>='
 			)
 		)

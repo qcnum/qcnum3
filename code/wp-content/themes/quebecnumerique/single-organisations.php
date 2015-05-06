@@ -81,9 +81,13 @@ $projets = new WP_Query( array(
 								<aside>
 									<div>
 										<h2 class="h2"><?php echo _n('Projet', 'Projets', $numP, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
-										<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
-											<h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-										<?php endwhile; wp_reset_postdata(); ?>
+										<div class="entry-content">
+											<ul>
+												<?php while ( $projets->have_posts() ) : $projets->the_post(); ?>
+													<li><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></li>
+												<?php endwhile; wp_reset_postdata(); ?>
+											</ul>
+										</div>
 									</div>
 								</aside>
 							<?php endif; ?>
@@ -92,14 +96,39 @@ $projets = new WP_Query( array(
 								<aside>
 									<div class="box-evenements">
 										<h2><?php echo _n('Événement', 'Événements', $numE, THEME_NAME); ?> <?php _e('en lien', THEME_NAME); ?></h2>
-										<?php while ( $evenements->have_posts() ) : $evenements->the_post(); ?>
-											<a title="<?php the_title(); ?>" href="<?php the_permalink(); ?>">
-												<article class="grispale-bg group">
-													<?php the_post_thumbnail('thumbnail'); ?>
+										<?php while ( $evenements->have_posts() ) : $evenements->the_post();
+											$startDate = get_field('startdate');
+											$myDate = strftime('%e %B %Y', $startDate/1000);
+											$endDate = get_field('enddate');
+											$myDate2 = strftime('%e %B %Y', $endDate/1000);
+											if($startDate != $endDate) { $date = 'Du ' . $myDate . ' au ' . $myDate2; } 
+											else { $date = 'Le ' . $myDate; }
+											$startHrs = get_field('hrs_debut');
+											$endHrs = get_field('hrs_fin');
+											if($startHrs && !$endHrs) {
+												$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . '</span>';
+											} elseif($startHrs && $endHrs) {
+												$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
+											}
+											?>
+											<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+												<article class="group">
+
+													<?php if(has_post_thumbnail()) : 
+														the_post_thumbnail('thumbnail');
+													else : 
+														$category = get_the_category();
+														$id = get_field('img-evenements', 'options'); 
+														$url = wp_get_attachment_image_src( $id , 'thumbnail');
+														?>
+														
+														<img src="<?php echo $url[0] ?>" alt="Événements">
+													<?php endif; ?>
+
 													<div class="content">
 														<div class="ellipsis info-event">
-															<span class="date"><?php echo get_the_date(); ?></span>
-															<span class="lieu"><i class="fa fa-map-marker"></i> L'Abri-co / 255 boulevard Charest Est</span>
+															<span class="date"><?php echo $date; ?><?php if($hrs) echo $hrs; ?></span>
+															<?php if(get_field('nom_du_lieu')) : ?><span class="lieu"><i class="fa fa-map-marker"></i> <?php the_field('nom_du_lieu'); ?></span><?php endif; ?>
 														</div>
 														<h3 class="ellipsis"><?php the_title(); ?></h3>
 													</div>

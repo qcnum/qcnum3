@@ -216,6 +216,14 @@ function my_connection_types() {
         'reciprocal' => true
     ) );
 
+    p2p_register_connection_type( array(
+        'name' => 'evenements-to-evenements',
+        'from' => 'evenements',
+        'to' => 'evenements',
+        'admin_column' => 'any',
+        'reciprocal' => true
+    ) );
+
 
 }
 add_action( 'p2p_init', 'my_connection_types' );
@@ -434,6 +442,10 @@ function my_acf_save_post( $post_id ) {
     $debut = get_post_meta( $post_id, 'startdate' );
     $fin = get_post_meta( $post_id, 'enddate' );
     if( $fin[0] == "" ) { update_post_meta( $post_id, 'enddate', $debut[0] ); }
+
+    //$hrsFin = get_post_meta( $post_id, 'hrs_fin' );
+   // $realFin = $debut[0]+$hrsFin[0];
+   // update_post_meta( $post_id, 'enddateH', $realFin );
 }
 // run after ACF saves the $_POST['acf'] data
 add_action('acf/save_post', 'my_acf_save_post', 20);
