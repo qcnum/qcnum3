@@ -68,7 +68,7 @@ if ('www.quebecnumerique.dev.evollia.com' === $_SERVER[ 'HTTP_HOST' ]) {
 } else {
 	define('DB_NAME', 'webaqueb_qcnum_2015_production');
 	define('DB_USER', 'webaqueb_qcnum');
-	define('DB_PASSWORD', 'Inkfwn7MdWSL');
+	define('DB_PASSWORD', '@Q3)$318fSQH');
 	define('DB_HOST', 'localhost');
 	define('WP_SITEURL', 'http://www.quebecnumerique.com');
 	define('WP_HOME', 'http://www.quebecnumerique.com');
