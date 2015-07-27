@@ -1,23 +1,28 @@
 <?php
 require_once('../../../../../wp-config.php');
 
+
 add_filter( 'posts_where', 'wpa57065_filter_where' );
+$diffGMT = get_option('gmt_offset') * 3600;  
+$currentDate = time() + $diffGMT;
+$unjour = $currentDate-(24*60*60);
 
 $evenements = new WP_Query(array(
         'post_type' => 'evenements',
         'posts_per_page' => 50,
         'orderby' => 'the_date', 
         'order' => 'DESC',
-	'meta_query' => array(
-		array(
-			'key'     => 'postexpired',
-			'value'   => date('Y-m-d'),
-			'compare' => '>=',
-		)
-	)));
+        'meta_query'  => array(
+            'relation' => 'AND',
+                array(
+                'key' => 'enddate',
+                'value' => $unjour,
+                'compare' => '>='
+            )
+        )
+));
 
 remove_filter( 'posts_where', 'wpa57065_filter_where' );
-
 
 /* 
  * Fichier JSON des Evènements
