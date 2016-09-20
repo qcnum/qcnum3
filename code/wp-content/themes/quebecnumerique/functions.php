@@ -461,8 +461,10 @@ function override_og_locale($locale) {
     return "fr_CA";
 }
 
-function unregister_taxonomy(){
-    register_taxonomy('post_tag', array());
+if (!function_exists('unregister_taxonomy')) {
+    function unregister_taxonomy(){
+        register_taxonomy('post_tag', array());
+    }
 }
 add_action('init', 'unregister_taxonomy');
 
