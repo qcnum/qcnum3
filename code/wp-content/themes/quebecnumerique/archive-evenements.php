@@ -56,23 +56,23 @@ query_posts(
 						} elseif($startHrs && $endHrs) {
 							$hrs = ' | <span class="hrs">' . date('G\hi', $startHrs) . ' à ' . date('G\hi', $endHrs) . '</span>';
 						}
-						$month = strftime('%b', $endDate/1000); 
 
+						$month = strftime('%b %Y', $endDate/1000);
 						if($month != $lastM && $lastM != null) {
 							/* On change de mois */
-							$lastM = $month; 
+							$lastM = $month;
 							$firstMonth = $month;
 							echo '</div></section>';
 							echo '<section class="group">';
 							echo '<header class="c1"><h2>';
-							echo $firstMonth . ' ' . get_the_date('Y');
+							echo $month;
 							echo '</h2></header><div class="c11 fr">';
 						} elseif($month != $lastM && $lastM == null) {
 							/* Premier mois */
 							$lastM = $month;
 							$firstMonth = $month;
 							echo '<header class="c1"><h2>';
-							echo $firstMonth . ' ' . get_the_date('Y');
+							echo $month;
 							echo '</h2></header><div class="c11 fr">';
 						} else { /* On continue */ $firstMonth = ''; }
 						?>
