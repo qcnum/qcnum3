@@ -124,8 +124,8 @@ function init() {
     );
 
     $labelsProjet = array(
-        'name' => _x('Projets', 'post type general name', THEME_NAME),
-        'singular_name' => _x('Projet', 'post type singular name', THEME_NAME),
+        'name' => _x('Culture/NumériQc', 'post type general name', THEME_NAME),
+        'singular_name' => _x('Culture/NumériQc', 'post type singular name', THEME_NAME),
         'add_new' => _x('Ajouter un projet', 'projets'),
         'add_new_item' => __('Ajouter un projet'),
         'edit_item' => __('Modifier le projet'),
@@ -136,7 +136,7 @@ function init() {
         'not_found' =>  __('Aucun projet trouvé'),
         'not_found_in_trash' => __('Rien de trouvé dans la corbeille'),
         'parent_item_colon' => '',
-        'menu_name' => 'Projets'
+        'menu_name' => 'Culture/NumériQc'
     );
 
     $argProjet = array(
