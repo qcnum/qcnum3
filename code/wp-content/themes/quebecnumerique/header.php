@@ -1,4 +1,4 @@
-<?php setlocale(LC_ALL, 'fr_FR'); ?>
+<?php setlocale(LC_ALL, 'fr_FR.UTF-8'); ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

@@ -45,7 +45,7 @@ function init() {
         'parent_item_colon' => '',
         'menu_name' => 'Événements'
     );
-    
+
     $argEvent = array(
         'labels' => $labelsEvent,
         'public' => true,
@@ -58,6 +58,37 @@ function init() {
         'hierarchical' => true,
         'menu_position' => 20,
         'menu_icon' => 'dashicons-calendar-alt',
+        'supports' => array('title', 'thumbnail', 'editor', 'revisions', 'page-attributes')
+    );
+
+    $labelsCulture = array(
+        'name' => _x('Culture/NumériQc', 'post type general name', THEME_NAME),
+        'singular_name' => _x('Culture/NumériQc', 'post type singular name', THEME_NAME),
+        'add_new' => _x('Ajouter un article Culture/NumeriQc', 'culture'),
+        'add_new_item' => __('Ajouter un article Culture/NumeriQc'),
+        'edit_item' => __('Modifier l\'article'),
+        'new_item' => __('Nouvel article'),
+        'all_items' => __('Toutes les articles'),
+        'view_item' => __('Voir l\'article'),
+        'search_items' => __('Chercher un article'),
+        'not_found' =>  __('Aucun article trouvé'),
+        'not_found_in_trash' => __('Rien de trouvé dans la corbeille'),
+        'parent_item_colon' => '',
+        'menu_name' => 'Culture/NumériQc'
+    );
+
+    $argCulture = array(
+        'labels' => $labelsCulture,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => true,
+        'menu_position' => 20,
+        'menu_icon' => 'dashicons-megaphone',
         'supports' => array('title', 'thumbnail', 'editor', 'revisions', 'page-attributes')
     );
 
@@ -76,7 +107,7 @@ function init() {
         'parent_item_colon' => '',
         'menu_name' => 'Organisations'
     );
-    
+
     $argOrg = array(
         'labels' => $labelsOrg,
         'public' => true,
@@ -107,7 +138,7 @@ function init() {
         'parent_item_colon' => '',
         'menu_name' => 'Projets'
     );
-    
+
     $argProjet = array(
         'labels' => $labelsProjet,
         'public' => true,
@@ -124,6 +155,7 @@ function init() {
     );
 
     register_post_type('projets', $argProjet);
+    register_post_type('culture', $argCulture);
     register_post_type('evenements', $argEvent);
     register_post_type('organisations', $argOrg);
 
@@ -242,7 +274,7 @@ function get_social_media() {
     $fb = get_field('facebook', 'options');
     $gp = get_field('google_plus', 'options');
     $li = get_field('linkedin', 'options');
-    $tw = get_field('twitter', 'options'); 
+    $tw = get_field('twitter', 'options');
     $pt = get_field('pinterest', 'options');
     $tumb = get_field('tumblr', 'options');
     $dribble = get_field('dribbble', 'options');
@@ -261,7 +293,7 @@ function get_social_media() {
         <?php if($tw) : ?>
             <a title="Twitter" href="<?php echo $tw; ?>"><i class="fa fa-twitter"></i></a>
         <?php endif; ?>
-            
+
         <?php if($fb) : ?>
             <a title="Facebook" href="<?php echo $fb; ?>"><i class="fa fa-facebook"></i></a>
         <?php endif; ?>
@@ -362,8 +394,8 @@ function get_sharing($post_id) { ?>
     <div class="sharing fr">
         <a href="#" class="sharer" title="Sharing"><i class="fa fa-share-alt"></i></a>
         <div>
-            <?php 
-            $urlimg = wp_get_attachment_url( get_post_thumbnail_id($post_id) ); 
+            <?php
+            $urlimg = wp_get_attachment_url( get_post_thumbnail_id($post_id) );
             $title = $post_id; $title = urlencode($title);
             $desc = get_the_excerpt(); $desc = urlencode($desc);
             $source = get_bloginfo('name'); $source = urlencode($source);
@@ -375,7 +407,7 @@ function get_sharing($post_id) { ?>
             <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink(); ?>&amp;title=<?php echo $title; ?>&amp;summary=<?php echo $desc; ?>&amp;source=<?php echo $source; ?>" class="li" title="Linkedin"><span>Linkedin</span> <i class="fa fa-linkedin"></i></a>
             <a target="_blank" href="https://pinterest.com/pin/create/button/?url=<?php the_permalink(); ?>&amp;media=<?php echo $urlimg; ?>&amp;description=<?php echo $desc; ?>" class="pin" title="Pinterest"><span>Pinterest</span> <i class="fa fa-pinterest-p"></i></a>
             <a href="mailto:?subject=<?php echo $title; ?>&amp;body=<?php echo $desc; ?>" class="email" title="Courriel"><span>Courriel</span> <i class="fa fa-envelope"></i></a>
-            
+
         </div>
     </div>
 <?php }
